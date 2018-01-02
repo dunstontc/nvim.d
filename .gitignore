@@ -9,6 +9,8 @@ cache_nvim
 
 # Folders
 dein/**
+sessions
+undo
 
 # mac system files
 Icon?
