@@ -2,7 +2,7 @@
 #   │ ┬│ │ ││ ┬││││ │├┬┘├┤
 #  o└─┘┴ ┴ ┴└─┘┘└┘└─┘┴└─└─┘
 
-!.gitkeep
+**/!.gitkeep
 state_nvim.vim
 rplugin.vim
 cache_nvim
