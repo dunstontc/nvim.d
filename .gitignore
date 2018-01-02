@@ -8,8 +8,6 @@ rplugin.vim
 cache_nvim
 
 # Folders
-undo/**
-sessions/**
 dein/**
 
 # mac system files
