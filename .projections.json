@@ -1,0 +1,26 @@
+{
+    "after/plugin/*.vim": {
+        "type": "after"
+    },
+    "autoload/*.vim": {
+        "type": "auto"
+    },
+    "colors/*.txt": {
+        "type": "col"
+    },
+    "doc/*.txt": {
+        "type": "doc"
+    },
+    "ftplugin/*.vim": {
+      "type": "ftp"
+    },
+    "plugin/*.vim": {
+        "type": "plug"
+    },
+    "readme.md": {
+        "type": "doc"
+    },
+    "init.vim": {
+        "type": "rc"
+    }
+}
