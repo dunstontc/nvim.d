@@ -1,18 +1,5 @@
 " ==============================================================================
-"  === Shougo/echodoc ===
-" ==============================================================================
-let g:echodoc#enable_at_startup = 1
-" The documentation display type.
-"echo": It uses the command line |:echo|.
-"signature": It uses gonvim signature feature.
-let g:echodoc#type='echo'
-" let g:echodoc#type='signature'
-let g:echodoc#highlight_identifier = "Identifier"
-let g:echodoc#highlight_arguments = "String"
-
-
-" ==============================================================================
-" === Shougo/deoplete ===
+" === Shougo/deoplete === {{{
 " ==============================================================================
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 500
@@ -33,7 +20,7 @@ let g:deoplete#min_pattern_length = 1
 let g:deoplete#sources#syntax#min_keyword_length = 1
 
 let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
+" let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
 " let g:deoplete#keyword_patterns.tex = '\\?[a-zA-Z_]\w*'
 let g:deoplete#keyword_patterns.tex = '[^\w|\s][a-zA-Z_]\w*'
 
@@ -133,21 +120,31 @@ call deoplete#custom#set('_', 'converters', [
   \ 'converter_truncate_menu',
   \ 'converter_auto_delimiter',
   \ ])
+" }}}
 
 " ==============================================================================
-" === dictionary ===
-" ==============================================================================
+"  === Shougo/echodoc === {{{
+let g:echodoc#enable_at_startup = 1
+" The documentation display type.
+"echo": It uses the command line |:echo|.
+"signature": It uses gonvim signature feature.
+let g:echodoc#type='echo'
+" let g:echodoc#type='signature'
+let g:echodoc#highlight_identifier = "Identifier"
+let g:echodoc#highlight_arguments = "String"
+" }}}
 
+" ==============================================================================
+" === dictionary === {{{
 call deoplete#custom#source('dictionary', 'min_pattern_length', 2)
 " Remove this if you'd like to use fuzzy search
 " call deoplete#custom#source('dictionary', 'matchers', ['matcher_head'])
 " If dictionary is already sorted, no need to sort it again.
 " call deoplete#custom#source('dictionary', 'sorters', [])
-
+" }}}
 
 " ==============================================================================
-" === SuperTab ===
-" ==============================================================================
+" === SuperTab === {{{
 " let g:SuperTabContextDefaultCompletionType = '<c-n>'
 let g:SuperTabDefaultCompletionType = '<C-n>'
 " let g:SuperTabCrMapping                = 0
@@ -155,10 +152,10 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " inoremap <expr> <cr>    pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
 " inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 " inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" }}}
 
 " ==============================================================================
-"  === (tenfyzhong/CompleteParameter.vim) ===
-" ==============================================================================
+"  === tenfyzhong/CompleteParameter.vim === {{{
 " inoremap <silent><expr> ( complete_parameter#pre_complete("()")
 " smap <c-n> <Plug>(complete_parameter#goto_next_parameter)
 " imap <c-n> <Plug>(complete_parameter#goto_next_parameter)
@@ -167,13 +164,10 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " let g:complete_parameter_log_level = 5
 " let g:complete_parameter_use_ultisnips_mapping = 1
+" }}}
 
-" if !exists('g:neocomplete#force_omni_input_patterns')
-"     let g:neocomplete#force_omni_input_patterns = {}
-" endif
-" let g:neocomplete#force_omni_input_patterns.javascript = '[^. \t]\.\w*'
-
-
+" ==============================================================================
+" === padawan-php/deoplete-padawan === {{{
 let g:deoplete#sources#padawan#server_addr = 'http://127.0.0.1:15155'
 let g:deoplete#sources#padawan#server_command = 'padawan-server'
 let g:deoplete#sources#padawan#composer_command = 'composer'
@@ -181,10 +175,10 @@ let g:deoplete#sources#padawan#log_file = '/tmp/padawan-server.log'
 let g:deoplete#sources#padawan#server_autostart = 1
 let g:deoplete#sources#padawan#add_parentheses = 0
 let g:deoplete#sources#padawan#auto_update = 0
+" }}}
 
 " ==============================================================================
-" === Shougo/neosnippet.vim ===
-" ==============================================================================
+" === Shougo/neosnippet.vim === {{{
 let g:neosnippet#disable_runtime_snippets = {
   \   '_' : 1,
   \ }
@@ -233,12 +227,10 @@ let g:neosnippet#snippets_directory='~/.dotfiles/editors/nvim/nsnipz'
 " smap <expr><TAB> neosnippet#jumpable() ?
 "   \ "\<Plug>(neosnippet_jump)"
 "   \: "\<TAB>"
-
-
+" }}}
 
 " ==============================================================================
-" === Ultisnips ===
-" ==============================================================================
+" === Ultisnips === {{{
 let g:UltiSnipsUsePythonVersion    = 3
 let g:UltiSnipsExpandTrigger       = '<tab>'
 let g:UltiSnipsJumpForwardTrigger  = '<tab>'
@@ -255,48 +247,124 @@ let g:ultisnips_python_triple_quoting_style = 'double'
 
 " inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<TAB>"
 " inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<TAB>"
-
-
+" }}}
 
 " ==============================================================================
-"  === Shougo/neco-syntax ===
-" ==============================================================================
+"  === Shougo/neco-syntax === {{{
 let g:necosyntax#min_keyword_length=1
 let g:necosyntax#max_syntax_line=1000
-
+" }}}
 
 " ==============================================================================
-"  === deoplete-jedi ===
-" ==============================================================================
-let g:deoplete#sources#jedi#show_docstring = 1
-let g:deoplete#sources#jedi#enable_cache = 1
-let g:deoplete#sources#jedi#short_types = 1
+"  === zchee/deoplete-jedi === {{{
+let g:deoplete#sources#jedi#show_docstring   = 1
+let g:deoplete#sources#jedi#enable_cache     = 1
+let g:deoplete#sources#jedi#short_types      = 1
 let g:deoplete#sources#jedi#statement_length = 30
-let g:deoplete#sources#jedi#server_timeout = 10
+let g:deoplete#sources#jedi#server_timeout   = 10
+" }}}
 
 " ==============================================================================
-"  === wellle/tmux-complete.vim ===
+" === tern-for-vim === {{{
+let g:tern_request_timeout = 1
+" let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
+"Add extra filetypes
+let g:tern#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ ]
+
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
+" }}}
+
 " ==============================================================================
+" === carlitux/deoplete-ternjs === {{{
+
+" Set bin if you have many instalations
+" let g:deoplete#sources#ternjs#tern_bin = '/path/to/tern_bin'
+
+let g:deoplete#sources#ternjs#timeout = 1
+
+" Whether to include the types of the completions in the result data.
+" Default: 0
+let g:deoplete#sources#ternjs#types = 1
+
+" Whether to include the distance
+" (in scopes for variables,
+" in prototypes for properties)
+" between the completions and the origin position in result data.
+" Default: 0
+let g:deoplete#sources#ternjs#depths = 1
+
+" Whether to include documentation strings (if found) in the result data.
+" Default: 0
+let g:deoplete#sources#ternjs#docs = 1
+
+" When on, only completions that match the current word
+" at the given point will be returned.
+" Turn this off to get all results,
+" so that you can filter on the client side.
+" Default: 1
+let g:deoplete#sources#ternjs#filter = 1
+
+" Whether to use a case-insensitive compare between
+" the current word and potential completions.
+" Default: 0
+let g:deoplete#sources#ternjs#case_insensitive = 1
+
+" When completing a property and no completions are found,
+" Tern will use some heuristics to try and return some properties anyway.
+" Set this to 0 to turn that off.
+" Default: 1
+let g:deoplete#sources#ternjs#guess = 0
+
+" Determines whether the result set will be sorted.
+" Default: 1
+let g:deoplete#sources#ternjs#sort = 0
+
+" When disabled, only the text before the given position is considered part of the word.
+" When enabled, the whole variable name that the cursor is on will be included.
+" Default: 1
+let g:deoplete#sources#ternjs#expand_word_forward = 0
+
+" Whether to ignore the properties of Object.prototype
+" unless they have been spelled out by at least two characters.
+" Default: 1
+let g:deoplete#sources#ternjs#omit_object_prototype = 1
+
+" Whether to include JavaScript keywords when
+" completing something that is not a property.
+" Default: 0
+let g:deoplete#sources#ternjs#include_keywords = 0
+
+" If completions should be returned when inside a literal.
+" Default: 1
+let g:deoplete#sources#ternjs#in_literal = 0
+
+
+"Add extra filetypes
+let g:deoplete#sources#ternjs#filetypes = [
+                \ 'jsx',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ ]
+" }}}
+
+" ==============================================================================
+"  === wellle/tmux-complete.vim === {{{
 let g:tmuxcomplete#trigger = ''
-
+" }}}
 
 " ==============================================================================
-"  === delimitMate ===
-" ==============================================================================
+"  === delimitMate === {{{
 let g:delimitMate_expand_cr=1
 let g:delimitMate_expand_space=1
-
-
-" ==============================================================================
-"  === https://www.reddit.com/r/vim/comments/4gjbqn/what_tricks_do_you_use_instead_of_popular_plugins/d2iatu9/ ===
-" ==============================================================================
-" cnoremap <expr> <Tab>   getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>/<C-r>/" : "<C-z>"
-" cnoremap <expr> <S-Tab> getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>?<C-r>/" : "<S-Tab>"
-
+" }}}
 
 " ==============================================================================
-"  === Emmet ===
-" ==============================================================================
+"  === Emmet === {{{
 let g:user_emmet_install_global = 0
 " " let g:user_emmet_leader_key='<Plug>(emmet_expand)'
 " " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
@@ -330,11 +398,10 @@ let g:user_emmet_install_global = 0
 "   let g:user_emmet_complete_tag = 0
 "   let g:user_emmet_install_global = 0
 "   autocmd FileType html,css,scss EmmetInstall
-
+" }}}
 
 " ==============================================================================
-"  === Table Mode ===
-" ==============================================================================
+"  === Table Mode === {{{
 " function! s:isAtStartOfLine(mapping)
 "   let text_before_cursor = getline('.')[0 : col('.')-1]
 "   let mapping_pattern = '\V' . escape(a:mapping, '\')
@@ -356,6 +423,11 @@ let g:table_mode_update_time = 500
 " let g:table_mode_motion_right_map = '<tab>'
 " let g:table_mode_motion_down_map = ''
 " let g:table_mode_motion_up_map = ''
+" }}}
 
 
-
+" ==============================================================================
+"  === https://www.reddit.com/r/vim/comments/4gjbqn/what_tricks_do_you_use_instead_of_popular_plugins/d2iatu9/ ===
+" ==============================================================================
+" cnoremap <expr> <Tab>   getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>/<C-r>/" : "<C-z>"
+" cnoremap <expr> <S-Tab> getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>?<C-r>/" : "<S-Tab>"

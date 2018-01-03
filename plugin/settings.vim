@@ -148,11 +148,12 @@ set list
 
 " === UI Characters ===
 " \ | │ ║ ─
+set fillchars=vert:│
 set fillchars+=stl:\           " Fix issue with statuslineNC Highlighting
 set fillchars+=stlnc:\         " Fix issue with statuslineNC Highlighting
-set fillchars+=vert:│
 set fillchars+=diff:─
-set fillchars+=fold:─
+" set fillchars+=fold:─
+set fillchars+=fold:\         " Test something new
 
 set emoji                      " When on all Unicode emoji characters are considered to be full width.
 
@@ -189,7 +190,7 @@ set dictionary+=~/grammar/google-10000-english-usa.txt
 " === Folding ===
 " ==============================================================================
 set foldenable                  " Enable folding
-set foldmethod=indent
+" set foldmethod=indent
 " set foldmethod=syntax
 set foldlevelstart=10           " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold

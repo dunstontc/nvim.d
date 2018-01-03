@@ -70,6 +70,7 @@ nnoremap <S-m> :Denite messages<CR>
 nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
 
 noremap R <C-r>
+nmap <S-U> <C-r>
 
 " Quit with Q
 nnoremap q :x<CR>
@@ -128,7 +129,7 @@ inoremap <F19> <esc>O
 nnoremap 𐌋 mxV"zy"zp`xj
 inoremap 𐌋 <esc>mxV"zy"zp`xj
 
-" Indentation
+" Indentation {{{
 " F15 -- ^[[1;2R
 " F16 -- ^[[1;2S
 vmap <silent><F15> <gv
@@ -143,10 +144,10 @@ imap <silent><F16> <esc>>>A
 " nmap <silent><leader>] >>
 " imap <silent><leader>[ <esc><<
 " imap <silent><leader>] <esc>>>
-
+" }}}
 
 ""
-" @subsection Alt Keys, alt
+" @subsection Alt Keys, alt {{{
 " With iTerm2 on OSX
 " Alt + h = ˙
 " Alt + j = ∆
@@ -184,6 +185,8 @@ vnoremap 𐌓 :m '>+1<CR>gv=gv
 " Use ⌥ left/right in command mode
 " cnoremap <Esc>b <S-Left>
 " cnoremap <Esc>f <S-Right>
+" }}}
+
 
 " Repeat on every line {{{
 " repeat last command for each line of a visual selection
@@ -316,7 +319,7 @@ nmap <silent> ]a <Plug>(ale_next_wrap)
 " === heavenshell/vim-pydocstring ===
 let g:pydocstring_enable_mapping = 0
 let g:pydocstring_enable_comment = 0
-let g:pydocstring_templates_dir  = '~/.dotfiles/editors/nvim/after/pydocstring'
+let g:pydocstring_templates_dir  = '~/nvim.d/after/pydocstring'
 nmap <silent>gd <Plug>(pydocstring)
 
 ""
@@ -430,22 +433,14 @@ map T <Plug>Sneak_T
 " autocmd VimEnter * call after_object#enable([']', '['], '=', ':')
 
 
-""
-" === joereynolds/place.vim ===
+" === joereynolds/place.vim === {{{
 " nmap gp <Plug>(place-insert)
 " <Plug>(place-insert-multiple)
+" }}}
 
 ""
-" @subsection Leader Mappings, leader maps
-
+" @subsection Leader Mappings, leader maps {{{
 nnoremap <leader><leader> <esc>
-
-" let g:lmap.i={
-"             \ 'name': '+Interfaces',
-"             \    'c': ['Cheat40Open',                'Cheat Sheet'     ],
-"             \    'q': ['call quickmenu#toggle(0)',   'Quickmenu'       ],
-"             \    'm': ['call magit#show_magit("v")', 'Magit'           ],
-"             \}
 
 " Tab -- We don't use tabs...?
 nnoremap <leader><Tab> :bn<CR>
@@ -463,12 +458,8 @@ noremap <silent> <leader>f :Denite grep<CR>
 nnoremap <leader>m @
 " q   -- Quit
 " nnoremap <leader>q qq
-
 " r   -- Reload
 nnoremap <leader>rr :source $MYVIMRC<CR>:call lightline#update_once()<CR>
-" u   -- Unundo
-nmap <leader>u <C-r>
-nmap <S-U> <C-r>
 " f t -- FileTree
 nnoremap <leader>ft :VimFilerExplorer<CR>
 " v   -- Vertical Split
@@ -481,10 +472,10 @@ nnoremap <leader><Left> zc
 nnoremap <leader><Right> zo
 nnoremap <leader><Up> :bprev<CR>
 nnoremap <leader><Down> :bnext<CR>
-
+" }}}
 
 " ==============================================================================
-"  === b -- Buffers===
+"  === b -- Buffers=== {{{
 " ==============================================================================
 " l -- List Buffers
 nnoremap <leader>l :Denite buffer -mode=normal<CR>
@@ -500,24 +491,23 @@ nnoremap <leader>bv :vert ball<CR>
 nnoremap <leader>bd :bd<CR>
 " Close a buffer, leave it on the list
 nnoremap <leader>bq :q<CR>
-
-
+" }}}
 
 " ==============================================================================
-"  === d -- Denite ===
+"  === d -- Denite === {{{
 " ==============================================================================
 nnoremap <leader>, :Denite menu:config<CR>
 nnoremap <leader>dc :Denite command<CR>
 nnoremap <leader>d<S-c> :Denite command_history<CR>
 nnoremap <leader>db :Denite bookmark<CR>
 nnoremap <leader>dd <NOP>
-nnoremap <leader>de :Denite env<CR>
+nnoremap <leader>de :Denite tcd_env<CR>
 nnoremap <leader>df :Denite menu:dotfiles<CR>
 nnoremap <leader>dg :Denite ghq<CR>
 nnoremap <leader>dh :Denite help<CR>
 nnoremap <leader>di :Denite menu:interfaces<CR>
 nnoremap <leader>dj :Denite jump<CR>
-nnoremap <leader>dk :Denite mapping_verbose<CR>
+nnoremap <leader>dk :Denite menu:map_list<CR>
 nnoremap <leader>d<S-k> :Maps<CR>
 nnoremap <leader>dl :Denite location_list<CR>
 nnoremap <leader>dm :Denite menu:Denite<CR>
@@ -529,11 +519,10 @@ nnoremap <leader>ds :Denite sauce<CR>
 nnoremap <leader>d<S-S> :Denite sauce_file<CR>
 nnoremap <leader>du :Denite ultisnips<CR>
 nnoremap <leader>d<S-U> :Denite ultisnips_file<CR>
-
-
+" }}}
 
 " ==============================================================================
-"  === e -- Edit ===
+"  === e -- Edit === {{{
 " ==============================================================================
 " lowercase to split
 " uppercase for current edit
@@ -543,64 +532,63 @@ nnoremap <leader>d<S-U> :Denite ultisnips_file<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>:echo<CR>
 nnoremap <leader>e<S-V> :edit $MYVIMRC<CR>:echo<CR>
 " Edit Settings
-nnoremap <leader>es :vs ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>:echo<CR>
-nnoremap <leader>e<S-S> :edit ~/.dotfiles/editors/nvim/plugin/settings.vim<CR>:echo<CR>
+nnoremap <leader>es :vs ~/nvim.d/plugin/settings.vim<CR>:echo<CR>
+nnoremap <leader>e<S-S> :edit ~/nvim.d/plugin/settings.vim<CR>:echo<CR>
 " Edit Lightline
-nnoremap <leader>el :vsplit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>:echo<CR>
-nnoremap <leader>e<S-L> :edit ~/.dotfiles/editors/nvim/plugin/lightline.vim<CR>:echo<CR>
+nnoremap <leader>el :vsplit ~/nvim.d/plugin/lightline.vim<CR>:echo<CR>
+nnoremap <leader>e<S-L> :edit ~/nvim.d/plugin/lightline.vim<CR>:echo<CR>
 " Edit Keys
-nnoremap <leader>ek :vsplit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>:echo<CR>
-nnoremap <leader>e<S-K> :edit ~/.dotfiles/editors/nvim/plugin/mappings.vim<CR>:echo<CR>
+nnoremap <leader>ek :vsplit ~/nvim.d/plugin/mappings.vim<CR>:echo<CR>
+nnoremap <leader>e<S-K> :edit ~/nvim.d/plugin/mappings.vim<CR>:echo<CR>
 " Edit Denite
-nnoremap <leader>ed :vsplit ~/.dotfiles/editors/nvim/plugin/denite.vim<CR>:echo<CR>
-nnoremap <leader>e<S-D> :edit ~/.dotfiles/editors/nvim/plugin/denite.vim<CR>:echo<CR>
+nnoremap <leader>ed :vsplit ~/nvim.d/plugin/denite.vim<CR>:echo<CR>
+nnoremap <leader>e<S-D> :edit ~/nvim.d/plugin/denite.vim<CR>:echo<CR>
 " Edit Commands
-nnoremap <leader>ec :vsplit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>:echo<CR>
-nnoremap <leader>e<S-C> :edit ~/.dotfiles/editors/nvim/plugin/commands.vim<CR>:echo<CR>
+nnoremap <leader>ec :vsplit ~/nvim.d/plugin/commands.vim<CR>:echo<CR>
+nnoremap <leader>e<S-C> :edit ~/nvim.d/plugin/commands.vim<CR>:echo<CR>
 " Edit Plugins
-nnoremap <leader>ep :vsplit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>:echo<CR>
-nnoremap <leader>e<S-P> :edit ~/.dotfiles/editors/nvim/plugin/plugins.vim<CR>:echo<CR>
+nnoremap <leader>ep :vsplit ~/nvim.d/plugin/plugins.vim<CR>:echo<CR>
+nnoremap <leader>e<S-P> :edit ~/nvim.d/plugin/plugins.vim<CR>:echo<CR>
 " Edit Interfaces
-nnoremap <leader>ei :vsplit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>:echo<CR>
-nnoremap <leader>e<S-I> :edit ~/.dotfiles/editors/nvim/plugin/ui.vim<CR>:echo<CR>
+nnoremap <leader>ei :vsplit ~/nvim.d/plugin/ui.vim<CR>:echo<CR>
+nnoremap <leader>e<S-I> :edit ~/nvim.d/plugin/ui.vim<CR>:echo<CR>
 " Edit Theme
 nnoremap <leader>et :vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>:echo<CR>
 nnoremap <leader>eT :edit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>:echo<CR>
 " Edit Ultisnips
-nnoremap <leader>eu :VimFiler -explorer ~/.dotfiles/editors/nvim/snipz<CR>
-
-
+nnoremap <leader>eu :VimFiler -explorer ~/nvim.d/snipz<CR>
+" }}}
 
 " ==============================================================================
-"  === f -- Files (or find) ===
+"  === f -- Files (or find) === {{{
 " ==============================================================================
-"
+
 nnoremap <leader>fd :FZF ~/.dotfiles<CR>
 nnoremap <leader>fk :Maps<CR>
-" nnoremap <leader>fv :FZF ~/.dotfiles/editors/nvim<CR>
+" nnoremap <leader>fv :FZF ~/nvim.d<CR>
 nnoremap <leader>fv :FZF ~/.config/nvim<CR>
-
-
+" }}}
 
 " ==============================================================================
-"  === g -- Grep ===
+"  === g -- Grep === {{{
 " ==============================================================================
 " Custom
 noremap <silent> <leader>g. :Denite grep -path=
 " .dotfiles
 noremap <silent> <leader>g. :Denite grep -path=~/.dotfiles<CR>
 " Dotfiles
-noremap <silent> <leader>gd :Denite grep -path=~/.dotfiles<CR>
-
-
+noremap <silent> <leader>gv :Denite grep -path=~/nvim.d<CR>
+" }}}
 
 " ==============================================================================
-"  === h -- Help ===
+"  === h -- Help === {{{
 " ==============================================================================
 " Search the docs
 nnoremap <leader><S-H> :Denite help<CR>
+" Denite Cheat Sheet
+nnoremap <leader>hc :Denite cheatsheet<CR>
 " Cheat Sheet
-nnoremap <leader>hc :Cheat40Open<CR>
+nnoremap <leader>h<S-c> :Cheat40Open<CR>
 " Check Health
 nnoremap <leader>hh :checkhealth nvim<CR>
 " index.man
@@ -609,12 +597,13 @@ nnoremap <leader>hi :H index<CR>
 " nnoremap <leader>, :call quickmenu#toggle(0)<CR>
 " Messages
 nnoremap <leader>hm :Denite messages<CR>
+
 " ==============================================================================
 " hd -- Help:Describe:
 
 " Describe Character
-" nnoremap <leader>hdc :ascii<CR>
 nmap     <leader>hdc :<Plug>(characterize)<CR>
+" nnoremap <leader>hdc :ascii<CR>
 " Describe Filetype
 nnoremap <leader>hdf :set filetype?<CR>
 " Describe Current Path'       ],
@@ -622,30 +611,29 @@ nnoremap <leader>hdp :GetFullPath<CR>
 " Describe Syntax at the cursosr
 nnoremap <leader>hds :SynDef<CR>
 " List Defined Syntax Groups
-nnoremap <leader>hd<S-s> :syntax<CR>
-
-
+nnoremap <leader>hd<S-s> :Denite tcd_syntax<CR>
+" }}}
 
 " ==============================================================================
-"   p -- Plugins
+"   p -- Plugins {{{
 " ==============================================================================
 
 " Update Plugins
 nnoremap <leader>pu :Denite menu:dein<CR>
-
-
+" }}}
 
 " ==============================================================================
-"   s -- Search
+"   s -- Search {{{
 " ==============================================================================
 
-" Update Plugins
+" Search ~/.dotfiles
 nnoremap <leader>s. :FZF ~/.dotfiles<CR>
+" Search in $VIMRUNTIME
 nnoremap <leader>sv :FZF ~/.config/nvim<CR>
-
+" }}}
 
 " ==============================================================================
-"   t -- Toggle
+"   t -- Toggle {{{
 " ==============================================================================
 
 " Braces
@@ -678,4 +666,7 @@ nnoremap <leader>tt :TagbarToggle<CR>
 nnoremap <leader>tw :set list!<CR>
 " ToggleUndotree (as in ctrl-z)
 nnoremap <leader>tz :UndotreeToggle<CR>
+" }}}
 
+
+" vim: fdm=marker fmr={{{,}}} fdl=0 fen

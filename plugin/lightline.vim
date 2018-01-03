@@ -3,8 +3,8 @@ scriptencoding utf-8
 " === Lightline ===
 " ==============================================================================
 
-source /Users/clay/.dotfiles/editors/nvim/autoload/lightline/DarkPlus.vim
-
+silent exec("source /Users/clay/nvim.d/autoload/lightline/DarkPlus.vim")
+"
 ""
 " @setting(g:lightline)
 " Settings for itchyny/|lightline|

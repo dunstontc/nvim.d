@@ -9,6 +9,7 @@ endif
 " =============================================================================
 " let g:ale_fixers={}
 let g:ale_linters = {
+    \    'html':       [''],
     \    'bash':       ['shellcheck'],
     \    'sh':         ['shellcheck'],
     \    'zsh':        ['shellcheck'],
