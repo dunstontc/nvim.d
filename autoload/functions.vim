@@ -67,6 +67,7 @@ endfunction
 function! functions#HoldOn() abort
   let g:held_reg_val = getreg("@")
   let g:held_reg_type = getregtype("0")
+  return ''
 endfunction
 
 

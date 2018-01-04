@@ -9,13 +9,14 @@ endif
 " =============================================================================
 " let g:ale_fixers={}
 let g:ale_linters = {
-    \    'html':       [''],
     \    'bash':       ['shellcheck'],
     \    'sh':         ['shellcheck'],
     \    'zsh':        ['shellcheck'],
+    \    'html':       [''],
+    \    'help':       ['vimhelplint'],
     \    'javascript': ['eslint'],
-    \    'vim':        ['vint'],
     \    'python':     ['flake8'],
+    \    'vim':        ['vint'],
     \ }
 
 

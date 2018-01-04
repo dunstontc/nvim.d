@@ -12,9 +12,9 @@ let g:deoplete#enable_refresh_always = 1
 let g:deoplete#disable_auto_complete = 0
 let g:deoplete#auto_completion_start_length = 1
 
-let g:deoplete#enable_camel_case = 1
+let g:deoplete#enable_camel_case  = 1
 let g:deoplete#enable_ignore_case = 1
-let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_smart_case  = 1
 let g:deoplete#min_keyword_length = 1
 let g:deoplete#min_pattern_length = 1
 let g:deoplete#sources#syntax#min_keyword_length = 1
@@ -52,7 +52,8 @@ call deoplete#custom#source('omni',           'mark', '⌾' )
 call deoplete#custom#source('file',           'mark', '' )
 call deoplete#custom#source('look',           'mark', '' )
 call deoplete#custom#source('jedi',           'mark', '' )
-call deoplete#custom#source('Jedi',           'mark', '' )
+" call deoplete#custom#source('Jedi',           'mark', '' )
+call deoplete#custom#source('tern',           'mark', '' )
 call deoplete#custom#source('emoji',          'mark', '' )
 call deoplete#custom#source('around',         'mark', '↻' )
 call deoplete#custom#source('buffer',         'mark', '' )
@@ -80,7 +81,8 @@ call deoplete#custom#source('dictionary', 'filetypes', ['gitcommit', 'markdown',
 " Default rank is 100, higher is better.
 call deoplete#custom#source('LanguageClient', 'rank', 800)
 call deoplete#custom#source('go',             'rank', 700)
-call deoplete#custom#source('TernJS',         'rank', 700)
+" call deoplete#custom#source('TernJS',         'rank', 700)
+call deoplete#custom#source('tern',           'rank', 700)
 call deoplete#custom#source('jedi',           'rank', 700)
 call deoplete#custom#source('padawan',        'rank', 700)
 call deoplete#custom#source('omni',           'rank', 600)     " Default: 500
@@ -113,13 +115,14 @@ call deoplete#custom#source('syntax',         'rank', 200)
 " inoremap <expr><C-d>  deoplete#close_popup()
 
 
-call deoplete#custom#set('_', 'converters', [
-  \ 'converter_remove_paren',
-  \ 'converter_remove_overlap',
-  \ 'converter_truncate_abbr',
-  \ 'converter_truncate_menu',
-  \ 'converter_auto_delimiter',
-  \ ])
+" call deoplete#custom#set('_', 'converters', [
+"   \ 'converter_remove_paren',
+"   \ 'converter_remove_overlap',
+"   \ 'converter_truncate_abbr',
+"   \ 'converter_truncate_menu',
+"   \ 'converter_auto_delimiter',
+"   \ ])
+
 " }}}
 
 " ==============================================================================
@@ -257,11 +260,36 @@ let g:necosyntax#max_syntax_line=1000
 
 " ==============================================================================
 "  === zchee/deoplete-jedi === {{{
-let g:deoplete#sources#jedi#show_docstring   = 1
-let g:deoplete#sources#jedi#enable_cache     = 1
-let g:deoplete#sources#jedi#short_types      = 1
-let g:deoplete#sources#jedi#statement_length = 30
-let g:deoplete#sources#jedi#server_timeout   = 10
+" The timeout (in seconds) for jedi server to workaround endless loop in jedi.
+" Increase it if you cannot get completions for large package such as pandas (see #125).
+" Default: 10
+let g:deoplete#sources#jedi#server_timeout = 10
+" Sets the maximum length of completion description text.
+" If this is exceeded, a simple description is used instead.
+" Default: 50
+let g:deoplete#sources#jedi#statement_length = 50
+" Enables caching of completions for faster results.
+" Default: 1
+let g:deoplete#sources#jedi#enable_cache = 1
+" Shows docstring in preview window.
+" Default: 0
+let g:deoplete#sources#jedi#show_docstring = 1
+" Set the Python interpreter path to use for the completion server.
+" deoplete-jedi uses the first available python in $PATH.
+" Use this only if you want use a specific Python interpreter.
+" This has no effect if $VIRTUAL_ENV is present in the environment.
+" Note: This is completely unrelated to configuring Neovim.
+" let g:deoplete#sources#jedi#python_path =
+" Enable logging from the server.
+" If set to 1, server messages are emitted to Deoplete's log file.
+" This can optionally be a string that points to a file for separate logging.
+" The log level will be inherited from deoplete#enable_logging().
+" let g:deoplete#sources#jedi#debug_server =
+" A list of extra paths to add to sys.path when performing completions.
+" let g:deoplete#sources#jedi#extra_path =
+" TODO: find out where i got `g:deoplete#sources#jedi#short_types` from...
+" let g:deoplete#sources#jedi#short_types      = 1
+
 " }}}
 
 " ==============================================================================

@@ -70,7 +70,7 @@ let g:lightline = {
       \   'buffercurrent':   'tabsel',
       \   'bufferbefore':    'raw',
       \   'bufferafter':     'raw',
-      \   'buffers': 'tabsel',
+      \   'buffers':         'tabsel',
       \},
       \}
 

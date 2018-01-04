@@ -1,13 +1,9 @@
-""
-" @section Mappings
-"
-
-""
-" @subsection Mouse Mappings, mouse maps
+" === Mouse Mappings === {{{
 map <S-ScrollWheelUp> <C-U>
 " map <ScrollWheelUp> <C-Y>
 map <S-ScrollWheelDown> <C-D>
 " map <ScrollWheelDown> <C-E>
+" }}}
 
 " cmap <c-x><c-a> <c-a>
 " cmap <c-x><c-b> <c-b>
@@ -17,13 +13,13 @@ map <S-ScrollWheelDown> <C-D>
 " cmap <F8> <C-\>getcmdline()<CR>
 
 
-""
-" @subsection General, general
+" === timeout === {{{
 " set ttimeout                    " Window to complete key code sequences
 " set ttimeoutlen=50
 " set timeout                     " Window to complete multi key maps
 " set timeoutlen=750
 " set timeoutlen=1000
+" }}}
 
 
 let mapleader="\<Space>"
@@ -35,21 +31,17 @@ inoremap <silent><F17> <esc>
 
 nnoremap ; :
 vnoremap ; :
-" I'm in too deep
-" inoremap ; :
-" inoremap : ;
-" inoremap \ <bar>
-" inoremap <bar> \
 
 nnoremap ' `
 nnoremap ` '
 
-" nnoremap <C-p> :Denite<space>
-" nnoremap <C-p>
+nnoremap v mvv
+
 nnoremap ,u :Unite<space><C-d>
 nnoremap ,/ :%s///g<left><left><left>
 
 
+" === Ctrl Mappings === {{{
 " use ctrl-q instead of ⎋ , stay on the home row
 inoremap <C-q> <C-c>
 nnoremap <C-q> <Nop>
@@ -66,15 +58,15 @@ nnoremap <C-W><up> <C-W>K
 nnoremap <C-p> :Denite file_mru<CR>
 nnoremap <S-m> :Denite messages<CR>
 
-" Clear highlights & commands
-nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
-
 noremap R <C-r>
 nmap <S-U> <C-r>
 
 " Quit with Q
 nnoremap q :x<CR>
 nnoremap <S-Q> q
+
+" Clear highlights & commands
+nnoremap <silent>\ :noh<CR>:call anzu#clear_search_status()<CR>:echo<CR>
 
 " Escape the terminal
 tnoremap <Esc> <C-\><C-n>
@@ -92,6 +84,18 @@ noremap <S-B> w
 noremap w @
 noremap <S-W> @@
 
+" gtfo
+nnoremap fj :Sayonara<CR>
+inoremap fj <esc>:Sayonara<CR>
+
+" === CTRL Mappings === {{{
+nnoremap <silent><C-s> :w<CR>
+inoremap <silent><C-s> <C-o>:w<CR>
+" }}}
+
+" === fn key mappings === {{{
+" https://unix.stackexchange.com/questions/53581/sending-function-keys-f1-f12-over-ssh
+
 " Edits in normal mode
 nnoremap <BS> mdi<DEL><esc>`d
 nnoremap ,, i<space><esc>
@@ -99,19 +103,6 @@ nnoremap [<Space> mwO<esc>`w
 nnoremap ]<Space> mwo<esc>`w
 nnoremap <F18> mwo<esc>`w
 nnoremap <F19> mwO<esc>`w
-
-" gtfo
-nnoremap fj :Sayonara<CR>
-inoremap fj <esc>:Sayonara<CR>
-
-" https://unix.stackexchange.com/questions/53581/sending-function-keys-f1-f12-over-ssh
-
-" Save wih ⌘ -s
-" F13 -- ^[[1;2P
-nnoremap <silent><C-s> :silent w<CR>
-inoremap <silent><C-s> <C-o>:silent w<CR>
-nnoremap <silent><F13> :silent w<CR>
-inoremap <silent><F13> <C-o>:silent w<CR>
 
 " Comment wih ⌘ -/
 " F14 -- ^[[1;2Q
@@ -128,8 +119,9 @@ inoremap <F19> <esc>O
 " Dupe lines with ⌥ - ⇧ - down
 nnoremap 𐌋 mxV"zy"zp`xj
 inoremap 𐌋 <esc>mxV"zy"zp`xj
+vnoremap 𐌋 VyO<esc>0pgv
 
-" Indentation {{{
+" === Indentation ===
 " F15 -- ^[[1;2R
 " F16 -- ^[[1;2S
 vmap <silent><F15> <gv
@@ -146,8 +138,7 @@ imap <silent><F16> <esc>>>A
 " imap <silent><leader>] <esc>>>
 " }}}
 
-""
-" @subsection Alt Keys, alt {{{
+" === Alt Keys === {{{
 " With iTerm2 on OSX
 " Alt + h = ˙
 " Alt + j = ∆
@@ -187,7 +178,6 @@ vnoremap 𐌓 :m '>+1<CR>gv=gv
 " cnoremap <Esc>f <S-Right>
 " }}}
 
-
 " Repeat on every line {{{
 " repeat last command for each line of a visual selection
 vnoremap . :normal .<CR>
@@ -201,10 +191,6 @@ vnoremap @q :normal @q<CR>
 " noremap <M-LEFT> :NERDTreeToggle<CR>
 " noremap <M-RIGHT> :NERDTreeToggle<CR>
 
-" map <S-ScrollWheelUp> <C-U>
-" map <S-ScrollWheelDown> <C-D>
-
-
 
 " === readline ===
 " inoremap <C-a> <C-o>0
@@ -212,15 +198,20 @@ vnoremap @q :normal @q<CR>
 " inoremap <M-left> <C-o>b
 " inoremap <M-right> <C-o>e
 
-""
-" @subsection Copy & Paste
+" === Copy & Paste === {{{
 
 " Yank into the void
-noremap d "_d
-noremap D "_D
-noremap dd "_dd
-noremap c "_c
-noremap C "_C
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+" noremap dd "_dd
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
+
+inoremap <esc> <esc><esc>
 
 " Paste from the top of the stack
 nnoremap ,p "0p
@@ -239,37 +230,44 @@ nnoremap <S-y> v$y
 
 " Yank with keeping cursor position in visual mode {{{
 " Thanks @haya14busa
-" function! s:keepcursor_visual_wrapper(command)
-"   execute 'normal! gv' . a:command
-"   execute "normal! gv\<ESC>"
-" endfunction
-" xnoremap <silent> y :<C-u>call <SID>keepcursor_visual_wrapper('y')<CR>
-" xnoremap <silent> Y :<C-u>call <SID>keepcursor_visual_wrapper('Y')<CR>
+function! s:keepcursor_visual_wrapper(command)
+  execute 'normal! gv' . a:command
+  execute "normal! gv\<ESC>"
+endfunction
+xnoremap <silent> y :<C-u>call <SID>keepcursor_visual_wrapper('y')<CR>
+xnoremap <silent> Y :<C-u>call <SID>keepcursor_visual_wrapper('Y')<CR>
 "}}}
-
-
+"}}}
 
 ""
 " @subsection Plugins
 
-""
-" === junegunn/EasyAlign ===
+" === junegunn/EasyAlign === {{{
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+" }}}
 
-""
-" === terryma/vim-expand-region ===
+" === terryma/vim-expand-region === {{{
 " map K <Plug>(expand_region_expand)
 " map J <Plug>(expand_region_shrink)
+" }}}
 
-""
-" === haya14busa/vim-edgemotion ===
-"
+" === haya14busa/vim-edgemotion === {{{
 map <S-j> <Plug>(edgemotion-j)
 map <S-k> <Plug>(edgemotion-k)
+" }}}
 
-" ""
-" " === dhruvasagar/vim-table-mode ===
+" === haya14busa/incsearch.vim === {{{
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+let g:incsearch#auto_nohlsearch = 1                   " Auto unhighlight after searching
+let g:incsearch#do_not_save_error_message_history = 1 " Don't store incsearch errors in history
+let g:incsearch#consistent_n_direction = 1            " When searching backward, do not invert meaning of n and N
+" }}}
+
+" === dhruvasagar/vim-table-mode === {{{
 let g:table_mode_disable_mappings = 1
 let g:table_mode_delimiter = ','
 let g:table_mode_always_active = 0
@@ -289,49 +287,49 @@ let g:table_mode_motion_up_map = ''
 let g:table_mode_motion_down_map = ''
 let g:table_mode_motion_left_map = ''
 let g:table_mode_motion_right_map = ''
+" }}}
 
-""
-" === pelodelfuego/vim-swoop ===
+" === pelodelfuego/vim-swoop === {{{
 let g:swoopUseDefaultKeyMap = 0
+" }}}
 
-""
-" === gitgutter ===
+" === gitgutter === {{{
 let g:gitgutter_map_keys = 0
+" }}}
 
-""
-" === slash ===
+" === slash === {{{
 " noremap <plug>(slash-after) zz
+" }}}
 
-""
-" === tomtom/tcomment ===
+" === tomtom/tcomment === {{{
 let g:tcommentMaps=0
 let g:tcommentMapLeader1=''
 let g:tcommentMapLeader2=''
 let g:tcommentMapLeaderCommentAnyway=''
 let g:tcommentTextObjectInlineComment=''
+" }}}
 
-""
-" === w0rp/ale ===
+" === w0rp/ale === {{{
 nmap <silent> [a <Plug>(ale_previous_wrap)
 nmap <silent> ]a <Plug>(ale_next_wrap)
+" }}}
 
-""
-" === heavenshell/vim-pydocstring ===
+" === heavenshell/vim-pydocstring === {{{
 let g:pydocstring_enable_mapping = 0
 let g:pydocstring_enable_comment = 0
 let g:pydocstring_templates_dir  = '~/nvim.d/after/pydocstring'
 nmap <silent>gd <Plug>(pydocstring)
+" }}}
 
-""
-" === vim-multiple-cursors ===
+" === vim-multiple-cursors === {{{
 let g:multi_cursor_use_default_mapping=0
 " let g:multi_cursor_next_key='𐌍' " (C-m)
 " let g:multi_cursor_prev_key='<C-p>'
 " let g:multi_cursor_skip_key='<C-x>'
 " let g:multi_cursor_quit_key='<Esc>'
+" }}}
 
-""
-" === osyo-manga/vim-anzu ===
+" === osyo-manga/vim-anzu === {{{
 " nmap n <Plug>(anzu-n-with-echo)
 nmap n <Plug>(anzu-n)
 nmap N <Plug>(anzu-N)
@@ -340,31 +338,33 @@ nmap # <Plug>(anzu-sharp)
 " if start anzu-mode key mapping
 " nmap n <Plug>(anzu-mode-n)
 " nmap N <Plug>(anzu-mode-N)
+" }}}
 
-""
-" === AndrewRadev/splitjoin.vim ===
-let g:splitjoin_split_mapping = 'gs'
-let g:splitjoin_join_mapping = 'gj'
-" nmap sj :SplitjoinSplit<cr>
-" nmap sk :SplitjoinJoin<cr>
+" === AndrewRadev/splitjoin.vim === {{{
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+let g:splitjoin_normalize_whitespace = 1
+let g:splitjoin_trailing_comma = 0
+let g:splitjoin_python_brackets_on_separate_lines = 1
+nmap gs :SplitjoinSplit<cr>
+nmap gj :SplitjoinJoin<cr>
+" }}}
 
-""
-" === AndrewRadev/switch.vim ===
+" === AndrewRadev/switch.vim === {{{
 " let g:switch_mapping='\<CR>'
 let g:switch_mapping="-"
 " nnoremap + :call switch#Switch({'definitions': g:variable_style_switch_definitions})<cr>
 " nnoremap - :Switch<cr>
 nnoremap - :Switch<CR>:echo<CR>
+" }}}
 
-""
-" === sidemenu ===
+" === sidemenu === {{{
 " nmap <Leader>y <Plug>(sidemenu)
 " xmap <Leader>y <Plug>(sidemenu-visual)
 " nnoremap ,0 :call quickmenu#toggle(0)<CR>
+" }}}
 
-
-""
-" === MattesGroeger/vim-bookmarks ===
+" === MattesGroeger/vim-bookmarks === {{{
 let g:bookmark_no_default_key_mappings = 0
 " nmap <Leader><Leader> <Plug>BookmarkToggle
 " nmap <Leader>i <Plug>BookmarkAnnotate
@@ -376,9 +376,9 @@ let g:bookmark_no_default_key_mappings = 0
 " nmap <Leader>kk <Plug>BookmarkMoveUp
 " nmap <Leader>jj <Plug>BookmarkMoveDown
 " nmap <Leader>g <Plug>BookmarkMoveToLine
+" }}}
 
-""
-" === vim-sneak ===
+" === vim-sneak === {{{
 let g:sneak#prompt = '§ '
 
 let g:sneak#label = 1
@@ -395,51 +395,56 @@ map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
+" }}}
 
-""
-" Leader Guide
+" === Leader Guide === {{{
 " let g:leaderGuide_map = {}
 " call leaderGuide#register_prefix_descriptions('', 'g:leaderGuide_map')
 " call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
 " nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
 " vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
+" }}}
 
-
-""
-" === christoomey/vim-tmux-navigator ===
+" === christoomey/vim-tmux-navigator === {{{
 " let g:tmux_navigator_no_mappings = 1
 " nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
 " nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
 " nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
 " nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
 " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+" }}}
 
 ""
 " @subsection Custom Motions & Objects
 
-""
-" === kana/vim-textobj-fold ===
+" === kana/vim-textobj-fold === {{{
 " let g:textobj_fold_no_default_key_mappings=0
 " noremap az <Plug>(textobj-fold-a)
 " noremap iz <Plug>(textobj-fold-i)
+" }}}
 
 " pretty much autoselect quotes
 " xmap q iq
 " omap q iq
 
+" === textobj_between === {{{
 " " let g:textobj_between_no_default_key_mappings=0
 " autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 " ]= and [= instead of a= and aa=
 " autocmd VimEnter * call after_object#enable([']', '['], '=', ':')
-
+" }}}
 
 " === joereynolds/place.vim === {{{
-" nmap gp <Plug>(place-insert)
+nmap gp <Plug>(place-insert)
 " <Plug>(place-insert-multiple)
 " }}}
 
 ""
-" @subsection Leader Mappings, leader maps {{{
+" @subsection Leader Mappings, leader maps
+
+" ==============================================================================
+" === <leader> === {{{
+" ==============================================================================
 nnoremap <leader><leader> <esc>
 
 " Tab -- We don't use tabs...?
@@ -485,6 +490,8 @@ nnoremap <leader>bn :bn<CR>
 nnoremap <leader>bp :bp<CR>
 " Allocate all buffers into Horizontal Splits
 nnoremap <leader>bh :ball<CR>
+" Close all buffers but the current one
+nnoremap <leader>bo :BufOnly<CR>
 " Allocate all buffers into Vertical Splits
 nnoremap <leader>bv :vert ball<CR>
 " Done with a buffer
@@ -502,7 +509,6 @@ nnoremap <leader>d<S-c> :Denite command_history<CR>
 nnoremap <leader>db :Denite bookmark<CR>
 nnoremap <leader>dd <NOP>
 nnoremap <leader>de :Denite tcd_env<CR>
-nnoremap <leader>df :Denite menu:dotfiles<CR>
 nnoremap <leader>dg :Denite ghq<CR>
 nnoremap <leader>dh :Denite help<CR>
 nnoremap <leader>di :Denite menu:interfaces<CR>
@@ -510,7 +516,7 @@ nnoremap <leader>dj :Denite jump<CR>
 nnoremap <leader>dk :Denite menu:map_list<CR>
 nnoremap <leader>d<S-k> :Maps<CR>
 nnoremap <leader>dl :Denite location_list<CR>
-nnoremap <leader>dm :Denite menu:Denite<CR>
+nnoremap <leader>dm :Denite marks<CR>
 nnoremap <leader>dp :Denite projectile -default-action=custom<CR>
 nnoremap <leader>dq :Denite quickfix<CR>
 nnoremap <leader>dt :Denite todotxt_local<CR>
@@ -573,7 +579,7 @@ nnoremap <leader>fv :FZF ~/.config/nvim<CR>
 "  === g -- Grep === {{{
 " ==============================================================================
 " Custom
-noremap <silent> <leader>g. :Denite grep -path=
+" noremap <silent> <leader>g. :Denite grep -path=
 " .dotfiles
 noremap <silent> <leader>g. :Denite grep -path=~/.dotfiles<CR>
 " Dotfiles
@@ -633,7 +639,7 @@ nnoremap <leader>sv :FZF ~/.config/nvim<CR>
 " }}}
 
 " ==============================================================================
-"   t -- Toggle {{{
+" === t -- Toggle === {{{
 " ==============================================================================
 
 " Braces
@@ -668,5 +674,11 @@ nnoremap <leader>tw :set list!<CR>
 nnoremap <leader>tz :UndotreeToggle<CR>
 " }}}
 
+" ==============================================================================
+" === w -- Window === {{{
+" ==============================================================================
+nnoremap <leader>wh :split<CR>
+nnoremap <leader>wv :vsplit<CR>
+" }}}
 
 " vim: fdm=marker fmr={{{,}}} fdl=0 fen

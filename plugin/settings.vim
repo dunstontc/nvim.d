@@ -167,14 +167,14 @@ endif
 " ==============================================================================
 
 " === Search ===
-set magic                       " Enable extended regexes
-" set gdefault                    " By default add g flag to search/replace. Add g to toggle
+set hlsearch                    " Highlight matches
 set incsearch                   " Search as characters are entered
+set inccommand=nosplit
+set magic                       " Enable extended regexes
+set wrapscan                    " Searches wrap around the end of the file
+set gdefault                    " By default add g flag to search/replace. Add g to toggle
 set ignorecase                  " Ignore case of searches
 set smartcase                   " Ignore 'ignorecase' if search patter contains uppercase characters
-set hlsearch                    " Highlight matches
-set hlsearch | nohlsearch       " Highlight search patterns, support reloading
-set wrapscan                    " Searches wrap around the end of the file
 
 " ==============================================================================
 " === Dictionary ===
@@ -221,6 +221,7 @@ set cmdheight=2
 set noshowcmd                  " Show (partial) command in the last line of the screen.
 set noshowmode                 " Don't show the current mode (airline takes care of this)
 set report=1                   " Report more than x lines changed at once
+
 
 " === Completion ===
 set wildmenu                   " Visual autocomplete for command menu
