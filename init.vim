@@ -161,7 +161,8 @@ call dein#add('slim-template/vim-slim',           {'lazy':1, 'on_ft': ['slim']})
 " }}}
 
 " === Linting: ✔ {{{
-call dein#add('w0rp/ale')
+" call dein#add('w0rp/ale')
+call dein#add('neomake/neomake')
 call dein#add('sbdchd/neoformat')
 call dein#add('machakann/vim-vimhelplint')
 call dein#add('ternjs/tern_for_vim', {'lazy':1, 'on_ft': ['jsx', 'javascript']})
@@ -396,7 +397,7 @@ call dein#add('tpope/vim-scriptease')
 " }}}
 
 " === Lazy === {{{
-call dein#add('itchyny/dictionary.vim')
+call dein#add('itchyny/dictionary.vim',        { 'lazy': 1, 'on_cmd'   : 'Dictionary' })
 call dein#add('heavenshell/vim-slack')
 " call dein#add('dohsimpson/vim-macroeditor')
 call dein#add('frioux/vim-regedit')

@@ -84,6 +84,8 @@ noremap <S-B> w
 noremap w @
 noremap <S-W> @@
 
+nnoremap g<S-i> gi<esc>
+
 " gtfo
 nnoremap fj :Sayonara<CR>
 inoremap fj <esc>:Sayonara<CR>

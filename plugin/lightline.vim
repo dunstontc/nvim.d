@@ -1,6 +1,6 @@
 scriptencoding utf-8
 " ==============================================================================
-" === Lightline ===
+" === Lightline === " {{{
 " ==============================================================================
 
 silent exec("source /Users/clay/nvim.d/autoload/lightline/DarkPlus.vim")
@@ -54,8 +54,10 @@ let g:lightline = {
       \    'undecided':       'IdkYet',
       \},
       \ 'component_expand': {
-      \   'linter_warnings': 'LightlineLinterWarnings',
-      \   'linter_errors':   'LightlineLinterErrors',
+      \   'linter_errors':    'LightlineLinterErrors',
+      \   'linter_warnings':  'LightlineLinterWarnings',
+      \   'neomake_errors':   'LightlineNeomakeErrors',
+      \   'neomake_warnings': 'LightlineNeomakeWarnings',
       \   'peest':           'Pest',
       \   'buffercurrent':   'lightline#buffer#buffercurrent',
       \   'bufferbefore':    'lightline#buffer#bufferbefore',
@@ -65,6 +67,8 @@ let g:lightline = {
       \ 'component_type': {
       \   'linter_warnings': 'warning',
       \   'linter_errors':   'error',
+      \   'neomake_warnings':'warning',
+      \   'neomake_errors':  'error',
       \   'linter_ok':       'ok',
       \   'peest':           'error',
       \   'buffercurrent':   'tabsel',
@@ -109,9 +113,10 @@ let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|netrw|peekaboo|quic
 let g:unite_force_overwrite_statusline = 0
 let g:denite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
+" }}}
 
 " ==============================================================================
-"  === taohex/lightline-buffer ===
+"  === taohex/lightline-buffer === " {{{
 " ==============================================================================
 
 " let g:lightline_buffer_logo = '   '
@@ -135,10 +140,10 @@ let g:vimfiler_force_overwrite_statusline = 0
 " let g:lightline_buffer_maxfextlen = 4
 " let g:lightline_buffer_minfextlen = 4
 " " let g:lightline_buffer_reservelen = 20
-
+" }}}
 
 " ==============================================================================
-"  === mgee/lightline-bufferline ===
+"  === mgee/lightline-bufferline === " {{{
 " ==============================================================================
 
 let g:lightline#bufferline#filename_modifier = ':t'
@@ -155,12 +160,12 @@ let g:lightline#bufferline#number_map        = {
 " let g:lightline#bufferline#number_map = {
 " \ 0: '₀', 1: '₁', 2: '₂', 3: '₃', 4: '₄',
 " \ 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉'}
-
+" }}}
 
 " ==============================================================================
 
 
-function! Mode() abort
+function! Mode() abort " {{{
   return
         \ expand('%:t') ==# 'ControlP'   ? 'CtrlP'    :
         \ expand('%:t') ==# 'peekaboo'   ? 'Peekaboo' :
@@ -184,20 +189,31 @@ function! Mode() abort
         \ &filetype ==#     'vimshell'   ? 'VimShell' :
         \ lightline#mode()
 endfunction
+" }}}
+
+
+function lightline#includeDenite() " {{{
+    let mode_str = substitute(denite#get_status_mode(), "-\\| ", "", "g")
+    call lightline#link(tolower(mode_str[0]))
+    return mode_str
+  endfunction
+" }}}
 
 " ==============================================================================
 
-function! Pest() abort
+function! Pest() abort " {{{
   if &paste
     return '----------PASTE----------PASTE----------PASTE----------PASTE----------'
   else
     return ''
   endif
 endfunction
+" }}}
+
 
 " ==============================================================================
 
-function! lightline#Filename() abort
+function! lightline#Filename() abort " {{{
   let l:filename = expand('%:t') !=# '' ? expand('%:t') : ''
   let l:modified = &modified ? ' +' : ''
 
@@ -211,33 +227,36 @@ function! lightline#Filename() abort
     return &filetype !~# g:tcd_blacklist ? (' '.l:filename.''.l:modified) : ' '
   endif
 endfunction
+" }}}
 
 ""
 " @function(DenitePath)
 " Returns the value of |denite#get_status_path()| with some added padding.
-function! DenitePath() abort
+function! DenitePath() abort " {{{
   if &filetype ==# 'denite'
     return '  '.denite#get_status_path().' '
   else
     return ''
   endif
 endfunction
+" }}}
 
 ""
 " @function(DeniteLine)
 " Returns the value of |denite#get_status_sources()| with some added padding.
-function! DeniteLine() abort
+function! DeniteLine() abort " {{{
   if &filetype ==# 'denite'
     return denite#get_status_sources().' '
   else
     return ''
   endif
 endfunction
+" }}}
 
 ""
 " @function(lighline#Pending)
 " For inactive files, returns the full path and |&modified|.
-function! lightline#Pending() abort
+function! lightline#Pending() abort " {{{
   let l:filename = expand('%F') !=# '' ? expand('%F') : ''
   let l:modified = &modified ? ' (+) ' : ''
 
@@ -247,40 +266,45 @@ function! lightline#Pending() abort
     return &filetype !~# g:tcd_blacklist ? ('  '.l:filename.''.l:modified) : ' '
   endif
 endfunction
+" }}}
 
 ""
 " @function(Readonly)
 " In specific filetypes, above a specified width, returns the powerline readonly icon.
-function! Readonly() abort
+function! Readonly() abort " {{{
   return &readonly && &filetype !~# g:tcd_blacklist ? '  ' : ''
 endfunction
+" }}}
 
 ""
 " @function(Register)
 " In specific filetypes, above a specified width, returns the name of the currently selected register.
-function! Register() abort
+function! Register() abort " {{{
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ' '.v:register.'' : ''
 endfunction
+" }}}
 
 ""
 " @function(TabSizing)
 " In specific filetypes, above a specified width, returns the current value of a tab.
-function! TabSizing() abort
+function! TabSizing() abort " {{{
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ( '␉ ' . &shiftwidth . ' ') : ''
 endfunction
+" }}}
 
 ""
 " @function(Devicon)
 " In specific filetypes, above a specified width, returns the corresponding filetype icon.
-function! Devicon()
+function! Devicon()  " {{{
   return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ('  '.WebDevIconsGetFileTypeSymbol().' ') : ''
 endfunction
+" }}}
 
 ""
 " @function(GitInfo)
 " If the active file is in a git repository,
 " returns the vaule of |fugitive#head()| and the powerline branch icon.
-function! GitInfo()
+function! GitInfo()  " {{{
   let l:git = fugitive#head()
   if l:git != ''
     return '  ' . fugitive#head().'   '
@@ -288,11 +312,12 @@ function! GitInfo()
     return '  '
   endif
 endfunction
+" }}}
 
 ""
 " @function(PaddedStats)
 " Returns the current/total rows & columns with padding to keep the statusline from resizing.
-function! PaddedStats() abort
+function! PaddedStats() abort " {{{
   let l:column   = virtcol('.')
   let l:padCol   = ''
   let l:width    = virtcol('$')
@@ -342,11 +367,12 @@ function! PaddedStats() abort
                          \ ( l:padCol.':'.l:padRow.'/'.l:height.' ')
   endif
 endfunction
+" }}}
 
 ""
 " @function(FileSize)
 " Returns a human-readable filesize for active buffer.
-function! FileSize() abort
+function! FileSize() abort " {{{
   let l:bytes = getfsize(expand('%:p'))
   if (l:bytes >= 1024)
     let l:kbytes = l:bytes / 1024
@@ -367,6 +393,7 @@ function! FileSize() abort
     return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? (l:bytes . ' B') : ''
   endif
 endfunction
+" }}}
 
 " ==============================================================================
 " ale + lightline
@@ -400,10 +427,37 @@ function! LightlineLinterOK() abort
 endfunction
 
 " ==============================================================================
+" `a:active here would reflect if the window is the current one.`
+" let neomake_status_str = neomake#statusline#get(bufnr, {
+"       \ 'format_running': '… ({{running_job_names}})',
+"       \ 'format_loclist_ok':
+"       \   (a:active ? '%#NeomakeStatusGood#' : '%*').'✓',
+"       \ 'format_quickfix_ok': '',
+"       \ 'format_quickfix_issues': (a:active ? '%s' : ''),
+"       \ 'format_status': '%%(%s'
+"       \   .(a:active ? '%%#StatColorHi2#' : '%%*')
+"       \   .'%%)',
+"       \ })
 
+" let lightline#neomake_status_str = neomake#statusline#get(bufnr, {
+"       \ 'format_running': '… ({{running_job_names}})',
+"       \ 'format_loclist_ok': '✓',
+"       \ 'format_quickfix_ok': '',
+"       \ 'format_quickfix_issues': '%s',
+"       \ })
 
-function lightline#includeDenite()
-    let mode_str = substitute(denite#get_status_mode(), "-\\| ", "", "g")
-    call lightline#link(tolower(mode_str[0]))
-    return mode_str
+function! LightLineNeomakeErrors()
+  if !exists(":Neomake") || ((get(neomake#statusline#QflistCounts(), "E", 0) + get(neomake#statusline#LoclistCounts(), "E", 0)) == 0)
+    return ''
+  endif
+  return 'E:'.(get(neomake#statusline#LoclistCounts(), 'E', 0) + get(neomake#statusline#QflistCounts(), 'E', 0))
 endfunction
+
+function! LightLineNeomakeWarnings()
+  if !exists(":Neomake") || ((get(neomake#statusline#QflistCounts(), "W", 0) + get(neomake#statusline#LoclistCounts(), "W", 0)) == 0)
+    return ''
+  endif
+  return 'W:'.(get(neomake#statusline#LoclistCounts(), 'W', 0) + get(neomake#statusline#QflistCounts(), 'W', 0))
+endfunction
+
+
