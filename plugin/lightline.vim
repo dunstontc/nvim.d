@@ -29,7 +29,7 @@ let g:lightline = {
       \            [   's','s',    'anzu', 'paste', 'peest', 's' ] ],
       \    'right': [ [ 'cool_col' ],
       \               [ 'register', 'tabsize', ],
-      \               [ 'linter_warnings', 'linter_errors', 's' ] ]
+      \               [ 's', 'neomake_warnings', 'neomake_errors', 's' ] ]
       \},
       \  'component': {
       \    's'        : ' ',
@@ -45,8 +45,8 @@ let g:lightline = {
       \    'highlite':        'StatuslineCurrentHighlight',
       \    'tabsize':         'TabSizing',
       \    'register':        'Register',
-      \    'pending':         'lightline#Pending',
       \    'icon':            'Devicon',
+      \    'pending':         'lightline#Pending',
       \    'anzu':            'anzu#search_status',
       \    'bufferinfo':      'lightline#buffer#bufferinfo',
       \    'deniteLN':        'DeniteLine',
@@ -54,15 +54,15 @@ let g:lightline = {
       \    'undecided':       'IdkYet',
       \},
       \ 'component_expand': {
-      \   'linter_errors':    'LightlineLinterErrors',
-      \   'linter_warnings':  'LightlineLinterWarnings',
-      \   'neomake_errors':   'LightlineNeomakeErrors',
-      \   'neomake_warnings': 'LightlineNeomakeWarnings',
-      \   'peest':           'Pest',
-      \   'buffercurrent':   'lightline#buffer#buffercurrent',
-      \   'bufferbefore':    'lightline#buffer#bufferbefore',
-      \   'bufferafter':     'lightline#buffer#bufferafter',
-      \   'buffers':         'lightline#bufferline#buffers',
+      \   'linter_errors':    'lightline#AleWarnings',
+      \   'linter_warnings':  'lightline#AleErrs',
+      \   'neomake_errors':   'lightline#NeomakeErrs',
+      \   'neomake_warnings': 'lightline#NeomakeWarnings',
+      \   'peest':            'lightline#Pest',
+      \   'buffercurrent':    'lightline#buffer#buffercurrent',
+      \   'bufferbefore':     'lightline#buffer#bufferbefore',
+      \   'bufferafter':      'lightline#buffer#bufferafter',
+      \   'buffers':          'lightline#bufferline#buffers',
       \},
       \ 'component_type': {
       \   'linter_warnings': 'warning',
@@ -164,7 +164,6 @@ let g:lightline#bufferline#number_map        = {
 
 " ==============================================================================
 
-
 function! Mode() abort " {{{
   return
         \ expand('%:t') ==# 'ControlP'   ? 'CtrlP'    :
@@ -201,7 +200,7 @@ function lightline#includeDenite() " {{{
 
 " ==============================================================================
 
-function! Pest() abort " {{{
+function! lightline#Pest() abort " {{{
   if &paste
     return '----------PASTE----------PASTE----------PASTE----------PASTE----------'
   else
@@ -210,9 +209,9 @@ function! Pest() abort " {{{
 endfunction
 " }}}
 
-
-" ==============================================================================
-
+""
+" @public
+" Returns the filename + &modified
 function! lightline#Filename() abort " {{{
   let l:filename = expand('%:t') !=# '' ? expand('%:t') : ''
   let l:modified = &modified ? ' +' : ''
@@ -395,36 +394,37 @@ function! FileSize() abort " {{{
 endfunction
 " }}}
 
-" ==============================================================================
-" ale + lightline
 
 augroup lightline#ale
   autocmd!
   autocmd User ALELint call lightline#update()
 augroup END
 
-function! LightlineLinterWarnings() abort
+function! lightline#AleWarnings() abort " {{{
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
   " return l:counts.total == 0 ? '' : printf('◊ %d ', all_non_errors)
   return l:counts.total == 0 ? '' : printf('● %d ', all_non_errors)
 endfunction
+" }}}
 
-function! LightlineLinterErrors() abort
+function! lightline#AleErrs() abort " {{{
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
   return l:counts.total == 0 ? '' : printf('✗ %d', all_errors)
   " return l:counts.total == 0 ? '' : printf('● %d', all_errors)
 endfunction
+" }}}
 
-function! LightlineLinterOK() abort
+function! lightline#AleOkay() abort " {{{
   let l:counts = ale#statusline#Count(bufnr(''))
   let l:all_errors = l:counts.error + l:counts.style_error
   let l:all_non_errors = l:counts.total - l:all_errors
   return l:counts.total == 0 ? '✓' : ''
 endfunction
+" }}}
 
 " ==============================================================================
 " `a:active here would reflect if the window is the current one.`
@@ -446,18 +446,37 @@ endfunction
 "       \ 'format_quickfix_issues': '%s',
 "       \ })
 
-function! LightLineNeomakeErrors()
-  if !exists(":Neomake") || ((get(neomake#statusline#QflistCounts(), "E", 0) + get(neomake#statusline#LoclistCounts(), "E", 0)) == 0)
-    return ''
-  endif
-  return 'E:'.(get(neomake#statusline#LoclistCounts(), 'E', 0) + get(neomake#statusline#QflistCounts(), 'E', 0))
-endfunction
+augroup lightline#neomake
+  autocmd!
+  autocmd User NeomakeJobFinished call lightline#update()
+augroup END
 
-function! LightLineNeomakeWarnings()
-  if !exists(":Neomake") || ((get(neomake#statusline#QflistCounts(), "W", 0) + get(neomake#statusline#LoclistCounts(), "W", 0)) == 0)
-    return ''
+function! lightline#NeomakeErrs() " {{{
+  " if !exists(":Neomake") || ((get(neomake#statusline#QflistCounts(), "E", 0) + get(neomake#statusline#LoclistCounts(), "E", 0)) == 0)
+    " return ''
+  " endif
+  " let loclist_errs = get(neomake#statusline#LoclistCounts(), 'E', 0)
+  " let qflist_errs = get(neomake#statusline#QflistCounts(), 'E', 0)
+  " let total_errs = (loclist_errs + qflist_errs)
+  " return total_errs == 0 ? '' : printf('✗ %d', total_errs)
+  " return qflist_errs
+  if (get(neomake#statusline#LoclistCounts(), 'E', 0) + get(neomake#statusline#QflistCounts(), 'E', 0)) >= 1
+    return '✗ '.(get(neomake#statusline#LoclistCounts(), 'E', 0) + get(neomake#statusline#QflistCounts(), 'E', 0))
+  else
+    return '  '
   endif
-  return 'W:'.(get(neomake#statusline#LoclistCounts(), 'W', 0) + get(neomake#statusline#QflistCounts(), 'W', 0))
 endfunction
+" }}}
 
+function! lightline#NeomakeWarnings() " {{{
+  " if !exists(":Neomake") || ((get(neomake#statusline#QflistCounts(), "W", 0) + get(neomake#statusline#LoclistCounts(), "W", 0)) == 0)
+    " return ''
+  " endif
+  if (get(neomake#statusline#LoclistCounts(), 'W', 0) + get(neomake#statusline#QflistCounts(), 'W', 0)) >= 1
+    return '● '.(get(neomake#statusline#LoclistCounts(), 'W', 0) + get(neomake#statusline#QflistCounts(), 'W', 0))
+  else
+    return '  '
+  endif
+endfunction
+" }}}
 
