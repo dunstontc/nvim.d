@@ -121,7 +121,8 @@ inoremap <F19> <esc>O
 " Dupe lines with ⌥ - ⇧ - down
 nnoremap 𐌋 mxV"zy"zp`xj
 inoremap 𐌋 <esc>mxV"zy"zp`xj
-vnoremap 𐌋 VyO<esc>0pgv
+" vnoremap 𐌋 VyO<esc>pgv
+vnoremap 𐌋 Vypgv
 
 " === Indentation ===
 " F15 -- ^[[1;2R
@@ -267,6 +268,16 @@ map g/ <Plug>(incsearch-stay)
 let g:incsearch#auto_nohlsearch = 1                   " Auto unhighlight after searching
 let g:incsearch#do_not_save_error_message_history = 1 " Don't store incsearch errors in history
 let g:incsearch#consistent_n_direction = 1            " When searching backward, do not invert meaning of n and N
+" }}}
+
+" === haya14busa/is.vim  {{{
+map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
+map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
+
+map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
+map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
+map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
+map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
 " }}}
 
 " === dhruvasagar/vim-table-mode === {{{

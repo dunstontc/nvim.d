@@ -4,6 +4,8 @@
 
 " When writing a buffer.
 call neomake#configure#automake('w')
+" When writing a buffer, and on normal mode changes (after 750ms).
+call neomake#configure#automake('nw', 3000)
 
 let g:neomake_place_signs = 1
 let g:neomake_highlight_columns = 1

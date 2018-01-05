@@ -34,7 +34,13 @@ let g:startify_fortune_use_unicode    = 1
 " let g:startify_session_autoload       = 0
 " let g:startify_session_persistence    = 0
 " let g:startify_update_oldfiles        = 1
-
+let g:startify_skiplist = [
+        \ '\.vimgolf',
+        \ '^/tmp',
+        \ '.git\/*',
+        \ '/project/.*/documentation',
+        \ escape(fnamemodify($HOME, ':p'), '\') .'mysecret.txt',
+        \ ]
 
 
 " Reload last session (for use with Tmux)

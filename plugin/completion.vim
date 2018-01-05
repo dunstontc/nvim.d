@@ -169,6 +169,27 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " let g:complete_parameter_use_ultisnips_mapping = 1
 " }}}
 
+
+" ==============================================================================
+" === zchee/deoplete-go === {{{
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+" Automatically insert dot after package name
+" Default: 0
+let g:deoplete#sources#go#package_dot = 0
+" Class Sorting and Ignore
+" Default: []
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+" Support pointer match
+" Default: 0
+" let g:deoplete#sources#go#pointer = 0
+" cgo complete use libclang-python3
+" Default: 0
+" let g:deoplete#sources#go#cgo = 0
+" let g:deoplete#sources#go#cgo#libclang_path
+" Automatically set GOOS environment variable when calling gocode
+" let g:deoplete#sources#go#goos = ''
+
+" }}}
 " ==============================================================================
 " === padawan-php/deoplete-padawan === {{{
 let g:deoplete#sources#padawan#server_addr = 'http://127.0.0.1:15155'
