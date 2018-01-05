@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " ==============================================================================
 " === Shougo/deoplete === {{{
 " ==============================================================================
@@ -175,7 +177,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 " Automatically insert dot after package name
 " Default: 0
-let g:deoplete#sources#go#package_dot = 0
+let g:deoplete#sources#go#package_dot = 1
 " Class Sorting and Ignore
 " Default: []
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']

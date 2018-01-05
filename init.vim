@@ -469,7 +469,6 @@ call dein#add('~/.ghq/github.com/dunstontc/vison',           {'lazy':1, 'on_ft':
 call dein#add('~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'lazy':1, 'on_ft': 'vim'           })
 call dein#add('~/.ghq/github.com/dunstontc/python-syntax',   {'lazy':1, 'on_ft': ['py', 'python']})
 call dein#add('~/.ghq/github.com/dunstontc/vim-startify')
-" call dein#add('~/.ghq/github.com/dunstontc/denite-extra')
 " call dein#add('~/.ghq/github.com/dunstontc/tagbar-markdown', {'lazy':1, 'on_ft': 'markdown'      }) " TODO: Learn PHP?
 call dein#add('dunstontc/vim-cheat40', { 'lazy': 1, 'on_cmd':'Cheat40Open'})
 " call dein#add('lervag/wiki')

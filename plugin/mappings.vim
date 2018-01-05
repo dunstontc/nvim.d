@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " === Mouse Mappings === {{{
 map <S-ScrollWheelUp> <C-U>
 " map <ScrollWheelUp> <C-Y>
@@ -42,7 +43,7 @@ nnoremap ,/ :%s///g<left><left><left>
 
 
 " === Ctrl Mappings === {{{
-" use ctrl-q instead of ⎋ , stay on the home row
+" use ctrl-q instead of <esc>, stay on the home row
 inoremap <C-q> <C-c>
 nnoremap <C-q> <Nop>
 vnoremap <C-q> <C-c>
@@ -106,7 +107,7 @@ nnoremap ]<Space> mwo<esc>`w
 nnoremap <F18> mwo<esc>`w
 nnoremap <F19> mwO<esc>`w
 
-" Comment wih ⌘ -/
+" Comment wih <CMD>/
 " F14 -- ^[[1;2Q
 noremap <silent><F14> :TComment<CR>
 inoremap <silent><F14> <esc>:TComment<CR>
@@ -118,11 +119,10 @@ inoremap <F18> <esc>o
 " F19 -- ^[[18;2~
 inoremap <F19> <esc>O
 
-" Dupe lines with ⌥ - ⇧ - down
-nnoremap 𐌋 mxV"zy"zp`xj
-inoremap 𐌋 <esc>mxV"zy"zp`xj
-" vnoremap 𐌋 VyO<esc>pgv
-vnoremap 𐌋 Vypgv
+" Dupe lines
+nnoremap <M-S-Down> mxV"zy"zp`xj
+inoremap <M-S-Down> <esc>mxV"zy"zp`xj
+vnoremap <M-S-Down> Vypgv
 
 " === Indentation ===
 " F15 -- ^[[1;2R
@@ -148,13 +148,6 @@ imap <silent><F16> <esc>>>A
 " Alt + k = ˚
 " ALT + l = ¬
 
-" Move selected/current line(s) up or down
-nnoremap <silent>˚ :m .-2<CR>==
-nnoremap <silent>∆ :m .+1<CR>==
-inoremap <silent>˚ <Esc>:m .-2<CR>==gi
-inoremap <silent>∆ <Esc>:m .+1<CR>==gi
-vnoremap <silent>˚ :m '<-2<CR>gv=gv
-vnoremap <silent>∆ :m '>+1<CR>gv=gv
 " Increase or decrease indent for selected/current line(s)
 vmap <silent>˙ <gv
 vmap <silent>¬ >gv
@@ -162,26 +155,31 @@ nmap <silent>˙ <<
 nmap <silent>¬ >>
 imap <silent>˙ <esc><<A
 imap <silent>¬ <esc>>>A
+
+" Move selected/current line(s) up or down
+nnoremap <silent>˚ :m .-2<CR>==
+nnoremap <silent>∆ :m .+1<CR>==
+inoremap <silent>˚ <Esc>:m .-2<CR>==gi
+inoremap <silent>∆ <Esc>:m .+1<CR>==gi
+vnoremap <silent>˚ :m '<-2<CR>gv=gv
+vnoremap <silent>∆ :m '>+1<CR>gv=gv
 " (Meta + j = ê)
 " (Meta + k = ë)
 
-"        𐌞 = ⌥ + UP
-"        𐌓 = ⌥ + DOWN
-nnoremap 𐌞 :m .-2<CR>==
-nnoremap 𐌓 :m .+1<CR>==
-inoremap 𐌞 <Esc>:m .-2<CR>==gi
-inoremap 𐌓 <Esc>:m .+1<CR>==gi
-vnoremap 𐌞 :m '<-2<CR>gv=gv
-vnoremap 𐌓 :m '>+1<CR>gv=gv
-vnoremap 𐌓 :m '>+1<CR>gv=gv
-
+nnoremap <M-Up> :m .-2<CR>==
+nnoremap <M-Down> :m .+1<CR>==
+inoremap <M-Up> <Esc>:m .-2<CR>==gi
+inoremap <M-Down> <Esc>:m .+1<CR>==gi
+vnoremap <M-Up> :m '<-2<CR>gv=gv
+vnoremap <M-Down> :m '>+1<CR>gv=gv
+vnoremap <M-Down> :m '>+1<CR>gv=gv
 
 " Use ⌥ left/right in command mode
 " cnoremap <Esc>b <S-Left>
 " cnoremap <Esc>f <S-Right>
 " }}}
 
-" Repeat on every line {{{
+" Repeat on every lin e {{{
 " repeat last command for each line of a visual selection
 vnoremap . :normal .<CR>
 " replay @q macro for each line of a visual selection
@@ -336,7 +334,6 @@ nmap <silent>gd <Plug>(pydocstring)
 
 " === vim-multiple-cursors === {{{
 let g:multi_cursor_use_default_mapping=0
-" let g:multi_cursor_next_key='𐌍' " (C-m)
 " let g:multi_cursor_prev_key='<C-p>'
 " let g:multi_cursor_skip_key='<C-x>'
 " let g:multi_cursor_quit_key='<Esc>'
@@ -528,10 +525,10 @@ nnoremap <leader>di :Denite menu:interfaces<CR>
 nnoremap <leader>dj :Denite jump<CR>
 nnoremap <leader>dk :Denite menu:map_list<CR>
 nnoremap <leader>d<S-k> :Maps<CR>
-nnoremap <leader>dl :Denite location_list<CR>
+nnoremap <leader>dl :Denite tcd_loclist<CR>
 nnoremap <leader>dm :Denite marks<CR>
 nnoremap <leader>dp :Denite projectile -default-action=custom<CR>
-nnoremap <leader>dq :Denite quickfix<CR>
+nnoremap <leader>dq :Denite tcd_quickfix<CR>
 nnoremap <leader>dt :Denite todotxt_local<CR>
 nnoremap <leader>d<S-T> :Denite todotxt<CR>
 nnoremap <leader>ds :Denite sauce<CR>
