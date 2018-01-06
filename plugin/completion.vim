@@ -53,7 +53,8 @@ call deoplete#custom#source('webcomplete',    'mark', '' )
 call deoplete#custom#source('omni',           'mark', '⌾' )
 call deoplete#custom#source('file',           'mark', '' )
 call deoplete#custom#source('look',           'mark', '' )
-call deoplete#custom#source('jedi',           'mark', '' )
+call deoplete#custom#source('go',             'mark', '' )
+" call deoplete#custom#source('jedi',           'mark', '' )
 " call deoplete#custom#source('Jedi',           'mark', '' )
 call deoplete#custom#source('tern',           'mark', '' )
 call deoplete#custom#source('emoji',          'mark', '' )
@@ -171,7 +172,6 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " let g:complete_parameter_use_ultisnips_mapping = 1
 " }}}
 
-
 " ==============================================================================
 " === zchee/deoplete-go === {{{
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
@@ -192,6 +192,7 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 " let g:deoplete#sources#go#goos = ''
 
 " }}}
+
 " ==============================================================================
 " === padawan-php/deoplete-padawan === {{{
 let g:deoplete#sources#padawan#server_addr = 'http://127.0.0.1:15155'

@@ -1,4 +1,5 @@
 scriptencoding utf-8
+
 " === Mouse Mappings === {{{
 map <S-ScrollWheelUp> <C-U>
 " map <ScrollWheelUp> <C-Y>
@@ -28,7 +29,7 @@ let maplocalleader = ","
 
 inoremap <S-Space> <esc>
 " F17 -- ^[[15;2~
-inoremap <silent><F17> <esc>
+" inoremap <silent><F17> <esc>
 
 nnoremap ; :
 vnoremap ; :
@@ -48,6 +49,8 @@ inoremap <C-q> <C-c>
 nnoremap <C-q> <Nop>
 vnoremap <C-q> <C-c>
 " xnoremap <C-q> <C-c>
+nnoremap <silent><C-s> :w<CR>
+inoremap <silent><C-s> <C-o>:w<CR>
 
 " Move splits around, as we use ctrl-hjkl to navigate
 nnoremap <C-W><left> <C-W>H
@@ -55,8 +58,9 @@ nnoremap <C-W><right> <C-W>L
 nnoremap <C-W><down> <C-W>J
 nnoremap <C-W><up> <C-W>K
 
-" nnoremap <C-A> ggVG
 nnoremap <C-p> :Denite file_mru<CR>
+" }}}
+
 nnoremap <S-m> :Denite messages<CR>
 
 noremap R <C-r>
@@ -91,9 +95,12 @@ nnoremap g<S-i> gi<esc>
 nnoremap fj :Sayonara<CR>
 inoremap fj <esc>:Sayonara<CR>
 
-" === CTRL Mappings === {{{
-nnoremap <silent><C-s> :w<CR>
-inoremap <silent><C-s> <C-o>:w<CR>
+" === Bracket Maps === {{{
+nmap [l <Plug>tcd_loc_previous
+nmap ]l <Plug>tcd_loc_next
+nmap <silent>[L :ll<cr>
+nmap [q <Plug>tcd_qf_next
+nmap q] <Plug>tcd_qf_previous
 " }}}
 
 " === fn key mappings === {{{
@@ -179,7 +186,7 @@ vnoremap <M-Down> :m '>+1<CR>gv=gv
 " cnoremap <Esc>f <S-Right>
 " }}}
 
-" Repeat on every lin e {{{
+" Repeat on every line {{{
 " repeat last command for each line of a visual selection
 vnoremap . :normal .<CR>
 " replay @q macro for each line of a visual selection
@@ -229,7 +236,7 @@ nnoremap X Vx
 nnoremap yy Vy
 nnoremap <S-y> v$y
 
-" Yank with keeping cursor position in visual mode {{{
+" Yank with keeping cursor position in visual mode
 " Thanks @haya14busa
 function! s:keepcursor_visual_wrapper(command)
   execute 'normal! gv' . a:command
@@ -237,7 +244,7 @@ function! s:keepcursor_visual_wrapper(command)
 endfunction
 xnoremap <silent> y :<C-u>call <SID>keepcursor_visual_wrapper('y')<CR>
 xnoremap <silent> Y :<C-u>call <SID>keepcursor_visual_wrapper('Y')<CR>
-"}}}
+
 "}}}
 
 ""

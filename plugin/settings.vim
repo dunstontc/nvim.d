@@ -24,6 +24,11 @@ set viewoptions=cursor,folds,slash,unix " What to save in sessions
 set undofile                 " Persistent Undo though
 set undodir=~/.config/nvim/undo
 
+set cmdheight=2
+" set noshowcmd                  " Show (partial) command in the last line of the screen.
+set noshowmode                 " Don't show the current mode (airline takes care of this)
+set report=1                   " Report more than x lines changed at once
+
 set shell=/usr/local/bin/bash
 
 " set grepprg=ag\ --vimgrep\ --nocolor\ $*
@@ -35,8 +40,30 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep --smart-case'
 endif
 
+" === shortmess ==== {{{
+set shortmess=a                " Assorted abbreviations
+set shortmess+=o               " Overwrite message for writing a file with subsequent message
+                               "     for reading a file (useful for ":wn" or when 'autowrite' on)
+set shortmess+=O               " Message for reading a file overwrites any previous message.
+                               "     Also for quickfix message (e.g., ":cn").
+set shortmess+=c               " Don't give |ins-completion-menu| messages.  For example,
+                               "     -- XXX completion (YYY)", "match 1 of 2", "The only match",
+                               "     Pattern not found", "Back at original", etc.
+set shortmess+=s               " Don't give 'search hit BOTTOM, continuing at TOP' or 'search
+                               "     hit TOP, continuing at BOTTOM" messages
+set shortmess+=t               " Truncate file message at the start if it is too long to fit
+                               "     on the command-line, "<" will appear in the left most column.
+                               "     Ignored in Ex mode.
+set shortmess+=T               " Truncate other messages in the middle if they are too long to
+                               "     fit on the command line.  "..." will appear in the middle.
+                               "     Ignored in Ex mode.
+set shortmess+=F               " Don't give the file info when editing a file,
+                               "     like `:silent` was used for the command
+" set shortmess=aoOcstTF
+" }}}
+
 " ==============================================================================
-"   Input & Navigation
+"  === Input & Navigation === {{{
 " ==============================================================================
 
 " === Navigation/Motion ===
@@ -52,31 +79,37 @@ set formatoptions+=j              " Get rid of comment leaders when joining line
 set nostartofline                 " Don't reset cursor to start of line when moving around
 set virtualedit=block
 
-" === Tabs & Spaces ===
+" === Tabs & Spaces === {{{
 set autoindent                  " Autoidentation on
 set copyindent                  " Copy indent from the previous line
 set expandtab                   " Expand Tabs (pressing Tab inserts spaces)
 set shiftround                  " Round indent to multiple of 'shiftwidth'
 set smartindent                 " Smart Indentation on
 set smarttab                    " Tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+" set tabstop=4
 set nojoinspaces                " don't autoinsert two spaces after '.', '?', '!' for join command
+" }}}
 
+set whichwrap=s,[,],<,>         "Allow specified keys to move to the previous/next line
+" whichwrap options {{{
+" char   key    mode  ~
+"  b    <BS>   Normal and Visual
+"  s    <Space>   Normal and Visual
+"  h    "h"   Normal and Visual (not recommended)
+"  l    "l"   Normal and Visual (not recommended)
+"  <    <Left>   Normal and Visual
+"  >    <Right>   Normal and Visual
+"  ~    "~"   Normal
+"  [    <Left>   Insert and Replace
+"  ]    <Right>   Insert and Replace
+" }}}
 
-set whichwrap=s,[,],<,> "Allow specified keys to move to the previous/next line
-    " char   key    mode  ~
-    "  b    <BS>   Normal and Visual
-    "  s    <Space>   Normal and Visual
-    "  h    "h"   Normal and Visual (not recommended)
-    "  l    "l"   Normal and Visual (not recommended)
-    "  <    <Left>   Normal and Visual
-    "  >    <Right>   Normal and Visual
-    "  ~    "~"   Normal
-    "  [    <Left>   Insert and Replace
-    "  ]    <Right>   Insert and Replace
+" }}}
 
 " ==============================================================================
-"   Styles
+"  === Styles === {{{
 " ==============================================================================
+" === cursor === {{{
 set termguicolors
 " set guicursor=
 " let g:vitality_shell_cursor = 1
@@ -89,7 +122,9 @@ set guicursor+=r-cr:block-rCursor
 " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 " let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" }}}
 
+" === theme === {{{
 highlight Comment gui=italic
 " set t_Co=256
 " set background=dark
@@ -102,6 +137,8 @@ let g:quantum_italics=1          " Enable darker quantum colortheme
 let g:quantum_black=1            " Enable italic font in quantum colorscheme
 " let g:enable_italic_font=1     " Enable italic font in one dark colorscheme
 " let g:enable_bold_font=1       " Enable bold   font in one dark colorscheme
+" }}}
+
 " set concealcursor=iv
 set conceallevel=1             " Enable conceal
 set cursorline                 " Highlight current line
@@ -119,7 +156,6 @@ set notitle                    " Don't Show the filename in the window titlebar
 " set linespace=0    " No extra spaces between rows
 " set pumheight=20   " Avoid the pop up menu occupying the whole screen
 
-
 " syntax sync minlines=200
 " syntax sync maxlines=500
 
@@ -128,13 +164,13 @@ set notitle                    " Don't Show the filename in the window titlebar
 if exists('+colorcolumn')
   execute "set colorcolumn=" . join(range(81,335), ',')
 endif
-
+" }}}
 
 " ==============================================================================
-" === Formatting Characters ===
+" === Formatting Characters === {{{
 " ==============================================================================
 " ¬ ↪ → · ● ❯ ❮
-set listchars+=tab:→\   " Comment here to keep whitespace intact
+set listchars+=tab:→\  " Comment here to keep whitespace intact
 " set listchars+=eol:¬   " Comment here to keep whitespace intact
 " set listchars+=eol:\    " Comment here to keep whitespace intact
 set listchars+=trail:●
@@ -161,12 +197,11 @@ if has('ambiwidth')
   " ref: https://gist.github.com/sgk/5991138
   set ambiwidth=double "Use twice the width of ASCII characters for Multibyte
 endif
+" }}}
 
 " ==============================================================================
-"   Preferences
+" === Search === {{{
 " ==============================================================================
-
-" === Search ===
 set hlsearch                    " Highlight matches
 set incsearch                   " Search as characters are entered
 set inccommand=nosplit
@@ -175,19 +210,10 @@ set wrapscan                    " Searches wrap around the end of the file
 set gdefault                    " By default add g flag to search/replace. Add g to toggle
 set ignorecase                  " Ignore case of searches
 set smartcase                   " Ignore 'ignorecase' if search patter contains uppercase characters
+" }}}
 
 " ==============================================================================
-" === Dictionary ===
-" ==============================================================================
-set spelllang=en,en_us
-set dictionary+=~/grammar/google-10000-english-usa.txt
-" setlocal dictionary+=/usr/share/dict/words
-" setlocal dictionary+=/usr/share/dict/american-english
-
-
-
-" ==============================================================================
-" === Folding ===
+" === Folding === {{{
 " ==============================================================================
 set foldenable                  " Enable folding
 " set foldmethod=indent
@@ -195,10 +221,19 @@ set foldenable                  " Enable folding
 set foldlevelstart=10           " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold
 set foldtext=functions#NeatFoldTextTwo()
-
+" }}}
 
 " ==============================================================================
-" === ≈ Completion ===
+" === Dictionary === {{{
+" ==============================================================================
+set spelllang=en,en_us
+set dictionary+=~/grammar/google-10000-english-usa.txt
+" setlocal dictionary+=/usr/share/dict/words
+" setlocal dictionary+=/usr/share/dict/american-english
+" }}}
+
+" ==============================================================================
+" === Completion === {{{
 " ==============================================================================
 " set completeopt&
 " set completeopt+=longest
@@ -210,20 +245,9 @@ set completeopt-=preview
 " set pumheight=20        " Avoid the pop up menu occupying the whole screen
 set infercase             " Ignore case on insert completion
 set showfulltag           " Show rich info for ins-completion
+" }}}
 
-
-" ==============================================================================
-" === Vim Commandline ===
-" ==============================================================================
-
-" === General ===
-set cmdheight=2
-set noshowcmd                  " Show (partial) command in the last line of the screen.
-set noshowmode                 " Don't show the current mode (airline takes care of this)
-set report=1                   " Report more than x lines changed at once
-
-
-" === Completion ===
+" === Cmdline Completion === {{{
 set wildmenu                   " Visual autocomplete for command menu
 set wildcharm=<C-z>            " Trigger for commandline completion in macros
 " set wildmode=longest:full,full   " 👈
@@ -242,42 +266,17 @@ set wildignore+=*/tmp/*
 set wildignore+=*.so
 set wildignore+=*.swp
 set wildignore+=*.zip
+" }}}
 
-" === Messages, etc. ====
-set shortmess=a                " Assorted abbreviations
-set shortmess+=o               " Overwrite message for writing a file with subsequent message
-                               "     for reading a file (useful for ":wn" or when 'autowrite' on)
-set shortmess+=O               " Message for reading a file overwrites any previous message.
-                               "     Also for quickfix message (e.g., ":cn").
-set shortmess+=c               " Don't give |ins-completion-menu| messages.  For example,
-                               "     -- XXX completion (YYY)", "match 1 of 2", "The only match",
-                               "     Pattern not found", "Back at original", etc.
-set shortmess+=s               " Don't give 'search hit BOTTOM, continuing at TOP' or 'search
-                               "     hit TOP, continuing at BOTTOM" messages
-set shortmess+=t               " Truncate file message at the start if it is too long to fit
-                               "     on the command-line, "<" will appear in the left most column.
-                               "     Ignored in Ex mode.
-set shortmess+=T               " Truncate other messages in the middle if they are too long to
-                               "     fit on the command line.  "..." will appear in the middle.
-                               "     Ignored in Ex mode.
-set shortmess+=F               " Don't give the file info when editing a file,
-                               "     like `:silent` was used for the command
-" set shortmess=aoOcstTF
-
-
-" ==============================================================================
-"  === Misc. ===
-" ==============================================================================
-
-
-" === Abbreviations ===
+" === Abbreviations === {{{
 iabbrev busniess business
 iabbrev congif config
 iabbrev teh the
 iabbrev w/ with
 iabbrev ldr leader
+" }}}
 
-" === Disable standard plugins ===
+" === Disable standard plugins === {{{
 let g:loaded_2html_plugin      = 1
 let g:loaded_logiPat           = 1
 let g:loaded_getscriptPlugin   = 1
@@ -295,6 +294,7 @@ let g:loaded_tarPlugin         = 1
 let g:loaded_tutor_mode_plugin = 1
 let g:loaded_vimballPlugin     = 1
 let g:loaded_zipPlugin         = 1
+" }}}
 
 let dgs#username='dunstontc'
 
@@ -304,6 +304,7 @@ let g:wiki = { 'root' : '~/Documents/Wiki/' }
 
 let g:tcd#testvar=1
 
+" === terminal colors === {{{
 let g:terminal_color_0 =  "#1e1e1e"  " black
 let g:terminal_color_1 =  "#d16969"  " red
 let g:terminal_color_2 =  "#608b4e"  " green
@@ -326,4 +327,4 @@ if &background == "light"
     let g:terminal_color_background = g:terminal_color_7
     let g:terminal_color_foreground = g:terminal_color_2
 endif
-
+" }}}

@@ -40,7 +40,7 @@ command! ${1:-nargs=$2} ${3:Cmd} ${4:cmd}${6:(${5:<f-args>})}
 endsnippet
 
 snippet autogroup "Group of autocommands"
-augroup $1
+augroup ${1:groupName}
   ${2:autocmd!}
   $0
 augroup END
@@ -48,10 +48,11 @@ endsnippet
 
 snippet fold "Fold" b
 "$0${2:"} {{{
-
 $1" }}}
-
 endsnippet
+
+#  =============================================================================
+#   Regular Expressions
 #  =============================================================================
 
 snippet pla "Positive Look-Ahead"
@@ -79,7 +80,7 @@ snippet group "Regex group"
 endsnippet
 
 # ==============================================================================
-#  Plugins
+#  Plugins {{{
 # ==============================================================================
 
 snippet cdap "call dein#add('plugin')"
@@ -106,8 +107,10 @@ snippet hilite "Syntax Highlighting Function" b
 call <sid>hi('${1:`!v @+`}',    ${2:{}},   ${3:{}}, ${4:'none'}, ${5:{}})$0
 endsnippet
 
+# }}}
+
 # ==============================================================================
-#  Dividers
+#  Dividers {{{
 # ==============================================================================
 
 snippet header "File, Author, & License" b
@@ -120,17 +123,18 @@ snippet header "File, Author, & License" b
 $0
 endsnippet
 
-# snippet divider "Divider" b
-# " ==============================================================================
-# endsnippet
-#
-# snippet section "Section Divider" b
-# " ==============================================================================
-# "  === ${1:title} ===
-# " ==============================================================================
-# $0
-# endsnippet
+snippet div "Divider" b
+" ==============================================================================
+endsnippet
 
+snippet divider "Section Divider" b
+" ==============================================================================
+"  === ${1:title} ===
+" ==============================================================================
+$0
+endsnippet
+
+# }}}
 
 # ==============================================================================
 #  Vimdoc
@@ -180,8 +184,9 @@ endsnippet
 
 snippet function "Generates a link to a function defined in the plugin." b
 ""
-" @function(${1:name})$2
-${0:" $3}
+" ${1:@public}
+" @function(${2:name})$3
+${0:" $4}
 endsnippet
 
 snippet cmd "Generates a link to a command defined in the plugin." b
@@ -222,7 +227,7 @@ endsnippet
 
 snippet section "Allows you to write a new section for the helpfile. The id will be a lowercased version of name if omitted." b
 ""
-" @section ${1:Name}, ${2:id}
+" @section ${1:Name} ${2:id}
 ${0:" $3}
 endsnippet
 
@@ -240,8 +245,8 @@ endsnippet
 
 snippet private "Marks a function as private." b
 ""
-" @private $1
-${0:" $2}
+" @private
+$0
 endsnippet
 
 snippet example "Example for documentation" b
