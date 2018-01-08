@@ -42,15 +42,13 @@ call dein#add('mgee/lightline-bufferline')
 call dein#add('kshenoy/vim-signature')
 call dein#add('itchyny/vim-cursorword')
 call dein#add('blueyed/vim-diminactive')
+call dein#add('xtal8/traces.vim')
 " call dein#add('tomtom/quickfixsigns_vim')
 " call dein#add('jeetsukumaran/vim-markology')
 " call dein#add('dhruvasagar/vim-markify')
 " call dein#add('CharlesGueunet/quickmenu.vim')
-" call dein#add('ap/vim-buftabline')
-" call dein#add('bling/vim-bufferline')
 " call dein#add('zhaocai/GoldenView.Vim')
 " call dein#add('powerman/vim-plugin-AnsiEsc')
-call dein#add('xtal8/traces.vim')
 " call dein#add('itchyny/vim-parenmatch')
 " call dein#add('jszakmeister/vim-togglecursor')
 " call dein#add('yuttie/comfortable-motion.vim')
@@ -101,9 +99,10 @@ call dein#add('posva/vim-vue',                    {'lazy':1, 'on_ft': ['vue'  ]}
 
 " HTML CSS: {{{2
 call dein#add('othree/html5.vim',                 {'lazy':1, 'on_ft': ['html' ]})
+call dein#add('valloric/matchtagalways',          {'lazy':1, 'on_ft': 'html', })
 call dein#add('hail2u/vim-css3-syntax',           {'lazy':1, 'on_ft': ['css'  ]})
 call dein#add('groenewege/vim-less',              {'lazy':1, 'on_ft': ['less' ]})
-call dein#add('valloric/matchtagalways',          {'lazy':1, 'on_ft': 'html', })
+call dein#add('wavded/vim-stylus',                {'lazy':1, 'on_ft': ['styl', 'stylus']})
 " }}}
 
 " Go: {{{2
@@ -168,8 +167,9 @@ call dein#add('rust-lang/rust.vim',               {'lazy':1, 'on_ft': ['rust', '
 call dein#add('jpalardy/vim-slime',               {'lazy':1, 'on_ft': ['lisp', 'el' ]})
 call dein#add('rhysd/vim-wasm',                   {'lazy':1, 'on_ft': ['wast'       ]})
 call dein#add('peterhoeg/vim-qml',                {'lazy':1, 'on_ft': ['qml']})
-call dein#add('wavded/vim-stylus',                {'lazy':1, 'on_ft': ['styl', 'stylus']})
 call dein#add('slim-template/vim-slim',           {'lazy':1, 'on_ft': ['slim']})
+call dein#add('digitaltoad/vim-pug',              {'lazy':1, 'on_ft': ['jade', 'pug'], })
+call dein#add('keith/swift.vim',                  {'lazy':1, 'on_ft': 'swift' })
 " }}}
 
 " }}}
@@ -345,9 +345,10 @@ call dein#add('zchee/deoplete-jedi',           { 'lazy':1, 'on_ft': ['python']})
 call dein#add('zchee/deoplete-zsh',            { 'lazy':1, 'on_ft': ['zsh']})
 call dein#add('ponko2/deoplete-fish',          { 'lazy':1, 'on_ft': ['fish' ]})
 call dein#add('carlitux/deoplete-ternjs',      { 'lazy':1, 'on_ft': ['jsx', 'javascript' ]})
-call dein#add('sebastianmarkow/deoplete-rust', { 'lazy':1, 'on_ft': ['rs', 'rust' ]})
+call dein#add('sebastianmarkow/deoplete-rust', { 'lazy':1, 'on_ft': ['rust' ]})
 call dein#add('fishbullet/deoplete-ruby',      { 'lazy':1, 'on_ft': ['ruby']})
 call dein#add('padawan-php/deoplete-padawan',  { 'lazy':1, 'on_ft': 'php'})
+call dein#add('artur-shaik/vim-javacomplete2', { 'lazy':1, 'on_ft': ['java']})
 call dein#add('zchee/deoplete-go',             { 'lazy':1, 'on_ft': 'go',
                                                \ 'build': 'make'})
 call dein#add('fcpg/vim-complimentary')  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
