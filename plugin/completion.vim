@@ -42,7 +42,8 @@ let g:deoplete#file#enable_buffer_path = 1
 
 "  deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#set('_', 'min_pattern_length', 0)
+call deoplete#custom#source('_', 'min_pattern_length', 0)
+call deoplete#custom#source('go', 'min_pattern_length', 1)
 " call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_rank'])
 
@@ -150,26 +151,42 @@ call deoplete#custom#source('dictionary', 'min_pattern_length', 2)
 " }}}
 
 " ==============================================================================
-" === SuperTab === {{{
-" let g:SuperTabContextDefaultCompletionType = '<c-n>'
-let g:SuperTabDefaultCompletionType = '<C-n>'
-" let g:SuperTabCrMapping                = 0
-
-" inoremap <expr> <cr>    pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
-" inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
-" inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+"  === Shougo/neco-syntax === {{{
+let g:necosyntax#min_keyword_length=1
+let g:necosyntax#max_syntax_line=1000
 " }}}
 
 " ==============================================================================
-"  === tenfyzhong/CompleteParameter.vim === {{{
-" inoremap <silent><expr> ( complete_parameter#pre_complete("()")
-" smap <c-n> <Plug>(complete_parameter#goto_next_parameter)
-" imap <c-n> <Plug>(complete_parameter#goto_next_parameter)
-" smap <c-p> <Plug>(complete_parameter#goto_previous_parameter)
-" imap <c-p> <Plug>(complete_parameter#goto_previous_parameter)
-
-" let g:complete_parameter_log_level = 5
-" let g:complete_parameter_use_ultisnips_mapping = 1
+"  === zchee/deoplete-jedi === {{{
+" The timeout (in seconds) for jedi server to workaround endless loop in jedi.
+" Increase it if you cannot get completions for large package such as pandas (see #125).
+" Default: 10
+let g:deoplete#sources#jedi#server_timeout = 10
+" Sets the maximum length of completion description text.
+" If this is exceeded, a simple description is used instead.
+" Default: 50
+let g:deoplete#sources#jedi#statement_length = 50
+" Enables caching of completions for faster results.
+" Default: 1
+let g:deoplete#sources#jedi#enable_cache = 1
+" Shows docstring in preview window.
+" Default: 0
+let g:deoplete#sources#jedi#show_docstring = 1
+" Set the Python interpreter path to use for the completion server.
+" deoplete-jedi uses the first available python in $PATH.
+" Use this only if you want use a specific Python interpreter.
+" This has no effect if $VIRTUAL_ENV is present in the environment.
+" Note: This is completely unrelated to configuring Neovim.
+" let g:deoplete#sources#jedi#python_path =
+" Enable logging from the server.
+" If set to 1, server messages are emitted to Deoplete's log file.
+" This can optionally be a string that points to a file for separate logging.
+" The log level will be inherited from deoplete#enable_logging().
+" let g:deoplete#sources#jedi#debug_server =
+" A list of extra paths to add to sys.path when performing completions.
+" let g:deoplete#sources#jedi#extra_path =
+" TODO: find out where i got `g:deoplete#sources#jedi#short_types` from...
+" let g:deoplete#sources#jedi#short_types      = 1
 " }}}
 
 " ==============================================================================
@@ -277,46 +294,6 @@ let g:ultisnips_python_triple_quoting_style = 'double'
 " }}}
 
 " ==============================================================================
-"  === Shougo/neco-syntax === {{{
-let g:necosyntax#min_keyword_length=1
-let g:necosyntax#max_syntax_line=1000
-" }}}
-
-" ==============================================================================
-"  === zchee/deoplete-jedi === {{{
-" The timeout (in seconds) for jedi server to workaround endless loop in jedi.
-" Increase it if you cannot get completions for large package such as pandas (see #125).
-" Default: 10
-let g:deoplete#sources#jedi#server_timeout = 10
-" Sets the maximum length of completion description text.
-" If this is exceeded, a simple description is used instead.
-" Default: 50
-let g:deoplete#sources#jedi#statement_length = 50
-" Enables caching of completions for faster results.
-" Default: 1
-let g:deoplete#sources#jedi#enable_cache = 1
-" Shows docstring in preview window.
-" Default: 0
-let g:deoplete#sources#jedi#show_docstring = 1
-" Set the Python interpreter path to use for the completion server.
-" deoplete-jedi uses the first available python in $PATH.
-" Use this only if you want use a specific Python interpreter.
-" This has no effect if $VIRTUAL_ENV is present in the environment.
-" Note: This is completely unrelated to configuring Neovim.
-" let g:deoplete#sources#jedi#python_path =
-" Enable logging from the server.
-" If set to 1, server messages are emitted to Deoplete's log file.
-" This can optionally be a string that points to a file for separate logging.
-" The log level will be inherited from deoplete#enable_logging().
-" let g:deoplete#sources#jedi#debug_server =
-" A list of extra paths to add to sys.path when performing completions.
-" let g:deoplete#sources#jedi#extra_path =
-" TODO: find out where i got `g:deoplete#sources#jedi#short_types` from...
-" let g:deoplete#sources#jedi#short_types      = 1
-
-" }}}
-
-" ==============================================================================
 " === tern-for-vim === {{{
 let g:tern_request_timeout = 1
 " let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
@@ -405,6 +382,18 @@ let g:deoplete#sources#ternjs#filetypes = [
 " }}}
 
 " ==============================================================================
+"  === tenfyzhong/CompleteParameter.vim === {{{
+" inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+" smap <c-n> <Plug>(complete_parameter#goto_next_parameter)
+" imap <c-n> <Plug>(complete_parameter#goto_next_parameter)
+" smap <c-p> <Plug>(complete_parameter#goto_previous_parameter)
+" imap <c-p> <Plug>(complete_parameter#goto_previous_parameter)
+
+" let g:complete_parameter_log_level = 5
+" let g:complete_parameter_use_ultisnips_mapping = 1
+" }}}
+
+" ==============================================================================
 "  === wellle/tmux-complete.vim === {{{
 let g:tmuxcomplete#trigger = ''
 " }}}
@@ -453,30 +442,15 @@ let g:user_emmet_install_global = 0
 " }}}
 
 " ==============================================================================
-"  === Table Mode === {{{
-" function! s:isAtStartOfLine(mapping)
-"   let text_before_cursor = getline('.')[0 : col('.')-1]
-"   let mapping_pattern = '\V' . escape(a:mapping, '\')
-"   let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
-"   return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
-" endfunction
-"
-" inoreabbrev <expr> <bar><bar>
-"           \ <SID>isAtStartOfLine('\|\|') ?
-"           \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
-" inoreabbrev <expr> __
-"           \ <SID>isAtStartOfLine('__') ?
-"           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
-let g:table_mode_syntax = 1
-let g:table_mode_corner='|'
-let g:table_mode_auto_align = 1
-let g:table_mode_update_time = 500
-" let g:table_mode_motion_left_map='<s-tab>'
-" let g:table_mode_motion_right_map = '<tab>'
-" let g:table_mode_motion_down_map = ''
-" let g:table_mode_motion_up_map = ''
-" }}}
+" === SuperTab === {{{
+" let g:SuperTabContextDefaultCompletionType = '<c-n>'
+let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:SuperTabCrMapping                = 0
 
+" inoremap <expr> <cr>    pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
+" inoremap <expr> <tab>   pumvisible() ? "\<c-n>" : "\<tab>"
+" inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" }}}
 
 " ==============================================================================
 "  === https://www.reddit.com/r/vim/comments/4gjbqn/what_tricks_do_you_use_instead_of_popular_plugins/d2iatu9/ ===

@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " ==============================================================================
 " Config
 " ==============================================================================
@@ -15,15 +16,11 @@ set belloff=all              " Disable error bells
 " set ttyfast                  " DEPRICATED: removed from neovim
 set hidden                   " Keep buffers alive
 set nospell                  " Let filetype settings set spell
-set noswapfile               " No thanks
-set nobackup                 " I'm alright
+set spelllang=en,en_us
 set splitbelow               " New split placed below
 set splitright               " New split placed right
 set winminheight=0           " Allow splits to be reduced to a single line
 set viewoptions=cursor,folds,slash,unix " What to save in sessions
-set undofile                 " Persistent Undo though
-set undodir=~/.config/nvim/undo
-
 set cmdheight=2
 " set noshowcmd                  " Show (partial) command in the last line of the screen.
 set noshowmode                 " Don't show the current mode (airline takes care of this)
@@ -35,10 +32,21 @@ set shell=/usr/local/bin/bash
 " set grepformat=%f:%l:%c:%m
 if executable('ag')
   " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --vimgrep\ --smart-case
   " Use Ag for Ack
   let g:ackprg = 'ag --vimgrep --smart-case'
 endif
+
+" === Paths to files & folders === {{{
+set nobackup                 " I'm alright
+set noswapfile               " No thanks
+set undofile                 " Persistent Undo though
+set undodir=~/.config/nvim/undo
+set spellfile=~/nvim.d/spell/en.utf-8.add
+set dictionary+=~/grammar/google-10000-english-usa.txt
+" setlocal dictionary+=/usr/share/dict/words
+" setlocal dictionary+=/usr/share/dict/american-english
+" }}}
 
 " === shortmess ==== {{{
 set shortmess=a                " Assorted abbreviations
@@ -170,9 +178,9 @@ endif
 " === Formatting Characters === {{{
 " ==============================================================================
 " ¬ ↪ → · ● ❯ ❮
-set listchars+=tab:→\  " Comment here to keep whitespace intact
-" set listchars+=eol:¬   " Comment here to keep whitespace intact
-" set listchars+=eol:\    " Comment here to keep whitespace intact
+set listchars+=tab:→\      " Comment here to keep whitespace intact
+" set listchars+=eol:¬     " Comment here to keep whitespace intact
+" set listchars+=eol:\      " Comment here to keep whitespace intact
 set listchars+=trail:●
 " set listchars+=nbsp:\   " Comment here to keep whitespace intact
 " set listchars+=nbsp:●   " Comment here to keep whitespace intact
@@ -205,9 +213,11 @@ endif
 set hlsearch                    " Highlight matches
 set incsearch                   " Search as characters are entered
 set inccommand=nosplit
+" set inccommand=split
+" set inccommand="nosplit"
 set magic                       " Enable extended regexes
 set wrapscan                    " Searches wrap around the end of the file
-set gdefault                    " By default add g flag to search/replace. Add g to toggle
+" set gdefault                    " By default add g flag to search/replace. Add g to toggle
 set ignorecase                  " Ignore case of searches
 set smartcase                   " Ignore 'ignorecase' if search patter contains uppercase characters
 " }}}
@@ -221,15 +231,6 @@ set foldenable                  " Enable folding
 set foldlevelstart=10           " Default folding level when buffer is opened
 set foldnestmax=10              " Maximum nested fold
 set foldtext=functions#NeatFoldTextTwo()
-" }}}
-
-" ==============================================================================
-" === Dictionary === {{{
-" ==============================================================================
-set spelllang=en,en_us
-set dictionary+=~/grammar/google-10000-english-usa.txt
-" setlocal dictionary+=/usr/share/dict/words
-" setlocal dictionary+=/usr/share/dict/american-english
 " }}}
 
 " ==============================================================================

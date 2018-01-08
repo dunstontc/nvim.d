@@ -27,7 +27,8 @@ map <S-ScrollWheelDown> <C-D>
 let mapleader="\<Space>"
 let maplocalleader = ","
 
-inoremap <S-Space> <esc>
+" === Unsorted ==={{{
+" inoremap <S-Space> <esc>
 " F17 -- ^[[15;2~
 " inoremap <silent><F17> <esc>
 
@@ -41,25 +42,6 @@ nnoremap v mvv
 
 nnoremap ,u :Unite<space><C-d>
 nnoremap ,/ :%s///g<left><left><left>
-
-
-" === Ctrl Mappings === {{{
-" use ctrl-q instead of <esc>, stay on the home row
-inoremap <C-q> <C-c>
-nnoremap <C-q> <Nop>
-vnoremap <C-q> <C-c>
-" xnoremap <C-q> <C-c>
-nnoremap <silent><C-s> :w<CR>
-inoremap <silent><C-s> <C-o>:w<CR>
-
-" Move splits around, as we use ctrl-hjkl to navigate
-nnoremap <C-W><left> <C-W>H
-nnoremap <C-W><right> <C-W>L
-nnoremap <C-W><down> <C-W>J
-nnoremap <C-W><up> <C-W>K
-
-nnoremap <C-p> :Denite file_mru<CR>
-" }}}
 
 nnoremap <S-m> :Denite messages<CR>
 
@@ -94,13 +76,33 @@ nnoremap g<S-i> gi<esc>
 " gtfo
 nnoremap fj :Sayonara<CR>
 inoremap fj <esc>:Sayonara<CR>
+" }}}
+
+" === Ctrl Mappings === {{{
+" use ctrl-q instead of <esc>, stay on the home row
+inoremap <C-q> <C-c>
+nnoremap <C-q> <Nop>
+vnoremap <C-q> <C-c>
+" xnoremap <C-q> <C-c>
+nnoremap <silent><C-s> :w<CR>
+inoremap <silent><C-s> <C-o>:w<CR>
+
+" Move splits around, as we use ctrl-hjkl to navigate
+nnoremap <C-W><left> <C-W>H
+nnoremap <C-W><right> <C-W>L
+nnoremap <C-W><down> <C-W>J
+nnoremap <C-W><up> <C-W>K
+
+" <C-m>
+nnoremap <F17> :Denite file_mru<CR>
+" }}}
 
 " === Bracket Maps === {{{
 nmap [l <Plug>tcd_loc_previous
 nmap ]l <Plug>tcd_loc_next
-nmap <silent>[L :ll<cr>
+nmap <silent>[<S-l> :ll<cr>
 nmap [q <Plug>tcd_qf_next
-nmap q] <Plug>tcd_qf_previous
+nmap ]q <Plug>tcd_qf_previous
 " }}}
 
 " === fn key mappings === {{{
@@ -196,8 +198,6 @@ vnoremap @q :normal @q<CR>
 " === Unused ===
 " imap <C-F>
 " nmap S
-" noremap <M-LEFT> :NERDTreeToggle<CR>
-" noremap <M-RIGHT> :NERDTreeToggle<CR>
 
 
 " === readline ===
@@ -265,54 +265,44 @@ map <S-j> <Plug>(edgemotion-j)
 map <S-k> <Plug>(edgemotion-k)
 " }}}
 
+" === osyo-manga/vim-anzu === {{{
+" nmap n <Plug>(anzu-n-with-echo)
+
+" nmap n <Plug>(anzu-n)
+" nmap N <Plug>(anzu-N)
+" nmap * <Plug>(anzu-star)
+" nmap # <Plug>(anzu-sharp)
+
+" if start anzu-mode key mapping
+" nmap n <Plug>(anzu-mode-n)
+" nmap N <Plug>(anzu-mode-N)
+" }}}
+
 " === haya14busa/incsearch.vim === {{{
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-let g:incsearch#auto_nohlsearch = 1                   " Auto unhighlight after searching
+map n <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
+map N <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
+
+let g:incsearch#auto_nohlsearch = 0                   " Auto unhighlight after searching
 let g:incsearch#do_not_save_error_message_history = 1 " Don't store incsearch errors in history
 let g:incsearch#consistent_n_direction = 1            " When searching backward, do not invert meaning of n and N
 " }}}
 
 " === haya14busa/is.vim  {{{
-map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
-map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
-
-map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
-map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
-map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
-map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
-" }}}
-
-" === dhruvasagar/vim-table-mode === {{{
-let g:table_mode_disable_mappings = 1
-let g:table_mode_delimiter = ','
-let g:table_mode_always_active = 0
-let g:table_mode_toggle_map = ''
-let g:table_mode_map_prefix = ''
-let g:table_mode_tableize_d_map = ''
-let g:table_mode_echo_cell_map = ''
-let g:table_mode_eval_formula_map = ''
-let g:table_mode_delete_row_map = ''
-let g:table_mode_delete_column_map = ''
-let g:table_mode_add_formula_map = ''
-let g:table_mode_realign_map = ''
-let g:table_mode_cell_text_object_i_map = ''
-let g:table_mode_cell_text_object_i_map = ''
-let g:table_mode_cell_text_object_a_map = ''
-let g:table_mode_motion_up_map = ''
-let g:table_mode_motion_down_map = ''
-let g:table_mode_motion_left_map = ''
-let g:table_mode_motion_right_map = ''
+" map n <Plug>(is-nohl)<Plug>(anzu-n-with-echo)
+" map N <Plug>(is-nohl)<Plug>(anzu-N-with-echo)
+"
+" map *  <Plug>(asterisk-z*)<Plug>(is-nohl-1)
+" map g* <Plug>(asterisk-gz*)<Plug>(is-nohl-1)
+" map #  <Plug>(asterisk-z#)<Plug>(is-nohl-1)
+" map g# <Plug>(asterisk-gz#)<Plug>(is-nohl-1)
 " }}}
 
 " === pelodelfuego/vim-swoop === {{{
 let g:swoopUseDefaultKeyMap = 0
-" }}}
-
-" === gitgutter === {{{
-let g:gitgutter_map_keys = 0
 " }}}
 
 " === slash === {{{
@@ -344,17 +334,6 @@ let g:multi_cursor_use_default_mapping=0
 " let g:multi_cursor_prev_key='<C-p>'
 " let g:multi_cursor_skip_key='<C-x>'
 " let g:multi_cursor_quit_key='<Esc>'
-" }}}
-
-" === osyo-manga/vim-anzu === {{{
-" nmap n <Plug>(anzu-n-with-echo)
-nmap n <Plug>(anzu-n)
-nmap N <Plug>(anzu-N)
-nmap * <Plug>(anzu-star)
-nmap # <Plug>(anzu-sharp)
-" if start anzu-mode key mapping
-" nmap n <Plug>(anzu-mode-n)
-" nmap N <Plug>(anzu-mode-N)
 " }}}
 
 " === AndrewRadev/splitjoin.vim === {{{
@@ -431,6 +410,14 @@ map T <Plug>Sneak_T
 " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 " }}}
 
+" === gitgutter === {{{
+let g:gitgutter_map_keys = 0
+" }}}
+
+" === frioux/vim-regedit === {{{
+nmap gr <Plug>(RegEditPrefix)
+nmap g<S-R> <Plug>(RegEditPostfix)
+" }}}
 ""
 " @subsection Custom Motions & Objects
 
@@ -583,24 +570,20 @@ nnoremap <leader>eu :VimFiler -explorer ~/nvim.d/snipz<CR>
 " }}}
 
 " ==============================================================================
-"  === f -- Files (or find) === {{{
+"  === f -- Find (files) === {{{
 " ==============================================================================
 
 nnoremap <leader>fd :FZF ~/.dotfiles<CR>
 nnoremap <leader>fk :Maps<CR>
 " nnoremap <leader>fv :FZF ~/nvim.d<CR>
+" Search in $VIMRUNTIME
 nnoremap <leader>fv :FZF ~/.config/nvim<CR>
 " }}}
 
 " ==============================================================================
-"  === g -- Grep === {{{
+"  === g -- Git === {{{
 " ==============================================================================
-" Custom
-" noremap <silent> <leader>g. :Denite grep -path=
-" .dotfiles
-noremap <silent> <leader>g. :Denite grep -path=~/.dotfiles<CR>
-" Dotfiles
-noremap <silent> <leader>gv :Denite grep -path=~/nvim.d<CR>
+nnoremap <leader>gs :Gstatus<CR>
 " }}}
 
 " ==============================================================================
@@ -638,7 +621,7 @@ nnoremap <leader>hd<S-s> :Denite tcd_syntax<CR>
 " }}}
 
 " ==============================================================================
-"   p -- Plugins {{{
+"  === p -- Plugins === {{{
 " ==============================================================================
 
 " Update Plugins
@@ -646,13 +629,16 @@ nnoremap <leader>pu :Denite menu:dein<CR>
 " }}}
 
 " ==============================================================================
-"   s -- Search {{{
+"  === s -- Search === {{{
 " ==============================================================================
 
 " Search ~/.dotfiles
-nnoremap <leader>s. :FZF ~/.dotfiles<CR>
-" Search in $VIMRUNTIME
-nnoremap <leader>sv :FZF ~/.config/nvim<CR>
+" Custom
+" noremap <silent> <leader>g. :Denite grep -path=
+" .dotfiles
+noremap <silent> <leader>g. :Denite grep -path=~/.dotfiles<CR>
+" Dotfiles
+noremap <silent> <leader>gv :Denite grep -path=~/nvim.d<CR>
 " }}}
 
 " ==============================================================================

@@ -1,7 +1,8 @@
 " Vim syntax file
 " Language:	Good old CFG files
 " Maintainer:	Igor N. Prischepoff (igor@tyumbit.ru, pri_igor@mail.ru)
-" Last change:	2012 Aug 11
+" Last Change:	2018 Jan 06
+" Changer:	Clay Dunston <dunstontc@gmail.com>
 
 " quit when a syntax file was already loaded
 if exists ("b:current_syntax")
@@ -26,6 +27,9 @@ syn match CfgSection	    "{.*}"
 " String
 syn match  CfgString	"\".*\"" contained
 syn match  CfgString    "'.*'"   contained
+syn region	confString	start=+"+ skip=+\\\\\|\\"+ end=+"+ oneline
+syn region	confString	start=+'+ skip=+\\\\\|\\'+ end=+'+ oneline
+
 
 " Comments (Everything before '#' or '//' or ';')
 syn match  CfgComment	"#.*"

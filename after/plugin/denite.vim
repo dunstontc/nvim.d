@@ -116,7 +116,7 @@ let s:menus.FZF.command_candidates = [
 "   \ [' Jumplist',             'Denite jump'],
 "   \ [' Junkfiles',            'Denite junkfile'],
 "   \ [' Lines',                "Denite Denite -buffer-name=search%`bufnr('%')` line<CR>"],
-"   \ [' Location List',        'Denite location_list'],
+"   \ [' Location List',        'Denite tcd_loclist'],
 "   \ [' Marks',                'Denite marks'],
 "   \ [' Mappings',             'Denite mapping'],
 "   \ [' Mappings/Verbose',     'Denite mapping_verbose'],

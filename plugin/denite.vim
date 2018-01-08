@@ -124,16 +124,11 @@ call denite#custom#map('normal', '<C-x>',  '<denite:do_action:split>',       'no
 " nnoremap <C-p> :<C-u>Denite file_rec<CR>
 " nnoremap <leader>s :<C-u>Denite buffer<CR>
 " nnoremap <leader>8 :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-" nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
-" nnoremap <leader>/ :<C-u>DeniteBufferDir grep:. -mode=normal<CR>
 
 
 " ==============================================================================
 " === denite-extra  ===
 " ==============================================================================
-" nnoremap <leader>o :<C-u>Denite location_list -mode=normal -no-empty<CR>
-" nnoremap <leader>hs :<C-u>Denite history:search -mode=normal<CR>
-" nnoremap <leader>hc :<C-u>Denite history:cmd -mode=normal<CR>
 call denite#custom#var('commands', 'config', '~/commands.json')
 
 
@@ -141,7 +136,6 @@ call denite#custom#var('commands', 'config', '~/commands.json')
 "  vim-denite-sessions
 " ==============================================================================
 call denite#custom#var('session', 'path', '~/.config/nvim/sessions')
-" call denite#custom#var('session', 'path', '~/.vim-sessions')
 
 
 " ==============================================================================
@@ -163,7 +157,6 @@ call denite#custom#var('task', 'taskrc', '~/.taskrc')
 call denite#custom#var('task', 'data_dir', '~/.task')
 call denite#custom#var('task', 'format', '{id:3.3} | {priority:1.1} | {project:15.15} | {description:40.40} | {entry} | {due}')
 call denite#custom#var('task', 'date_format', '%y-%m-%d %H:%M')
-" call denite#custom#var('task', 'label_width', 17)
 
 
 
@@ -245,11 +238,11 @@ call unite#custom#profile('default', 'context', {
 "  === vim-bookmarks ===
 " ==============================================================================
 
-call unite#custom#profile('source/vim_bookmarks', 'context', {
-  \   'winheight': 13,
-  \   'direction': 'botright',
-  \   'start_insert': 1,
-  \   'keep_focus': 1,
-  \   'no_quit': 1,
-  \ })
+" call unite#custom#profile('source/vim_bookmarks', 'context', {
+"   \   'winheight': 13,
+"   \   'direction': 'botright',
+"   \   'start_insert': 1,
+"   \   'keep_focus': 1,
+"   \   'no_quit': 1,
+"   \ })
 

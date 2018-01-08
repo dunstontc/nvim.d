@@ -186,6 +186,7 @@ function! Mode() abort " {{{
         \ &filetype ==#     'undotree'   ? 'UndoTree' :
         \ &filetype ==#     'vimfiler'   ? vimfiler#get_status_string() :
         \ &filetype ==#     'vimshell'   ? 'VimShell' :
+        \ &filetype ==#     'goterm'     ? 'GoTerm'   :
         \ lightline#mode()
 endfunction
 " }}}
@@ -302,11 +303,13 @@ endfunction
 ""
 " @function(GitInfo)
 " If the active file is in a git repository,
-" returns the vaule of |fugitive#head()| and the powerline branch icon.
+" returns the vaule of |fugitive#statusline()| and the powerline branch icon.
 function! GitInfo()  " {{{
-  let l:git = fugitive#head()
+  " let l:git = fugitive#head()
+  let l:git = fugitive#statusline()
   if l:git != ''
-    return '  ' . fugitive#head().'   '
+    " return '  ' . fugitive#head().'   '
+    return '  ' . fugitive#statusline().'   '
   else
     return '  '
   endif
