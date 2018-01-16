@@ -6,7 +6,6 @@ endfunction
 
 " =============================================================================
 
-" https://github.com/mhartington/dotfiles/blob/master/config/nvim/init.vim#L216 🙏
 " Log scope @ the cursor
 function! functions#SynStack()
   " if !exists('*synstack')
@@ -51,13 +50,13 @@ endfunction
 " endfunction
 
 function! functions#NeatFoldTextTwo()
-  let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
-  let lines_count = v:foldend - v:foldstart + 1
+  let line             = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+  let lines_count      = v:foldend - v:foldstart + 1
   let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-  let foldchar = matchstr(&fillchars, 'fold:\zs.')
-  let foldtextstart = strpart('' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
-  let foldtextend = lines_count_text . repeat(foldchar, 8)
-  let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+  let foldchar         = matchstr(&fillchars, 'fold:\zs.')
+  let foldtextstart    = strpart('' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+  let foldtextend      = lines_count_text . repeat(foldchar, 8)
+  let foldtextlength   = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
   return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
 endfunction
 
@@ -65,7 +64,7 @@ endfunction
 
 
 function! functions#HoldOn() abort
-  let g:held_reg_val = getreg("@")
+  let g:held_reg_val = getreg("+")
   let g:held_reg_type = getregtype("0")
   return ''
 endfunction
@@ -73,6 +72,7 @@ endfunction
 
 function! functions#HandItOver() abort
   call setreg('+', g:held_reg_val, g:held_reg_type)
+  return ''
 endfunction
 
 " =============================================================================
@@ -112,7 +112,7 @@ function! s:fnameescape(file) abort
     return escape(a:file," \t\n*?[{`$\\%#'\"|!<")
   endif
 endfunction
-d
+
 function! s:runtime_globpath(file) abort
   return split(globpath(escape(&runtimepath, ' '), a:file), "\n")
 endfunction

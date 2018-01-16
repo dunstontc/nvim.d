@@ -48,6 +48,9 @@ nnoremap <S-m> :Denite messages<CR>
 noremap R <C-r>
 nmap <S-U> <C-r>
 
+" Delete to start of line with <D-BS>
+nnoremap <C-u> hv0"_d<esc>
+
 " Quit with Q
 nnoremap q :x<CR>
 nnoremap <S-Q> q
@@ -513,6 +516,7 @@ nnoremap <leader>d<S-c> :Denite command_history<CR>
 nnoremap <leader>db :Denite bookmark<CR>
 nnoremap <leader>dd <NOP>
 nnoremap <leader>de :Denite tcd_env<CR>
+nnoremap <leader>df :Denite filetype<CR>
 nnoremap <leader>dg :Denite ghq<CR>
 nnoremap <leader>dh :Denite help<CR>
 nnoremap <leader>di :Denite menu:interfaces<CR>
@@ -521,6 +525,7 @@ nnoremap <leader>dk :Denite menu:map_list<CR>
 nnoremap <leader>d<S-k> :Maps<CR>
 nnoremap <leader>dl :Denite tcd_loclist<CR>
 nnoremap <leader>dm :Denite marks<CR>
+nnoremap <leader>do :Denite options<CR>
 nnoremap <leader>dp :Denite projectile -default-action=custom<CR>
 nnoremap <leader>dq :Denite tcd_quickfix<CR>
 nnoremap <leader>dt :Denite todotxt_local<CR>

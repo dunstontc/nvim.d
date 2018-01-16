@@ -4,33 +4,37 @@ scriptencoding utf-8
 " === Shougo/deoplete === {{{
 " ==============================================================================
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#max_list = 500
-let g:deoplete#max_abbr_width = 55
+let g:deoplete#max_list = 250
+let g:deoplete#max_abbr_width = 75
 let g:deoplete#max_menu_width = 75
 let g:deoplete#auto_complete_delay = 150
 let g:deoplete#auto_refresh_delay = 1000
-let g:deoplete#enable_refresh_always = 1
-
 let g:deoplete#disable_auto_complete = 0
+let g:deoplete#enable_refresh_always = 1
 let g:deoplete#auto_completion_start_length = 1
 
-let g:deoplete#enable_camel_case  = 1
 let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_camel_case  = 1
 let g:deoplete#enable_smart_case  = 1
 let g:deoplete#min_keyword_length = 1
 let g:deoplete#min_pattern_length = 1
-let g:deoplete#sources#syntax#min_keyword_length = 1
+
 
 let g:deoplete#keyword_patterns = {}
 " let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
 " let g:deoplete#keyword_patterns.tex = '\\?[a-zA-Z_]\w*'
 let g:deoplete#keyword_patterns.tex = '[^\w|\s][a-zA-Z_]\w*'
 
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.python = ''
 let g:deoplete#omni#functions = {}
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.cs = ['\w*']
+let g:deoplete#omni#input_patterns.lua = '\w+|[^. *\t][.:]\w*'
+let g:deoplete#omni#input_patterns.python = ''
+
 
 " let g:deoplete#skip_chars = ['(', ')', '<', '>']
+let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#sources#syntax#min_keyword_length = 1
 
 " let g:deoplete#ignore_sources =
 " let g:deoplete#file#enable_buffer_path = 1
@@ -38,37 +42,39 @@ let g:deoplete#omni#functions = {}
 " let g:deoplete#omni#input_patterns =
 " let g:deoplete#omni_patterns =
 " let g:context_filetype#same_filetypes=0
-let g:deoplete#file#enable_buffer_path = 1
 
 "  deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#source('_', 'matchers', ['matcher_fuzzy'])
-call deoplete#custom#source('_', 'min_pattern_length', 0)
+call deoplete#custom#source('_',  'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('_',  'min_pattern_length', 0)
 call deoplete#custom#source('go', 'min_pattern_length', 1)
+call deoplete#custom#source('clang_complete', 'min_pattern_length', 1)
 " call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_rank'])
 
 " ⌁ ⌘ ℬ'
-call deoplete#custom#source('vim',            'mark', '' )
-call deoplete#custom#source('tag',            'mark', '⌦' )
-call deoplete#custom#source('webcomplete',    'mark', '' )
-call deoplete#custom#source('omni',           'mark', '⌾' )
-call deoplete#custom#source('file',           'mark', '' )
-call deoplete#custom#source('look',           'mark', '' )
-call deoplete#custom#source('go',             'mark', '' )
-" call deoplete#custom#source('jedi',           'mark', '' )
-" call deoplete#custom#source('Jedi',           'mark', '' )
-call deoplete#custom#source('tern',           'mark', '' )
-call deoplete#custom#source('emoji',          'mark', '' )
 call deoplete#custom#source('around',         'mark', '↻' )
 call deoplete#custom#source('buffer',         'mark', '' )
+call deoplete#custom#source('file',           'mark', '' )
+call deoplete#custom#source('member',         'mark', 'M' )
+call deoplete#custom#source('omni',           'mark', '⌾' )
+call deoplete#custom#source('tag',            'mark', '⌦' )
+call deoplete#custom#source('vim',            'mark', '' )
+call deoplete#custom#source('clang_complete', 'mark', '' )
 call deoplete#custom#source('dictionary',     'mark', '' )
-call deoplete#custom#source('member',         'mark', '.' )
-call deoplete#custom#source('necovim',        'mark', '' )
-call deoplete#custom#source('ultisnips',      'mark', ' ')
-call deoplete#custom#source('neosnippet',     'mark', ' ')
-call deoplete#custom#source('necosyntax',     'mark', '♯' )
-call deoplete#custom#source('tmux-complete',  'mark', '⧉ ')
+call deoplete#custom#source('emoji',          'mark', '' )
+call deoplete#custom#source('go',             'mark', '' )
+call deoplete#custom#source('jedi',           'mark', '' )
+" call deoplete#custom#source('Jedi',           'mark', '' )
 call deoplete#custom#source('LanguageClient', 'mark', '⌾' )
+call deoplete#custom#source('look',           'mark', '' )
+call deoplete#custom#source('necovim',        'mark', '' )
+call deoplete#custom#source('necosyntax',     'mark', '♯' )
+call deoplete#custom#source('neosnippet',     'mark', ' ')
+call deoplete#custom#source('tern',           'mark', '' )
+call deoplete#custom#source('tmux-complete',  'mark', '⧉ ')
+call deoplete#custom#source('ultisnips',      'mark', ' ')
+call deoplete#custom#source('webcomplete',    'mark', '' )
+call deoplete#custom#source('zsh',            'mark', '' )
 
 " call deoplete#custom#source('jedi',          'matchers', ['matcher_fuzzy'])
 " call deoplete#custom#source('necovim',       'matchers', ['matcher_fuzzy'])
@@ -85,7 +91,6 @@ call deoplete#custom#source('dictionary', 'filetypes', ['gitcommit', 'markdown',
 " Default rank is 100, higher is better.
 call deoplete#custom#source('LanguageClient', 'rank', 800)
 call deoplete#custom#source('go',             'rank', 700)
-" call deoplete#custom#source('TernJS',         'rank', 700)
 call deoplete#custom#source('tern',           'rank', 700)
 call deoplete#custom#source('jedi',           'rank', 700)
 call deoplete#custom#source('padawan',        'rank', 700)
@@ -207,6 +212,11 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 " let g:deoplete#sources#go#cgo#libclang_path
 " Automatically set GOOS environment variable when calling gocode
 " let g:deoplete#sources#go#goos = ''
+
+" }}}
+
+" ==============================================================================
+" ===  C#? === {{{
 
 " }}}
 

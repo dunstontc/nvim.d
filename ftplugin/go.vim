@@ -2,6 +2,8 @@
 
 setlocal nolist
 
+nmap <buffer><localleader>a <Plug>(go-alternate-vertical)
+nmap <buffer><localleader><S-A> <Plug>(go-alternate-edit)
 nmap <buffer><localleader>b :<C-u>call <SID>build_go_files()<CR>
 nmap <buffer><localleader>c <Plug>(go-coverage-toggle)
 nmap <buffer><localleader>r <Plug>(go-run)

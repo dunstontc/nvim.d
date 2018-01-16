@@ -1,6 +1,6 @@
 scriptencoding utf-8
 " ==============================================================================
-" Config
+" === General === {{{
 " ==============================================================================
 set encoding=utf-8 nobomb
 set clipboard=unnamedplus    " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -36,6 +36,7 @@ if executable('ag')
   " Use Ag for Ack
   let g:ackprg = 'ag --vimgrep --smart-case'
 endif
+" }}}
 
 " === Paths to files & folders === {{{
 set nobackup                 " I'm alright
@@ -123,10 +124,12 @@ set termguicolors
 " let g:vitality_shell_cursor = 1
 " set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:block-lCursor,r-cr:hor20-Cursor/lCursor
 set guicursor=a:blinkon0
-set guicursor+=n-c:block-Cursor/lCursor-blinkon0
-set guicursor+=i-ci:block-lCursor
-set guicursor+=v-ve:block-iCursor
-set guicursor+=r-cr:block-rCursor
+" set guicursor+=n-c:block-Cursor-blinkon0
+set guicursor+=n:block-Cursor-blinkon0
+set guicursor+=o:hor50-Cursor
+set guicursor+=i-c-ci-cr:block-iCursor
+set guicursor+=v-ve:block-vCursor
+set guicursor+=r:block-rCursor
 " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 " let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"

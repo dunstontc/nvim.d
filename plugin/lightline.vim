@@ -234,7 +234,10 @@ endfunction
 " Returns the value of |denite#get_status_path()| with some added padding.
 function! DenitePath() abort " {{{
   if &filetype ==# 'denite'
-    return '  '.denite#get_status_path().' '
+    let l:path = denite#get_status_path()
+    let l:clean_path = substitute(l:path, '\([\|\]\)', '', 'g')
+    return '  '.l:clean_path.' '
+    " return '  '.denite#get_status_path().' '
   else
     return ''
   endif
@@ -307,9 +310,10 @@ endfunction
 function! GitInfo()  " {{{
   " let l:git = fugitive#head()
   let l:git = fugitive#statusline()
-  if l:git != ''
+  let l:goot = substitute(l:git, '\([\|\]\)', '', 'g')
+  if l:git !=? ''
     " return '  ' . fugitive#head().'   '
-    return '  ' . fugitive#statusline().'   '
+    return ' ' . l:goot.'  '
   else
     return '  '
   endif
@@ -362,7 +366,12 @@ function! PaddedStats() abort " {{{
   if &filetype =~ '\v(cheat40|peekaboo|tagbar|undotree|vimfiler)'
     return ''
   elseif &filetype == 'denite'
-    return denite#get_status_path().' '
+    " return denite#get_status_path().' '
+    " let l:path = denite#get_status_path()
+    let l:clean_path = substitute(denite#get_status_path(), '\([\|\]\)', '', 'g')
+    let l:cool_path = substitute(l:clean_path, expand($HOME), '~', 'g')
+    return ''.l:cool_path.'   '
+    " return ' '.substitute(denite#get_status_path(), '\([\|\]\)', '', 'g').'  '
   else
     return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ?
                          \ (' '.l:padRow.':'.l:height.' /'.l:padCol .':'.l:padWidth) :

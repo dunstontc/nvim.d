@@ -6,7 +6,7 @@ augroup filetypes
 
   autocmd BufRead,BufNewFile *.cson set filetype=coffee
 
-  autocmd BufRead,BufNewFile *.ctags set filetype=cfg
+  autocmd BufRead,BufNewFile *.ctags,.editorconfig set filetype=cfg
 
   autocmd BufRead,BufNewFile *.csv,*.dat,*.tsv set filetype=csv
 
