@@ -32,17 +32,20 @@ let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Pictures'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Downloads'] = ''
 
 
-
 "   Extensions
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['bash']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['c']          = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cpp']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cs']         = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['aspx']       = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['cson']       = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['csv']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['tsv']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ctags']      = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['coffee']     = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['el']         = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['exe']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['fish']       = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['go']         = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html']       = ''

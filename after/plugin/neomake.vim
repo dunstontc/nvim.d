@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " if !exists('g:neomake_place_signs') || &cp || version < 700
 "   finish
 " endif
@@ -26,11 +28,18 @@ let g:neomake_info_sign =    {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
 
 " This setting will echo the error for the line your cursor is on, if any.
 " Default: 1
-let g:neomake_echo_current_error = 0
+let g:neomake_echo_current_error=0
+
+" Default: 1
+let g:neomake_verbose = 0
 
 
 let g:neomake_python_enabled_makers = ['flake8']
+let g:neomake_go_enabled_makers = ['gometalinter']
+let g:neomake_help_enabled_makers = ['vimhelplint']
 let g:neomake_vim_enabled_makers = ['vint']
+let g:neomake_yaml_enabled_makers = ['yamllint']
+let g:neomake_markdown_enabled_makers = []
 
 " let g:neomake_make_maker = {
 "     \ 'exe': 'make',
@@ -49,9 +58,12 @@ let g:neomake_vim_enabled_makers = ['vint']
 "     \ 'errorformat': '%f:%l:%c: %m',
 "     \ }
 
+" All linters are only warnings, the go compiler will report errors
+let g:neomake_go_gometalinter_args = ['--disable-all', '--enable=errcheck', '--enable=megacheck', '--enable=maligned', '--enable=vet']
+let g:neomake_go_gometalinter_errorformat = '%f:%l:%c:%t%*[^:]: %m'
 
 
 
 " Thanks @blueyed
 " shellcheck: ignore "Can't follow non-constant source."
-let $SHELLCHECK_OPTS='-e SC1090'
+" let $SHELLCHECK_OPTS='-e SC1090'
