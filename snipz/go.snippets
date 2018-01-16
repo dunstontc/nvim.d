@@ -12,7 +12,7 @@ import (
 endsnippet
 
 snippet /^package/ "Package declaration" r
-// Package $1 provides ...
+/* Package $1 provides ${2:...} */
 package ${1:main}
 endsnippet
 
@@ -112,5 +112,15 @@ snippet err "Basic error handling" b
 if err != nil {
 	log.${1:Fatal}(err)
 }
+endsnippet
+
+snippet doc "Multiline Comment"
+/**
+ * $0
+ */
+endsnippet
+
+snippet comment "Line Comment"
+/* $1 */$0
 endsnippet
 
