@@ -12,7 +12,7 @@
         "type": "doc"
     },
     "ftplugin/*.vim": {
-      "type": "ftp"
+      "type":   "ftp"
     },
     "plugin/*.vim": {
         "type": "plug"

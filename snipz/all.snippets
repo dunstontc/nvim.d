@@ -6,7 +6,7 @@ snippet todo "TODO comment" bw
 endsnippet
 
 snippet modeline "Vim settings" b
-vim:${1:filetype=$2:}${3:foldmethod=${4:marker}:}${5:${6:tabstop=4:}${7:shiftwidth=4:}${8:softtabstop=0:}${9:noexpandtab:}}
+vim:${1:filetype=$2:}${3:foldmethod=${4:marker}:}${5:${7:tabstop=${6:4}:}${9:shiftwidth=${8:4}:}${11:softtabstop=${10:4}:}${12:noexpandtab:}}
 endsnippet
 
 snippet date "YYYY-MM-DD" w
@@ -33,11 +33,11 @@ endsnippet
 # snippet divider "Divider" b
 # endsnippet
 
-snippet section "Section Divider" b
-`!p snip.rv=get_comment_format()[0]` =============================================================================
-`!p snip.rv=get_comment_format()[0]` === ${1:title} ===
-`!p snip.rv=get_comment_format()[0]` =============================================================================
-$0
-endsnippet
+# snippet section "Section Divider" b
+# `!p snip.rv=get_comment_format()[0]` =============================================================================
+# `!p snip.rv=get_comment_format()[0]` === ${1:title} ===
+# `!p snip.rv=get_comment_format()[0]` =============================================================================
+# $0
+# endsnippet
 
 # vim:ft=snippets:

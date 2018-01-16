@@ -85,7 +85,7 @@ call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-cpp-enhanced-highlight'
 " }}}
 
 " C# {{{
-call dein#add('OmniSharp/omnisharp-vim', { 'lazy': 1, 'on_ft': ['cs']})
+call dein#add('/Users/clay/.ghq/github.com/dunstontc/omnisharp-vim', { 'lazy': 1, 'on_ft': ['cs']})
 call dein#add('tpope/vim-dispatch')
 " call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-csharp', { 'lazy': 1, 'on_ft': ['aspx', 'cs']})
 " }}}
@@ -363,8 +363,9 @@ call dein#add('fishbullet/deoplete-ruby',      { 'lazy':1, 'on_ft': 'ruby'})
 call dein#add('padawan-php/deoplete-padawan',  { 'lazy':1, 'on_ft': 'php'})
 call dein#add('artur-shaik/vim-javacomplete2', { 'lazy':1, 'on_ft': 'java'})
 call dein#add('zchee/deoplete-go',             { 'lazy':1, 'on_ft': 'go',
-                                               \ 'build': 'make'})
-call dein#add('fcpg/vim-complimentary')  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
+                                               \ 'build':  'make'})
+call dein#add('fcpg/vim-complimentary',        { 'lazy':1, 'on_ft': 'vim'})  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
+" call dein#add('cyansprite/deoplete-omnisharp', { 'build': './build.sh'})
 " call dein#add('1995eaton/vim-better-javascript-completion')
 " call dein#add('mopp/googlesuggest-source.vim')
 " call dein#add('mattn/googlesuggest-complete-vim')
@@ -374,9 +375,10 @@ call dein#add('fcpg/vim-complimentary')  " Complimentary improves the completion
 call dein#add('mattn/webapi-vim')
 call dein#add('wakatime/vim-wakatime')
 " call dein#add('tbabej/taskwiki')
-call dein#add('skywind3000/asyncrun.vim')
-" call dein#add('equalsraf/neovim-gui-shim')
-call dein#add('chrisbra/unicode.vim')
+" call dein#add('skywind3000/asyncrun.vim')
+call dein#add('equalsraf/neovim-gui-shim')
+call dein#add('dzhou121/gonvim-fuzzy')
+" call dein#add('chrisbra/unicode.vim')
 " call dein#add('lambdalisue/vim-gista', {
 "     \ 'on_cmd': 'Gista',
 "     \})
@@ -503,7 +505,7 @@ set nocompatible           " Not compatible with vi
 
 
 " ==============================================================================
-" === C# ===
+" === C# === {{{
 " let g:OmniSharp_server_type = 'v1'
 let g:OmniSharp_server_type = 'roslyn'
 
@@ -514,6 +516,7 @@ let g:OmniSharp_host = "http://localhost:2000"
 let g:OmniSharp_timeout = 1
 
 let g:OmniSharp_selector_ui = 'fzf'    " Use fzf.vim
+" }}}
 
 " ==============================================================================
 " === C === {{{

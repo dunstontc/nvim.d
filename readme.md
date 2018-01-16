@@ -29,3 +29,14 @@
 ├── init.vim            # nvimrc
 └── readme.md           # You are here :)
 ```
+
+## omnisharp-vim  ##
+[link](https://github.com/OmniSharp/omnisharp-vim/issues/306)
+```sh
+cd /Users/clay/.ghq/github.com/dunstontc/omnisharp-vim
+git submodule update --init --recursive
+mkdir -p omnisharp-roslyn/artifacts/scripts && cd omnisharp-roslyn/artifacts/scripts
+ln -s ~/.omnisharp/* /Users/clay/.ghq/github.com/dunstontc/omnisharp-vim/omnisharp-roslyn/artifacts/scripts
+# ln -s ~/.omnisharp/* .
+ln -s OmniSharp.exe Omnisharp
+```

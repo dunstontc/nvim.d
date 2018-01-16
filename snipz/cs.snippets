@@ -349,6 +349,16 @@ endsnippet
 #  comments  #
 ##############
 
+snippet doc "Multiline Comment"
+/**
+ * $0
+ */
+endsnippet
+
+snippet line "Inline Comment"
+/* $0 */
+endsnippet
+
 snippet /// "XML summary comment" b
 /// <summary>
 /// $0
@@ -369,4 +379,14 @@ endsnippet
 
 snippet <c "XML code comment" w
 <code>$0</code>
+endsnippet
+
+snippet templ "Hello World" b
+using System;
+
+class MainClass {
+    public static void Main (string[] args) {
+        Console.WriteLine ("Hello"); $0
+    }
+}
 endsnippet
