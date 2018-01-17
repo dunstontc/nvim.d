@@ -665,7 +665,7 @@ nnoremap <leader>tk :ColorToggle<CR>
 " Line Wrapping
 nnoremap <leader>tl :set wrap!<CR>:echo<CR>
 " Toggle TableMode
-nnoremap <leader>tm :tablemode#Toggle()<CR>
+nnoremap <leader>tm :TableModeToggle<CR>
 " Paste
 nnoremap <leader>tp :set nopaste<CR>
 " Quickfix List

@@ -18,8 +18,8 @@ vmap <buffer> <leader>b SI
 let b:surround_73 = "**\r**"
 
 " === (tpope/vim-markdown) ===
-let g:markdown_fenced_languages = ['html', 'js=javascript', 'python', 'ruby', 'sh', 'bash=sh', 'vim',]
-" let g:markdown_syntax_conceal = 1
+" let g:markdown_fenced_languages = ['html', 'js=javascript', 'python', 'ruby', 'sh', 'bash=sh', 'vim',]
+let g:markdown_syntax_conceal = 1
 " let g:markdown_minlines = 100
 
 " ===(plasticboy/vim-markdown) ===

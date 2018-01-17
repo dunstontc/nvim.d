@@ -78,7 +78,13 @@ call dein#add('mhallendal/spacedust-theme')
 " }}}
 
 " === Language Support === {{{1
-" call dein#add('autozimu/LanguageClient-neovim', {'do': ':UpdateRemotePlugins' })
+
+" Language Servers {{{2
+call dein#add('autozimu/LanguageClient-neovim', {
+    \ 'rev': 'next',
+    \ 'build': 'bash install.sh',
+    \ })
+" }}}
 
 " C: {{{2
 call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-cpp-enhanced-highlight', {'lazy':1, 'on_ft': ['c', 'cpp', 'objc', 'objcpp']})
@@ -155,9 +161,10 @@ call dein#add('dag/vim-fish',                     {'lazy':1, 'on_ft': ['fish' ]}
 
 " Writing: {{{2
 call dein#add('lervag/vimtex',                    {'lazy':1, 'on_ft': ['tex'  ]})
-" call dein#add('tpope/vim-markdown',               {'lazy':1, 'on_ft': ['md', 'markdown']})
-call dein#add('plasticboy/vim-markdown',          {'lazy':1, 'on_ft': ['md', 'markdown']})
-call dein#add('jceb/vim-orgmode',                 {'lazy':1, 'on_ft': ['org'           ]})
+call dein#add('jceb/vim-orgmode',                 {'lazy':1, 'on_ft': ['org']})
+call dein#add('tpope/vim-markdown',               {'lazy':1, 'on_ft': ['markdown']})
+call dein#add('tyru/markdown-codehl-onthefly.vim',{'lazy':1, 'on_ft': ['markdown']})
+" call dein#add('plasticboy/vim-markdown',          {'lazy':1, 'on_ft': ['md', 'markdown']})
 " call dein#add('vim-pandoc/vim-pandoc')
 " call dein#add('vim-pandoc/vim-pandoc-syntax',     {'lazy':1, 'on_ft': ['md', 'md.pandoc', 'pandoc']})
 " }}}
@@ -261,7 +268,6 @@ call dein#add('pbrisbin/vim-mkdir')
 " call dein#add('Rykka/colorv.vim')
 call dein#add('kopischke/vim-stay')
 " call dein#add('farmergreg/vim-lastplace')
-" call dein#add('tyru/caw.vim')
 " call dein#add('moll/vim-bbye')
 call dein#add('duff/vim-bufonly', {'lazy': 1, 'on_cmd': 'BufOnly'})
 call dein#add('mhinz/vim-sayonara')
@@ -506,7 +512,7 @@ set nocompatible           " Not compatible with vi
 
 " ==============================================================================
 " === C# === {{{
-" let g:OmniSharp_server_type = 'v1'
+let g:OmniSharp_server_type = 'v1'
 let g:OmniSharp_server_type = 'roslyn'
 
 "This is the default value, setting it isn't actually necessary
