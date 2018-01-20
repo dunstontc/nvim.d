@@ -1,21 +1,44 @@
-" " Vim syntax file
-" " Language:     Markdown
-" " Maintainer:   Tim Pope <vimNOSPAM@tpope.org>
-" " Filenames:    *.markdown
-" " Last Change:  2013 May 30
-"
+" ==============================================================================
+" Vim syntax file
+" Language:     Markdown
+" Maintainer:   Clay Dunston <dunstontc@gmail.com>
+" Filenames:    *.md
+" Last Change:  2018-01-17
+" Thanks:   Tim Pope <vimNOSPAM@tpope.org> (vim-markdown, VIM License)
+" Thanks:   Ben Williams <benw@plasticboy.com> (BenWilliams, MIT License)
+" ==============================================================================
+
 " if exists("b:current_syntax")
 "   finish
 " endif
-"
+
 " if !exists('main_syntax')
 "   let main_syntax = 'markdown'
 " endif
 "
 " runtime! syntax/html.vim
 " unlet! b:current_syntax
-"
-" " Fenced Languages: {{{
+
+syn match markdownListMarker	/^\s*\%([-*+]\|\d\+\.\)\ze\s\+/
+syn match markdownLineBreak	" \{2,\}$"
+syn region markdownStrike	start="\%(\~\~\)"	end="\%(\~\~\)"
+
+" hi def markdownStrike		term=strikethrough cterm=strikethrough gui=strikethrough
+" hi def markdownStrike		term=underline cterm=underline gui=underline
+highlight default link markdownStrike Comment
+
+" syn region mkdItalic		matchgroup=mkdItalic start="\%(\*\|_\)"    end="\%(\*\|_\)"
+" syn region mkdBold		matchgroup=mkdBold start="\%(\*\*\|__\)"    end="\%(\*\*\|__\)"
+" syn region mkdBoldItalic	matchgroup=mkdBoldItalic start="\%(\*\*\*\|___\)"    end="\%(\*\*\*\|___\)"
+
+let b:current_syntax = "markdown"
+
+
+
+" ==============================================================================
+" " tpope/markdown {{{1
+
+" " Fenced Languages: {{{2
 " if !exists('g:markdown_fenced_languages')
 "   let g:markdown_fenced_languages = []
 " endif
@@ -34,13 +57,13 @@
 " unlet! s:type
 " unlet! s:done_include
 " " }}}
-"
+
+" General: {{{
 " if !exists('g:markdown_minlines')
 "   let g:markdown_minlines = 50
 " endif
 " execute 'syn sync minlines=' . g:markdown_minlines
 "
-" " tpope/markdown {{{
 " syn case ignore
 "
 " syn match markdownValid '[<>]\c[a-z/$!]\@!'
@@ -97,8 +120,9 @@
 "
 " syn match markdownEscape "\\[][\\`*_{}()<>#+.!-]"
 " syn match markdownError "\w\@<=_\w\@="
-"
-" " Conceal: {{{
+" }}}
+
+" " Conceal: {{{2
 " let s:concealends = ''
 " if has('conceal') && get(g:, 'markdown_syntax_conceal', 1) == 1
 "   let s:concealends = ' concealends'
@@ -123,8 +147,8 @@
 "   unlet! s:done_include
 " endif
 " " }}}
-"
-" " Link Definitions: {{{
+
+" " Link Definitions: {{{2
 " hi def link markdownH1                    htmlH1
 " hi def link markdownH2                    htmlH2
 " hi def link markdownH3                    htmlH3
@@ -169,15 +193,16 @@
 " hi def link markdownError                 Error
 " " }}}
 "
-" let b:current_syntax = "markdown"
+
 " if main_syntax ==# 'markdown'
 "   unlet main_syntax
 " endif
 "
 " " vim:set sw=2:
 " " }}}
-"
-"
+
+" ==============================================================================
+" === plasticboy/vim-markdown {{{
 " let s:conceal = ''
 " let s:concealends = ''
 " if has('conceal') && get(g:, 'vim_markdown_conceal', 1)
@@ -311,4 +336,4 @@
 "
 " delcommand HtmlHiLink
 " " vim: ts=8
-
+" }}}
