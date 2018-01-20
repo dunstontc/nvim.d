@@ -6,6 +6,8 @@ augroup filetypes
 
   autocmd BufRead,BufNewFile *.cson set filetype=coffee
 
+  autocmd BufRead,BufNewFile *.csx set filetype=cs
+
   autocmd BufRead,BufNewFile *.ctags,.editorconfig set filetype=cfg
 
   autocmd BufRead,BufNewFile *.csv,*.dat,*.tsv set filetype=csv
@@ -28,6 +30,8 @@ augroup filetypes
   autocmd BufRead,BufNewFile .{bash_prompt,bash_profile} set filetype=sh
 
   autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+
+  autocmd BufNewFile,BufRead *.sln setlocal filetype=solution
 
   autocmd BufNewFile,BufReadPost *{snippets,snip} set filetype=snippets
 

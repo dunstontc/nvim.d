@@ -32,7 +32,7 @@ call dein#add('haya14busa/dein-command.vim')
 
 " === user-interface === {{{
 call dein#add('junegunn/vim-peekaboo')
-call dein#add('airblade/vim-gitgutter')
+" call dein#add('airblade/vim-gitgutter')
 call dein#add('Shougo/vimfiler.vim')
 call dein#add('romgrk/vimfiler-prompt')
 call dein#add('ryanoasis/vim-devicons')
@@ -80,10 +80,10 @@ call dein#add('mhallendal/spacedust-theme')
 " === Language Support === {{{1
 
 " Language Servers {{{2
-call dein#add('autozimu/LanguageClient-neovim', {
-    \ 'rev': 'next',
-    \ 'build': 'bash install.sh',
-    \ })
+" call dein#add('autozimu/LanguageClient-neovim', {
+"     \ 'rev': 'next',
+"     \ 'build': 'bash install.sh',
+"     \ })
 " }}}
 
 " C: {{{2
@@ -92,7 +92,8 @@ call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-cpp-enhanced-highlight'
 
 " C# {{{
 call dein#add('/Users/clay/.ghq/github.com/dunstontc/omnisharp-vim', { 'lazy': 1, 'on_ft': ['cs']})
-call dein#add('tpope/vim-dispatch')
+" call dein#add('tpope/vim-dispatch')
+" call dein#add('fsharp/vim-fsharp', { 'lazy': 1, 'on_ft': ['fsharp']})
 " call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-csharp', { 'lazy': 1, 'on_ft': ['aspx', 'cs']})
 " }}}
 
@@ -132,7 +133,7 @@ call dein#add('leafo/moonscript-vim',    {'lazy':1, 'on_ft': ['moon' ]})
 " }}}
 
 " PHP: {{{2
-call dein#add('tobyS/pdv')
+call dein#add('tobyS/pdv', {'lazy': 1, 'on_ft': 'php'})
 " }}}
 
 " Python: {{{2
@@ -209,7 +210,7 @@ call dein#add('ternjs/tern_for_vim',       {'lazy':1, 'on_ft': ['jsx', 'javascri
 call dein#add('kana/vim-textobj-user')
 call dein#add('kana/vim-textobj-line')
 call dein#add('kana/vim-textobj-fold')
-call dein#add('kana/vim-textobj-syntax')
+" call dein#add('kana/vim-textobj-syntax')
 call dein#add('kana/vim-textobj-help')  " TODO: Configure this
 " call dein#add('kana/vim-textobj-function')  " FIXME: Look into interaction between Denite & textobj-function
 " call dein#add('haya14busa/vim-textobj-function-syntax')
@@ -223,10 +224,10 @@ call dein#add('Raimondi/vim_search_objects')
 " call dein#add('thinca/vim-textobj-between')
 " call dein#add('paulhybryant/vim-textobj-path')
 " call dein#add('jceb/vim-textobj-uri')
-call dein#add('mattn/vim-textobj-url')
+" call dein#add('mattn/vim-textobj-url')
 call dein#add('beloglazov/vim-textobj-quotes')
 " call dein#add('vimtaku/vim-textobj-keyvalue')
-call dein#add('reedes/vim-textobj-sentence')
+" call dein#add('reedes/vim-textobj-sentence')
 " call dein#add('saaguero/vim-textobj-pastedtext')
 " call dein#add('fvictorio/vim-textobj-backticks')
 " call dein#add('rhysd/vim-textobj-anyblock')
@@ -272,7 +273,7 @@ call dein#add('kopischke/vim-stay')
 call dein#add('duff/vim-bufonly', {'lazy': 1, 'on_cmd': 'BufOnly'})
 call dein#add('mhinz/vim-sayonara')
 call dein#add('ervandew/supertab')
-call dein#add('airblade/vim-matchquote')  " `%` jumps, but for quotes
+" call dein#add('airblade/vim-matchquote')  " `%` jumps, but for quotes
 call dein#add('justinmk/vim-sneak')
 " call dein#add('dhruvasagar/vim-buffer-history')  " A vim plugin to maintain a MRU buffer jump history per window
 " call dein#add('rhysd/clever-f.vim')
@@ -333,14 +334,13 @@ call dein#add('rafi/vim-denite-session')
 " call dein#add('lambdalisue/session.vim')
 call dein#add('chemzqm/denite-git')
 call dein#add('chemzqm/vim-easygit')
-call dein#add('chemzqm/unite-location')
-call dein#add('iyuuya/denite-ale')
+" call dein#add('iyuuya/denite-ale')
 " call dein#add('kmnk/gitn')
 call dein#add('mhartington/denite-neomake')
 " call dein#add('5t111111/denite-rails')
-call dein#add('iamcco/file-manager.vim')
+" call dein#add('iamcco/file-manager.vim')
 call dein#add('notomo/denite-autocmd')
-call dein#add('bennyyip/denite-github-stars')
+" call dein#add('bennyyip/denite-github-stars')
 call dein#add('yyotti/denite-marks')
 call dein#add('blankname/denite_fzf_matcher')
 " }}}
@@ -355,6 +355,7 @@ call dein#add('Shougo/neoinclude.vim')
 " call dein#add('ujihisa/neco-look')
 call dein#add('SirVer/ultisnips')
 " call dein#add('tenfyzhong/CompleteParameter.vim')
+" call dein#add('thalesmello/webcomplete.vim')
 call dein#add('wellle/tmux-complete.vim')
 call dein#add('mattn/emmet-vim',               { 'lazy':1, 'on_ft': ['jsx', 'html', 'vue' ]})
 " call dein#add('zchee/deoplete-clang',          { 'lazy':1, 'on_ft': ['c', 'cpp', 'objc', 'objcpp']})
@@ -371,7 +372,7 @@ call dein#add('artur-shaik/vim-javacomplete2', { 'lazy':1, 'on_ft': 'java'})
 call dein#add('zchee/deoplete-go',             { 'lazy':1, 'on_ft': 'go',
                                                \ 'build':  'make'})
 call dein#add('fcpg/vim-complimentary',        { 'lazy':1, 'on_ft': 'vim'})  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
-" call dein#add('cyansprite/deoplete-omnisharp', { 'build': './build.sh'})
+" call dein#add('cyansprite/deoplete-omnisharp', { 'lazy':1, 'on_ft': 'cs'})
 " call dein#add('1995eaton/vim-better-javascript-completion')
 " call dein#add('mopp/googlesuggest-source.vim')
 " call dein#add('mattn/googlesuggest-complete-vim')
@@ -392,8 +393,8 @@ call dein#add('dzhou121/gonvim-fuzzy')
 " call dein#add('pocket7878/curses-vim')
 " call dein#add('chemzqm/todoapp.vim')
 " call dein#add('vifm/neovim-vifm')
-call dein#add('nicwest/vim-http')
-call dein#add('diepm/vim-rest-console')
+" call dein#add('nicwest/vim-http')
+" call dein#add('diepm/vim-rest-console')
 " }}}
 
 " === Version Control === {{{
@@ -401,11 +402,11 @@ call dein#add('diepm/vim-rest-console')
 " call dein#add('c9s/helper.vim')
 " call dein#add('c9s/treemenu.vim')
 " call dein#add('c9s/hypergit.vim')
-call dein#add('gregsexton/gitv')
-call dein#add('rhysd/committia.vim')
-call dein#add('idanarye/vim-merginal')
-call dein#add('elstgav/branch-manager')
-call dein#add('chrisbra/vim-diff-enhanced')
+" call dein#add('gregsexton/gitv')
+" call dein#add('rhysd/committia.vim')
+" call dein#add('idanarye/vim-merginal')
+" call dein#add('elstgav/branch-manager')
+" call dein#add('chrisbra/vim-diff-enhanced')
 " }}}
 
 " === Search And Replace === {{{
@@ -439,7 +440,7 @@ call dein#add('tweekmonster/nvim-api-viewer', { 'lazy': 1, 'on_cmd' : ['NvimAPI'
 
 " === Lazy === {{{
 call dein#add('ciaranm/securemodelines',       { 'lazy': 1, 'on_event' : 'BufRead'                    })
-call dein#add('heavenshell/vim-slack')
+" call dein#add('heavenshell/vim-slack')
 " call dein#add('dohsimpson/vim-macroeditor')
 " call dein#add('frioux/vim-regedit',            { 'lazy': 1, 'on_cmd'   : ['<Plug>(RegEditPostfix)', '<Plug>(RegEditPrefix)']})
 call dein#add('frioux/vim-regedit')
@@ -512,16 +513,23 @@ set nocompatible           " Not compatible with vi
 
 " ==============================================================================
 " === C# === {{{
-let g:OmniSharp_server_type = 'v1'
+let g:Omnisharp_start_server=0
+
+" let g:OmniSharp_server_type = 'v1'
 let g:OmniSharp_server_type = 'roslyn'
 
 "This is the default value, setting it isn't actually necessary
-let g:OmniSharp_host = "http://localhost:2000"
+let g:OmniSharp_host = 'http://localhost:2000'
 
 "Timeout in seconds to wait for a response from the server
 let g:OmniSharp_timeout = 1
+" Use fzf.vim, no current Deoplete support.
+let g:OmniSharp_selector_ui = 'fzf'
 
-let g:OmniSharp_selector_ui = 'fzf'    " Use fzf.vim
+let g:OmniSharp_server_path = 'mono /Users/clay/.omnisharp/OmniSharp.exe'
+
+let g:deoplete_omnisharp_exe_path = 'mono /Users/clay/.omnisharp/OmniSharp.exe'
+let g:deoplete_omnisharp_port = 2000
 " }}}
 
 " ==============================================================================

@@ -28,19 +28,19 @@ endsnippet
 # common stuff #
 ################
 
-snippet bold "Be bold"
+snippet bd "**bold**"
 **$1**$0
 endsnippet
 
-snippet italic "Make things italic"
+snippet ic "*italic*"
 *$1*$0
 endsnippet
 
-snippet strike "Strike out text"
+snippet strike "~~Strike~~"
 ~~$1~~$0
 endsnippet
 
-snippet link "Markdown link"
+snippet link "[title](address)"
 [$2]($1)$0
 endsnippet
 
@@ -56,14 +56,15 @@ snippet markdownlink "Full link snippet"
 [${1:2ext}](${3:http://${2:www.url.com}})$0
 endsnippet
 
-snippet image "Markdown image"
-![$1]($2)$0
-endsnippet
-
-snippet block "a block of code" b
+snippet code "a block of code" b
 \`\`\`$1
 $0
 \`\`\`
 endsnippet
+
+snippet image "Markdown image"
+![$1]($2)$0
+endsnippet
+
 
 # vim:ft=snippets:
