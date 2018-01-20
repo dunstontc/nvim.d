@@ -25,11 +25,14 @@ let g:deoplete#keyword_patterns = {}
 " let g:deoplete#keyword_patterns.tex = '\\?[a-zA-Z_]\w*'
 let g:deoplete#keyword_patterns.tex = '[^\w|\s][a-zA-Z_]\w*'
 
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.cs = ['\w*']
-let g:deoplete#omni#input_patterns.lua = '\w+|[^. *\t][.:]\w*'
-let g:deoplete#omni#input_patterns.python = ''
+" let g:deoplete#omni#functions = {}
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+  let g:deoplete#omni#input_patterns.cs = ['\w*']
+  " let g:deoplete#omni#input_patterns.cs = '\w*'
+  let g:deoplete#omni#input_patterns.lua = '\w+|[^. *\t][.:]\w*'
+  let g:deoplete#omni#input_patterns.python = ''
+endif
 
 
 " let g:deoplete#skip_chars = ['(', ')', '<', '>']
@@ -56,7 +59,7 @@ call deoplete#custom#source('around',         'mark', '↻' )
 call deoplete#custom#source('buffer',         'mark', '' )
 call deoplete#custom#source('file',           'mark', '' )
 call deoplete#custom#source('member',         'mark', 'M' )
-call deoplete#custom#source('omni',           'mark', '⌾' )
+" call deoplete#custom#source('omni',           'mark', '⌾' )
 call deoplete#custom#source('tag',            'mark', '⌦' )
 call deoplete#custom#source('vim',            'mark', '' )
 call deoplete#custom#source('clang_complete', 'mark', '' )
@@ -94,7 +97,7 @@ call deoplete#custom#source('go',             'rank', 700)
 call deoplete#custom#source('tern',           'rank', 700)
 call deoplete#custom#source('jedi',           'rank', 700)
 call deoplete#custom#source('padawan',        'rank', 700)
-call deoplete#custom#source('omni',           'rank', 600)     " Default: 500
+" call deoplete#custom#source('omni',           'rank', 600)     " Default: 500
 call deoplete#custom#source('file',           'rank', 650)     " Default: 150
 call deoplete#custom#source('ultisnips',      'rank', 550)
 call deoplete#custom#source('neosnippet',     'rank', 550)

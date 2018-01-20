@@ -8,7 +8,7 @@ set autoread                 " Auto-reload changed files
 set modeline                 " Respect modeline in files
 set modelines=5              " Well, in the first 5 lines of files
 set diffopt+=iwhite,vertical " Ignore changes in amount of white space
-set lazyredraw               " Don't redraw when we don't have to
+set nolazyredraw             " Don't redraw when we don't have to
 set nopaste                  " Use system pasting
 set noerrorbells             " Disable error bells
 set visualbell               " Disable error bells
@@ -26,7 +26,7 @@ set cmdheight=2
 set noshowmode                 " Don't show the current mode (airline takes care of this)
 set report=1                   " Report more than x lines changed at once
 
-set shell=/usr/local/bin/bash
+set shell=/bin/bash
 
 " set grepprg=ag\ --vimgrep\ --nocolor\ $*
 " set grepformat=%f:%l:%c:%m
