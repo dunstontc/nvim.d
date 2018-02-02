@@ -90,6 +90,8 @@ vnoremap <C-q> <C-c>
 nnoremap <silent><C-s> :w<CR>
 inoremap <silent><C-s> <C-o>:w<CR>
 
+nnoremap <C-p> :Denite file_mru<CR>
+
 " Move splits around, as we use ctrl-hjkl to navigate
 nnoremap <C-W><left> <C-W>H
 nnoremap <C-W><right> <C-W>L
@@ -112,12 +114,12 @@ nmap ]q <Plug>tcd_qf_previous
 " https://unix.stackexchange.com/questions/53581/sending-function-keys-f1-f12-over-ssh
 
 " Edits in normal mode
-nnoremap <BS> mdi<DEL><esc>`d
+nnoremap <BS> mdi<DEL><esc>`dmd
 nnoremap ,, i<space><esc>
-nnoremap [<Space> mwO<esc>`w
-nnoremap ]<Space> mwo<esc>`w
-nnoremap <F18> mwo<esc>`w
-nnoremap <F19> mwO<esc>`w
+nnoremap [<Space> mwO<esc>`wmw
+nnoremap ]<Space> mwo<esc>`wmw
+nnoremap <F18> mwo<esc>`wmw
+nnoremap <F19> mwO<esc>`wmw
 
 " Comment wih <CMD>/
 " F14 -- ^[[1;2Q
@@ -132,8 +134,8 @@ inoremap <F18> <esc>o
 inoremap <F19> <esc>O
 
 " Dupe lines
-nnoremap <M-S-Down> mxV"zy"zp`xj
-inoremap <M-S-Down> <esc>mxV"zy"zp`xj
+nnoremap <M-S-Down> mxV"zy"zp`xjmx
+inoremap <M-S-Down> <esc>mxV"zy"zp`xjmx
 vnoremap <M-S-Down> Vypgv
 
 " === Indentation ===
@@ -186,6 +188,9 @@ vnoremap <M-Up> :m '<-2<CR>gv=gv
 vnoremap <M-Down> :m '>+1<CR>gv=gv
 vnoremap <M-Down> :m '>+1<CR>gv=gv
 
+" Insert after word with <M-a>
+nnoremap å ea
+
 " Use ⌥ left/right in command mode
 " cnoremap <Esc>b <S-Left>
 " cnoremap <Esc>f <S-Right>
@@ -204,6 +209,7 @@ vnoremap @q :normal @q<CR>
 
 
 " === readline ===
+inoremap <C-u> <esc>v0"_di
 " inoremap <C-a> <C-o>0
 " inoremap <C-e> <C-o>$
 " inoremap <M-left> <C-o>b
@@ -241,12 +247,12 @@ nnoremap <S-y> v$y
 
 " Yank with keeping cursor position in visual mode
 " Thanks @haya14busa
-function! s:keepcursor_visual_wrapper(command)
-  execute 'normal! gv' . a:command
-  execute "normal! gv\<ESC>"
-endfunction
-xnoremap <silent> y :<C-u>call <SID>keepcursor_visual_wrapper('y')<CR>
-xnoremap <silent> Y :<C-u>call <SID>keepcursor_visual_wrapper('Y')<CR>
+" function! s:keepcursor_visual_wrapper(command)
+"   execute 'normal! gv' . a:command
+"   execute "normal! gv\<ESC>"
+" endfunction
+" xnoremap <silent> y :<C-u>call <SID>keepcursor_visual_wrapper('y')<CR>
+" xnoremap <silent> Y :<C-u>call <SID>keepcursor_visual_wrapper('Y')<CR>
 
 "}}}
 
@@ -313,9 +319,9 @@ let g:swoopUseDefaultKeyMap = 0
 " }}}
 
 " === tomtom/tcomment === {{{
-let g:tcommentMaps=0
-let g:tcommentMapLeader1=''
-let g:tcommentMapLeader2=''
+let g:tcommentMaps=1
+let g:tcommentMapLeader1='<C-d>'
+let g:tcommentMapLeader2='<C-d>'
 let g:tcommentMapLeaderCommentAnyway=''
 let g:tcommentTextObjectInlineComment=''
 " }}}
@@ -462,7 +468,7 @@ nnoremap <leader><S-Tab> :bp<CR>
 nnoremap <leader>a <Plug>(place-insert)
 nnoremap <leader>` :Deol -split -start-insert<CR>
 " c   -- Comment
-noremap <silent> <leader>c :TComment<CR>
+" noremap <silent> <leader>c :TComment<CR>
 " f   -- Find (grep)
 noremap <silent> <leader>f :Denite grep<CR>
 " l   -- List Buffers
@@ -568,8 +574,8 @@ nnoremap <leader>e<S-P> :edit ~/nvim.d/plugin/plugins.vim<CR>:echo<CR>
 nnoremap <leader>ei :vsplit ~/nvim.d/plugin/ui.vim<CR>:echo<CR>
 nnoremap <leader>e<S-I> :edit ~/nvim.d/plugin/ui.vim<CR>:echo<CR>
 " Edit Theme
-nnoremap <leader>et :vsplit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>:echo<CR>
-nnoremap <leader>eT :edit ~/Projects/vim/vim-code-dark/colors/codedark.vim<CR>:echo<CR>
+nnoremap <leader>et :vsplit ~/Projects/GitHub/vim-vscode-theme/colors/dark_plus.vim<CR>:echo<CR>
+nnoremap <leader>eT :edit ~/Projects/GitHub/vim-vscode-theme/colors/dark_plus.vim<CR>:echo<CR>
 " Edit Ultisnips
 nnoremap <leader>eu :VimFiler -explorer ~/nvim.d/snipz<CR>
 " }}}

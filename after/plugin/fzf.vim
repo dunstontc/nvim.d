@@ -4,7 +4,6 @@ endif
 " =============================================================================
 "  === fzf ===
 " =============================================================================
-" This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
@@ -35,15 +34,6 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'StatusLineNC'],
   \ 'header':  ['fg', 'StatusLineNC'] }
 
-" let g:fzf_colors =
-" \ { 'fg':      ['fg', 'StatusLineNC'],
-"   \ 'bg':      ['bg', 'StatusLineNC'],
-"   \ 'hl':      ['fg', 'StatusLineNC'],
-"   \ 'fg+':     ['fg', 'StatusLineNC', 'StatusLineNC', 'StatusLineNC'],
-"   \ 'bg+':     ['bg', 'StatusLineNC', 'StatusLineNC'],
-"   \ 'hl+':     ['fg', 'StatusLineNC'],
-"   \ 'info':    ['fg', 'StatusLineNC'],
-"   \ 'border':  ['fg', 'StatusLineNC'] }
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and

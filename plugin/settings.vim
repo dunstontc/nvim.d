@@ -138,12 +138,16 @@ set guicursor+=r:block-rCursor
 " === theme === {{{
 highlight Comment gui=italic
 " set t_Co=256
-" set background=dark
 
-colorscheme codedark
+" colorscheme space-vim-dark
+" colorscheme spring-night
+
+" colorscheme codedark
+
+colorscheme dark_plus
 " colorscheme gruvbox
 " colorscheme apprentice
-" colorscheme spring-night
+let g:lightline.colorscheme = 'dark_plus'
 let g:quantum_italics=1          " Enable darker quantum colortheme
 let g:quantum_black=1            " Enable italic font in quantum colorscheme
 " let g:enable_italic_font=1     " Enable italic font in one dark colorscheme
@@ -300,7 +304,7 @@ let g:loaded_vimballPlugin     = 1
 let g:loaded_zipPlugin         = 1
 " }}}
 
-let dgs#username='dunstontc'
+let g:dgs#username='dunstontc'
 
 let g:session_directory='~/.config/nvim/sessions'
 
@@ -308,27 +312,3 @@ let g:wiki = { 'root' : '~/Documents/Wiki/' }
 
 let g:tcd#testvar=1
 
-" === terminal colors === {{{
-let g:terminal_color_0 =  "#1e1e1e"  " black
-let g:terminal_color_1 =  "#d16969"  " red
-let g:terminal_color_2 =  "#608b4e"  " green
-let g:terminal_color_3 =  "#d7ba7d"  " yellow
-let g:terminal_color_4 =  "#569cd6"  " blue
-let g:terminal_color_5 =  "#c586c0"  " magenta
-let g:terminal_color_6 =  "#4ec9b0"  " cyan
-let g:terminal_color_7 =  "#d4d4d4"  " white
-let g:terminal_color_8 =  "#1e1e1e"  " bright_black
-let g:terminal_color_9 =  "#d16969"  " bright_red
-let g:terminal_color_10 = "#608b4e"  " bright_green
-let g:terminal_color_11 = "#d7ba7d"  " bright_yellow
-let g:terminal_color_12 = "#569cd6"  " bright_blue
-let g:terminal_color_13 = "#c586c0"  " bright_magenta
-let g:terminal_color_14 = "#4ec9b0"  " bright_cyan
-let g:terminal_color_15 = "#d4d4d4"  " bright_white
-let g:terminal_color_background = g:terminal_color_0
-let g:terminal_color_foreground = g:terminal_color_7
-if &background == "light"
-    let g:terminal_color_background = g:terminal_color_7
-    let g:terminal_color_foreground = g:terminal_color_2
-endif
-" }}}

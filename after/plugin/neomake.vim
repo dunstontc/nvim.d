@@ -66,7 +66,8 @@ let g:neomake_vim_enabled_makers = ['vint']
 "     \ }
 
 " All linters are only warnings, the go compiler will report errors
-let g:neomake_go_gometalinter_args = ['--disable-all', '--enable=errcheck', '--enable=megacheck', '--enable=maligned', '--enable=vet']
+" let g:neomake_go_gometalinter_args = ['--disable-all', '--enable=errcheck', '--enable=megacheck', '--enable=maligned']
+let g:neomake_go_gometalinter_args = ['--disable-all', '--enable=errcheck', '--enable=megacheck']
 let g:neomake_go_gometalinter_errorformat = '%f:%l:%c:%t%*[^:]: %m'
 
 

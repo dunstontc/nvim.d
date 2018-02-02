@@ -64,7 +64,7 @@ endfunction
 
 
 function! functions#HoldOn() abort
-  let g:held_reg_val = getreg("+")
+  let g:held_reg_val  = getreg("+")
   let g:held_reg_type = getregtype("0")
   return ''
 endfunction
@@ -72,23 +72,10 @@ endfunction
 
 function! functions#HandItOver() abort
   call setreg('+', g:held_reg_val, g:held_reg_type)
+  let g:held_reg_val = ''
+  let g:held_reg_type = ''
   return ''
 endfunction
-
-" =============================================================================
-
-function! functions#Chomp()
-  " let l:column = virtcol('.') " cursor position
-
-  if (virtcol('.') != 1)
-    " execute 'call feedkeys("a\<bs>\<esc>")'
-    exec 'normal i<del><esc><right>'
-  else
-    exec 'normal a<bs><esc>'
-    " execute 'call feedkeys("a\<del>\<esc>\<right>")'
-  endif
-endfunction
-
 
 " =============================================================================
 function! functions#tcdtoggle()

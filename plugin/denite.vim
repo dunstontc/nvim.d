@@ -1,6 +1,7 @@
 " ==============================================================================
 "   Denite
 " ==============================================================================
+scriptencoding utf-8
 
 call denite#custom#option('default', {
   \ 'prompt':                  '❯ ',
@@ -11,19 +12,19 @@ call denite#custom#option('default', {
   \ 'cursor_wrap':             v:true,
   \ 'reversed':                v:false,
   \ 'statusline':              v:false,
+  \ 'cursorline':              v:true,
   \ 'updatetime':              1,
   \ 'scroll':                  1,
   \ 'source_names':            '',
   \ 'prompt_highlight':        'helpSpecial',
-  \ 'highlight_matched_char':  'Underlined',
-  \ 'highlight_matched_range': 'Underlined',
-  \ 'highlight_mode_normal':   'deniteModeNormal',
-  \ 'highlight_mode_insert':   'deniteModeInsert',
-  \ 'highlight_preview_line':  'String',
+  \ 'highlight_cursor':        'Cursor',
+  \ 'highlight_matched_char':  'Bold',
+  \ 'highlight_matched_range': 'Bold',
+  \ 'highlight_mode_normal':   'Underlined',
+  \ 'highlight_mode_insert':   'Underlined',
+  \ 'highlight_preview_line':  'Type',
   \ })
 
-  " \ 'cursorline':              v:true,
-  " \ 'auto_highlight':          v:true,
   " \ 'winheight':              10,
 " \ 'source_names':           'long',
 

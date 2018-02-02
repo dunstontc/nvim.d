@@ -1,3 +1,4 @@
+scriptencoding utf-8
 
 " let g:tagbar_width = 40
 let g:tagbar_left = 0
@@ -77,8 +78,6 @@ let g:tagbar_type_snippets = {
   \ ],
   \ 'sort': 0
   \}
-
-
 
 let g:tagbar_type_vim = {
     \ 'ctagstype': 'Vim',

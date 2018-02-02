@@ -5,8 +5,8 @@ scriptencoding utf-8
 " ==============================================================================
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#max_list = 250
-let g:deoplete#max_abbr_width = 75
-let g:deoplete#max_menu_width = 75
+let g:deoplete#max_abbr_width = 200
+let g:deoplete#max_menu_width = 200
 let g:deoplete#auto_complete_delay = 150
 let g:deoplete#auto_refresh_delay = 1000
 let g:deoplete#disable_auto_complete = 0
@@ -19,16 +19,30 @@ let g:deoplete#enable_smart_case  = 1
 let g:deoplete#min_keyword_length = 1
 let g:deoplete#min_pattern_length = 1
 
+" let g:deoplete#ignore_sources = {
+"       \ '_': 'tag',
+"       \ 'markdown': ''
+"       \ }
 
 let g:deoplete#keyword_patterns = {}
 " let g:deoplete#keyword_patterns._ = '[a-zA-Z_]\k*\(?'
 " let g:deoplete#keyword_patterns.tex = '\\?[a-zA-Z_]\w*'
 let g:deoplete#keyword_patterns.tex = '[^\w|\s][a-zA-Z_]\w*'
 
-" let g:deoplete#omni#functions = {}
+" if !exists('g:deoplete#omni#functions')
+"   let g:deoplete#omni#functions = {}
+"   let g:deoplete#omni#functions = {}
+"   " let g:deoplete#omni#functions.cs = ''
+"   let g:deoplete#omni#functions.ruby = 'rubycomplete#Complete'
+"   let g:deoplete#omni#functions.javascript = [
+"     \ 'tern#Complete',
+"     \ 'jspc#omni'
+"     \]
+" endif
+
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
-  let g:deoplete#omni#input_patterns.cs = ['\w*']
+  let g:deoplete#omni#input_patterns.cs = ['\w*|\.']
   " let g:deoplete#omni#input_patterns.cs = '\w*'
   let g:deoplete#omni#input_patterns.lua = '\w+|[^. *\t][.:]\w*'
   let g:deoplete#omni#input_patterns.python = ''
@@ -46,44 +60,40 @@ let g:deoplete#sources#syntax#min_keyword_length = 1
 " let g:deoplete#omni_patterns =
 " let g:context_filetype#same_filetypes=0
 
-"  deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#source('_',  'matchers', ['matcher_fuzzy'])
-call deoplete#custom#source('_',  'min_pattern_length', 0)
-call deoplete#custom#source('go', 'min_pattern_length', 1)
+call deoplete#custom#source('_',      'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('_',      'min_pattern_length', 0)
+call deoplete#custom#source('omni',   'min_pattern_length', 1)
+call deoplete#custom#source('go',     'min_pattern_length', 1)
+call deoplete#custom#source('buffer', 'min_pattern_length', 3)
 call deoplete#custom#source('clang_complete', 'min_pattern_length', 1)
 " call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_rank'])
 
 " ⌁ ⌘ ℬ'
-call deoplete#custom#source('around',         'mark', '↻' )
-call deoplete#custom#source('buffer',         'mark', '' )
-call deoplete#custom#source('file',           'mark', '' )
-call deoplete#custom#source('member',         'mark', 'M' )
-" call deoplete#custom#source('omni',           'mark', '⌾' )
-call deoplete#custom#source('tag',            'mark', '⌦' )
-call deoplete#custom#source('vim',            'mark', '' )
-call deoplete#custom#source('clang_complete', 'mark', '' )
-call deoplete#custom#source('dictionary',     'mark', '' )
-call deoplete#custom#source('emoji',          'mark', '' )
-call deoplete#custom#source('go',             'mark', '' )
-call deoplete#custom#source('jedi',           'mark', '' )
+call deoplete#custom#source('around',         'mark', '↻ ')
+call deoplete#custom#source('buffer',         'mark', ' ')
+call deoplete#custom#source('file',           'mark', ' ')
+call deoplete#custom#source('member',         'mark', 'M ')
+call deoplete#custom#source('omni',           'mark', '⌁ ')
+call deoplete#custom#source('tag',            'mark', '⌦ ')
+call deoplete#custom#source('vim',            'mark', ' ')
+call deoplete#custom#source('clang_complete', 'mark', ' ')
+call deoplete#custom#source('dictionary',     'mark', 'D ')
+call deoplete#custom#source('emoji',          'mark', ' ')
+call deoplete#custom#source('go',             'mark', ' ')
+call deoplete#custom#source('jedi',           'mark', ' ')
 " call deoplete#custom#source('Jedi',           'mark', '' )
-call deoplete#custom#source('LanguageClient', 'mark', '⌾' )
-call deoplete#custom#source('look',           'mark', '' )
-call deoplete#custom#source('necovim',        'mark', '' )
-call deoplete#custom#source('necosyntax',     'mark', '♯' )
-call deoplete#custom#source('neosnippet',     'mark', ' ')
-call deoplete#custom#source('tern',           'mark', '' )
+call deoplete#custom#source('LanguageClient', 'mark', '⌾ ')
+call deoplete#custom#source('look',           'mark', ' ')
+call deoplete#custom#source('necovim',        'mark', ' ')
+call deoplete#custom#source('necosyntax',     'mark', '♯ ')
+call deoplete#custom#source('syntax',         'mark', '♯ ')
+call deoplete#custom#source('neosnippet',     'mark', '<>')
+call deoplete#custom#source('tern',           'mark', ' ')
 call deoplete#custom#source('tmux-complete',  'mark', '⧉ ')
-call deoplete#custom#source('ultisnips',      'mark', ' ')
-call deoplete#custom#source('webcomplete',    'mark', '' )
-call deoplete#custom#source('zsh',            'mark', '' )
-
-" call deoplete#custom#source('jedi',          'matchers', ['matcher_fuzzy'])
-" call deoplete#custom#source('necovim',       'matchers', ['matcher_fuzzy'])
-" call deoplete#custom#source('ultisnips',     'matchers', ['matcher_fuzzy'])
-" call deoplete#custom#source('necosyntax',    'matchers', ['matcher_fuzzy'])
-" call deoplete#custom#source('tmux-complete', 'matchers', ['matcher_fuzzy'])
+call deoplete#custom#source('ultisnips',      'mark', '<>')
+call deoplete#custom#source('webcomplete',    'mark', ' ')
+call deoplete#custom#source('zsh',            'mark', ' ')
 
 call deoplete#custom#source('emoji',      'filetypes', ['gitcommit', 'markdown', 'org', 'rst', 'txt', 'todo'])
 call deoplete#custom#source('dictionary', 'filetypes', ['gitcommit', 'markdown', 'org', 'rst', 'txt', 'todo'])
@@ -219,8 +229,8 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 " }}}
 
 " ==============================================================================
-" ===  C#? === {{{
-
+" === C# === {{{
+" FIXME: deoplete C#
 " }}}
 
 " ==============================================================================

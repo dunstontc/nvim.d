@@ -37,7 +37,7 @@ let g:startify_fortune_use_unicode    = 1
 let g:startify_skiplist = [
         \ '\.vimgolf',
         \ '^/tmp',
-        \ '.git\/*',
+        \ '\.git\/*',
         \ '/project/.*/documentation',
         \ escape(fnamemodify($HOME, ':p'), '\') .'mysecret.txt',
         \ ]

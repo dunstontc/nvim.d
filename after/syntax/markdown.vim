@@ -15,24 +15,33 @@
 " if !exists('main_syntax')
 "   let main_syntax = 'markdown'
 " endif
-"
-" runtime! syntax/html.vim
+
+runtime! syntax/html.vim
 " unlet! b:current_syntax
 
 syn match markdownListMarker	/^\s*\%([-*+]\|\d\+\.\)\ze\s\+/
 syn match markdownLineBreak	" \{2,\}$"
 syn region markdownStrike	start="\%(\~\~\)"	end="\%(\~\~\)"
 
+syn cluster markdownMarkup	contains=markdownBold,markdownItalic,markdownStrike,markdownCode
+
+syn region markdownBlockquote   start=/^\s*>/                   end=/$/ contains=@Spell
+
 " hi def markdownStrike		term=strikethrough cterm=strikethrough gui=strikethrough
 " hi def markdownStrike		term=underline cterm=underline gui=underline
-highlight default link markdownStrike Comment
 
-" syn region mkdItalic		matchgroup=mkdItalic start="\%(\*\|_\)"    end="\%(\*\|_\)"
-" syn region mkdBold		matchgroup=mkdBold start="\%(\*\*\|__\)"    end="\%(\*\*\|__\)"
-" syn region mkdBoldItalic	matchgroup=mkdBoldItalic start="\%(\*\*\*\|___\)"    end="\%(\*\*\*\|___\)"
+" syn region markdownItalic	matchgroup=markdownItalic start="\%(\*\|_\)"    end="\%(\*\|_\)"
+" syn region markdownBold		matchgroup=markdownBold start="\%(\*\*\|__\)"    end="\%(\*\*\|__\)"
+" syn region markdownBoldItalic	matchgroup=markdownBoldItalic start="\%(\*\*\*\|___\)"    end="\%(\*\*\*\|___\)"
+
+
+highlight default link markdownStrike		Comment
+highlight default link markdownBlockquote	Comment
+highlight default link markdownItalic		htmlItalic
+highlight default link markdownBold		htmlBold
+" highlight default link markdownBoldItalic
 
 let b:current_syntax = "markdown"
-
 
 
 " ==============================================================================

@@ -3,19 +3,18 @@ scriptencoding utf-8
 " === Lightline === " {{{
 " ==============================================================================
 
-silent exec("source /Users/clay/nvim.d/autoload/lightline/DarkPlus.vim")
-"
+
 ""
 " @setting(g:lightline)
 " Settings for itchyny/|lightline|
+      " \ 'colorscheme': 'dark_plus',
 let g:lightline = {
-      \ 'colorscheme': 'DarkPlus',
-      \ 'separator':            { 'left': '', 'right': '' },
-      \ 'subseparator':         { 'left': '',  'right': ''  },
-      \ 'tabline_separator':    { 'left': '', 'right': '' },
-      \ 'tabline_subseparator': { 'left': '  ', 'right': '  ' },
+      \ 'separator':            { "left": " ", "right": " " },
+      \ 'subseparator':         { "left": " ", "right": " " },
+      \ 'tabline_separator':    { "left": " ", "right": " " },
+      \ 'tabline_subseparator': { "left": " ", "right": " " },
       \ 'tabline': {
-      \   'left': [['buffers']],
+      \   'left':  [ [ 'buffers' ]],
       \   'right': [ [ 'gitbranch' ], ],
       \},
       \  'inactive': {
@@ -23,17 +22,16 @@ let g:lightline = {
       \    'right': [],
       \},
       \  'active': {
-      \    'left': [ [ 's',        'mode', 's'],
-      \            [   'readonly', 'filename' ],
-      \            [   'icon',     'fsize',   ],
-      \            [   's','s',    'anzu', 'paste', 'peest', 's' ] ],
+      \    'left': [ [ "s",        'mode',  "s"                   ],
+      \            [   'readonly', 'filename'                     ],
+      \            [   'icon',     'fsize', "s", 'conflicted'     ],
+      \            [   "s","s",    'anzu',  'paste', 'peest', "s" ] ],
       \    'right': [ [ 'cool_col' ],
-      \               [ 'register', 'tabsize', ],
-      \               [ 's', 'neomake_warnings', 'neomake_errors', 's' ] ]
+      \               [ 'register', 'tabsize' ],
+      \               [ "s", 'neomake_warnings', 'neomake_errors' ] ]
       \},
       \  'component': {
-      \    's'        : ' ',
-      \    'separator': '',
+      \    "s"        : " ",
       \},
       \  'component_function': {
       \    'mode':            'Mode',
@@ -42,6 +40,7 @@ let g:lightline = {
       \    'readonly':        'Readonly',
       \    'cool_col':        'PaddedStats',
       \    'gitbranch':       'GitInfo',
+      \    'conflicted':      'ConflictedVersion',
       \    'highlite':        'StatuslineCurrentHighlight',
       \    'tabsize':         'TabSizing',
       \    'register':        'Register',
@@ -51,7 +50,6 @@ let g:lightline = {
       \    'bufferinfo':      'lightline#buffer#bufferinfo',
       \    'deniteLN':        'DeniteLine',
       \    'deniteP':         'DenitePath',
-      \    'undecided':       'IdkYet',
       \},
       \ 'component_expand': {
       \   'linter_errors':    'lightline#AleWarnings',
@@ -59,9 +57,6 @@ let g:lightline = {
       \   'neomake_errors':   'lightline#NeomakeErrs',
       \   'neomake_warnings': 'lightline#NeomakeWarnings',
       \   'peest':            'lightline#Pest',
-      \   'buffercurrent':    'lightline#buffer#buffercurrent',
-      \   'bufferbefore':     'lightline#buffer#bufferbefore',
-      \   'bufferafter':      'lightline#buffer#bufferafter',
       \   'buffers':          'lightline#bufferline#buffers',
       \},
       \ 'component_type': {
@@ -109,45 +104,20 @@ let g:lightline = {
 " ==============================================================================
 
 let g:tcd_blacklist = '\v(cheat40|denite|gundo|help|nerdtree|netrw|peekaboo|quickmenu|startify|tagbar|undotree|unite|vimfiler|vimshell)'
+let s:nbsp = ' '
 
 let g:unite_force_overwrite_statusline = 0
 let g:denite_force_overwrite_statusline = 0
 let g:vimfiler_force_overwrite_statusline = 0
 " }}}
 
-" ==============================================================================
-"  === taohex/lightline-buffer === " {{{
-" ==============================================================================
-
-" let g:lightline_buffer_logo = '   '
-" let g:lightline_buffer_readonly_icon = ' '
-" let g:lightline_buffer_modified_icon = '(+)'
-" let g:lightline_buffer_git_icon = ' '
-" let g:lightline_buffer_ellipsis_icon = '..'
-" let g:lightline_buffer_expand_left_icon = '◀ '
-" let g:lightline_buffer_expand_right_icon = ' ▶'
-" let g:lightline_buffer_active_buffer_left_icon = ' %{WebDevIconsGetFileTypeSymbol()}'
-" let g:lightline_buffer_active_buffer_right_icon = ' '
-" let g:lightline_buffer_separator_icon = ' '
-"
-" let g:lightline_buffer_show_bufnr = 0
-" let g:lightline_buffer_rotate = 0
-" let g:lightline_buffer_fname_mod = ':t'
-" let g:lightline_buffer_excludes = ['vimfiler', 'Startify']
-"
-" let g:lightline_buffer_maxflen = 30
-" let g:lightline_buffer_minflen = 16
-" let g:lightline_buffer_maxfextlen = 4
-" let g:lightline_buffer_minfextlen = 4
-" " let g:lightline_buffer_reservelen = 20
-" }}}
 
 " ==============================================================================
 "  === mgee/lightline-bufferline === " {{{
 " ==============================================================================
 
-let g:lightline#bufferline#filename_modifier = ':t'
-let g:lightline#bufferline#modified          = '(+)'
+let g:lightline#bufferline#filename_modifier = ":t ".s:nbsp
+let g:lightline#bufferline#modified          = "+ "
 let g:lightline#bufferline#read_only         = ' '
 let g:lightline#bufferline#more_buffers      = '...'
 let g:lightline#bufferline#show_number       = 2
@@ -155,8 +125,8 @@ let g:lightline#bufferline#shorten_path      = 1
 let g:lightline#bufferline#min_buffer_count  = 0
 let g:lightline#bufferline#unnamed           = '[No Name]'
 let g:lightline#bufferline#number_map        = {
-\ 0: ' ⁰', 1: ' ¹', 2: ' ²', 3: ' ³', 4: ' ⁴',
-\ 5: ' ⁵', 6: ' ⁶', 7: ' ⁷', 8: ' ⁸', 9: ' ⁹'}
+\ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+\ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
 " let g:lightline#bufferline#number_map = {
 " \ 0: '₀', 1: '₁', 2: '₂', 3: '₃', 4: '₄',
 " \ 5: '₅', 6: '₆', 7: '₇', 8: '₈', 9: '₉'}
@@ -214,8 +184,8 @@ endfunction
 " @public
 " Returns the filename + &modified
 function! lightline#Filename() abort " {{{
-  let l:filename = expand('%:t') !=# '' ? expand('%:t') : ''
-  let l:modified = &modified ? ' +' : ''
+  let l:filename = expand('%:t') !=# '' ? expand('%:t') : ' '
+  let l:modified = &modified ? ' + ' : ' '
 
   if &filetype ==# 'help'
     return ' ' . l:filename
@@ -224,7 +194,7 @@ function! lightline#Filename() abort " {{{
   elseif &filetype ==# 'tagbar'
     return ' '.g:lightline.fname
   else
-    return &filetype !~# g:tcd_blacklist ? (' '.l:filename.''.l:modified) : ' '
+    return &filetype !~# g:tcd_blacklist ? (' '.l:filename.''.l:modified) : " "
   endif
 endfunction
 " }}}
@@ -249,7 +219,7 @@ endfunction
 " Returns the value of |denite#get_status_sources()| with some added padding.
 function! DeniteLine() abort " {{{
   if &filetype ==# 'denite'
-    return denite#get_status_sources().' '
+    return denite#get_status_sources().'  '
   else
     return ''
   endif
@@ -283,7 +253,7 @@ endfunction
 " @function(Register)
 " In specific filetypes, above a specified width, returns the name of the currently selected register.
 function! Register() abort " {{{
-  return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ' '.v:register.'' : ''
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? '  '.v:register.'' : ' '
 endfunction
 " }}}
 
@@ -299,7 +269,7 @@ endfunction
 " @function(Devicon)
 " In specific filetypes, above a specified width, returns the corresponding filetype icon.
 function! Devicon()  " {{{
-  return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ('  '.WebDevIconsGetFileTypeSymbol().' ') : ''
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ('['.&filetype.']') : ''
 endfunction
 " }}}
 
@@ -308,12 +278,11 @@ endfunction
 " If the active file is in a git repository,
 " returns the vaule of |fugitive#statusline()| and the powerline branch icon.
 function! GitInfo()  " {{{
-  " let l:git = fugitive#head()
-  let l:git = fugitive#statusline()
+  let l:git = fugitive#head()
   let l:goot = substitute(l:git, '\([\|\]\)', '', 'g')
   if l:git !=? ''
     " return '  ' . fugitive#head().'   '
-    return ' ' . l:goot.'  '
+    return ' '.l:goot.'  '
   else
     return '  '
   endif

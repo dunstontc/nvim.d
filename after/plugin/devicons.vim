@@ -15,23 +15,8 @@ let g:WebDevIconsUnicodeDecorateFolderNodesExactMatches = 1
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {} " needed
 
-"  Folders
-"       
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['node_modules'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.dotfiles'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Applications'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['iCloud Drive'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Google Drive'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Creative Cloud Drive'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Desktop'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Projects'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Documents'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Music'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Movies'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Pictures'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Downloads'] = ''
 
-
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ' '
 "   Extensions
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['bash']       = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['c']          = ''
@@ -57,6 +42,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['json']       = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['less']       = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['lua']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md']         = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['man']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['markdown']   = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['png']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['org']        = ''
@@ -68,6 +54,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['snippets']   = ' '
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['sln']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['snip']       = ' '
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['sh']         = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['svg']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['toml']       = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ttf']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt']        = ''
@@ -77,9 +64,12 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue']        = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['woff']       = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yaml']       = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['yml']        = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['zsh']        = ''
+
 
 "   Exact names
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['DS_Store']      = ''
+" let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['DS_Store']      = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.nuspec']           = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.ds_store']         = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['license']           = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmrc']            = ''
@@ -114,3 +104,18 @@ let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.ctags']            = '�
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['makefile']          = ''
 " let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['tags']              = ''
 
+"  Folders
+"       
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['node_modules'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.dotfiles'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Applications'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['iCloud Drive'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Google Drive'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Creative Cloud Drive'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Desktop'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Projects'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Documents'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Music'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Movies'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Pictures'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['Downloads'] = ''
