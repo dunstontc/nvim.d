@@ -61,7 +61,7 @@ call dein#add('/Users/clay/Projects/GitHub/vim-vscode-theme')
 
 " === Language Support === {{{1
 
-" Language Servers {{{2
+" Language Server {{{2
 " call dein#add('autozimu/LanguageClient-neovim', {
 "     \ 'rev': 'next',
 "     \ 'build': 'bash install.sh',
@@ -87,7 +87,7 @@ call dein#add('posva/vim-vue',                    {'lazy':1, 'on_ft': ['vue'  ]}
 " call dein#add('othree/yajs.vim',                  {'lazy':1, 'on_ft': ['js', 'jsx', 'javascript']})
 " call dein#add('elzr/vim-json',                    {'lazy':1, 'on_ft': ['json'                  ]})
 " call dein#add('othree/javascript-libraries-syntax.vim')
-call dein#add('rhysd/vim-fixjson',       { 'lazy':1, 'on_ft': 'json' })
+call dein#add('rhysd/vim-fixjson',                {'lazy':1, 'on_ft': 'json' })
 " }}}
 
 " HTML CSS: {{{2
@@ -148,27 +148,34 @@ call dein#add('dag/vim-fish',                     {'lazy':1, 'on_ft': ['fish' ]}
 call dein#add('rbtnn/powershell.vim',             {'lazy':1, 'on_ft': ['ps1' ]})
 " }}}
 
+" Swift: {{{
+call dein#add('gfontenot/vim-xcode')
+call dein#add('keith/swift.vim',         { 'lazy':1, 'on_ft': 'swift' })
+" }}}
+
 " Config: {{{2
-" call dein#add('xu-cheng/brew.vim')
 call dein#add('zplug/vim-zplug',         { 'lazy':1, 'on_ft': ['zsh'        ]})
 call dein#add('tmux-plugins/vim-tmux',   { 'lazy':1, 'on_ft': ['tmux'       ]})
 call dein#add('chrisbra/csv.vim',        { 'lazy':1, 'on_ft': ['csv', 'tsv' ]})
 call dein#add('cespare/vim-toml',        { 'lazy':1, 'on_ft': ['toml', 'tml']})
+call dein#add('chr4/nginx.vim',          { 'lazy':1, 'on_ft': ['nginx'      ]})
 call dein#add('ekalinin/Dockerfile.vim', { 'lazy':1, 'on_ft': ['dockerfile' ]})
 " }}}
 
 " Other: {{{2
 call dein#add('rhysd/vim-crystal',       { 'lazy':1, 'on_ft': ['crystal', 'cr' ]})
+call dein#add('uarun/vim-protobuf',      { 'lazy':1, 'on_ft': ['proto']})
 call dein#add('rust-lang/rust.vim',      { 'lazy':1, 'on_ft': ['rust', 'rs' ]})
-call dein#add('jpalardy/vim-slime',      { 'lazy':1, 'on_ft': ['lisp', 'el' ]})
-call dein#add('rhysd/vim-wasm',          { 'lazy':1, 'on_ft': ['wast'       ]})
-call dein#add('peterhoeg/vim-qml',       { 'lazy':1, 'on_ft': ['qml']})
-call dein#add('slim-template/vim-slim',  { 'lazy':1, 'on_ft': ['slim']})
-call dein#add('digitaltoad/vim-pug',     { 'lazy':1, 'on_ft': ['jade', 'pug'], })
-call dein#add('keith/swift.vim',         { 'lazy':1, 'on_ft': 'swift' })
+" call dein#add('jpalardy/vim-slime',      { 'lazy':1, 'on_ft': ['lisp', 'el' ]})
+" call dein#add('rhysd/vim-wasm',          { 'lazy':1, 'on_ft': ['wast'       ]})
+" call dein#add('peterhoeg/vim-qml',       { 'lazy':1, 'on_ft': ['qml']})
+" call dein#add('slim-template/vim-slim',  { 'lazy':1, 'on_ft': ['slim']})
+" call dein#add('dunstontc/kotlin-vim',    { 'lazy':1, 'on_ft': ['kotlin']})
+" call dein#add('digitaltoad/vim-pug',     { 'lazy':1, 'on_ft': ['jade', 'pug'], })
 " }}}
 
 " }}}
+
 
 " === Linting === {{{
 call dein#add('neomake/neomake',           {'build': 'make build/vimhelplint'})
@@ -182,14 +189,12 @@ call dein#add('ternjs/tern_for_vim',       {'lazy':1, 'on_ft': ['jsx', 'javascri
 " === Text Objects === {{{
 " call dein#add('wellle/targets.vim')
 call dein#add('kana/vim-operator-user')
-" call dein#add('kana/vim-operator-replace')
 " call dein#add('rhysd/vim-operator-surround')
 
 call dein#add('kana/vim-textobj-user')
 call dein#add('kana/vim-textobj-line')
 call dein#add('kana/vim-textobj-fold')
 call dein#add('kana/vim-textobj-entire')
-call dein#add('kana/vim-textobj-help')  " TODO: Configure this
 " call dein#add('kana/vim-textobj-syntax')
 " call dein#add('kana/vim-textobj-function')  " FIXME: Look into interaction between Denite & textobj-function
 " call dein#add('haya14busa/vim-textobj-function-syntax')
@@ -200,11 +205,6 @@ call dein#add('Julian/vim-textobj-brace')
 call dein#add('Raimondi/vim_search_objects')
 " call dein#add('junegunn/vim-after-object')
 " call dein#add('thinca/vim-textobj-between')
-call dein#add('beloglazov/vim-textobj-quotes')
-" call dein#add('reedes/vim-textobj-sentence')
-" call dein#add('saaguero/vim-textobj-pastedtext')
-" call dein#add('rhysd/vim-textobj-anyblock')
-" call dein#add('christoomey/vim-textobj-codeblock')
 " }}}
 
 " === Editing === {{{
@@ -244,7 +244,7 @@ call dein#add('kopischke/vim-stay')
 call dein#add('duff/vim-bufonly', {'lazy': 1, 'on_cmd': 'BufOnly'})
 call dein#add('mhinz/vim-sayonara')
 call dein#add('ervandew/supertab')
-call dein#add('airblade/vim-matchquote')  " `%` jumps, but for quotes
+call dein#add('airblade/vim-matchquote')
 call dein#add('justinmk/vim-sneak')
 " call dein#add('rhysd/clever-f.vim')
 call dein#add('Raimondi/delimitMate')
@@ -258,7 +258,7 @@ call dein#add('lambdalisue/suda.vim')
 call dein#add('Shougo/context_filetype.vim')
 " call dein#add('Shougo/neossh.vim')
 call dein#add('Shougo/echodoc.vim')
-" call dein#add('Shougo/vimproc.vim', { 'build' : 'make' })
+call dein#add('Shougo/vimproc.vim', { 'build' : 'make' })
 " }}}
 
 " === Denite === {{{
@@ -351,7 +351,7 @@ call dein#add('frioux/vim-regedit')
 call dein#add('Shougo/junkfile.vim')
 call dein#add('Shougo/vinarise.vim',           { 'lazy': 1, 'on_cmd': 'Vinarise'})
 call dein#add('Shougo/deol.nvim',              { 'lazy': 1, 'on_cmd': 'Deol'                       })
-" call dein#add('tweekmonster/startuptime.vim')
+call dein#add('tweekmonster/startuptime.vim')
 call dein#add('tweekmonster/nvim-api-viewer',  { 'lazy': 1, 'on_cmd' :['NvimAPI', 'NvimAPI!'      ]})
 call dein#add('tyru/capture.vim',              { 'lazy': 1, 'on_cmd': 'Capture'                    })
 call dein#add('thinca/vim-scouter',            { 'lazy': 1, 'on_cmd': ['Scouter', 'ScouterVerbose']})
@@ -392,6 +392,25 @@ filetype plugin indent on
 syntax on
 set nocompatible           " Not compatible with vi
 
+" === Disable standard plugins === {{{
+let g:loaded_2html_plugin      = 1
+let g:loaded_logiPat           = 1
+let g:loaded_getscriptPlugin   = 1
+let g:loaded_gzip              = 1
+let g:loaded_man               = 1
+let g:loaded_matchit           = 1
+" let g:loaded_matchparen        = 1
+let g:loaded_netrwFileHandlers = 1
+let g:loaded_netrwPlugin       = 1
+let g:loaded_netrwSettings     = 1
+let g:loaded_rrhelper          = 1
+let g:loaded_shada_plugin      = 1
+let g:loaded_spellfile_plugin  = 1
+let g:loaded_tarPlugin         = 1
+let g:loaded_tutor_mode_plugin = 1
+let g:loaded_vimballPlugin     = 1
+let g:loaded_zipPlugin         = 1
+" }}}
 
 " ==============================================================================
 " === C# === {{{
