@@ -78,15 +78,21 @@ call dein#add('fsharp/vim-fsharp', { 'lazy': 1, 'on_ft': ['fsharp']})
 " }}}
 
 " JavaScript: {{{2
-call dein#add('pangloss/vim-javascript',          {'lazy':1, 'on_ft': ['jsx', 'javascript']})
-call dein#add('heavenshell/vim-jsdoc',            {'lazy':1, 'on_ft': ['jsx', 'javascript']})
-call dein#add('othree/jsdoc-syntax.vim',          {'lazy':1, 'on_ft': ['jsx', 'typescript', 'vue']})
-call dein#add('HerringtonDarkholme/yats.vim',     {'lazy':1, 'on_ft': ['tsx', 'typescript']})
-call dein#add('kchmck/vim-coffee-script',         {'lazy':1, 'on_ft': ['coff', 'coffee', 'cson']})
-call dein#add('posva/vim-vue',                    {'lazy':1, 'on_ft': ['vue'  ]})
 " call dein#add('othree/yajs.vim',                  {'lazy':1, 'on_ft': ['js', 'jsx', 'javascript']})
-" call dein#add('elzr/vim-json',                    {'lazy':1, 'on_ft': ['json'                  ]})
 " call dein#add('othree/javascript-libraries-syntax.vim')
+call dein#add('pangloss/vim-javascript',          {'lazy':1, 'on_ft': ['javascript', 'typescript', 'jsx', 'tsx']})
+" call dein#add('heavenshell/vim-jsdoc',            {'lazy':1, 'on_ft': ['javascript', 'typescript', 'jsx', 'tsx']})
+" call dein#add('othree/jsdoc-syntax.vim',          {'lazy':1, 'on_ft': ['javascript', 'typescript', 'vue']})
+call dein#add('posva/vim-vue',                    {'lazy':1, 'on_ft': 'vue'})
+" JSX:
+" call dein#add('mxw/vim-jsx',                      {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
+call dein#add('MaxMEllon/vim-jsx-pretty',         {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
+" TypeScript:
+call dein#add('HerringtonDarkholme/yats.vim',     {'lazy':1, 'on_ft': ['tsx', 'typescript']})
+" CoffeeScript:
+call dein#add('kchmck/vim-coffee-script',         {'lazy':1, 'on_ft': ['coff', 'coffee', 'cson']})
+" JSON:
+" call dein#add('elzr/vim-json',                    {'lazy':1, 'on_ft': ['json'                  ]})
 call dein#add('rhysd/vim-fixjson',                {'lazy':1, 'on_ft': 'json' })
 " }}}
 
@@ -113,7 +119,8 @@ call dein#add('leafo/moonscript-vim',    {'lazy':1, 'on_ft': ['moon' ]})
 " }}}
 
 " PHP: {{{2
-call dein#add('tobyS/pdv', {'lazy': 1, 'on_ft': 'php'})
+call dein#add('tobyS/pdv',   {'lazy': 1, 'on_ft': 'php'})
+call dein#add('mxw/vim-xhp', { 'lazy':1, 'on_ft': ['php', 'xhp']})
 " }}}
 
 " Python: {{{2
@@ -176,12 +183,10 @@ call dein#add('rust-lang/rust.vim',      { 'lazy':1, 'on_ft': ['rust', 'rs' ]})
 
 " }}}
 
-
 " === Linting === {{{
+call dein#add('sbdchd/neoformat')
 call dein#add('neomake/neomake',           {'build': 'make build/vimhelplint'})
-call dein#add('machakann/vim-vimhelplint', {'lazy':1, 'on_ft': 'help'})
-call dein#add('ternjs/tern_for_vim',       {'lazy':1, 'on_ft': ['jsx', 'javascript']})
-" call dein#add('sbdchd/neoformat')
+call dein#add('ternjs/tern_for_vim',       {'lazy':1, 'on_ft': ['javascript']})
 " call dein#add('reedes/vim-wordy')
 " call dein#add('reedes/vim-lexical')
 " }}}
@@ -285,7 +290,6 @@ call dein#add('Shougo/neco-syntax')
 call dein#add('Shougo/neoinclude.vim')
 " call dein#add('ujihisa/neco-look')
 call dein#add('SirVer/ultisnips')
-call dein#add('thalesmello/webcomplete.vim')
 call dein#add('wellle/tmux-complete.vim')
 call dein#add('mattn/emmet-vim',               { 'lazy':1, 'on_ft': ['jsx', 'html', 'vue' ]})
 " call dein#add('zchee/deoplete-clang',          { 'lazy':1, 'on_ft': ['c', 'cpp', 'objc', 'objcpp']})
@@ -373,7 +377,7 @@ call dein#add('guns/xterm-color-table.vim',    { 'lazy': 1, 'on_cmd': 'XtermColo
 call dein#add('/Users/clay/Projects/Vim/me/tcd')
 call dein#add('~/Projects/Vim/me/projectile.nvim')
 call dein#add('/Users/clay/.ghq/github.com/dunstontc/lightline.vim')
-call dein#add('/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
+" call dein#add('/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
 " call dein#add('/Users/clay/.ghq/github.com/dunstontc/highlighter.nvim', { 'do': ':UpdateRemotePlugins' })
 call dein#add('~/.ghq/github.com/dunstontc/vison',           {'lazy':1, 'on_ft': ['json'        ]})
 call dein#add('~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'lazy':1, 'on_ft': 'vim'           })
@@ -390,8 +394,9 @@ endif
 
 filetype plugin indent on
 syntax on
-set nocompatible           " Not compatible with vi
+set nocompatible
 
+" ==============================================================================
 " === Disable standard plugins === {{{
 let g:loaded_2html_plugin      = 1
 let g:loaded_logiPat           = 1
@@ -457,6 +462,32 @@ let g:deoplete#sources#clang#libclang_path='/Library/Developer/CommandLineTools/
 let g:deoplete#sources#clang#autofill_neomake = v:true
 let g:deoplete#sources#clang#executable='/usr/bin/clang'
 
+" }}}
+
+" ==============================================================================
+" === Javascript === {{{
+" ==============================================================================
+let g:xml_syntax_folding = 0
+" (mxw/vim-jsx)
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 0
+
+" (MaxMEllon/vim-jsx-pretty)
+let g:vim_jsx_pretty_enable_jsx_highlight = 1
+" Extra highlighting with pangloss/vim-javascript.
+let g:vim_jsx_pretty_colorful_config = 1
+
+" === tern-for-vim ===
+let g:tern_request_timeout = 1
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
+" let g:tern_show_signature_in_pum = '0'  " Disable full signature type on autocomplete
+let g:tern#filetypes = [
+                \ 'jsx',
+                \ 'javascript',
+                \ 'javascript.jsx',
+                \ 'vue',
+                \ ]
 " }}}
 
 " ==============================================================================

@@ -64,7 +64,7 @@ call deoplete#custom#source('_',      'matchers', ['matcher_fuzzy'])
 call deoplete#custom#source('_',      'min_pattern_length', 0)
 call deoplete#custom#source('omni',   'min_pattern_length', 1)
 call deoplete#custom#source('go',     'min_pattern_length', 1)
-call deoplete#custom#source('buffer', 'min_pattern_length', 3)
+" call deoplete#custom#source('buffer', 'min_pattern_length', 1)
 call deoplete#custom#source('clang_complete', 'min_pattern_length', 1)
 " call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_rank'])
@@ -317,21 +317,6 @@ let g:ultisnips_python_triple_quoting_style = 'double'
 " }}}
 
 " ==============================================================================
-" === tern-for-vim === {{{
-let g:tern_request_timeout = 1
-" let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
-"Add extra filetypes
-let g:tern#filetypes = [
-                \ 'jsx',
-                \ 'javascript.jsx',
-                \ 'vue',
-                \ ]
-
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
-" }}}
-
-" ==============================================================================
 " === carlitux/deoplete-ternjs === {{{
 
 " Set bin if you have many instalations
@@ -462,6 +447,13 @@ let g:user_emmet_install_global = 0
 "   let g:user_emmet_complete_tag = 0
 "   let g:user_emmet_install_global = 0
 "   autocmd FileType html,css,scss EmmetInstall
+" so Emmet.vim will work in JSX
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+  \      'extends': 'jsx',
+  \      'quote_char': '"',
+  \  },
+  \}
 " }}}
 
 " ==============================================================================
@@ -475,8 +467,3 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 " }}}
 
-" ==============================================================================
-"  === https://www.reddit.com/r/vim/comments/4gjbqn/what_tricks_do_you_use_instead_of_popular_plugins/d2iatu9/ ===
-" ==============================================================================
-" cnoremap <expr> <Tab>   getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>/<C-r>/" : "<C-z>"
-" cnoremap <expr> <S-Tab> getcmdtype() == "/" \|\| getcmdtype() == "?" ? "<CR>?<C-r>/" : "<S-Tab>"

@@ -1,6 +1,7 @@
 " setlocal tabstop = 4
 
 setlocal nolist
+setlocal foldmethod=syntax
 
 nmap <buffer><localleader>a <Plug>(go-alternate-vertical)
 nmap <buffer><localleader><S-A> <Plug>(go-alternate-edit)

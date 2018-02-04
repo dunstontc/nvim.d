@@ -1,1 +1,3 @@
-set iskeyword-=#
+setlocal iskeyword-=#
+setlocal foldmethod=marker
+
