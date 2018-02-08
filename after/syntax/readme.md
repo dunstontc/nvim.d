@@ -72,4 +72,28 @@
 ## [prabirshrestha/vim-lsp](https://github.com/prabirshrestha/vim-lsp)
 
 ### Servers
+[Official List](https://microsoft.github.io/language-server-protocol/implementors/servers/)
+
+#### JavaScript+
 - [sourcegraph/javascript-typescript-langserver](https://github.com/sourcegraph/javascript-typescript-langserver)
+- [vue-language-server](rcjsuen/dockerfile-language-server-nodejs)
+- [Polymer/polymer-editor-service](https://github.com/Polymer/polymer-editor-service)
+- [graphql/graphql-language-service](https://github.com/graphql/graphql-language-service)
+- [Microsoft/vscode-json-languageservice](https://github.com/Microsoft/vscode-json-languageservice)
+
+#### C#
+- [OmniSharp/csharp-language-server-protocol](https://github.com/OmniSharp/csharp-language-server-protocol)
+- [tintoy/msbuild-project-tools-vscode](https://github.com/tintoy/msbuild-project-tools-vscode)
+- [tintoy/msbuild-project-tools-server](https://github.com/tintoy/msbuild-project-tools-server)
+
+#### Other
+- [rcjsuen/dockerfile-language-server-nodejs](https://github.com/rcjsuen/dockerfile-language-server-nodejs)
+- [sourcegraph/go-langserver](https://github.com/sourcegraph/go-langserver)
+- [vscode-html](https://github.com/Microsoft/vscode/tree/master/extensions/html)
+- [felixfbecker/php-language-server](https://github.com/felixfbecker/php-language-server)
+- [sourcegraph/python-langserver ❌](https://github.com/sourcegraph/python-langserver)
+- [palantir/python-language-server](https://github.com/palantir/python-language-server)
+- [rlovelett/langserver-swift](https://github.com/rlovelett/langserver-swift)
+- [redhat-developer/yaml-language-server](https://github.com/redhat-developer/yaml-language-server)
+- [mtsmfm/language_server-ruby](https://github.com/mtsmfm/language_server-ruby)
+- [Alloyed/lua-lsp](https://github.com/Alloyed/lua-lsp)

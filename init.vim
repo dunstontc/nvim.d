@@ -78,7 +78,7 @@ call dein#add('fsharp/vim-fsharp', { 'lazy': 1, 'on_ft': ['fsharp']})
 " }}}
 
 " JavaScript: {{{2
-" call dein#add('othree/yajs.vim',                  {'lazy':1, 'on_ft': ['js', 'jsx', 'javascript']})
+" call dein#add('othree/yajs.vim',                  {'lazy':1, 'on_ft': ['javascript', 'jsx']})
 " call dein#add('othree/javascript-libraries-syntax.vim')
 call dein#add('pangloss/vim-javascript',          {'lazy':1, 'on_ft': ['javascript', 'typescript', 'jsx', 'tsx']})
 " call dein#add('heavenshell/vim-jsdoc',            {'lazy':1, 'on_ft': ['javascript', 'typescript', 'jsx', 'tsx']})
@@ -86,7 +86,8 @@ call dein#add('pangloss/vim-javascript',          {'lazy':1, 'on_ft': ['javascri
 call dein#add('posva/vim-vue',                    {'lazy':1, 'on_ft': 'vue'})
 " JSX:
 " call dein#add('mxw/vim-jsx',                      {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
-call dein#add('MaxMEllon/vim-jsx-pretty',         {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
+call dein#add('neoclide/vim-jsx-improve',                      {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
+" call dein#add('MaxMEllon/vim-jsx-pretty',         {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
 " TypeScript:
 call dein#add('HerringtonDarkholme/yats.vim',     {'lazy':1, 'on_ft': ['tsx', 'typescript']})
 " CoffeeScript:
@@ -170,8 +171,8 @@ call dein#add('ekalinin/Dockerfile.vim', { 'lazy':1, 'on_ft': ['dockerfile' ]})
 " }}}
 
 " Other: {{{2
-call dein#add('rhysd/vim-crystal',       { 'lazy':1, 'on_ft': ['crystal', 'cr' ]})
-call dein#add('uarun/vim-protobuf',      { 'lazy':1, 'on_ft': ['proto']})
+" call dein#add('rhysd/vim-crystal',       { 'lazy':1, 'on_ft': ['crystal', 'cr' ]})
+" call dein#add('uarun/vim-protobuf',      { 'lazy':1, 'on_ft': ['proto']})
 call dein#add('rust-lang/rust.vim',      { 'lazy':1, 'on_ft': ['rust', 'rs' ]})
 " call dein#add('jpalardy/vim-slime',      { 'lazy':1, 'on_ft': ['lisp', 'el' ]})
 " call dein#add('rhysd/vim-wasm',          { 'lazy':1, 'on_ft': ['wast'       ]})
@@ -418,6 +419,14 @@ let g:loaded_zipPlugin         = 1
 " }}}
 
 " ==============================================================================
+" === Language Servers === {{{
+" ==============================================================================
+let g:LanguageClient_serverCommands = {
+    \ 'vue': ['vls']
+    \ }
+" }}}
+
+" ==============================================================================
 " === C# === {{{
 let g:Omnisharp_start_server=1
 
@@ -443,7 +452,7 @@ let g:OmniSharp_server_path = '/Users/clay/.omnisharp/OmniSharp'
 " ==============================================================================
 
 " === octol/vim-cpp-enhanced-highlight ===
-let g:c_no_curly_error=1
+let g:c_no_curly_error = 1
 let g:cpp_concepts_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_class_scope_highlight = 1
@@ -462,6 +471,17 @@ let g:deoplete#sources#clang#libclang_path='/Library/Developer/CommandLineTools/
 let g:deoplete#sources#clang#autofill_neomake = v:true
 let g:deoplete#sources#clang#executable='/usr/bin/clang'
 
+" }}}
+
+" ==============================================================================
+" === Java === {{{
+" ==============================================================================
+let g:java_highlight_all = 1
+" let g:java_comment_strings = 1
+let g:java_ignore_javadoc = 0
+let g:java_highlight_java_lang_ids = 1
+let g:java_highlight_functions = 1
+let g:java_highlight_debug = 1
 " }}}
 
 " ==============================================================================

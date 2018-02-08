@@ -43,6 +43,7 @@ let g:deoplete#keyword_patterns.tex = '[^\w|\s][a-zA-Z_]\w*'
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
   let g:deoplete#omni#input_patterns.cs = ['\w*|\.']
+  let g:deoplete#omni#input_patterns.java = '[^. *\t]\.\w*'
   " let g:deoplete#omni#input_patterns.cs = '\w*'
   let g:deoplete#omni#input_patterns.lua = '\w+|[^. *\t][.:]\w*'
   let g:deoplete#omni#input_patterns.python = ''
@@ -62,7 +63,7 @@ let g:deoplete#sources#syntax#min_keyword_length = 1
 
 call deoplete#custom#source('_',      'matchers', ['matcher_fuzzy'])
 call deoplete#custom#source('_',      'min_pattern_length', 0)
-call deoplete#custom#source('omni',   'min_pattern_length', 1)
+" call deoplete#custom#source('omni',   'min_pattern_length', 1)
 call deoplete#custom#source('go',     'min_pattern_length', 1)
 " call deoplete#custom#source('buffer', 'min_pattern_length', 1)
 call deoplete#custom#source('clang_complete', 'min_pattern_length', 1)
@@ -76,7 +77,7 @@ call deoplete#custom#source('file',           'mark', ' ')
 call deoplete#custom#source('member',         'mark', 'M ')
 call deoplete#custom#source('omni',           'mark', '⌁ ')
 call deoplete#custom#source('tag',            'mark', '⌦ ')
-call deoplete#custom#source('vim',            'mark', ' ')
+call deoplete#custom#source('vim',            'mark', ' ')
 call deoplete#custom#source('clang_complete', 'mark', ' ')
 call deoplete#custom#source('dictionary',     'mark', 'D ')
 call deoplete#custom#source('emoji',          'mark', ' ')
@@ -84,16 +85,16 @@ call deoplete#custom#source('go',             'mark', ' ')
 call deoplete#custom#source('jedi',           'mark', ' ')
 " call deoplete#custom#source('Jedi',           'mark', '' )
 call deoplete#custom#source('LanguageClient', 'mark', '⌾ ')
-call deoplete#custom#source('look',           'mark', ' ')
+call deoplete#custom#source('look',           'mark', 'L ')
 call deoplete#custom#source('necovim',        'mark', ' ')
 call deoplete#custom#source('necosyntax',     'mark', '♯ ')
 call deoplete#custom#source('syntax',         'mark', '♯ ')
-call deoplete#custom#source('neosnippet',     'mark', '<>')
+call deoplete#custom#source('neosnippet',     'mark', ' ')
 call deoplete#custom#source('tern',           'mark', ' ')
 call deoplete#custom#source('tmux-complete',  'mark', '⧉ ')
-call deoplete#custom#source('ultisnips',      'mark', '<>')
+call deoplete#custom#source('ultisnips',      'mark', ' ')
 call deoplete#custom#source('webcomplete',    'mark', ' ')
-call deoplete#custom#source('zsh',            'mark', ' ')
+call deoplete#custom#source('zsh',            'mark', 'z ')
 
 call deoplete#custom#source('emoji',      'filetypes', ['gitcommit', 'markdown', 'org', 'rst', 'txt', 'todo'])
 call deoplete#custom#source('dictionary', 'filetypes', ['gitcommit', 'markdown', 'org', 'rst', 'txt', 'todo'])
