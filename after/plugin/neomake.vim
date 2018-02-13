@@ -43,6 +43,7 @@ let g:neomake_info_sign =    {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
 let g:neomake_cs_enabled_makers = ['mcs']
 let g:neomake_go_enabled_makers = ['gometalinter']
 let g:neomake_help_enabled_makers = ['vimhelplint']
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_markdown_enabled_makers = []
 let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_yaml_enabled_makers = ['yamllint']

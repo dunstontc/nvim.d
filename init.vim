@@ -30,7 +30,7 @@ call dein#begin(expand('~/.config/nvim/dein'))
 call dein#add('Shougo/dein.vim')
 call dein#add('haya14busa/dein-command.vim')
 
-" === user-interface === {{{
+" === User Interface === {{{
 call dein#add('junegunn/vim-peekaboo')
 " call dein#add('itchyny/lightline.vim')
 call dein#add('airblade/vim-gitgutter')
@@ -77,6 +77,10 @@ call dein#add('/Users/clay/.ghq/github.com/dunstontc/omnisharp-vim', { 'lazy': 1
 call dein#add('fsharp/vim-fsharp', { 'lazy': 1, 'on_ft': ['fsharp']})
 " }}}
 
+" Java: {{{
+" call dein#add('dunstontc/kotlin-vim',    { 'lazy':1, 'on_ft': ['kotlin']})
+" }}}
+
 " JavaScript: {{{2
 " call dein#add('othree/yajs.vim',                  {'lazy':1, 'on_ft': ['javascript', 'jsx']})
 " call dein#add('othree/javascript-libraries-syntax.vim')
@@ -102,6 +106,10 @@ call dein#add('othree/html5.vim',                 {'lazy':1, 'on_ft': ['html' ]}
 call dein#add('hail2u/vim-css3-syntax',           {'lazy':1, 'on_ft': ['css'  ]})
 call dein#add('groenewege/vim-less',              {'lazy':1, 'on_ft': ['less' ]})
 call dein#add('wavded/vim-stylus',                {'lazy':1, 'on_ft': ['styl', 'stylus']})
+call dein#add('mustache/vim-mustache-handlebars', {'lazy':1, 'on_ft': ['hbs']})
+" call dein#add('slim-template/vim-slim',           {'lazy':1, 'on_ft': ['slim']})
+call dein#add('tpope/vim-haml',                   {'lazy':1, 'on_ft': ['haml'       ]})
+" call dein#add('digitaltoad/vim-pug',     { 'lazy':1, 'on_ft': ['jade', 'pug'], })
 " }}}
 
 " Go: {{{2
@@ -135,7 +143,6 @@ call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'lazy':1
 
 " Ruby: {{{2
 call dein#add('vim-ruby/vim-ruby',                {'lazy':1, 'on_ft': ['ruby', 'rb' ]})
-call dein#add('tpope/vim-haml',                   {'lazy':1, 'on_ft': ['haml'       ]})
 " }}}
 
 " Writing: {{{2
@@ -177,9 +184,6 @@ call dein#add('rust-lang/rust.vim',      { 'lazy':1, 'on_ft': ['rust', 'rs' ]})
 " call dein#add('jpalardy/vim-slime',      { 'lazy':1, 'on_ft': ['lisp', 'el' ]})
 " call dein#add('rhysd/vim-wasm',          { 'lazy':1, 'on_ft': ['wast'       ]})
 " call dein#add('peterhoeg/vim-qml',       { 'lazy':1, 'on_ft': ['qml']})
-" call dein#add('slim-template/vim-slim',  { 'lazy':1, 'on_ft': ['slim']})
-" call dein#add('dunstontc/kotlin-vim',    { 'lazy':1, 'on_ft': ['kotlin']})
-" call dein#add('digitaltoad/vim-pug',     { 'lazy':1, 'on_ft': ['jade', 'pug'], })
 " }}}
 
 " }}}
@@ -231,6 +235,8 @@ call dein#add('dkarter/bullets.vim',       {'lazy': 1, 'on_ft' : ['gitcommit', '
 " === Utilities === {{{
 call dein#add('/usr/local/opt/fzf')
 call dein#add('~/Projects/Vim/forks/fzf.vim')
+call dein#add('djoshea/vim-autoread')
+" call dein#add('chrisbra/vim-autoread')
 call dein#add('tpope/vim-rsi')
 " call dein#add('tpope/vim-tbone')
 call dein#add('tpope/vim-eunuch')
@@ -428,7 +434,7 @@ let g:LanguageClient_serverCommands = {
 
 " ==============================================================================
 " === C# === {{{
-let g:Omnisharp_start_server=1
+let g:Omnisharp_start_server=0
 
 " let g:OmniSharp_server_type = 'v1'
 let g:OmniSharp_server_type = 'roslyn'

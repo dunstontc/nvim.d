@@ -28,7 +28,7 @@ augroup filetypes
 
   autocmd BufReadPost,BufRead *.rs set filetype=rust
 
-  autocmd BufRead,BufNewFile .{aliases,env,exports,functions,highlight,inputrc,path,} set filetype=sh
+  autocmd BufRead,BufNewFile .{aliases,env,exports,functions,highlight,inputrc,path} set filetype=sh
   autocmd BufRead,BufNewFile .{bash_prompt,bash_profile} set filetype=sh
 
   autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
@@ -36,6 +36,15 @@ augroup filetypes
   autocmd BufNewFile,BufRead *.sln setlocal filetype=solution
 
   autocmd BufNewFile,BufReadPost *{snippets,snip} set filetype=snippets
+
+  " .NET filetypes
+  autocmd BufNewFile,BufRead *.proj  set filetype=xml
+  autocmd BufNewFile,BufRead *.csproj set filetype=xml
+  autocmd BufNewFile,BufRead *.sln set filetype=xml
+  autocmd BufNewFile,BufRead *.cshtml set filetype=cshtml.html syntax=cshtml
+  autocmd BufNewFile,BufRead *.aspx set filetype=aspx.html syntax=aspx
+  autocmd BufNewFile,BufRead *.ascx set filetype=aspx.html syntax=aspx
+  autocmd BufNewFile,BufRead *.master set filetype=aspx.html syntax=aspx
 
   " https://github.com/tjdevries/config_manager
   " autocmd TermOpen term://*  set filetype=term
