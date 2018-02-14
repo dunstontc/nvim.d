@@ -471,7 +471,8 @@ nnoremap <leader>` :Deol -split -start-insert<CR>
 " noremap <silent> <leader>c :TComment<CR>
 " f   -- Find (grep)
 noremap <silent> <leader>f :Denite grep<CR>
-" l   -- List Buffers
+" l   -- Neoformat
+noremap <leader>l :Neoformat<CR>
 " m   -- replay Macro
 nnoremap <leader>m @
 " q   -- Quit
@@ -486,7 +487,9 @@ nnoremap <leader>v :vsplit \| Startify<CR>:echo<CR>
 nnoremap <leader>x :Denite todo<CR>
 nnoremap <leader><S-X> :Denite todotxt<CR>
 
+" left  -- Close Folds
 nnoremap <leader><Left> zc
+" right -- Open  Folds
 nnoremap <leader><Right> zo
 nnoremap <leader><Up> :bprev<CR>
 nnoremap <leader><Down> :bnext<CR>

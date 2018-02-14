@@ -138,20 +138,21 @@ set guicursor+=r:block-rCursor
 " === theme === {{{
 highlight Comment gui=italic
 " set t_Co=256
+set background=dark
+
 
 " colorscheme space-vim-dark
 " colorscheme spring-night
+" colorscheme metalheart
+" colorscheme darktooth
+" colorscheme apprentice
 
-" colorscheme codedark
+" let g:gruvbox_italic=1
+" colorscheme gruvbox
+" let g:gruvbox_termcolors=256
 
 colorscheme dark_plus
-" colorscheme gruvbox
-" colorscheme apprentice
 let g:lightline.colorscheme = 'dark_plus'
-let g:quantum_italics=1          " Enable darker quantum colortheme
-let g:quantum_black=1            " Enable italic font in quantum colorscheme
-" let g:enable_italic_font=1     " Enable italic font in one dark colorscheme
-" let g:enable_bold_font=1       " Enable bold   font in one dark colorscheme
 " }}}
 
 " set concealcursor=iv

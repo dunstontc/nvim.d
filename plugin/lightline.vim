@@ -28,7 +28,7 @@ let g:lightline = {
       \            [   "s","s",    'anzu',  'paste', 'peest', "s" ] ],
       \    'right': [ [ 'cool_col' ],
       \               [ 'register', 'tabsize' ],
-      \               [ "s", 'neomake_warnings', 'neomake_errors' ] ]
+      \               [ "s", 'neomake_warnings', 'neomake_errors', "s", 'server_stat' ] ]
       \},
       \  'component': {
       \    "s"        : " ",
@@ -50,6 +50,7 @@ let g:lightline = {
       \    'bufferinfo':      'lightline#buffer#bufferinfo',
       \    'deniteLN':        'DeniteLine',
       \    'deniteP':         'DenitePath',
+      \    'server_stat':     'LanguageClient_statusLine',
       \},
       \ 'component_expand': {
       \   'linter_errors':    'lightline#AleWarnings',
@@ -375,6 +376,20 @@ function! FileSize() abort " {{{
 endfunction
 " }}}
 
+""
+" @function(LangServStatus)
+" Returns autozimu/LanguageClient-neovim StatusLine
+" - LanguageClient_serverStatus()
+"   - Get language server status. 0 for server idle. 1 for server busy.
+" - LanguageClient_serverStatusMessage()
+"   - Get a detail message of server status.
+" - LanguageClient_statusLine()
+"   - Example status line making use of LanguageClient_serverStatusMessage.
+function! LangServStatus() abort " {{{
+  let l:stat = LanguageClient_statusLine()
+  return l:stat
+endfunction
+" }}}
 
 augroup lightline#ale
   autocmd!

@@ -20,6 +20,9 @@ augroup filetypes
 
   autocmd BufRead,BufNewFile .spacemacs set filetype=lisp
 
+  autocmd BufNewFile,BufRead *.mustache,*.hogan,*.hulk,*.hjs set filetype=html.mustache syntax=mustache
+  autocmd BufNewFile,BufRead *.handlebars,*.hbs set filetype=html.handlebars syntax=mustache
+
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
   autocmd BufNewFile,BufRead *.{jade,pug} set filetype=pug
@@ -57,6 +60,8 @@ augroup filetypes
   autocmd BufNewFile,BufRead *.ts set filetype=typescript
 
   autocmd BufRead,BufNewFile rc.conf set filetype=vim
+
+  autocmd BufRead,BufNewFile compose.yml set filetype=yaml
 
   autocmd BufRead,BufNewFile *.vstheme set filetype=xml
 

@@ -47,9 +47,9 @@ call dein#add('xtal8/traces.vim')
 
 " === Themes === {{{
 call dein#add('/Users/clay/Projects/GitHub/vim-vscode-theme')
-" call dein#add('dunstontc/vim-code-dark')
-" call dein#add('morhetz/gruvbox')
-" call dein#add('romainl/Apprentice')
+" call dein#add('dunstontc/vim-vscode-theme')
+call dein#add('morhetz/gruvbox')
+call dein#add('romainl/Apprentice')
 " call dein#add('KKPMW/moonshine-vim')
 " call dein#add('joshdick/onedark.vim')
 " call dein#add('mhartington/oceanic-next')
@@ -102,14 +102,15 @@ call dein#add('rhysd/vim-fixjson',                {'lazy':1, 'on_ft': 'json' })
 " }}}
 
 " HTML CSS: {{{2
-call dein#add('othree/html5.vim',                 {'lazy':1, 'on_ft': ['html' ]})
-call dein#add('hail2u/vim-css3-syntax',           {'lazy':1, 'on_ft': ['css'  ]})
-call dein#add('groenewege/vim-less',              {'lazy':1, 'on_ft': ['less' ]})
-call dein#add('wavded/vim-stylus',                {'lazy':1, 'on_ft': ['styl', 'stylus']})
-call dein#add('mustache/vim-mustache-handlebars', {'lazy':1, 'on_ft': ['hbs']})
+call dein#add('othree/html5.vim',                 { 'lazy':1, 'on_ft': ['html' ]})
+call dein#add('hail2u/vim-css3-syntax',           { 'lazy':1, 'on_ft': ['css'  ]})
+call dein#add('groenewege/vim-less',              { 'lazy':1, 'on_ft': ['less' ]})
+call dein#add('wavded/vim-stylus',                { 'lazy':1, 'on_ft': ['styl', 'stylus']})
+call dein#add('mustache/vim-mustache-handlebars', { 'lazy':1, 'on_ft': ['hbs']})
 " call dein#add('slim-template/vim-slim',           {'lazy':1, 'on_ft': ['slim']})
-call dein#add('tpope/vim-haml',                   {'lazy':1, 'on_ft': ['haml'       ]})
-" call dein#add('digitaltoad/vim-pug',     { 'lazy':1, 'on_ft': ['jade', 'pug'], })
+call dein#add('tpope/vim-haml',                   { 'lazy':1, 'on_ft': ['haml'       ]})
+" call dein#add('digitaltoad/vim-pug',              { 'lazy':1, 'on_ft': ['jade', 'pug'], })
+" call dein#add('lepture/vim-jinja',                {'lazy':1, 'on_ft': ['jinja' ]})
 " }}}
 
 " Go: {{{2
@@ -133,7 +134,6 @@ call dein#add('mxw/vim-xhp', { 'lazy':1, 'on_ft': ['php', 'xhp']})
 " }}}
 
 " Python: {{{2
-call dein#add('lepture/vim-jinja',                {'lazy':1, 'on_ft': ['jinja' ]})
 call dein#add('tweekmonster/impsort.vim',         {'lazy':1, 'on_ft': ['python']})
 call dein#add('hynek/vim-python-pep8-indent',     {'lazy':1, 'on_ft': ['py', 'python'  ]})
 call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'lazy':1, 'on_ft': ['python']})
@@ -184,6 +184,7 @@ call dein#add('rust-lang/rust.vim',      { 'lazy':1, 'on_ft': ['rust', 'rs' ]})
 " call dein#add('jpalardy/vim-slime',      { 'lazy':1, 'on_ft': ['lisp', 'el' ]})
 " call dein#add('rhysd/vim-wasm',          { 'lazy':1, 'on_ft': ['wast'       ]})
 " call dein#add('peterhoeg/vim-qml',       { 'lazy':1, 'on_ft': ['qml']})
+" call dein#add('reasonml-editor/vim-reason-plus', { 'lazy':1, 'on_ft': ['reason']})
 " }}}
 
 " }}}
@@ -428,8 +429,19 @@ let g:loaded_zipPlugin         = 1
 " === Language Servers === {{{
 " ==============================================================================
 let g:LanguageClient_serverCommands = {
-    \ 'vue': ['vls']
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    \ 'vue': ['vls'],
     \ }
+
+let g:LanguageClient_rootMarkers = {
+    \ 'javascript': ['project.json'],
+    \ 'rust': ['Cargo.toml'],
+    \ }
+
 " }}}
 
 " ==============================================================================
@@ -487,7 +499,7 @@ let g:java_highlight_all = 1
 let g:java_ignore_javadoc = 0
 let g:java_highlight_java_lang_ids = 1
 let g:java_highlight_functions = 1
-let g:java_highlight_debug = 1
+let g:java_highlight_debug = 0
 " }}}
 
 " ==============================================================================

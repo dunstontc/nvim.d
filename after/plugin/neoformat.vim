@@ -5,8 +5,16 @@ let g:neoformat_only_msg_on_error = 1
 let g:neoformat_run_all_formatters = 0
 
 
+let g:neoformat_enabled_c        = ['uncrustify']
+let g:neoformat_enabled_cpp      = ['uncrustify']
+let g:neoformat_enabled_cs       = ['uncrustify']
+let g:neoformat_enabled_csx      = ['uncrustify']
 let g:neoformat_enabled_go       = ['gofmt']
+let g:neoformat_enabled_html     = ['tidy']
+let g:neoformat_enabled_xhtml    = ['tidy']
+let g:neoformat_enabled_xml      = ['tidy']
 let g:neoformat_enabled_json     = ['fixjson']
+let g:neoformat_enabled_java     = ['uncrustify']
 let g:neoformat_enabled_markdown = ['remark']
 let g:neoformat_enabled_sh       = ['shfmt']
 let g:neoformat_enabled_bash     = ['shfmt']
