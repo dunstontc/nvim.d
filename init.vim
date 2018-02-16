@@ -41,6 +41,7 @@ call dein#add('mgee/lightline-bufferline')
 call dein#add('itchyny/vim-cursorword')
 call dein#add('blueyed/vim-diminactive')
 call dein#add('xtal8/traces.vim')
+call dein#add('jaxbot/semantic-highlight.vim')
 " call dein#add('jszakmeister/vim-togglecursor')
 " call dein#add('thaerkh/vim-indentguides')
 " }}}
@@ -62,10 +63,10 @@ call dein#add('romainl/Apprentice')
 " === Language Support === {{{1
 
 " Language Server {{{2
-" call dein#add('autozimu/LanguageClient-neovim', {
-"     \ 'rev': 'next',
-"     \ 'build': 'bash install.sh',
-"     \ })
+call dein#add('autozimu/LanguageClient-neovim', {
+    \ 'rev': 'next',
+    \ 'build': 'bash install.sh',
+    \ })
 " }}}
 
 " C: {{{2
@@ -82,15 +83,16 @@ call dein#add('fsharp/vim-fsharp', { 'lazy': 1, 'on_ft': ['fsharp']})
 " }}}
 
 " JavaScript: {{{2
-" call dein#add('othree/yajs.vim',                  {'lazy':1, 'on_ft': ['javascript', 'jsx']})
-" call dein#add('othree/javascript-libraries-syntax.vim')
-call dein#add('pangloss/vim-javascript',          {'lazy':1, 'on_ft': ['javascript', 'typescript', 'jsx', 'tsx']})
+call dein#add('pangloss/vim-javascript',                {'lazy':1, 'on_ft': ['javascript', 'typescript', 'jsx', 'tsx']})
+" call dein#add('othree/yajs.vim',                        {'lazy':1, 'on_ft': ['javascript', 'jsx']})
+" call dein#add('othree/javascript-libraries-syntax.vim', {'lazy':1, 'on_ft': ['javascript', 'jsx']})
 " call dein#add('heavenshell/vim-jsdoc',            {'lazy':1, 'on_ft': ['javascript', 'typescript', 'jsx', 'tsx']})
 " call dein#add('othree/jsdoc-syntax.vim',          {'lazy':1, 'on_ft': ['javascript', 'typescript', 'vue']})
+" Vue:
 call dein#add('posva/vim-vue',                    {'lazy':1, 'on_ft': 'vue'})
 " JSX:
 " call dein#add('mxw/vim-jsx',                      {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
-call dein#add('neoclide/vim-jsx-improve',                      {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
+call dein#add('neoclide/vim-jsx-improve',         {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
 " call dein#add('MaxMEllon/vim-jsx-pretty',         {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
 " TypeScript:
 call dein#add('HerringtonDarkholme/yats.vim',     {'lazy':1, 'on_ft': ['tsx', 'typescript']})
@@ -102,15 +104,19 @@ call dein#add('rhysd/vim-fixjson',                {'lazy':1, 'on_ft': 'json' })
 " }}}
 
 " HTML CSS: {{{2
+" HTML:
 call dein#add('othree/html5.vim',                 { 'lazy':1, 'on_ft': ['html' ]})
+call dein#add('azakus/vim-webcomponents',         { 'lazy':1, 'on_ft': ['html']})
+" CSS:
 call dein#add('hail2u/vim-css3-syntax',           { 'lazy':1, 'on_ft': ['css'  ]})
 call dein#add('groenewege/vim-less',              { 'lazy':1, 'on_ft': ['less' ]})
 call dein#add('wavded/vim-stylus',                { 'lazy':1, 'on_ft': ['styl', 'stylus']})
-call dein#add('mustache/vim-mustache-handlebars', { 'lazy':1, 'on_ft': ['hbs']})
-" call dein#add('slim-template/vim-slim',           {'lazy':1, 'on_ft': ['slim']})
-call dein#add('tpope/vim-haml',                   { 'lazy':1, 'on_ft': ['haml'       ]})
-" call dein#add('digitaltoad/vim-pug',              { 'lazy':1, 'on_ft': ['jade', 'pug'], })
+" Templates:
+call dein#add('tpope/vim-haml',                   { 'lazy':1, 'on_ft': ['haml']})
 " call dein#add('lepture/vim-jinja',                {'lazy':1, 'on_ft': ['jinja' ]})
+" call dein#add('digitaltoad/vim-pug',              { 'lazy':1, 'on_ft': ['jade', 'pug'], })
+" call dein#add('slim-template/vim-slim',           {'lazy':1, 'on_ft': ['slim']})
+call dein#add('mustache/vim-mustache-handlebars', { 'lazy':1, 'on_ft': ['hbs', 'html']})
 " }}}
 
 " Go: {{{2
@@ -120,10 +126,10 @@ call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-go',  {'lazy':1, 'on_ft
 " }}}
 
 " Lua: {{{2
-call dein#add('tbastos/vim-lua',         {'lazy':1, 'on_ft': ['lua'  ]})
-call dein#add('VaiN474/vim-etlua',       {'lazy':1, 'on_ft': ['lua' ]})
-call dein#add('VaiN474/vim-etlua-plain', {'lazy':1, 'on_ft': ['ept' ]})
-call dein#add('leafo/moonscript-vim',    {'lazy':1, 'on_ft': ['moon' ]})
+call dein#add('tbastos/vim-lua',         {'lazy':1, 'on_ft': ['lua']})
+call dein#add('VaiN474/vim-etlua',       {'lazy':1, 'on_ft': ['lua']})
+call dein#add('VaiN474/vim-etlua-plain', {'lazy':1, 'on_ft': ['ept']})
+call dein#add('leafo/moonscript-vim',    {'lazy':1, 'on_ft': ['moon']})
 " call dein#add('xolox/vim-misc',         {'lazy':1, 'on_ft': ['lua'  ]})
 " call dein#add('xolox/vim-lua-ftplugin', {'lazy':1, 'on_ft': ['lua'  ]})
 " }}}
@@ -160,7 +166,9 @@ call dein#add('tyru/markdown-codehl-onthefly.vim',{'lazy':1, 'on_ft': ['markdown
 call dein#add('chrisbra/vim-zsh',                 {'lazy':1, 'on_ft': ['zsh'  ]})
 call dein#add('vim-perl/vim-perl',                {'lazy':1, 'on_ft': ['perl']})
 call dein#add('dag/vim-fish',                     {'lazy':1, 'on_ft': ['fish' ]})
-call dein#add('rbtnn/powershell.vim',             {'lazy':1, 'on_ft': ['ps1' ]})
+" call dein#add('rbtnn/powershell.vim',             {'lazy':1, 'on_ft': ['powershell']})
+call dein#add('dunstontc/vim-ps1',             {'lazy':1, 'on_ft': ['ps1']})
+
 " }}}
 
 " Swift: {{{
@@ -227,7 +235,7 @@ call dein#add('joereynolds/place.vim')
 call dein#add('junegunn/vim-easy-align')
 call dein#add('haya14busa/vim-edgemotion')
 " call dein#add('machakann/vim-swap')
-call dein#add('valloric/matchtagalways',   {'lazy':1,  'on_ft': ['html', 'xml'], })
+call dein#add('valloric/matchtagalways',   {'lazy': 1,  'on_ft': ['html', 'xml']})
 call dein#add('AndrewRadev/splitjoin.vim', {'lazy': 1, 'on_cmd': ['SplitjoinSplit', 'SplitjoinJoin']})
 call dein#add('AndrewRadev/switch.vim',    {'lazy': 1, 'on_cmd': 'Switch'})
 call dein#add('dkarter/bullets.vim',       {'lazy': 1, 'on_ft' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']})
@@ -266,6 +274,8 @@ call dein#add('sgur/vim-editorconfig')
 call dein#add('christoomey/vim-tmux-navigator')
 call dein#add('nickeb96/vitality.vim')
 " call dein#add('simeji/winresizer')
+" call dein#add('jaawerth/nrun.vim')
+" call dein#add('embear/vim-localvimrc')
 call dein#add('ludovicchabant/vim-gutentags')
 call dein#add('lambdalisue/suda.vim')
 call dein#add('Shougo/context_filetype.vim')
@@ -292,7 +302,8 @@ call dein#add('blankname/denite_fzf_matcher')
 " }}}
 
 " === Completion === {{{
-call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+" call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+call dein#add('dunstontc/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
 call dein#add('Shougo/neco-vim')
 call dein#add('Shougo/neco-syntax')
 call dein#add('Shougo/neoinclude.vim')
@@ -433,6 +444,7 @@ let g:LanguageClient_serverCommands = {
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'typescript': ['javascript-typescript-stdio'],
     \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ 'vue': ['vls'],
     \ }

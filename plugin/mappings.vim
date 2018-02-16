@@ -499,7 +499,7 @@ nnoremap <leader><Down> :bnext<CR>
 "  === b -- Buffers=== {{{
 " ==============================================================================
 " l -- List Buffers
-nnoremap <leader>l :Denite buffer -mode=normal<CR>
+nnoremap <leader>b :Denite buffer -mode=normal<CR>
 " Next Buffer
 nnoremap <leader>bn :bn<CR>
 " Previous Buffer

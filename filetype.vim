@@ -27,6 +27,8 @@ augroup filetypes
 
   autocmd BufNewFile,BufRead *.{jade,pug} set filetype=pug
 
+  autocmd BufNewFile,BufRead *.log set filetype=prolog
+
   autocmd BufNewFile,BufRead *.pyi set filetype=python
 
   autocmd BufReadPost,BufRead *.rs set filetype=rust
@@ -63,7 +65,7 @@ augroup filetypes
 
   autocmd BufRead,BufNewFile compose.yml set filetype=yaml
 
-  autocmd BufRead,BufNewFile *.vstheme set filetype=xml
+  autocmd BufRead,BufNewFile *.vstheme,*.vssettings set filetype=xml
 
   " autocmd BufNewFile,BufReadPost *.wiki set filetype=wiki
 
