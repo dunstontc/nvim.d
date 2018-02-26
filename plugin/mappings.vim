@@ -45,7 +45,7 @@ nnoremap ,/ :%s///g<left><left><left>
 
 nnoremap <S-m> :Denite messages<CR>
 
-noremap R <C-r>
+noremap R @
 nmap <S-U> <C-r>
 
 " Delete to start of line with <D-BS>
@@ -327,14 +327,14 @@ let g:tcommentTextObjectInlineComment=''
 " }}}
 
 " === w0rp/ale === {{{
-nmap <silent> [a <Plug>(ale_previous_wrap)
-nmap <silent> ]a <Plug>(ale_next_wrap)
+" nmap <silent> [a <Plug>(ale_previous_wrap)
+" nmap <silent> ]a <Plug>(ale_next_wrap)
 " }}}
 
 " === heavenshell/vim-pydocstring === {{{
 let g:pydocstring_enable_mapping = 0
 let g:pydocstring_enable_comment = 0
-let g:pydocstring_templates_dir  = '~/nvim.d/after/pydocstring'
+let g:pydocstring_templates_dir  = '~/.config/nvim/after/pydocstring'
 nmap <silent>gd <Plug>(pydocstring)
 " }}}
 
@@ -468,7 +468,7 @@ nnoremap <leader><S-Tab> :bp<CR>
 nnoremap <leader>a <Plug>(place-insert)
 nnoremap <leader>` :Deol -split -start-insert<CR>
 " c   -- Comment
-" noremap <silent> <leader>c :TComment<CR>
+noremap <silent> <leader>c :TComment<CR>
 " f   -- Find (grep)
 noremap <silent> <leader>f :Denite grep<CR>
 " l   -- Neoformat
@@ -556,31 +556,31 @@ nnoremap <leader>d<S-U> :Denite ultisnips_file<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>:echo<CR>
 nnoremap <leader>e<S-V> :edit $MYVIMRC<CR>:echo<CR>
 " Edit Settings
-nnoremap <leader>es :vs ~/nvim.d/plugin/settings.vim<CR>:echo<CR>
-nnoremap <leader>e<S-S> :edit ~/nvim.d/plugin/settings.vim<CR>:echo<CR>
+nnoremap <leader>es :vs ~/.config/nvim/plugin/settings.vim<CR>:echo<CR>
+nnoremap <leader>e<S-S> :edit ~/.config/nvim/plugin/settings.vim<CR>:echo<CR>
 " Edit Lightline
-nnoremap <leader>el :vsplit ~/nvim.d/plugin/lightline.vim<CR>:echo<CR>
-nnoremap <leader>e<S-L> :edit ~/nvim.d/plugin/lightline.vim<CR>:echo<CR>
+nnoremap <leader>el :vsplit ~/.config/nvim/plugin/lightline.vim<CR>:echo<CR>
+nnoremap <leader>e<S-L> :edit ~/.config/nvim/plugin/lightline.vim<CR>:echo<CR>
 " Edit Keys
-nnoremap <leader>ek :vsplit ~/nvim.d/plugin/mappings.vim<CR>:echo<CR>
-nnoremap <leader>e<S-K> :edit ~/nvim.d/plugin/mappings.vim<CR>:echo<CR>
+nnoremap <leader>ek :vsplit ~/.config/nvim/plugin/mappings.vim<CR>:echo<CR>
+nnoremap <leader>e<S-K> :edit ~/.config/nvim/plugin/mappings.vim<CR>:echo<CR>
 " Edit Denite
-nnoremap <leader>ed :vsplit ~/nvim.d/plugin/denite.vim<CR>:echo<CR>
-nnoremap <leader>e<S-D> :edit ~/nvim.d/plugin/denite.vim<CR>:echo<CR>
+nnoremap <leader>ed :vsplit ~/.config/nvim/plugin/denite.vim<CR>:echo<CR>
+nnoremap <leader>e<S-D> :edit ~/.config/nvim/plugin/denite.vim<CR>:echo<CR>
 " Edit Commands
-nnoremap <leader>ec :vsplit ~/nvim.d/plugin/commands.vim<CR>:echo<CR>
-nnoremap <leader>e<S-C> :edit ~/nvim.d/plugin/commands.vim<CR>:echo<CR>
+nnoremap <leader>ec :vsplit ~/.config/nvim/plugin/commands.vim<CR>:echo<CR>
+nnoremap <leader>e<S-C> :edit ~/.config/nvim/plugin/commands.vim<CR>:echo<CR>
 " Edit Plugins
-nnoremap <leader>ep :vsplit ~/nvim.d/plugin/plugins.vim<CR>:echo<CR>
-nnoremap <leader>e<S-P> :edit ~/nvim.d/plugin/plugins.vim<CR>:echo<CR>
+nnoremap <leader>ep :vsplit ~/.config/nvim/plugin/plugins.vim<CR>:echo<CR>
+nnoremap <leader>e<S-P> :edit ~/.config/nvim/plugin/plugins.vim<CR>:echo<CR>
 " Edit Interfaces
-nnoremap <leader>ei :vsplit ~/nvim.d/plugin/ui.vim<CR>:echo<CR>
-nnoremap <leader>e<S-I> :edit ~/nvim.d/plugin/ui.vim<CR>:echo<CR>
+nnoremap <leader>ei :vsplit ~/.config/nvim/plugin/ui.vim<CR>:echo<CR>
+nnoremap <leader>e<S-I> :edit ~/.config/nvim/plugin/ui.vim<CR>:echo<CR>
 " Edit Theme
 nnoremap <leader>et :vsplit ~/Projects/GitHub/vim-vscode-theme/colors/dark_plus.vim<CR>:echo<CR>
 nnoremap <leader>eT :edit ~/Projects/GitHub/vim-vscode-theme/colors/dark_plus.vim<CR>:echo<CR>
 " Edit Ultisnips
-nnoremap <leader>eu :VimFiler -explorer ~/nvim.d/snipz<CR>
+nnoremap <leader>eu :VimFiler -explorer ~/.config/nvim/snipz<CR>
 " }}}
 
 " ==============================================================================
@@ -589,7 +589,7 @@ nnoremap <leader>eu :VimFiler -explorer ~/nvim.d/snipz<CR>
 
 nnoremap <leader>fd :FZF ~/.dotfiles<CR>
 nnoremap <leader>fk :Maps<CR>
-" nnoremap <leader>fv :FZF ~/nvim.d<CR>
+" nnoremap <leader>fv :FZF ~/.config/nvim<CR>
 " Search in $VIMRUNTIME
 nnoremap <leader>fv :FZF ~/.config/nvim<CR>
 " }}}
@@ -652,7 +652,7 @@ nnoremap <leader>pu :Denite menu:dein<CR>
 " .dotfiles
 noremap <silent> <leader>g. :Denite grep -path=~/.dotfiles<CR>
 " Dotfiles
-noremap <silent> <leader>gv :Denite grep -path=~/nvim.d<CR>
+noremap <silent> <leader>gv :Denite grep -path=~/.config/nvim<CR>
 " }}}
 
 " ==============================================================================

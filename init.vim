@@ -15,401 +15,366 @@ endif
 "  Plugins
 " ==============================================================================
 
-let g:dein_repo = 'https://github.com/Shougo/dein.vim.git'
-let g:dein_dir = '~/.config/nvim/dein/repos/github.com/Shougo/dein.vim'
+call plug#begin('~/.local/share/nvim/plugged')
 
-if empty(glob(g:dein_dir))
-  exec 'silent !mkdir -p '.g:dein_dir
-  exec '!git clone '.g:dein_repo.' '.g:dein_dir
-endif
-exec 'set runtimepath+='.g:dein_dir
-
-
-call dein#begin(expand('~/.config/nvim/dein'))
-
-call dein#add('Shougo/dein.vim')
-call dein#add('haya14busa/dein-command.vim')
-
-" === User Interface === {{{
-call dein#add('junegunn/vim-peekaboo')
-" call dein#add('itchyny/lightline.vim')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('Shougo/vimfiler.vim')
-call dein#add('romgrk/vimfiler-prompt')
-call dein#add('ryanoasis/vim-devicons')
-call dein#add('mgee/lightline-bufferline')
-call dein#add('itchyny/vim-cursorword')
-call dein#add('blueyed/vim-diminactive')
-call dein#add('xtal8/traces.vim')
-call dein#add('jaxbot/semantic-highlight.vim')
-" call dein#add('jszakmeister/vim-togglecursor')
-" call dein#add('thaerkh/vim-indentguides')
-" }}}
-
-" === Themes === {{{
-call dein#add('/Users/clay/Projects/GitHub/vim-vscode-theme')
-" call dein#add('dunstontc/vim-vscode-theme')
-call dein#add('morhetz/gruvbox')
-call dein#add('romainl/Apprentice')
-" call dein#add('KKPMW/moonshine-vim')
-" call dein#add('joshdick/onedark.vim')
-" call dein#add('mhartington/oceanic-next')
-" call dein#add('altercation/vim-colors-solarized')
-" call dein#add('rhysd/vim-color-spring-night')
-" call dein#add('liuchengxu/space-vim-dark')
-" call dein#add('mhallendal/spacedust-theme')
+Plug 'junegunn/vim-peekaboo'
+Plug 'dunstontc/lightline.vim'
+Plug 'mgee/lightline-bufferline'
+Plug 'airblade/vim-gitgutter'
+Plug 'Shougo/vimfiler.vim'
+Plug 'romgrk/vimfiler-prompt', { 'on': 'VimFilerPrompt'}
+Plug 'ryanoasis/vim-devicons'
+Plug 'itchyny/vim-cursorword'
+Plug 'blueyed/vim-diminactive'
+Plug 'xtal8/traces.vim'
+" Plug 'jaxbot/semantic-highlight.vim' " FIXME: does this work?
+" Plug 'philip-karlsson/bolt.nvim'
+" Plug 'jszakmeister/vim-togglecursor'
+" Plug 'thaerkh/vim-indentguides'
+" Plug 'c0r73x/neotags.nvim'
+" Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
+Plug 'dunstontc/vim-vscode-theme'
 " }}}
 
 " === Language Support === {{{1
 
 " Language Server {{{2
-call dein#add('autozimu/LanguageClient-neovim', {
-    \ 'rev': 'next',
-    \ 'build': 'bash install.sh',
-    \ })
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'rev': 'next',
+"     \ 'build': 'bash install.sh',
+"     \ }
 " }}}
 
 " C: {{{2
-call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-cpp-enhanced-highlight', {'lazy':1, 'on_ft': ['c', 'cpp', 'objc', 'objcpp']})
+Plug '/Users/clay/.ghq/github.com/dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " }}}
 
 " C# {{{
-call dein#add('/Users/clay/.ghq/github.com/dunstontc/omnisharp-vim', { 'lazy': 1, 'on_ft': ['cs']})
-call dein#add('fsharp/vim-fsharp', { 'lazy': 1, 'on_ft': ['fsharp']})
+" Plug '/Users/clay/.ghq/github.com/dunstontc/omnisharp-vim', { 'for': ['cs']}
+Plug 'fsharp/vim-fsharp', { 'for': ['fsharp']}
 " }}}
 
 " Java: {{{
-" call dein#add('dunstontc/kotlin-vim',    { 'lazy':1, 'on_ft': ['kotlin']})
+" Plug 'dunstontc/kotlin-vim',    { 'for': ['kotlin']}
 " }}}
 
 " JavaScript: {{{2
-call dein#add('pangloss/vim-javascript',                {'lazy':1, 'on_ft': ['javascript', 'typescript', 'jsx', 'tsx']})
-" call dein#add('othree/yajs.vim',                        {'lazy':1, 'on_ft': ['javascript', 'jsx']})
-" call dein#add('othree/javascript-libraries-syntax.vim', {'lazy':1, 'on_ft': ['javascript', 'jsx']})
-" call dein#add('heavenshell/vim-jsdoc',            {'lazy':1, 'on_ft': ['javascript', 'typescript', 'jsx', 'tsx']})
-" call dein#add('othree/jsdoc-syntax.vim',          {'lazy':1, 'on_ft': ['javascript', 'typescript', 'vue']})
+Plug 'pangloss/vim-javascript',                {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
+" Plug 'othree/yajs.vim',                        {'for': ['javascript', 'jsx']}
+" Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'jsx']}
+" Plug 'heavenshell/vim-jsdoc',            {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
+" Plug 'othree/jsdoc-syntax.vim',          {'for': ['javascript', 'typescript', 'vue']}
 " Vue:
-call dein#add('posva/vim-vue',                    {'lazy':1, 'on_ft': 'vue'})
+Plug 'posva/vim-vue',                    {'for': 'vue'}
 " JSX:
-" call dein#add('mxw/vim-jsx',                      {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
-call dein#add('neoclide/vim-jsx-improve',         {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
-" call dein#add('MaxMEllon/vim-jsx-pretty',         {'lazy':1, 'on_ft': ['javascript', 'jsx', 'tsx']})
+" Plug 'mxw/vim-jsx',                      {'for': ['javascript', 'jsx', 'tsx']}
+Plug 'neoclide/vim-jsx-improve',         {'for': ['javascript', 'jsx', 'tsx']}
+" Plug 'MaxMEllon/vim-jsx-pretty',         {'for': ['javascript', 'jsx', 'tsx']}
 " TypeScript:
-call dein#add('HerringtonDarkholme/yats.vim',     {'lazy':1, 'on_ft': ['tsx', 'typescript']})
+Plug 'HerringtonDarkholme/yats.vim',     {'for': ['tsx', 'typescript']}
 " CoffeeScript:
-call dein#add('kchmck/vim-coffee-script',         {'lazy':1, 'on_ft': ['coff', 'coffee', 'cson']})
+Plug 'kchmck/vim-coffee-script',         {'for': ['coff', 'coffee', 'cson']}
 " JSON:
-" call dein#add('elzr/vim-json',                    {'lazy':1, 'on_ft': ['json'                  ]})
-call dein#add('rhysd/vim-fixjson',                {'lazy':1, 'on_ft': 'json' })
+" Plug 'elzr/vim-json',                    {'for': ['json'                  ]}
+Plug 'rhysd/vim-fixjson',                {'for': 'json' }
 " }}}
 
 " HTML CSS: {{{2
 " HTML:
-call dein#add('othree/html5.vim',                 { 'lazy':1, 'on_ft': ['html' ]})
-call dein#add('azakus/vim-webcomponents',         { 'lazy':1, 'on_ft': ['html']})
+Plug 'othree/html5.vim',                 { 'for': ['html' ]}
+Plug 'azakus/vim-webcomponents',         { 'for': ['html']}
 " CSS:
-call dein#add('hail2u/vim-css3-syntax',           { 'lazy':1, 'on_ft': ['css'  ]})
-call dein#add('groenewege/vim-less',              { 'lazy':1, 'on_ft': ['less' ]})
-call dein#add('wavded/vim-stylus',                { 'lazy':1, 'on_ft': ['styl', 'stylus']})
+Plug 'hail2u/vim-css3-syntax',           { 'for': ['css'  ]}
+Plug 'groenewege/vim-less',              { 'for': ['less' ]}
+Plug 'wavded/vim-stylus',                { 'for': ['styl', 'stylus']}
 " Templates:
-call dein#add('tpope/vim-haml',                   { 'lazy':1, 'on_ft': ['haml']})
-" call dein#add('lepture/vim-jinja',                {'lazy':1, 'on_ft': ['jinja' ]})
-" call dein#add('digitaltoad/vim-pug',              { 'lazy':1, 'on_ft': ['jade', 'pug'], })
-" call dein#add('slim-template/vim-slim',           {'lazy':1, 'on_ft': ['slim']})
-call dein#add('mustache/vim-mustache-handlebars', { 'lazy':1, 'on_ft': ['hbs', 'html']})
+Plug 'tpope/vim-haml',                   { 'for': ['haml']}
+" Plug 'lepture/vim-jinja',                {'for': ['jinja' ]}
+" Plug 'digitaltoad/vim-pug',              { 'for': ['jade', 'pug'], }
+" Plug 'slim-template/vim-slim',           {'for': ['slim']}
+Plug 'mustache/vim-mustache-handlebars', { 'for': ['hbs', 'html']}
 " }}}
 
 " Go: {{{2
-call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-go',  {'lazy':1, 'on_ft': 'go' })
-" call dein#add('jodosha/vim-godebug')
-" call dein#add('godoctor/godoctor.vim')
+Plug '/Users/clay/.ghq/github.com/dunstontc/vim-go',  {'for': 'go' }
+" Plug 'jodosha/vim-godebug'
+" Plug 'godoctor/godoctor.vim'
 " }}}
 
 " Lua: {{{2
-call dein#add('tbastos/vim-lua',         {'lazy':1, 'on_ft': ['lua']})
-call dein#add('VaiN474/vim-etlua',       {'lazy':1, 'on_ft': ['lua']})
-call dein#add('VaiN474/vim-etlua-plain', {'lazy':1, 'on_ft': ['ept']})
-call dein#add('leafo/moonscript-vim',    {'lazy':1, 'on_ft': ['moon']})
-" call dein#add('xolox/vim-misc',         {'lazy':1, 'on_ft': ['lua'  ]})
-" call dein#add('xolox/vim-lua-ftplugin', {'lazy':1, 'on_ft': ['lua'  ]})
+Plug 'tbastos/vim-lua',         {'for': ['lua']}
+Plug 'VaiN474/vim-etlua',       {'for': ['lua']}
+Plug 'VaiN474/vim-etlua-plain', {'for': ['ept']}
+Plug 'leafo/moonscript-vim',    {'for': ['moon']}
+" Plug 'xolox/vim-misc',         {'for': ['lua'  ]}
+" Plug 'xolox/vim-lua-ftplugin', {'for': ['lua'  ]}
 " }}}
 
 " PHP: {{{2
-call dein#add('tobyS/pdv',   {'lazy': 1, 'on_ft': 'php'})
-call dein#add('mxw/vim-xhp', { 'lazy':1, 'on_ft': ['php', 'xhp']})
+Plug 'tobyS/pdv',   {'for': 'php'}
+Plug 'mxw/vim-xhp', { 'for': ['php', 'xhp']}
 " }}}
 
 " Python: {{{2
-call dein#add('tweekmonster/impsort.vim',         {'lazy':1, 'on_ft': ['python']})
-call dein#add('hynek/vim-python-pep8-indent',     {'lazy':1, 'on_ft': ['py', 'python'  ]})
-call dein#add('/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'lazy':1, 'on_ft': ['python']})
-" call dein#add('python-mode/python-mode',          {'lazy':1, 'on_ft': ['py', 'python'  ]})
-" call dein#add('davidhalter/jedi-vim',             {'lazy':1, 'on_ft': ['py', 'python'  ]})
+Plug 'tweekmonster/impsort.vim',         {'for': ['python']}
+Plug 'hynek/vim-python-pep8-indent',     {'for': ['py', 'python'  ]}
+Plug '/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'for': ['python']}
+" Plug 'python-mode/python-mode',          {'for': ['py', 'python'  ]}
+" Plug 'davidhalter/jedi-vim',             {'for': ['py', 'python'  ]}
 " }}}
 
 " Ruby: {{{2
-call dein#add('vim-ruby/vim-ruby',                {'lazy':1, 'on_ft': ['ruby', 'rb' ]})
+Plug 'vim-ruby/vim-ruby',                {'for': ['ruby', 'rb' ]}
 " }}}
 
 " Writing: {{{2
-call dein#add('lervag/vimtex',                    {'lazy':1, 'on_ft': ['tex'  ]})
-call dein#add('jceb/vim-orgmode',                 {'lazy':1, 'on_ft': ['org'  ]})
-call dein#add('tpope/vim-markdown',               {'lazy':1, 'on_ft': ['markdown']})
-" call dein#add('nelstrom/vim-markdown-folding',    {'lazy':1, 'on_ft': ['markdown']})
-call dein#add('tyru/markdown-codehl-onthefly.vim',{'lazy':1, 'on_ft': ['markdown']})
-" call dein#add('plasticboy/vim-markdown',          {'lazy':1, 'on_ft': ['md', 'markdown']})
-" call dein#add('vim-pandoc/vim-pandoc')
-" call dein#add('vim-pandoc/vim-pandoc-syntax',     {'lazy':1, 'on_ft': ['md', 'md.pandoc', 'pandoc']})
+Plug 'lervag/vimtex',                    {'for': ['tex'  ]}
+Plug 'jceb/vim-orgmode',                 {'for': ['org'  ]}
+Plug 'tpope/vim-markdown',               {'for': ['markdown']}
+" Plug 'nelstrom/vim-markdown-folding',    {'for': ['markdown']}
+Plug 'tyru/markdown-codehl-onthefly.vim',{'for': ['markdown']}
+" Plug 'plasticboy/vim-markdown',          {'for': ['md', 'markdown']}
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax',     {'for': ['md', 'md.pandoc', 'pandoc']}
 " }}}
 
 " Shell: {{{2
-call dein#add('chrisbra/vim-zsh',                 {'lazy':1, 'on_ft': ['zsh'  ]})
-call dein#add('vim-perl/vim-perl',                {'lazy':1, 'on_ft': ['perl']})
-call dein#add('dag/vim-fish',                     {'lazy':1, 'on_ft': ['fish' ]})
-" call dein#add('rbtnn/powershell.vim',             {'lazy':1, 'on_ft': ['powershell']})
-call dein#add('dunstontc/vim-ps1',             {'lazy':1, 'on_ft': ['ps1']})
+Plug 'chrisbra/vim-zsh',  { 'for': ['zsh'  ]}
+Plug 'vim-perl/vim-perl', { 'for': 'perl'}
+Plug 'dag/vim-fish',      { 'for': 'fish' }
+" Plug 'rbtnn/powershell.vim',             {'for': ['powershell']}
+Plug 'dunstontc/vim-ps1', { 'for': ['ps1']}
+Plug 'dmix/elvish.vim',   { 'for': 'elvish'}
 
 " }}}
 
 " Swift: {{{
-call dein#add('gfontenot/vim-xcode')
-call dein#add('keith/swift.vim',         { 'lazy':1, 'on_ft': 'swift' })
+Plug 'gfontenot/vim-xcode'
+Plug 'keith/swift.vim',         { 'for': 'swift' }
 " }}}
 
 " Config: {{{2
-call dein#add('zplug/vim-zplug',         { 'lazy':1, 'on_ft': ['zsh'        ]})
-call dein#add('tmux-plugins/vim-tmux',   { 'lazy':1, 'on_ft': ['tmux'       ]})
-call dein#add('chrisbra/csv.vim',        { 'lazy':1, 'on_ft': ['csv', 'tsv' ]})
-call dein#add('cespare/vim-toml',        { 'lazy':1, 'on_ft': ['toml', 'tml']})
-call dein#add('chr4/nginx.vim',          { 'lazy':1, 'on_ft': ['nginx'      ]})
-call dein#add('ekalinin/Dockerfile.vim', { 'lazy':1, 'on_ft': ['dockerfile' ]})
+Plug 'zplug/vim-zplug',         { 'for': ['zsh'        ]}
+Plug 'tmux-plugins/vim-tmux',   { 'for': ['tmux'       ]}
+Plug 'chrisbra/csv.vim',        { 'for': ['csv', 'tsv' ]}
+Plug 'cespare/vim-toml',        { 'for': ['toml', 'tml']}
+Plug 'chr4/nginx.vim',          { 'for': ['nginx'      ]}
+Plug 'ekalinin/Dockerfile.vim', { 'for': ['dockerfile' ]}
 " }}}
 
 " Other: {{{2
-" call dein#add('rhysd/vim-crystal',       { 'lazy':1, 'on_ft': ['crystal', 'cr' ]})
-" call dein#add('uarun/vim-protobuf',      { 'lazy':1, 'on_ft': ['proto']})
-call dein#add('rust-lang/rust.vim',      { 'lazy':1, 'on_ft': ['rust', 'rs' ]})
-" call dein#add('jpalardy/vim-slime',      { 'lazy':1, 'on_ft': ['lisp', 'el' ]})
-" call dein#add('rhysd/vim-wasm',          { 'lazy':1, 'on_ft': ['wast'       ]})
-" call dein#add('peterhoeg/vim-qml',       { 'lazy':1, 'on_ft': ['qml']})
-" call dein#add('reasonml-editor/vim-reason-plus', { 'lazy':1, 'on_ft': ['reason']})
+Plug 'jparise/vim-graphql', { 'for': ['graphql']}
+" Plug 'rhysd/vim-crystal',       { 'for': ['crystal', 'cr' ]}
+" Plug 'uarun/vim-protobuf',      { 'for': ['proto']}
+Plug 'rust-lang/rust.vim',      { 'for': ['rust', 'rs' ]}
+" Plug 'jpalardy/vim-slime',      { 'for': ['lisp', 'el' ]}
+" Plug 'rhysd/vim-wasm',          { 'for': ['wast'       ]}
+" Plug 'peterhoeg/vim-qml',       { 'for': ['qml']}
+" Plug 'reasonml-editor/vim-reason-plus', { 'for': ['reason']}
 " }}}
 
 " }}}
 
 " === Linting === {{{
-call dein#add('sbdchd/neoformat')
-call dein#add('neomake/neomake',           {'build': 'make build/vimhelplint'})
-call dein#add('ternjs/tern_for_vim',       {'lazy':1, 'on_ft': ['javascript']})
-" call dein#add('reedes/vim-wordy')
-" call dein#add('reedes/vim-lexical')
+Plug 'sbdchd/neoformat'
+Plug 'neomake/neomake',           {'do': 'make build/vimhelplint'}
+Plug 'ternjs/tern_for_vim',       {'for': ['javascript']}
+" Plug 'reedes/vim-wordy'
+" Plug 'reedes/vim-lexical'
 " }}}
 
 " === Text Objects === {{{
-" call dein#add('wellle/targets.vim')
-call dein#add('kana/vim-operator-user')
-" call dein#add('rhysd/vim-operator-surround')
+" Plug 'wellle/targets.vim'
+Plug 'kana/vim-operator-user'
+" Plug 'rhysd/vim-operator-surround'
 
-call dein#add('kana/vim-textobj-user')
-call dein#add('kana/vim-textobj-line')
-call dein#add('kana/vim-textobj-fold')
-call dein#add('kana/vim-textobj-entire')
-" call dein#add('kana/vim-textobj-syntax')
-" call dein#add('kana/vim-textobj-function')  " FIXME: Look into interaction between Denite & textobj-function
-" call dein#add('haya14busa/vim-textobj-function-syntax')
-call dein#add('glts/vim-textobj-comment')
-call dein#add('michaeljsmith/vim-indent-object')
-call dein#add('Julian/vim-textobj-variable-segment')
-call dein#add('Julian/vim-textobj-brace')
-call dein#add('Raimondi/vim_search_objects')
-" call dein#add('junegunn/vim-after-object')
-" call dein#add('thinca/vim-textobj-between')
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-fold'
+Plug 'kana/vim-textobj-entire'
+" Plug 'kana/vim-textobj-syntax'
+" Plug 'kana/vim-textobj-function'  " FIXME: Look into interaction between Denite & textobj-function
+" Plug 'haya14busa/vim-textobj-function-syntax'
+Plug 'glts/vim-textobj-comment'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'Julian/vim-textobj-variable-segment'
+Plug 'Julian/vim-textobj-brace'
+Plug 'Raimondi/vim_search_objects'
+" Plug 'junegunn/vim-after-object'
+" Plug 'thinca/vim-textobj-between'
 " }}}
 
 " === Editing === {{{
-" call dein#add('tpope/vim-commentary')
-call dein#add('tomtom/tcomment_vim')
-call dein#add('tyru/caw.vim')
-call dein#add('kana/vim-niceblock')
-call dein#add('joereynolds/place.vim')
-call dein#add('junegunn/vim-easy-align')
-call dein#add('haya14busa/vim-edgemotion')
-" call dein#add('machakann/vim-swap')
-call dein#add('valloric/matchtagalways',   {'lazy': 1,  'on_ft': ['html', 'xml']})
-call dein#add('AndrewRadev/splitjoin.vim', {'lazy': 1, 'on_cmd': ['SplitjoinSplit', 'SplitjoinJoin']})
-call dein#add('AndrewRadev/switch.vim',    {'lazy': 1, 'on_cmd': 'Switch'})
-call dein#add('dkarter/bullets.vim',       {'lazy': 1, 'on_ft' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']})
+" Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
+Plug 'tyru/caw.vim'
+Plug 'kana/vim-niceblock'
+Plug 'joereynolds/place.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'haya14busa/vim-edgemotion'
+" Plug 'machakann/vim-swap'
+Plug 'valloric/matchtagalways',   { 'for': ['html', 'xml']}
+Plug 'AndrewRadev/splitjoin.vim', {'on': ['SplitjoinSplit', 'SplitjoinJoin']}
+Plug 'AndrewRadev/switch.vim',    {'on': 'Switch'}
+Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']}
 " }}}
 
 " === Utilities === {{{
-call dein#add('/usr/local/opt/fzf')
-call dein#add('~/Projects/Vim/forks/fzf.vim')
-call dein#add('djoshea/vim-autoread')
-" call dein#add('chrisbra/vim-autoread')
-call dein#add('tpope/vim-rsi')
-" call dein#add('tpope/vim-tbone')
-call dein#add('tpope/vim-eunuch')
-call dein#add('tpope/vim-repeat')
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-surround')
-call dein#add('tpope/vim-dispatch')
-" call dein#add('tpope/vim-endwise')
-" call dein#add('tpope/vim-abolish')
-call dein#add('tpope/vim-projectionist')
-call dein#add('tpope/vim-speeddating')
-call dein#add('tpope/vim-characterize', {'lazy': 1, 'on_cmd': '<Plug>(characterize)'})
-call dein#add('airblade/vim-rooter')
-call dein#add('pbrisbin/vim-mkdir')
-call dein#add('kopischke/vim-stay')
-" call dein#add('farmergreg/vim-lastplace')
-call dein#add('duff/vim-bufonly', {'lazy': 1, 'on_cmd': 'BufOnly'})
-call dein#add('mhinz/vim-sayonara')
-call dein#add('ervandew/supertab')
-call dein#add('airblade/vim-matchquote')
-call dein#add('justinmk/vim-sneak')
-" call dein#add('rhysd/clever-f.vim')
-call dein#add('Raimondi/delimitMate')
-call dein#add('sgur/vim-editorconfig')
-" call dein#add('tommcdo/vim-kangaroo')
-call dein#add('christoomey/vim-tmux-navigator')
-call dein#add('nickeb96/vitality.vim')
-" call dein#add('simeji/winresizer')
-" call dein#add('jaawerth/nrun.vim')
-" call dein#add('embear/vim-localvimrc')
-call dein#add('ludovicchabant/vim-gutentags')
-call dein#add('lambdalisue/suda.vim')
-call dein#add('Shougo/context_filetype.vim')
-" call dein#add('Shougo/neossh.vim')
-call dein#add('Shougo/echodoc.vim')
-call dein#add('Shougo/vimproc.vim', { 'build' : 'make' })
+Plug '/usr/local/opt/fzf'
+Plug '~/Projects/Vim/forks/fzf.vim'
+Plug 'djoshea/vim-autoread'
+" Plug 'chrisbra/vim-autoread'
+Plug 'tpope/vim-rsi'
+" Plug 'tpope/vim-tbone'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-dispatch'
+" Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-characterize', {'on': '<Plug>(characterize'}
+Plug 'airblade/vim-rooter'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'kopischke/vim-stay'
+" Plug 'farmergreg/vim-lastplace'
+Plug 'duff/vim-bufonly', {'on': 'BufOnly'}
+Plug 'mhinz/vim-sayonara'
+Plug 'ervandew/supertab'
+Plug 'airblade/vim-matchquote'
+Plug 'justinmk/vim-sneak'
+" Plug 'rhysd/clever-f.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'sgur/vim-editorconfig'
+" Plug 'tommcdo/vim-kangaroo'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'nickeb96/vitality.vim'
+" Plug 'simeji/winresizer'
+" Plug 'jaawerth/nrun.vim'
+" Plug 'embear/vim-localvimrc'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'lambdalisue/suda.vim'
+Plug 'Shougo/context_filetype.vim'
+" Plug 'Shougo/neossh.vim'
+Plug 'Shougo/echodoc.vim'
+Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
 " }}}
 
 " === Denite === {{{
-call dein#add('Shougo/unite.vim')
-call dein#add('~/.ghq/github.com/dunstontc/denite.nvim')
-call dein#add('~/.ghq/github.com/dunstontc/neomru.vim')
-call dein#add('Shougo/neoyank.vim')
-call dein#add('Jagua/vim-denite-ghq')
-call dein#add('rafi/vim-denite-z')
-call dein#add('rafi/vim-denite-session')
-" call dein#add('lambdalisue/session.vim')
-call dein#add('mhartington/denite-neomake')
-" call dein#add('iamcco/file-manager.vim')
-call dein#add('notomo/denite-autocmd')
-" call dein#add('bennyyip/denite-github-stars')
-call dein#add('yyotti/denite-marks')
-call dein#add('blankname/denite_fzf_matcher')
+Plug 'Shougo/unite.vim'
+Plug '~/.ghq/github.com/dunstontc/denite.nvim'
+Plug '~/.ghq/github.com/dunstontc/neomru.vim'
+Plug 'Shougo/neoyank.vim'
+Plug 'rafi/vim-denite-z'
+Plug 'rafi/vim-denite-session'
+" Plug 'lambdalisue/session.vim'
+Plug 'mhartington/denite-neomake'
+" Plug 'iamcco/file-manager.vim'
+" Plug 'notomo/denite-autocmd'
+" Plug 'bennyyip/denite-github-stars'
+Plug 'yyotti/denite-marks'
+Plug 'blankname/denite_fzf_matcher'
 " }}}
 
 " === Completion === {{{
-" call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
-call dein#add('dunstontc/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
-call dein#add('Shougo/neco-vim')
-call dein#add('Shougo/neco-syntax')
-call dein#add('Shougo/neoinclude.vim')
-" call dein#add('ujihisa/neco-look')
-call dein#add('SirVer/ultisnips')
-call dein#add('wellle/tmux-complete.vim')
-call dein#add('mattn/emmet-vim',               { 'lazy':1, 'on_ft': ['jsx', 'html', 'vue' ]})
-" call dein#add('zchee/deoplete-clang',          { 'lazy':1, 'on_ft': ['c', 'cpp', 'objc', 'objcpp']})
-" call dein#add('tweekmonster/deoplete-clang2',  { 'lazy':1, 'on_ft': ['c', 'cpp', 'objc', 'objcpp']})
-call dein#add('Rip-Rip/clang_complete',        { 'lazy':1, 'on_ft': ['c', 'cpp', 'objc', 'objcpp']})
-call dein#add('zchee/deoplete-jedi',           { 'lazy':1, 'on_ft': 'python'})
-call dein#add('zchee/deoplete-zsh',            { 'lazy':1, 'on_ft': 'zsh'})
-call dein#add('zchee/deoplete-docker',         { 'lazy':1, 'on_ft': 'dockerfile'})
-call dein#add('ponko2/deoplete-fish',          { 'lazy':1, 'on_ft': 'fish'})
-call dein#add('carlitux/deoplete-ternjs',      { 'lazy':1, 'on_ft': ['jsx', 'javascript' ]})
-call dein#add('sebastianmarkow/deoplete-rust', { 'lazy':1, 'on_ft': 'rust'})
-call dein#add('fishbullet/deoplete-ruby',      { 'lazy':1, 'on_ft': 'ruby'})
-call dein#add('padawan-php/deoplete-padawan',  { 'lazy':1, 'on_ft': 'php'})
-call dein#add('artur-shaik/vim-javacomplete2', { 'lazy':1, 'on_ft': 'java'})
-call dein#add('zchee/deoplete-go',             { 'lazy':1, 'on_ft': 'go',
-                                               \ 'build':  'make'})
-call dein#add('fcpg/vim-complimentary',        { 'lazy':1, 'on_ft': 'vim'})  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
-" call dein#add('cyansprite/deoplete-omnisharp', { 'lazy':1, 'on_ft': 'cs'})
-" call dein#add('1995eaton/vim-better-javascript-completion')
+Plug 'dunstontc/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-vim'
+Plug 'Shougo/neco-syntax'
+Plug 'Shougo/neoinclude.vim'
+" Plug 'ujihisa/neco-look'
+Plug 'SirVer/ultisnips'
+Plug 'wellle/tmux-complete.vim'
+Plug 'mattn/emmet-vim',               { 'for': ['jsx', 'html', 'vue' ]}
+" Plug 'zchee/deoplete-clang',          { 'for': ['c', 'cpp', 'objc', 'objcpp']}
+" Plug 'tweekmonster/deoplete-clang2',  { 'for': ['c', 'cpp', 'objc', 'objcpp']}
+Plug 'Rip-Rip/clang_complete',        { 'for': ['c', 'cpp', 'objc', 'objcpp']}
+Plug 'zchee/deoplete-jedi',           { 'for': 'python'}
+Plug 'zchee/deoplete-zsh',            { 'for': 'zsh'}
+Plug 'zchee/deoplete-docker',         { 'for': 'dockerfile'}
+Plug 'ponko2/deoplete-fish',          { 'for': 'fish'}
+Plug 'carlitux/deoplete-ternjs',      { 'for': ['jsx', 'javascript' ]}
+Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust'}
+Plug 'fishbullet/deoplete-ruby',      { 'for': 'ruby'}
+Plug 'padawan-php/deoplete-padawan',  { 'for': 'php'}
+Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java'}
+" Plug 'zchee/deoplete-go',             { 'for': 'go', 'do':  'make'}
+Plug 'fcpg/vim-complimentary',        { 'for': 'vim'}  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
+" Plug 'cyansprite/deoplete-omnisharp', { 'for': 'cs'}
+" Plug '1995eaton/vim-better-javascript-completion'
 " }}}
 
 " === Misc === {{{
-call dein#add('mattn/webapi-vim')
-call dein#add('wakatime/vim-wakatime')
-" call dein#add('skywind3000/asyncrun.vim')
-call dein#add('equalsraf/neovim-gui-shim')
-call dein#add('dzhou121/gonvim-fuzzy')
-" call dein#add('chrisbra/unicode.vim')
-" call dein#add('lambdalisue/vim-gista', {
-"     \ 'on_cmd': 'Gista',
-"     \})
-" call dein#add('vifm/neovim-vifm')
-" call dein#add('nicwest/vim-http')
-" call dein#add('diepm/vim-rest-console')
+Plug 'mattn/webapi-vim'
+Plug 'wakatime/vim-wakatime'
+" Plug 'skywind3000/asyncrun.vim'
+" Plug 'equalsraf/neovim-gui-shim'
+" Plug 'dzhou121/gonvim-fuzzy'
+" Plug 'chrisbra/unicode.vim'
+" Plug 'lambdalisue/vim-gista', {
+"     \ 'on': 'Gista',
+"     \}
+" Plug 'vifm/neovim-vifm'
+" Plug 'nicwest/vim-http'
+" Plug 'diepm/vim-rest-console'
 " }}}
 
 " === Version Control === {{{
-" call dein#add('lambdalisue/gina.vim')
-" call dein#add('gregsexton/gitv')
-" call dein#add('rhysd/committia.vim')
-" call dein#add('idanarye/vim-merginal')
-" call dein#add('elstgav/branch-manager')
-call dein#add('jreybert/vimagit', { 'lazy': 1, 'on_cmd': 'Magit' })
-call dein#add('christoomey/vim-conflicted')
-" call dein#add('chrisbra/vim-diff-enhanced')
+" Plug 'lambdalisue/gina.vim'
+" Plug 'gregsexton/gitv'
+" Plug 'rhysd/committia.vim'
+" Plug 'idanarye/vim-merginal'
+" Plug 'elstgav/branch-manager'
+" Plug 'jreybert/vimagit', { 'on': 'Magit' }
+" Plug 'christoomey/vim-conflicted'
+" Plug 'chrisbra/vim-diff-enhanced'
 " }}}
 
 " === Search And Replace === {{{
-" call dein#add('mileszs/ack.vim')
-call dein#add('osyo-manga/vim-anzu')
-" call dein#add('haya14busa/is.vim')
-call dein#add('haya14busa/incsearch.vim')
-call dein#add('haya14busa/vim-asterisk')
-" call dein#add('brooth/far.vim')
-" call dein#add('dyng/ctrlsf.vim')
-" call dein#add('pelodelfuego/vim-swoop', { 'lazy': 1, 'on_source': 'swoop'})
-" call dein#add('ctrlpvim/ctrlp.vim', { 'lazy': 1, 'on_map': '<C-p>'})
+" Plug 'mileszs/ack.vim'
+Plug 'osyo-manga/vim-anzu'
+" Plug 'haya14busa/is.vim')
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/vim-asterisk'
+" Plug 'brooth/far.vim'
+" Plug 'dyng/ctrlsf.vim'
+" Plug 'pelodelfuego/vim-swoop', { 'on_source': 'swoop'}
+" Plug 'ctrlpvim/ctrlp.vim', { 'on_map': '<C-p>'}
 " }}}
 
 " === Lazy === {{{
-call dein#add('ciaranm/securemodelines',       { 'lazy': 1, 'on_event' : 'BufRead' })
-call dein#add('frioux/vim-regedit')
-call dein#add('Shougo/junkfile.vim')
-call dein#add('Shougo/vinarise.vim',           { 'lazy': 1, 'on_cmd': 'Vinarise'})
-call dein#add('Shougo/deol.nvim',              { 'lazy': 1, 'on_cmd': 'Deol'                       })
-call dein#add('tweekmonster/startuptime.vim')
-call dein#add('tweekmonster/nvim-api-viewer',  { 'lazy': 1, 'on_cmd' :['NvimAPI', 'NvimAPI!'      ]})
-call dein#add('tyru/capture.vim',              { 'lazy': 1, 'on_cmd': 'Capture'                    })
-call dein#add('thinca/vim-scouter',            { 'lazy': 1, 'on_cmd': ['Scouter', 'ScouterVerbose']})
-call dein#add('thinca/vim-prettyprint',        { 'lazy': 1, 'on_cmd': ['PrettyPrint', 'PP'        ]})
-call dein#add('chrisbra/Colorizer',            { 'lazy': 1, 'on_cmd': 'ColorToggle'                })
-call dein#add('dhruvasagar/vim-table-mode',    { 'lazy': 1, 'on_cmd': 'TableModeToggle'            })
-call dein#add('majutsushi/tagbar',             { 'lazy': 1, 'on_cmd': 'TagbarToggle'               })
-call dein#add('mbbill/undotree',               { 'lazy': 1, 'on_cmd': 'UndoTreeToggle'             })
-call dein#add('itchyny/calendar.vim',          { 'lazy': 1, 'on_cmd': 'Calendar'                   })
-call dein#add('itchyny/screensaver.vim',       { 'lazy': 1, 'on_cmd': 'ScreenSaver'                })
-call dein#add('metakirby5/codi.vim',           { 'lazy': 1, 'on_cmd': 'Codi'                       })
-call dein#add('ryanss/vim-hackernews',         { 'lazy': 1, 'on_cmd': 'HackerNews'                 })
-call dein#add('junegunn/vim-github-dashboard', { 'lazy': 1, 'on_cmd': ['GHDashboard', 'GHActivity']})
-call dein#add('junegunn/gv.vim',               { 'lazy': 1, 'on_cmd': ['GV', 'GV!', 'GV?'         ]})
-call dein#add('guns/xterm-color-table.vim',    { 'lazy': 1, 'on_cmd': 'XtermColorTable'            })
+" Plug 'ciaranm/securemodelines',       { 'on_event' : 'BufRead' }
+Plug 'frioux/vim-regedit'
+Plug 'Shougo/junkfile.vim'
+Plug 'Shougo/vinarise.vim',           { 'on': 'Vinarise'}
+Plug 'Shougo/deol.nvim',              { 'on': 'Deol'                       }
+Plug 'tweekmonster/startuptime.vim'
+Plug 'tyru/capture.vim',              { 'on': 'Capture'                    }
+Plug 'thinca/vim-scouter',            { 'on': ['Scouter', 'ScouterVerbose']}
+Plug 'chrisbra/Colorizer',            { 'on': 'ColorToggle'                }
+Plug 'dhruvasagar/vim-table-mode',    { 'on': 'TableModeToggle'            }
+Plug 'majutsushi/tagbar',             { 'on': 'TagbarToggle'               }
+Plug 'mbbill/undotree',               { 'on': 'UndoTreeToggle'             }
+Plug 'junegunn/vim-github-dashboard', { 'on': ['GHDashboard', 'GHActivity']}
+Plug 'junegunn/gv.vim',               { 'on': 'GV'}
+Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'            }
 " }}}
 
 " === Local === {{{
-call dein#add('/Users/clay/Projects/Vim/me/tcd')
-call dein#add('~/Projects/Vim/me/projectile.nvim')
-call dein#add('/Users/clay/.ghq/github.com/dunstontc/lightline.vim')
-" call dein#add('/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
-" call dein#add('/Users/clay/.ghq/github.com/dunstontc/highlighter.nvim', { 'do': ':UpdateRemotePlugins' })
-call dein#add('~/.ghq/github.com/dunstontc/vison',           {'lazy':1, 'on_ft': ['json'        ]})
-call dein#add('~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'lazy':1, 'on_ft': 'vim'           })
-call dein#add('~/.ghq/github.com/dunstontc/python-syntax',   {'lazy':1, 'on_ft': ['py', 'python']})
-call dein#add('~/.ghq/github.com/dunstontc/vim-startify')
-" call dein#add('~/.ghq/github.com/dunstontc/tagbar-markdown', {'lazy':1, 'on_ft': 'markdown'      }) " TODO: Learn PHP?
+Plug '/Users/clay/Projects/Vim/me/tcd'
+Plug '~/Projects/Vim/me/projectile.nvim'
+Plug '/Users/clay/go/src/github.com/dunstontc/AsTex.nvim'
+Plug '/Users/clay/.ghq/github.com/dunstontc/lightline.vim'
+" Plug '/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
+" Plug '/Users/clay/.ghq/github.com/dunstontc/highlighter.nvim', { 'do': ':UpdateRemotePlugins' })
+Plug '~/.ghq/github.com/dunstontc/vison',           {'for': ['json']}
+Plug '~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'for': 'vim'}
+Plug '~/.ghq/github.com/dunstontc/python-syntax',   {'for': ['py', 'python']}
+Plug '~/.ghq/github.com/dunstontc/vim-startify'
 " }}}
 
-call dein#end()
-
-if dein#check_install()
-  call dein#install()
-endif
+call plug#end()
 
 filetype plugin indent on
 syntax on
@@ -439,21 +404,21 @@ let g:loaded_zipPlugin         = 1
 " ==============================================================================
 " === Language Servers === {{{
 " ==============================================================================
-let g:LanguageClient_serverCommands = {
-    \ 'ocaml': ['ocaml-language-server', '--stdio'],
-    \ 'reason': ['ocaml-language-server', '--stdio'],
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'typescript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['javascript-typescript-stdio'],
-    \ 'vue': ['vls'],
-    \ }
-
-let g:LanguageClient_rootMarkers = {
-    \ 'javascript': ['project.json'],
-    \ 'rust': ['Cargo.toml'],
-    \ }
-
+" let g:LanguageClient_serverCommands = {
+"     \ 'ocaml': ['ocaml-language-server', '--stdio'],
+"     \ 'reason': ['ocaml-language-server', '--stdio'],
+"     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+"     \ 'javascript': ['javascript-typescript-stdio'],
+"     \ 'typescript': ['javascript-typescript-stdio'],
+"     \ 'javascript.jsx': ['javascript-typescript-stdio'],
+"     \ 'vue': ['vls'],
+"     \ }
+"
+" let g:LanguageClient_rootMarkers = {
+"     \ 'javascript': ['project.json'],
+"     \ 'rust': ['Cargo.toml'],
+"     \ }
+"
 " }}}
 
 " ==============================================================================
@@ -638,3 +603,4 @@ let g:go_highlight_space_tab_error = 1
 " === shell === {{{
 let g:sh_no_error=1
 " }}}
+

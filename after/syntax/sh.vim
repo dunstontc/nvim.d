@@ -358,6 +358,16 @@ syn match   shSpecialNxt	contained	"\\[\\"'`$()#]"
 syn region  shBkslshSnglQuote	contained	matchgroup=shQuote start=+'+ end=+'+	contains=@Spell
 syn region  shBkslshDblQuote	contained	matchgroup=shQuote start=+"+ skip=+\\"+ end=+"+	contains=@shDblQuoteList,shStringSpecial,@Spell
 
+syn match bashFmtEsc	"\\33\[1m"
+syn match bashFmtEsc	"\\33\[0m"
+syn match bashFmtEsc	"\\e\[1m"
+syn match bashFmtEsc	"\\e\[0m"
+hi def link bashFmtEsc	Character
+
+syn match bashNull	"/dev/null"
+hi def link bashNull	Constant
+
+
 " Comments: {{{1
 "==========
 syn cluster	shCommentGroup	contains=shTodo,@Spell

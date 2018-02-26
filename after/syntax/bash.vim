@@ -6,7 +6,6 @@
 " " Previous Maintainer:	Lennart Schultz <Lennart.Schultz@ecmwf.int>
 " " Last Change:		2018-01-17
 " " ==============================================================================
-" " For options and settings, please use:      :help ft-sh-syntax
 " " This file includes many ideas from Eric Brunet (eric.brunet@ens.fr)
 "
 " " quit when a syntax file was already loaded {{{
@@ -51,23 +50,30 @@
 "
 " syn keyword bashBourneBuiltins	.	:	break	cd	continue	ecal	exec	exit	export	getopts	hash	pwd	readonly	return	shift	times	trap	umask	unset
 " syn keyword bashPosixBuiltins	break	:	.	continue	eval	exec	exit	export	readonly	return	set	shift	trap	unset
-" syn keyword bashBuiltinCommands	alias	bind	builtin	caller	command	declare	echo	enable	help	let	local	logout	mapfile	printf	read	readarray	source	type	typeset	ulimit	unalias	set
+syn keyword bashBuiltinCommands	alias	bind	builtin	caller	command	declare	echo	enable	help	let	local	logout	mapfile	printf	read	readarray	source	type	typeset	ulimit	unalias	set
 " syn keyword bashSetOptions	allexport	braceexpand	emacs	errexit	errtrace	functrace	hashall	histexpand	history	ignoreeof	keyword	monitor	noclobber	noexec	noglob	nolog	notify	nounset	onecmd	physical	pipefail	posix	privileged	verbose	vi	xtrace
 " syn keyword bashShoptOptions	autocd	cdable_vars	cdspell	checkhash	checkjobs	checkwinsize	cmdhist	compat31	compat32	compat40	compat41	compat42	compat43	complete_fullquote	direxpand	dirspell	dotglob	execfail	expand_aliases	extdebug	extglob	extquote	failglob	force_fignore	globasciiranges	globstar	gnu_errfmt	histappend	histreedit	histverify	hostcomplete	huponexit	inherit_errexit	interactive_comments	lastpipe	lithist	login_shell	mailwarn	no_empty_cmd_completion	nocaseglob	nocasematch	nullglob	progcomp	promptvars	restricted_shell	shift_verbose	sourcepath	xpg_echo
 " syn keyword bashBourneVars	cdpath	home	ifs	mail	mailpath	optarg	optind	path	ps1	ps2
 " syn keyword bashVariables	bash	bashopts	bashpid	bash_aliases	bash_argc	bash_argv	bash_cmds	bash_command	bash_compat	bash_env	bash_execution_string	bash_lineno	bash_loadables_path	bash_rematch	bash_source	bash_subshell	bash_versinfo	bash_version	bash_xtracefd	child_max	columns	comp_cword	comp_line	comp_point	comp_type	comp_key	comp_wordbreaks	comp_words	compreply	coproc	dirstack	emacs	env	euid	execignore	fcedit	fignore	funcname	funcnest	globignore	groups	histchars	histcmd	histcontrol	histfile	histfilesize	histignore	histsize	histtimeformat	hostfile	hostname	hosttype	ignoreeof	inputrc	lang	lc_all	lc_collate	lc_ctype	lc_messages	lc_numeric	lc_time	lineno	lines	machtype	mailcheck	mapfile	oldpwd	opterr	ostype	pipestatus	posixly_correct	ppid	prompt_command	prompt_dirtrim	ps0	ps3	ps4	pwd	random	readline_line	readline_point	reply	seconds	shell	shellopts	shlvl	timeformat	tmout	tmpdir	uid
 "
-" " syn cluster bashKeywords	contains=bashBourneBuiltins,bashPosixBuiltins,bashBuiltinCommands,bashSetOptions,bashSetOptions,bashBourneVars,bashVariables
+" syn cluster bashKeywords	contains=bashBourneBuiltins,bashPosixBuiltins,bashBuiltinCommands,bashSetOptions,bashSetOptions,bashBourneVars,bashVariables
 "
+syn match bashFmtEsc	"\\e\[[01];\d\dm"
+syn match bashFmtEsc	"\\e\[[01]m"
+syn match bashFmtEsc	"\\033\[[01]m"
+hi def link bashFmtEsc	Character
+
+syn match bashNull	"/dev/null"
+hi def link bashNull	Constant
 "
-" syn keyword bashIf		if	then	fi	else
+syn keyword bashIf		if	then	fi	else
 "
 " " syn region bashCommandSubstitution
 "
 " hi def link bashBourneVars	Identifier
 " " hi def link bashKeywords	Identifier
-" hi def link bashBuiltinCommands	Function
-" hi def link bashIf		Statement
+hi def link bashBuiltinCommands	Constant
+hi def link bashIf		Conditional
 " hi def link bashComment		Comment
 " hi def link bashPosixBuiltins	bashIf
 " " hi def link bashQuickComment	bashComment

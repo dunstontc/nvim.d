@@ -1,12 +1,11 @@
-#######################################################################
-#                      C# Snippets for UltiSnips                      #
-#######################################################################
+# =============================================================================
+#                  === C# Snippets for UltiSnips ===                          #
+# =============================================================================
 
-# priority -50
 
-#########################
+# =============================================================================
 #  classes and structs  #
-#########################
+# =============================================================================
 
 snippet namespace "namespace" b
 namespace ${1:MyNamespace}
@@ -41,32 +40,40 @@ enum ${1:MyEnum} { ${2:Item} };
 endsnippet
 
 
-############
+# =============================================================================
 #  Main()  #
-############
+# =============================================================================
 
-snippet sim "static int main" b
-static int Main(string[] args)
+snippet main "static int main" b
+static ${1:void} Main(string[] args)
 {
 	$0
 }
 endsnippet
 
-snippet svm "static void main" b
-static void Main(string[] args)
-{
-	$0
-}
-endsnippet
+# snippet sim "static int main" b
+# static int Main(string[] args)
+# {
+# 	$0
+# }
+# endsnippet
+#
+# snippet svm "static void main" b
+# static void Main(string[] args)
+# {
+# 	$0
+# }
+# endsnippet
 
 
-################
+# =============================================================================
 #  properties  #
-################
+# =============================================================================
 
 snippet prop "Simple property declaration" b
 public ${1:int} ${2:MyProperty} { get; set; }
 endsnippet
+
 
 snippet propfull "Full property declaration" b
 private ${1:int} ${2:_myProperty};
@@ -78,20 +85,23 @@ public $1 ${3:MyProperty}
 }
 endsnippet
 
+
 snippet propg "Property with a private setter" b
 public ${1:int} ${2:MyProperty} { get; private set; }
 endsnippet
 
 
-############
+
+# =============================================================================
 #  blocks  #
-############
+# =============================================================================
 
 snippet #if "#if #endif" b
 #if ${1:DEBUG}
 ${VISUAL}$0
 #endif
 endsnippet
+
 
 snippet #region "#region #endregion" b
 #region ${1:Region}
@@ -100,9 +110,9 @@ ${VISUAL}$0
 endsnippet
 
 
-###########
+# =============================================================================
 #  loops  #
-###########
+# =============================================================================
 
 snippet for "for loop" b
 for (int ${1:i} = 0; $1 < ${2:10}; $1++)
@@ -111,12 +121,14 @@ for (int ${1:i} = 0; $1 < ${2:10}; $1++)
 }
 endsnippet
 
+
 snippet forr "for loop (reverse)" b
 for (int ${1:i} = ${2:10}; $1 >= 0; $1--)
 {
 	${VISUAL}$0
 }
 endsnippet
+
 
 snippet foreach "foreach loop" b
 foreach (${3:var} ${2:item} in ${1:items})
@@ -125,12 +137,14 @@ foreach (${3:var} ${2:item} in ${1:items})
 }
 endsnippet
 
+
 snippet while "while loop" b
 while (${1:true})
 {
 	${VISUAL}$0
 }
 endsnippet
+
 
 snippet do "do loop" b
 do
@@ -140,9 +154,10 @@ do
 endsnippet
 
 
-###############
+
+# =============================================================================
 #  branching  #
-###############
+# =============================================================================
 
 snippet if "if statement" b
 if ($1)
@@ -150,6 +165,7 @@ if ($1)
 	${VISUAL}$0
 }
 endsnippet
+
 
 snippet ife "if else statement" b
 if ($1)
@@ -161,12 +177,14 @@ else
 }
 endsnippet
 
+
 snippet elif "else if" b
 else if ($1)
 {
 	$0
 }
 endsnippet
+
 
 snippet elseif "else if" b
 else if ($1)
@@ -175,12 +193,14 @@ else if ($1)
 }
 endsnippet
 
+
 snippet ifnn "if not null" b
 if ($1 != null)
 {
 	${VISUAL}$0
 }
 endsnippet
+
 
 snippet switch "switch statement" b
 switch (${1:statement})
@@ -193,6 +213,7 @@ switch (${1:statement})
 }
 endsnippet
 
+
 snippet case "case" b
 case ${1:value}:
 	$2
@@ -200,9 +221,9 @@ case ${1:value}:
 endsnippet
 
 
-##############
+# =============================================================================
 #  wrappers  #
-##############
+# =============================================================================
 
 snippet using "using statement" b
 using (${1:resource})
@@ -211,6 +232,7 @@ using (${1:resource})
 }
 endsnippet
 
+
 snippet unchecked "unchecked block" b
 unchecked
 {
@@ -218,12 +240,14 @@ unchecked
 }
 endsnippet
 
+
 snippet checked "checked block" b
 checked
 {
 	${VISUAL}$0
 }
 endsnippet
+
 
 snippet unsafe "unsafe" b
 unsafe
@@ -233,9 +257,9 @@ unsafe
 endsnippet
 
 
-########################
+# =============================================================================
 #  exception handling  #
-########################
+# =============================================================================
 
 snippet try "try catch block" b
 try
@@ -263,9 +287,9 @@ throw new $1Exception("$2");
 endsnippet
 
 
-##########
+# =============================================================================
 #  LINQ  #
-##########
+# =============================================================================
 
 snippet from "LINQ syntax" b
 var ${1:seq} =
@@ -276,9 +300,9 @@ var ${1:seq} =
 endsnippet
 
 
-############################
+# =============================================================================
 #  feedback and debugging  #
-############################
+# =============================================================================
 
 snippet da "Debug.Assert" b
 Debug.Assert(${1:true});
@@ -304,9 +328,9 @@ MessageBox.Show("${1:message}");
 endsnippet
 
 
-#############
+# =============================================================================
 #  methods  #
-#############
+# =============================================================================
 
 snippet equals "Equals method" b
 public override bool Equals(object obj)
@@ -334,9 +358,9 @@ ${1:public} static ${2:void} ${3:MyMethod}(${4})
 }
 endsnippet
 
-###############
+# =============================================================================
 # constructor #
-###############
+# =============================================================================
 
 snippet ctor "Constructor" b
 ${1:public} ${2:`!p snip.rv = snip.basename or "untitled"`}(${3})
@@ -345,9 +369,9 @@ ${1:public} ${2:`!p snip.rv = snip.basename or "untitled"`}(${3})
 }
 endsnippet
 
-##############
+# =============================================================================
 #  comments  #
-##############
+# =============================================================================
 
 snippet doc "Multiline Comment"
 /**

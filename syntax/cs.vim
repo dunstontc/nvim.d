@@ -105,6 +105,7 @@ syn keyword csType			bool byte char decimal double float int long object sbyte s
 
 " Storage:
 syn keyword csStorage			delegate enum interface namespace struct var
+syn keyword csStorage			public private
 
 syn keyword csRepeat			break continue do for foreach goto return while in
 syn keyword csConditional		else if switch
@@ -114,7 +115,8 @@ syn keyword csUsing			using
 " user labels (see [1] 8.6 Statements)
 " syn match   csLabel			display +^\s*\I\i*\s*:\([^:]\)\@=+
 
-syn keyword csModifier			abstract const extern internal override private protected public readonly sealed static virtual volatile
+" syn keyword csModifier			abstract const extern internal override private protected public readonly sealed static virtual volatile
+syn keyword csModifier			abstract const extern internal override protected readonly sealed static virtual volatile
 
 syn keyword csConstant			false null true
 
@@ -275,7 +277,7 @@ hi def link csIsAs 			Keyword
 hi def link csAsyncKeyword              Keyword
 hi def link csContextualStatement	Statement
 hi def link csOperatorError		Error
-hi def link csInterfaceDeclaration      Identifier
+hi def link csInterfaceDeclaration      Type
 hi def link csParams			Identifier
 
 hi def link csTodo			Todo

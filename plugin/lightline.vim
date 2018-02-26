@@ -117,7 +117,7 @@ let g:vimfiler_force_overwrite_statusline = 0
 "  === mgee/lightline-bufferline === " {{{
 " ==============================================================================
 
-let g:lightline#bufferline#filename_modifier = ":t ".s:nbsp
+let g:lightline#bufferline#filename_modifier = ":t".s:nbsp
 let g:lightline#bufferline#modified          = "+ "
 let g:lightline#bufferline#read_only         = ' '
 let g:lightline#bufferline#more_buffers      = '...'
@@ -169,6 +169,16 @@ function lightline#includeDenite() " {{{
     return mode_str
   endfunction
 " }}}
+
+" function! s:fzf_statusline()
+"   " Override statusline as you like
+"   highlight fzf1 ctermfg=161 ctermbg=251
+"   highlight fzf2 ctermfg=23 ctermbg=251
+"   highlight fzf3 ctermfg=236 ctermbg=251
+"   setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+" endfunction
+"
+" autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " ==============================================================================
 
