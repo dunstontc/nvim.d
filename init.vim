@@ -27,13 +27,13 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/vim-cursorword'
 Plug 'blueyed/vim-diminactive'
 Plug 'xtal8/traces.vim'
-" Plug 'jaxbot/semantic-highlight.vim' " FIXME: does this work?
 " Plug 'philip-karlsson/bolt.nvim'
 " Plug 'jszakmeister/vim-togglecursor'
 " Plug 'thaerkh/vim-indentguides'
 " Plug 'c0r73x/neotags.nvim'
-" Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
-Plug 'dunstontc/vim-vscode-theme'
+" Plug 'jaxbot/semantic-highlight.vim' " FIXME: does this work?
+Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
+" Plug 'dunstontc/vim-vscode-theme'
 " }}}
 
 " === Language Support === {{{1
@@ -50,12 +50,12 @@ Plug '/Users/clay/.ghq/github.com/dunstontc/vim-cpp-enhanced-highlight', {'for':
 " }}}
 
 " C# {{{
-" Plug '/Users/clay/.ghq/github.com/dunstontc/omnisharp-vim', { 'for': ['cs']}
-Plug 'fsharp/vim-fsharp', { 'for': ['fsharp']}
+" Plug '/Users/clay/.ghq/github.com/dunstontc/omnisharp-vim', {'for': ['cs']}
+Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
 " }}}
 
 " Java: {{{
-" Plug 'dunstontc/kotlin-vim',    { 'for': ['kotlin']}
+" Plug 'dunstontc/kotlin-vim',    {'for': ['kotlin']}
 " }}}
 
 " JavaScript: {{{2
@@ -64,6 +64,7 @@ Plug 'pangloss/vim-javascript',                {'for': ['javascript', 'typescrip
 " Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'jsx']}
 " Plug 'heavenshell/vim-jsdoc',            {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
 " Plug 'othree/jsdoc-syntax.vim',          {'for': ['javascript', 'typescript', 'vue']}
+Plug 'jparise/vim-graphql',              {'for': ['graphql']}
 " Vue:
 Plug 'posva/vim-vue',                    {'for': 'vue'}
 " JSX:
@@ -81,18 +82,18 @@ Plug 'rhysd/vim-fixjson',                {'for': 'json' }
 
 " HTML CSS: {{{2
 " HTML:
-Plug 'othree/html5.vim',                 { 'for': ['html' ]}
-Plug 'azakus/vim-webcomponents',         { 'for': ['html']}
+Plug 'othree/html5.vim',                 {'for': ['html' ]}
+Plug 'azakus/vim-webcomponents',         {'for': ['html']}
 " CSS:
-Plug 'hail2u/vim-css3-syntax',           { 'for': ['css'  ]}
-Plug 'groenewege/vim-less',              { 'for': ['less' ]}
-Plug 'wavded/vim-stylus',                { 'for': ['styl', 'stylus']}
+Plug 'hail2u/vim-css3-syntax',           {'for': ['css'  ]}
+Plug 'groenewege/vim-less',              {'for': ['less' ]}
+Plug 'wavded/vim-stylus',                {'for': ['styl', 'stylus']}
 " Templates:
-Plug 'tpope/vim-haml',                   { 'for': ['haml']}
+" Plug 'tpope/vim-haml',                   {'for': ['haml']}
 " Plug 'lepture/vim-jinja',                {'for': ['jinja' ]}
-" Plug 'digitaltoad/vim-pug',              { 'for': ['jade', 'pug'], }
+" Plug 'digitaltoad/vim-pug',              {'for': ['jade', 'pug'], }
 " Plug 'slim-template/vim-slim',           {'for': ['slim']}
-Plug 'mustache/vim-mustache-handlebars', { 'for': ['hbs', 'html']}
+Plug 'mustache/vim-mustache-handlebars', {'for': ['hbs', 'html']}
 " }}}
 
 " Go: {{{2
@@ -163,14 +164,13 @@ Plug 'ekalinin/Dockerfile.vim', { 'for': ['dockerfile' ]}
 " }}}
 
 " Other: {{{2
-Plug 'jparise/vim-graphql', { 'for': ['graphql']}
-" Plug 'rhysd/vim-crystal',       { 'for': ['crystal', 'cr' ]}
-" Plug 'uarun/vim-protobuf',      { 'for': ['proto']}
-Plug 'rust-lang/rust.vim',      { 'for': ['rust', 'rs' ]}
-" Plug 'jpalardy/vim-slime',      { 'for': ['lisp', 'el' ]}
-" Plug 'rhysd/vim-wasm',          { 'for': ['wast'       ]}
-" Plug 'peterhoeg/vim-qml',       { 'for': ['qml']}
-" Plug 'reasonml-editor/vim-reason-plus', { 'for': ['reason']}
+" Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr' ]}
+" Plug 'uarun/vim-protobuf',  {'for': ['proto']}
+" Plug 'rust-lang/rust.vim',  {'for': ['rust', 'rs' ]}
+" Plug 'jpalardy/vim-slime',  {'for': ['lisp', 'el' ]}
+" Plug 'rhysd/vim-wasm',      {'for': ['wast'       ]}
+" Plug 'peterhoeg/vim-qml',   {'for': ['qml']}
+" Plug 'reasonml-editor/vim-reason-plus', {'for': ['reason']}
 " }}}
 
 " }}}
@@ -179,15 +179,11 @@ Plug 'rust-lang/rust.vim',      { 'for': ['rust', 'rs' ]}
 Plug 'sbdchd/neoformat'
 Plug 'neomake/neomake',           {'do': 'make build/vimhelplint'}
 Plug 'ternjs/tern_for_vim',       {'for': ['javascript']}
-" Plug 'reedes/vim-wordy'
-" Plug 'reedes/vim-lexical'
 " }}}
 
 " === Text Objects === {{{
 " Plug 'wellle/targets.vim'
 Plug 'kana/vim-operator-user'
-" Plug 'rhysd/vim-operator-surround'
-
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-fold'
@@ -213,7 +209,7 @@ Plug 'joereynolds/place.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'haya14busa/vim-edgemotion'
 " Plug 'machakann/vim-swap'
-Plug 'valloric/matchtagalways',   { 'for': ['html', 'xml']}
+Plug 'valloric/matchtagalways',   {'for': ['html', 'xml']}
 Plug 'AndrewRadev/splitjoin.vim', {'on': ['SplitjoinSplit', 'SplitjoinJoin']}
 Plug 'AndrewRadev/switch.vim',    {'on': 'Switch'}
 Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']}
@@ -223,7 +219,6 @@ Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scr
 Plug '/usr/local/opt/fzf'
 Plug '~/Projects/Vim/forks/fzf.vim'
 Plug 'djoshea/vim-autoread'
-" Plug 'chrisbra/vim-autoread'
 Plug 'tpope/vim-rsi'
 " Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-eunuch'
@@ -239,7 +234,6 @@ Plug 'tpope/vim-characterize', {'on': '<Plug>(characterize'}
 Plug 'airblade/vim-rooter'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'kopischke/vim-stay'
-" Plug 'farmergreg/vim-lastplace'
 Plug 'duff/vim-bufonly', {'on': 'BufOnly'}
 Plug 'mhinz/vim-sayonara'
 Plug 'ervandew/supertab'
@@ -251,15 +245,13 @@ Plug 'sgur/vim-editorconfig'
 " Plug 'tommcdo/vim-kangaroo'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nickeb96/vitality.vim'
-" Plug 'simeji/winresizer'
-" Plug 'jaawerth/nrun.vim'
 " Plug 'embear/vim-localvimrc'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'lambdalisue/suda.vim'
 Plug 'Shougo/context_filetype.vim'
 " Plug 'Shougo/neossh.vim'
 Plug 'Shougo/echodoc.vim'
-Plug 'Shougo/vimproc.vim', { 'do' : 'make' }
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " }}}
 
 " === Denite === {{{
@@ -267,41 +259,38 @@ Plug 'Shougo/unite.vim'
 Plug '~/.ghq/github.com/dunstontc/denite.nvim'
 Plug '~/.ghq/github.com/dunstontc/neomru.vim'
 Plug 'Shougo/neoyank.vim'
-Plug 'rafi/vim-denite-z'
 Plug 'rafi/vim-denite-session'
 " Plug 'lambdalisue/session.vim'
 Plug 'mhartington/denite-neomake'
 " Plug 'iamcco/file-manager.vim'
-" Plug 'notomo/denite-autocmd'
-" Plug 'bennyyip/denite-github-stars'
 Plug 'yyotti/denite-marks'
 Plug 'blankname/denite_fzf_matcher'
 " }}}
 
 " === Completion === {{{
-Plug 'dunstontc/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'dunstontc/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neoinclude.vim'
 " Plug 'ujihisa/neco-look'
 Plug 'SirVer/ultisnips'
 Plug 'wellle/tmux-complete.vim'
-Plug 'mattn/emmet-vim',               { 'for': ['jsx', 'html', 'vue' ]}
-" Plug 'zchee/deoplete-clang',          { 'for': ['c', 'cpp', 'objc', 'objcpp']}
-" Plug 'tweekmonster/deoplete-clang2',  { 'for': ['c', 'cpp', 'objc', 'objcpp']}
-Plug 'Rip-Rip/clang_complete',        { 'for': ['c', 'cpp', 'objc', 'objcpp']}
-Plug 'zchee/deoplete-jedi',           { 'for': 'python'}
-Plug 'zchee/deoplete-zsh',            { 'for': 'zsh'}
-Plug 'zchee/deoplete-docker',         { 'for': 'dockerfile'}
-Plug 'ponko2/deoplete-fish',          { 'for': 'fish'}
-Plug 'carlitux/deoplete-ternjs',      { 'for': ['jsx', 'javascript' ]}
-Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust'}
-Plug 'fishbullet/deoplete-ruby',      { 'for': 'ruby'}
-Plug 'padawan-php/deoplete-padawan',  { 'for': 'php'}
-Plug 'artur-shaik/vim-javacomplete2', { 'for': 'java'}
-" Plug 'zchee/deoplete-go',             { 'for': 'go', 'do':  'make'}
-Plug 'fcpg/vim-complimentary',        { 'for': 'vim'}  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
-" Plug 'cyansprite/deoplete-omnisharp', { 'for': 'cs'}
+Plug 'mattn/emmet-vim',               {'for': ['jsx', 'html', 'vue' ]}
+" Plug 'zchee/deoplete-clang',         {'for': ['c', 'cpp', 'objc', 'objcpp']}
+" Plug 'tweekmonster/deoplete-clang2', {'for': ['c', 'cpp', 'objc', 'objcpp']}
+Plug 'Rip-Rip/clang_complete',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
+Plug 'zchee/deoplete-jedi',           {'for': 'python'}
+Plug 'zchee/deoplete-zsh',            {'for': 'zsh'}
+Plug 'zchee/deoplete-docker',         {'for': 'dockerfile'}
+Plug 'ponko2/deoplete-fish',          {'for': 'fish'}
+Plug 'carlitux/deoplete-ternjs',      {'for': ['jsx', 'javascript' ]}
+Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
+Plug 'fishbullet/deoplete-ruby',      {'for': 'ruby'}
+Plug 'padawan-php/deoplete-padawan',  {'for': 'php'}
+Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
+Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
+Plug 'fcpg/vim-complimentary',        {'for': 'vim'}  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
+" Plug 'cyansprite/deoplete-omnisharp', {'for': 'cs'}
 " Plug '1995eaton/vim-better-javascript-completion'
 " }}}
 
@@ -312,10 +301,7 @@ Plug 'wakatime/vim-wakatime'
 " Plug 'equalsraf/neovim-gui-shim'
 " Plug 'dzhou121/gonvim-fuzzy'
 " Plug 'chrisbra/unicode.vim'
-" Plug 'lambdalisue/vim-gista', {
-"     \ 'on': 'Gista',
-"     \}
-" Plug 'vifm/neovim-vifm'
+" Plug 'lambdalisue/vim-gista', { 'on': 'Gista'}
 " Plug 'nicwest/vim-http'
 " Plug 'diepm/vim-rest-console'
 " }}}
@@ -334,31 +320,30 @@ Plug 'wakatime/vim-wakatime'
 " === Search And Replace === {{{
 " Plug 'mileszs/ack.vim'
 Plug 'osyo-manga/vim-anzu'
-" Plug 'haya14busa/is.vim')
+" Plug 'haya14busa/is.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 " Plug 'brooth/far.vim'
 " Plug 'dyng/ctrlsf.vim'
-" Plug 'pelodelfuego/vim-swoop', { 'on_source': 'swoop'}
-" Plug 'ctrlpvim/ctrlp.vim', { 'on_map': '<C-p>'}
+" Plug 'pelodelfuego/vim-swoop'
 " }}}
 
 " === Lazy === {{{
-" Plug 'ciaranm/securemodelines',       { 'on_event' : 'BufRead' }
+Plug 'ciaranm/securemodelines'
 Plug 'frioux/vim-regedit'
 Plug 'Shougo/junkfile.vim'
 Plug 'Shougo/vinarise.vim',           { 'on': 'Vinarise'}
-Plug 'Shougo/deol.nvim',              { 'on': 'Deol'                       }
+Plug 'Shougo/deol.nvim',              { 'on': 'Deol'}
 Plug 'tweekmonster/startuptime.vim'
-Plug 'tyru/capture.vim',              { 'on': 'Capture'                    }
+Plug 'tyru/capture.vim',              { 'on': 'Capture'}
 Plug 'thinca/vim-scouter',            { 'on': ['Scouter', 'ScouterVerbose']}
-Plug 'chrisbra/Colorizer',            { 'on': 'ColorToggle'                }
-Plug 'dhruvasagar/vim-table-mode',    { 'on': 'TableModeToggle'            }
-Plug 'majutsushi/tagbar',             { 'on': 'TagbarToggle'               }
-Plug 'mbbill/undotree',               { 'on': 'UndoTreeToggle'             }
+Plug 'chrisbra/Colorizer',            { 'on': 'ColorToggle'}
+Plug 'dhruvasagar/vim-table-mode',    { 'on': 'TableModeToggle'}
+Plug 'majutsushi/tagbar',             { 'on': 'TagbarToggle'}
+Plug 'mbbill/undotree',               { 'on': 'UndoTreeToggle'}
 Plug 'junegunn/vim-github-dashboard', { 'on': ['GHDashboard', 'GHActivity']}
 Plug 'junegunn/gv.vim',               { 'on': 'GV'}
-Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'            }
+Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'}
 " }}}
 
 " === Local === {{{
@@ -367,7 +352,6 @@ Plug '~/Projects/Vim/me/projectile.nvim'
 Plug '/Users/clay/go/src/github.com/dunstontc/AsTex.nvim'
 Plug '/Users/clay/.ghq/github.com/dunstontc/lightline.vim'
 " Plug '/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
-" Plug '/Users/clay/.ghq/github.com/dunstontc/highlighter.nvim', { 'do': ':UpdateRemotePlugins' })
 Plug '~/.ghq/github.com/dunstontc/vison',           {'for': ['json']}
 Plug '~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'for': 'vim'}
 Plug '~/.ghq/github.com/dunstontc/python-syntax',   {'for': ['py', 'python']}
