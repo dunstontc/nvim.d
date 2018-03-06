@@ -7,7 +7,7 @@
 "     \|__| \|__|\|__|/       \|__|\|__|     \|__|\|__|\|__|\|_______|
 
 scriptencoding utf-8
-if !has('nvim')
+if !has("nvim")
   finish
 endif
 
@@ -17,6 +17,8 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+
+" UI: {{{
 Plug 'junegunn/vim-peekaboo'
 Plug 'dunstontc/lightline.vim'
 Plug 'mgee/lightline-bufferline'
@@ -36,7 +38,7 @@ Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
 " Plug 'dunstontc/vim-vscode-theme'
 " }}}
 
-" === Language Support === {{{1
+" === Language Support === {{{
 
 " Language Server {{{2
 " Plug 'autozimu/LanguageClient-neovim', {
@@ -45,7 +47,7 @@ Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
 "     \ }
 " }}}
 
-" C: {{{2
+" C: {{{
 Plug '/Users/clay/.ghq/github.com/dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " }}}
 
@@ -58,7 +60,7 @@ Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
 " Plug 'dunstontc/kotlin-vim',    {'for': ['kotlin']}
 " }}}
 
-" JavaScript: {{{2
+" JavaScript: {{{
 Plug 'pangloss/vim-javascript',                {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
 " Plug 'othree/yajs.vim',                        {'for': ['javascript', 'jsx']}
 " Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'jsx']}
@@ -80,7 +82,7 @@ Plug 'kchmck/vim-coffee-script',         {'for': ['coff', 'coffee', 'cson']}
 Plug 'rhysd/vim-fixjson',                {'for': 'json' }
 " }}}
 
-" HTML CSS: {{{2
+" HTML CSS: {{{
 " HTML:
 Plug 'othree/html5.vim',                 {'for': ['html' ]}
 Plug 'azakus/vim-webcomponents',         {'for': ['html']}
@@ -96,13 +98,13 @@ Plug 'wavded/vim-stylus',                {'for': ['styl', 'stylus']}
 Plug 'mustache/vim-mustache-handlebars', {'for': ['hbs', 'html']}
 " }}}
 
-" Go: {{{2
+" Go: {{{
 Plug '/Users/clay/.ghq/github.com/dunstontc/vim-go',  {'for': 'go' }
 " Plug 'jodosha/vim-godebug'
 " Plug 'godoctor/godoctor.vim'
 " }}}
 
-" Lua: {{{2
+" Lua: {{{
 Plug 'tbastos/vim-lua',         {'for': ['lua']}
 Plug 'VaiN474/vim-etlua',       {'for': ['lua']}
 Plug 'VaiN474/vim-etlua-plain', {'for': ['ept']}
@@ -111,12 +113,12 @@ Plug 'leafo/moonscript-vim',    {'for': ['moon']}
 " Plug 'xolox/vim-lua-ftplugin', {'for': ['lua'  ]}
 " }}}
 
-" PHP: {{{2
+" PHP: {{{
 Plug 'tobyS/pdv',   {'for': 'php'}
 Plug 'mxw/vim-xhp', { 'for': ['php', 'xhp']}
 " }}}
 
-" Python: {{{2
+" Python: {{{
 Plug 'tweekmonster/impsort.vim',         {'for': ['python']}
 Plug 'hynek/vim-python-pep8-indent',     {'for': ['py', 'python'  ]}
 Plug '/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'for': ['python']}
@@ -124,11 +126,11 @@ Plug '/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'for': ['python']
 " Plug 'davidhalter/jedi-vim',             {'for': ['py', 'python'  ]}
 " }}}
 
-" Ruby: {{{2
+" Ruby: {{{
 Plug 'vim-ruby/vim-ruby',                {'for': ['ruby', 'rb' ]}
 " }}}
 
-" Writing: {{{2
+" Writing: {{{
 Plug 'lervag/vimtex',                    {'for': ['tex'  ]}
 Plug 'jceb/vim-orgmode',                 {'for': ['org'  ]}
 Plug 'tpope/vim-markdown',               {'for': ['markdown']}
@@ -139,7 +141,7 @@ Plug 'tyru/markdown-codehl-onthefly.vim',{'for': ['markdown']}
 " Plug 'vim-pandoc/vim-pandoc-syntax',     {'for': ['md', 'md.pandoc', 'pandoc']}
 " }}}
 
-" Shell: {{{2
+" Shell: {{{
 Plug 'chrisbra/vim-zsh',  { 'for': ['zsh'  ]}
 Plug 'vim-perl/vim-perl', { 'for': 'perl'}
 Plug 'dag/vim-fish',      { 'for': 'fish' }
@@ -154,15 +156,16 @@ Plug 'gfontenot/vim-xcode'
 Plug 'keith/swift.vim',         { 'for': 'swift' }
 " }}}
 
-" Config: {{{2
+" Config: {{{
 Plug 'tmux-plugins/vim-tmux',   { 'for': ['tmux'       ]}
 Plug 'chrisbra/csv.vim',        { 'for': ['csv', 'tsv' ]}
 Plug 'cespare/vim-toml',        { 'for': ['toml', 'tml']}
 Plug 'chr4/nginx.vim',          { 'for': ['nginx'      ]}
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['dockerfile' ]}
+" Plug 'pearofducks/ansible-vim'
 " }}}
 
-" Other: {{{2
+" Other: {{{
 " Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr' ]}
 " Plug 'uarun/vim-protobuf',  {'for': ['proto']}
 " Plug 'rust-lang/rust.vim',  {'for': ['rust', 'rs' ]}
