@@ -1,11 +1,22 @@
 " TODO: Add load guard
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust':       ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
-    \ 'json':       [''],
-    \ 'vue':        ['vls'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'typescript': ['javascript-typescript-stdio'],
+    \ 'vue': ['vls'],
     \ }
+    " \ 'javascript.jsx': ['javascript-typescript-stdio'],
+    " \ 'javascript': ['/opt/javascript-typescript-langserver/lib/language-server-stdio.js'],
+
+
+let g:LanguageClient_rootMarkers = {
+    \ 'javascript': ['project.json'],
+    \ 'rust': ['Cargo.toml'],
+    \ }
+
 
 " Automatically start language servers.
 let g:LanguageClient_autoStart = 1

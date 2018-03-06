@@ -7,9 +7,6 @@
 "     \|__| \|__|\|__|/       \|__|\|__|     \|__|\|__|\|__|\|_______|
 
 scriptencoding utf-8
-if !has("nvim")
-  finish
-endif
 
 " ==============================================================================
 "  Plugins
@@ -368,7 +365,7 @@ set nocompatible
 
 " ==============================================================================
 " === Disable standard plugins === {{{
-let g:loaded_2html_plugin      = 1
+let g:loaded_2html_plugin      = 'none'
 let g:loaded_logiPat           = 1
 let g:loaded_getscriptPlugin   = 1
 let g:loaded_gzip              = 1
@@ -385,84 +382,6 @@ let g:loaded_tarPlugin         = 1
 let g:loaded_tutor_mode_plugin = 1
 let g:loaded_vimballPlugin     = 1
 let g:loaded_zipPlugin         = 1
-" }}}
-
-" ==============================================================================
-" === Language Servers === {{{
-" ==============================================================================
-" let g:LanguageClient_serverCommands = {
-"     \ 'ocaml': ['ocaml-language-server', '--stdio'],
-"     \ 'reason': ['ocaml-language-server', '--stdio'],
-"     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-"     \ 'javascript': ['javascript-typescript-stdio'],
-"     \ 'typescript': ['javascript-typescript-stdio'],
-"     \ 'javascript.jsx': ['javascript-typescript-stdio'],
-"     \ 'vue': ['vls'],
-"     \ }
-"
-" let g:LanguageClient_rootMarkers = {
-"     \ 'javascript': ['project.json'],
-"     \ 'rust': ['Cargo.toml'],
-"     \ }
-"
-" }}}
-
-" ==============================================================================
-" === C# === {{{
-let g:Omnisharp_start_server=0
-
-" let g:OmniSharp_server_type = 'v1'
-let g:OmniSharp_server_type = 'roslyn'
-
-"This is the default value, setting it isn't actually necessary
-" let g:OmniSharp_host = 'http://localhost:2000'
-
-"Timeout in seconds to wait for a response from the server
-let g:OmniSharp_timeout = 1
-" Use fzf.vim, no current Deoplete support.
-let g:OmniSharp_selector_ui = 'fzf'
-
-let g:OmniSharp_server_path = '/Users/clay/.omnisharp/OmniSharp'
-
-" let g:deoplete_omnisharp_exe_path = 'mono /Users/clay/.omnisharp/OmniSharp.exe'
-" let g:deoplete_omnisharp_port = 2000
-" }}}
-
-" ==============================================================================
-" === C === {{{
-" ==============================================================================
-
-" === octol/vim-cpp-enhanced-highlight ===
-let g:c_no_curly_error = 1
-let g:cpp_concepts_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_experimental_template_highlight = 1
-" let g:cpp_experimental_simple_template_highlight = 1
-
-" === Rip-Rip/clang_complete ===
-let g:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
-
-" === zchee/deoplete-clang ===
-let g:deoplete#sources#clang#libclang_path='/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
-" let g:deoplete#sources#clang#clang_header=
-
-" === tweekmonster/deoplete-clang2 ===
-let g:deoplete#sources#clang#autofill_neomake = v:true
-let g:deoplete#sources#clang#executable='/usr/bin/clang'
-
-" }}}
-
-" ==============================================================================
-" === Java === {{{
-" ==============================================================================
-let g:java_highlight_all = 1
-" let g:java_comment_strings = 1
-let g:java_ignore_javadoc = 0
-let g:java_highlight_java_lang_ids = 1
-let g:java_highlight_functions = 1
-let g:java_highlight_debug = 0
 " }}}
 
 " ==============================================================================
@@ -583,10 +502,5 @@ let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_highlight_string_spellcheck = 1
 let g:go_highlight_space_tab_error = 1
-" }}}
-
-" ==============================================================================
-" === shell === {{{
-let g:sh_no_error=1
 " }}}
 
