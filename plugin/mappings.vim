@@ -100,6 +100,14 @@ nnoremap <C-W><up> <C-W>K
 
 " <C-m>
 nnoremap <F17> :Denite file_mru<CR>
+
+" <C-d>
+" Dupe lines
+nnoremap <C-d> mxV"zy"zp`xjmx
+inoremap <C-d> <esc>mxV"zy"zp`xjmx
+vnoremap <C-d> Vypgv
+
+
 " }}}
 
 " === Bracket Maps === {{{
@@ -132,11 +140,6 @@ inoremap <F18> <esc>o
 " <D-S-CR> New line above
 " F19 -- ^[[18;2~
 inoremap <F19> <esc>O
-
-" Dupe lines
-nnoremap <M-S-Down> mxV"zy"zp`xjmx
-inoremap <M-S-Down> <esc>mxV"zy"zp`xjmx
-vnoremap <M-S-Down> Vypgv
 
 " === Indentation ===
 " F15 -- ^[[1;2R

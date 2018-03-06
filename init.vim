@@ -155,7 +155,6 @@ Plug 'keith/swift.vim',         { 'for': 'swift' }
 " }}}
 
 " Config: {{{2
-Plug 'zplug/vim-zplug',         { 'for': ['zsh'        ]}
 Plug 'tmux-plugins/vim-tmux',   { 'for': ['tmux'       ]}
 Plug 'chrisbra/csv.vim',        { 'for': ['csv', 'tsv' ]}
 Plug 'cespare/vim-toml',        { 'for': ['toml', 'tml']}
@@ -281,7 +280,7 @@ Plug 'mattn/emmet-vim',               {'for': ['jsx', 'html', 'vue' ]}
 Plug 'Rip-Rip/clang_complete',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
 Plug 'zchee/deoplete-jedi',           {'for': 'python'}
 Plug 'zchee/deoplete-zsh',            {'for': 'zsh'}
-Plug 'zchee/deoplete-docker',         {'for': 'dockerfile'}
+" Plug 'zchee/deoplete-docker',         {'for': 'dockerfile'}
 Plug 'ponko2/deoplete-fish',          {'for': 'fish'}
 Plug 'carlitux/deoplete-ternjs',      {'for': ['jsx', 'javascript' ]}
 Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
@@ -340,7 +339,7 @@ Plug 'thinca/vim-scouter',            { 'on': ['Scouter', 'ScouterVerbose']}
 Plug 'chrisbra/Colorizer',            { 'on': 'ColorToggle'}
 Plug 'dhruvasagar/vim-table-mode',    { 'on': 'TableModeToggle'}
 Plug 'majutsushi/tagbar',             { 'on': 'TagbarToggle'}
-Plug 'mbbill/undotree',               { 'on': 'UndoTreeToggle'}
+Plug 'mbbill/undotree'
 Plug 'junegunn/vim-github-dashboard', { 'on': ['GHDashboard', 'GHActivity']}
 Plug 'junegunn/gv.vim',               { 'on': 'GV'}
 Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'}
