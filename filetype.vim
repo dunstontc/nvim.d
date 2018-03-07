@@ -20,7 +20,6 @@ augroup filetypes
 
   autocmd BufRead,BufNewFile .spacemacs set filetype=lisp
 
-  " autocmd BufNewFile,BufRead *.mustache,*.hogan,*.hulk,*.hjs set filetype=html.mustache syntax=mustache
   autocmd BufNewFile,BufRead *.{mustache,hogan,hulk,hjs} set filetype=html.mustache syntax=mustache
   autocmd BufNewFile,BufRead *.{handlebars,hbs} set filetype=html.handlebars syntax=mustache
 
@@ -34,8 +33,9 @@ augroup filetypes
 
   autocmd BufReadPost,BufRead *.rs set filetype=rust
 
+  autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
+
   autocmd BufRead,BufNewFile .{aliases,env,exports,functions,highlight,inputrc,path} set filetype=sh
-  " autocmd BufRead,BufNewFile .{bash_prompt,bash_profile} set filetype=sh
   autocmd BufRead,BufNewFile *.{bashrc,bash_prompt,bash_profile} set filetype=sh
 
   autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
