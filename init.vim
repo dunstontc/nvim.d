@@ -124,7 +124,8 @@ Plug '/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'for': ['python']
 " }}}
 
 " Ruby: {{{
-Plug 'vim-ruby/vim-ruby',                {'for': ['ruby', 'rb' ]}
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+" Plug 'tpope/vim-rails'
 " }}}
 
 " Writing: {{{
@@ -159,7 +160,7 @@ Plug 'chrisbra/csv.vim',        { 'for': ['csv', 'tsv' ]}
 Plug 'cespare/vim-toml',        { 'for': ['toml', 'tml']}
 Plug 'chr4/nginx.vim',          { 'for': ['nginx'      ]}
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['dockerfile' ]}
-" Plug 'pearofducks/ansible-vim'
+Plug 'pearofducks/ansible-vim'
 " }}}
 
 " Other: {{{
@@ -277,7 +278,8 @@ Plug 'wellle/tmux-complete.vim'
 Plug 'mattn/emmet-vim',               {'for': ['jsx', 'html', 'vue' ]}
 " Plug 'zchee/deoplete-clang',         {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " Plug 'tweekmonster/deoplete-clang2', {'for': ['c', 'cpp', 'objc', 'objcpp']}
-Plug 'Rip-Rip/clang_complete',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
+Plug 'Shougo/deoplete-clangx',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
+" Plug 'Rip-Rip/clang_complete',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
 Plug 'zchee/deoplete-jedi',           {'for': 'python'}
 Plug 'zchee/deoplete-zsh',            {'for': 'zsh'}
 " Plug 'zchee/deoplete-docker',         {'for': 'dockerfile'}

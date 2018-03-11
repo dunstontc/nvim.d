@@ -30,12 +30,12 @@ syn region razorBlock start=+@{+ end=+}+ contains=@aspnetAddCS,@html
 
 syn region razorMixedBlock start="{" end="}" contains=@aspnetAddCS,@html
 
-syn region razorComment start="@\*" end="\*@"
+syn region razorComment start="@\* " end="\*@ "
 
 
 " Links: {{{
 " hi def link razorLine Conditional
-hi def link razorComment Comment
+hi link razorComment Comment
 ""}}}
 
 let b:current_syntax = 'cshtml'

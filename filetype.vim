@@ -33,7 +33,7 @@ augroup filetypes
 
   autocmd BufReadPost,BufRead *.rs set filetype=rust
 
-  autocmd BufRead,BufNewFile Vagrantfile set filetype=ruby
+  autocmd BufRead,BufNewFile Vagrantfile,Vagrantfile.local,.vagrantuser set filetype=ruby
 
   autocmd BufRead,BufNewFile .{aliases,env,exports,functions,highlight,inputrc,path} set filetype=sh
   autocmd BufRead,BufNewFile *.{bashrc,bash_prompt,bash_profile} set filetype=sh

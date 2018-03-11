@@ -1,6 +1,8 @@
+" ==============================================================================
 " Vim syntax-highlighting for text, forked from:
 " URL: http://aurelio.net/vim/txt.vim
 " Maintainer: Aurelio Marinho Jargas
+" ==============================================================================
 
 " syn clear
 syn case match
