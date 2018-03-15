@@ -116,11 +116,11 @@ Plug 'mxw/vim-xhp', { 'for': ['php', 'xhp']}
 " }}}
 
 " Python: {{{
-Plug 'tweekmonster/impsort.vim',         {'for': ['python']}
-Plug 'hynek/vim-python-pep8-indent',     {'for': ['py', 'python'  ]}
-Plug '/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'for': ['python']}
-" Plug 'python-mode/python-mode',          {'for': ['py', 'python'  ]}
-" Plug 'davidhalter/jedi-vim',             {'for': ['py', 'python'  ]}
+Plug 'tweekmonster/impsort.vim',         {'for': 'python'}
+Plug 'hynek/vim-python-pep8-indent',     {'for': 'python'  }
+Plug '/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'for': 'python'}
+" Plug 'python-mode/python-mode',          {'for': 'python'  }
+" Plug 'davidhalter/jedi-vim',             {'for': 'python'  }
 " }}}
 
 " Ruby: {{{
@@ -140,11 +140,11 @@ Plug 'tyru/markdown-codehl-onthefly.vim',{'for': ['markdown']}
 " }}}
 
 " Shell: {{{
-Plug 'chrisbra/vim-zsh',  { 'for': ['zsh'  ]}
+Plug 'chrisbra/vim-zsh',  { 'for': 'zsh'}
 Plug 'vim-perl/vim-perl', { 'for': 'perl'}
-Plug 'dag/vim-fish',      { 'for': 'fish' }
+Plug 'dag/vim-fish',      { 'for': 'fish'}
 " Plug 'rbtnn/powershell.vim',             {'for': ['powershell']}
-Plug 'dunstontc/vim-ps1', { 'for': ['ps1']}
+Plug 'dunstontc/vim-ps1', { 'for': 'ps1'}
 Plug 'dmix/elvish.vim',   { 'for': 'elvish'}
 
 " }}}
@@ -155,11 +155,11 @@ Plug 'keith/swift.vim',         { 'for': 'swift' }
 " }}}
 
 " Config: {{{
-Plug 'tmux-plugins/vim-tmux',   { 'for': ['tmux'       ]}
+Plug 'tmux-plugins/vim-tmux',   { 'for': 'tmux'}
 Plug 'chrisbra/csv.vim',        { 'for': ['csv', 'tsv' ]}
 Plug 'cespare/vim-toml',        { 'for': ['toml', 'tml']}
-Plug 'chr4/nginx.vim',          { 'for': ['nginx'      ]}
-Plug 'ekalinin/Dockerfile.vim', { 'for': ['dockerfile' ]}
+Plug 'chr4/nginx.vim',          { 'for': 'nginx'}
+Plug 'ekalinin/Dockerfile.vim', { 'for': ['dockerfile']}
 Plug 'pearofducks/ansible-vim'
 " }}}
 
@@ -183,14 +183,12 @@ Plug 'ternjs/tern_for_vim',       {'for': ['javascript']}
 
 " === Text Objects === {{{
 " Plug 'wellle/targets.vim'
-Plug 'kana/vim-operator-user'
+" Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-fold'
 Plug 'kana/vim-textobj-entire'
 " Plug 'kana/vim-textobj-syntax'
-" Plug 'kana/vim-textobj-function'  " FIXME: Look into interaction between Denite & textobj-function
-" Plug 'haya14busa/vim-textobj-function-syntax'
 Plug 'glts/vim-textobj-comment'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'Julian/vim-textobj-variable-segment'
@@ -220,7 +218,6 @@ Plug '/usr/local/opt/fzf'
 Plug '~/Projects/Vim/forks/fzf.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-rsi'
-" Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
@@ -230,7 +227,6 @@ Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-characterize', {'on': '<Plug>(characterize'}
 Plug 'airblade/vim-rooter'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'kopischke/vim-stay'
@@ -262,7 +258,6 @@ Plug 'Shougo/neoyank.vim'
 Plug 'rafi/vim-denite-session'
 " Plug 'lambdalisue/session.vim'
 Plug 'mhartington/denite-neomake'
-" Plug 'iamcco/file-manager.vim'
 Plug 'yyotti/denite-marks'
 Plug 'blankname/denite_fzf_matcher'
 " }}}
@@ -301,10 +296,6 @@ Plug 'wakatime/vim-wakatime'
 " Plug 'skywind3000/asyncrun.vim'
 " Plug 'equalsraf/neovim-gui-shim'
 " Plug 'dzhou121/gonvim-fuzzy'
-" Plug 'chrisbra/unicode.vim'
-" Plug 'lambdalisue/vim-gista', { 'on': 'Gista'}
-" Plug 'nicwest/vim-http'
-" Plug 'diepm/vim-rest-console'
 " }}}
 
 " === Version Control === {{{
@@ -350,7 +341,6 @@ Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'}
 " === Local === {{{
 Plug '/Users/clay/Projects/Vim/me/tcd'
 Plug '~/Projects/Vim/me/projectile.nvim'
-Plug '/Users/clay/go/src/github.com/dunstontc/AsTex.nvim'
 Plug '/Users/clay/.ghq/github.com/dunstontc/lightline.vim'
 " Plug '/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
 Plug '~/.ghq/github.com/dunstontc/vison',           {'for': ['json']}
