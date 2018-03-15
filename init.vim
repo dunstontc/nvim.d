@@ -26,11 +26,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/vim-cursorword'
 Plug 'blueyed/vim-diminactive'
 Plug 'xtal8/traces.vim'
-" Plug 'philip-karlsson/bolt.nvim'
+" Plug 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'jszakmeister/vim-togglecursor'
 " Plug 'thaerkh/vim-indentguides'
-" Plug 'c0r73x/neotags.nvim'
-" Plug 'jaxbot/semantic-highlight.vim' " FIXME: does this work?
 Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
 " Plug 'dunstontc/vim-vscode-theme'
 " }}}
@@ -143,7 +141,6 @@ Plug 'tyru/markdown-codehl-onthefly.vim',{'for': ['markdown']}
 Plug 'chrisbra/vim-zsh',  { 'for': 'zsh'}
 Plug 'vim-perl/vim-perl', { 'for': 'perl'}
 Plug 'dag/vim-fish',      { 'for': 'fish'}
-" Plug 'rbtnn/powershell.vim',             {'for': ['powershell']}
 Plug 'dunstontc/vim-ps1', { 'for': 'ps1'}
 Plug 'dmix/elvish.vim',   { 'for': 'elvish'}
 
@@ -188,14 +185,11 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-fold'
 Plug 'kana/vim-textobj-entire'
-" Plug 'kana/vim-textobj-syntax'
 Plug 'glts/vim-textobj-comment'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'Julian/vim-textobj-variable-segment'
 Plug 'Julian/vim-textobj-brace'
 Plug 'Raimondi/vim_search_objects'
-" Plug 'junegunn/vim-after-object'
-" Plug 'thinca/vim-textobj-between'
 " }}}
 
 " === Editing === {{{
@@ -294,8 +288,6 @@ Plug 'fcpg/vim-complimentary',        {'for': 'vim'}  " Complimentary improves t
 Plug 'mattn/webapi-vim'
 Plug 'wakatime/vim-wakatime'
 " Plug 'skywind3000/asyncrun.vim'
-" Plug 'equalsraf/neovim-gui-shim'
-" Plug 'dzhou121/gonvim-fuzzy'
 " }}}
 
 " === Version Control === {{{
@@ -328,7 +320,6 @@ Plug 'Shougo/vinarise.vim',           { 'on': 'Vinarise'}
 Plug 'Shougo/deol.nvim',              { 'on': 'Deol'}
 Plug 'tweekmonster/startuptime.vim'
 Plug 'tyru/capture.vim',              { 'on': 'Capture'}
-Plug 'thinca/vim-scouter',            { 'on': ['Scouter', 'ScouterVerbose']}
 Plug 'chrisbra/Colorizer',            { 'on': 'ColorToggle'}
 Plug 'dhruvasagar/vim-table-mode',    { 'on': 'TableModeToggle'}
 Plug 'majutsushi/tagbar',             { 'on': 'TagbarToggle'}
@@ -446,8 +437,7 @@ let g:go_textobj_enabled = 1
 " the `af` text object and `[[` motion.
 " Defualt: 1
 let g:go_textobj_include_function_doc = 1
-" Consider the variable of an function assignment
-" to be part of the anonymous
+" Consider the variable of an function assignment to be part of the anonymous
 " function when using the `af` text object.
 " Default: 1
 let g:go_textobj_include_variable = 1
