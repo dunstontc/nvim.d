@@ -43,16 +43,15 @@ Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
 " }}}
 
 " C: {{{
-Plug '/Users/clay/.ghq/github.com/dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
+Plug 'dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " }}}
 
 " C# {{{
-" Plug '/Users/clay/.ghq/github.com/dunstontc/omnisharp-vim', {'for': ['cs']}
 Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
 " }}}
 
 " Java: {{{
-" Plug 'dunstontc/kotlin-vim',    {'for': ['kotlin']}
+Plug 'dunstontc/kotlin-vim',    {'for': ['kotlin']}
 " }}}
 
 " JavaScript: {{{
@@ -94,7 +93,7 @@ Plug 'mustache/vim-mustache-handlebars', {'for': ['hbs', 'html']}
 " }}}
 
 " Go: {{{
-Plug '/Users/clay/.ghq/github.com/dunstontc/vim-go',  {'for': 'go' }
+Plug 'dunstontc/vim-go',  {'for': 'go' }
 " Plug 'jodosha/vim-godebug'
 " Plug 'godoctor/godoctor.vim'
 " }}}
@@ -114,11 +113,11 @@ Plug 'mxw/vim-xhp', { 'for': ['php', 'xhp']}
 " }}}
 
 " Python: {{{
-Plug 'tweekmonster/impsort.vim',         {'for': 'python'}
-Plug 'hynek/vim-python-pep8-indent',     {'for': 'python'  }
-Plug '/Users/clay/.ghq/github.com/dunstontc/vim-pydocstring', {'for': 'python'}
-" Plug 'python-mode/python-mode',          {'for': 'python'  }
-" Plug 'davidhalter/jedi-vim',             {'for': 'python'  }
+Plug 'tweekmonster/impsort.vim',     {'for': 'python'}
+Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
+Plug 'dunstontc/vim-pydocstring',    {'for': 'python'}
+" Plug 'python-mode/python-mode',      {'for': 'python'}
+" Plug 'davidhalter/jedi-vim',         {'for': 'python'}
 " }}}
 
 " Ruby: {{{
@@ -129,20 +128,19 @@ Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 " Writing: {{{
 Plug 'lervag/vimtex',                    {'for': ['tex'  ]}
 Plug 'jceb/vim-orgmode',                 {'for': ['org'  ]}
-Plug 'tpope/vim-markdown',               {'for': ['markdown']}
-" Plug 'nelstrom/vim-markdown-folding',    {'for': ['markdown']}
-Plug 'tyru/markdown-codehl-onthefly.vim',{'for': ['markdown']}
-" Plug 'plasticboy/vim-markdown',          {'for': ['md', 'markdown']}
+Plug 'tpope/vim-markdown',               {'for': 'markdown'}
+" Plug 'nelstrom/vim-markdown-folding',    {'for': 'markdown'}
+Plug 'tyru/markdown-codehl-onthefly.vim',{'for': 'markdown'}
 " Plug 'vim-pandoc/vim-pandoc'
 " Plug 'vim-pandoc/vim-pandoc-syntax',     {'for': ['md', 'md.pandoc', 'pandoc']}
 " }}}
 
 " Shell: {{{
-Plug 'chrisbra/vim-zsh',  { 'for': 'zsh'}
-Plug 'vim-perl/vim-perl', { 'for': 'perl'}
-Plug 'dag/vim-fish',      { 'for': 'fish'}
-Plug 'dunstontc/vim-ps1', { 'for': 'ps1'}
-Plug 'dmix/elvish.vim',   { 'for': 'elvish'}
+Plug 'chrisbra/vim-zsh',  { 'for': 'zsh'    }
+Plug 'vim-perl/vim-perl', { 'for': 'perl'   }
+Plug 'dag/vim-fish',      { 'for': 'fish'   }
+Plug 'dunstontc/vim-ps1', { 'for': 'ps1'    }
+Plug 'dmix/elvish.vim',   { 'for': 'elvish' }
 
 " }}}
 
@@ -152,11 +150,11 @@ Plug 'keith/swift.vim',         { 'for': 'swift' }
 " }}}
 
 " Config: {{{
-Plug 'tmux-plugins/vim-tmux',   { 'for': 'tmux'}
-Plug 'chrisbra/csv.vim',        { 'for': ['csv', 'tsv' ]}
-Plug 'cespare/vim-toml',        { 'for': ['toml', 'tml']}
-Plug 'chr4/nginx.vim',          { 'for': 'nginx'}
-Plug 'ekalinin/Dockerfile.vim', { 'for': ['dockerfile']}
+Plug 'tmux-plugins/vim-tmux',   { 'for': 'tmux'          }
+Plug 'chrisbra/csv.vim',        { 'for': ['csv', 'tsv' ] }
+Plug 'cespare/vim-toml',        { 'for': ['toml', 'tml'] }
+Plug 'chr4/nginx.vim',          { 'for': 'nginx'         }
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'dockerfile'   }
 Plug 'pearofducks/ansible-vim'
 " }}}
 
@@ -209,7 +207,7 @@ Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scr
 
 " === Utilities === {{{
 Plug '/usr/local/opt/fzf'
-Plug '~/Projects/Vim/forks/fzf.vim'
+Plug 'dunstontc/fzf.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
@@ -246,8 +244,8 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 " === Denite === {{{
 Plug 'Shougo/unite.vim'
-Plug '~/.ghq/github.com/dunstontc/denite.nvim'
-Plug '~/.ghq/github.com/dunstontc/neomru.vim'
+Plug 'dunstontc/denite.nvim'
+Plug 'dunstontc/neomru.vim'
 Plug 'Shougo/neoyank.vim'
 Plug 'rafi/vim-denite-session'
 " Plug 'lambdalisue/session.vim'
@@ -324,15 +322,12 @@ Plug 'chrisbra/Colorizer',            { 'on': 'ColorToggle'}
 Plug 'dhruvasagar/vim-table-mode',    { 'on': 'TableModeToggle'}
 Plug 'majutsushi/tagbar',             { 'on': 'TagbarToggle'}
 Plug 'mbbill/undotree'
-Plug 'junegunn/vim-github-dashboard', { 'on': ['GHDashboard', 'GHActivity']}
-Plug 'junegunn/gv.vim',               { 'on': 'GV'}
 Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'}
 " }}}
 
 " === Local === {{{
 Plug '/Users/clay/Projects/Vim/me/tcd'
 Plug '~/Projects/Vim/me/projectile.nvim'
-Plug '/Users/clay/.ghq/github.com/dunstontc/lightline.vim'
 " Plug '/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
 Plug '~/.ghq/github.com/dunstontc/vison',           {'for': ['json']}
 Plug '~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'for': 'vim'}
