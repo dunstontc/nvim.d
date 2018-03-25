@@ -106,6 +106,7 @@ nnoremap <F17> :Denite file_mru<CR>
 nnoremap <C-d> mxV"zy"zp`xjmx
 inoremap <C-d> <esc>mxV"zy"zp`xjmx
 vnoremap <C-d> Vypgv
+noremap <M-S-Down> <nop>
 
 
 " }}}
@@ -697,8 +698,8 @@ nnoremap <leader>tz :UndotreeToggle<CR>
 " ==============================================================================
 " === w -- Window === {{{
 " ==============================================================================
-nnoremap <leader>wh :split<CR>
-nnoremap <leader>wv :vsplit<CR>
+" nnoremap <leader>wh :split<CR>
+" nnoremap <leader>wv :vsplit<CR>
 " }}}
 
 " vim: fdm=marker fmr={{{,}}} fdl=0 fen

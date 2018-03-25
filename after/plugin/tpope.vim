@@ -47,4 +47,13 @@ let g:projectionist_heuristics = {
       \  }
       \}
 
+augroup commentGroup
+  autocmd!
+
+  autocmd FileType text setlocal commentstring=#\ %s
+  autocmd FileType txt setlocal commentstring=#\ %s
+  autocmd FileType apache setlocal commentstring=#\ %s
+  autocmd FileType terraform setlocal commentstring=#%s
+
+augroup END
 

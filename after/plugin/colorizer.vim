@@ -6,8 +6,6 @@ let g:colorizer_custom_colors = {
       \ 'cyan':    '#4ec9b0',
       \ 'blue':    '#569cd6',
       \ 'magenta': '#c586c0',
-      \ '0':       '#000000',
-      \ '1':       '#800000',
       \ '2':       '#008000',
       \ '3':       '#808000',
       \ '4':       '#000080',
@@ -261,6 +259,41 @@ let g:colorizer_custom_colors = {
       \ '252':     '#d0d0d0',
       \ '253':     '#dadada',
       \ '254':     '#e4e4e4',
-      \ '255':     '#eeeeee'
+      \ '255':     '#eeeeee',
+      \ '0;30': '#1e1e1e',
+      \ '1;30': '#808080',
+      \ '0;31': '#d16969',
+      \ '1;31': '#d16969',
+      \ '0;32': '#608b4e',
+      \ '1;32': '#b5cea8',
+      \ '0;33': '#d7ba7d',
+      \ '1;33': '#d7ba7d',
+      \ '0;34': '#569cd6',
+      \ '1;34': '#9cdcfe',
+      \ '0;35': '#c586c0',
+      \ '1;35': '#c586c0',
+      \ '0;36': '#4ec9b0',
+      \ '1;36': '#4ec9b0',
+      \ '0;37': '#d4d4d4',
+      \ '1;37': '#808080',
       \}
 
+
+  " bold='';
+  " reset="\e[0m";
+  " black="\e[0;30m";
+  " bright_black="\e[1;30m";
+  " red="\e[0;31m";
+  " bright_red="\e[1;31m";
+  " green="\e[0;32m";
+  " bright_green="\e[1;32m";
+  " yellow="\e[0;33m"; # Orange
+  " bright_yellow="\e[1;33m";
+  " blue="\e[0;34m";
+  " bright_blue="\e[1;34m";
+  " magenta="\e[0;35m";
+  " bright_magenta="\e[1;35m";
+  " cyan="\e[0;36m";
+  " bright_cyan="\e[1;36m";
+  " white="\e[0;37m";
+  " bright_white="\e[1;37m";

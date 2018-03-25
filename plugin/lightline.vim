@@ -280,7 +280,8 @@ endfunction
 " @function(Devicon)
 " In specific filetypes, above a specified width, returns the corresponding filetype icon.
 function! Devicon()  " {{{
-  return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ('['.&filetype.']') : ''
+  " return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? ('['.&filetype.']') : ''
+  return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ? (WebDevIconsGetFileTypeSymbol()) : ''
 endfunction
 " }}}
 

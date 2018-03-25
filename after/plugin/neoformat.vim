@@ -5,19 +5,20 @@ let g:neoformat_only_msg_on_error = 1
 let g:neoformat_run_all_formatters = 0
 
 
-let g:neoformat_enabled_c        = ['uncrustify']
-let g:neoformat_enabled_cpp      = ['uncrustify']
-let g:neoformat_enabled_cs       = ['uncrustify']
-let g:neoformat_enabled_csx      = ['uncrustify']
-let g:neoformat_enabled_go       = ['gofmt']
-let g:neoformat_enabled_html     = ['tidy']
-let g:neoformat_enabled_xhtml    = ['tidy']
-let g:neoformat_enabled_xml      = ['tidy']
-let g:neoformat_enabled_json     = ['fixjson']
-let g:neoformat_enabled_java     = ['uncrustify']
-let g:neoformat_enabled_markdown = ['remark']
-let g:neoformat_enabled_sh       = ['shfmt']
-let g:neoformat_enabled_bash     = ['shfmt']
+let g:neoformat_enabled_c          = ['uncrustify']
+let g:neoformat_enabled_cpp        = ['uncrustify']
+let g:neoformat_enabled_cs         = ['uncrustify']
+let g:neoformat_enabled_csx        = ['uncrustify']
+let g:neoformat_enabled_go         = ['gofmt']
+let g:neoformat_enabled_html       = ['tidy']
+let g:neoformat_enabled_xhtml      = ['tidy']
+let g:neoformat_enabled_xml        = ['tidy']
+let g:neoformat_enabled_javascript = ['es_dlint']
+let g:neoformat_enabled_json       = ['fixjson']
+let g:neoformat_enabled_java       = ['uncrustify']
+let g:neoformat_enabled_markdown   = ['remark']
+let g:neoformat_enabled_sh         = ['shfmt']
+let g:neoformat_enabled_bash       = ['shfmt']
 
 " exe       the name the formatter executable in the path  n/a  required
 " args      list of arguments  []  optional
@@ -25,6 +26,12 @@ let g:neoformat_enabled_bash     = ['shfmt']
 " stdin     send data to the stdin of the formatter  0  optional
 " env       list of environment variable definitions to be prepended to the formatter command  []  optional
 " no_append do not append the path of the file to the formatter command, used when the path is in the middle of a command  0  optional
+
+let g:neoformat_javascript_eslint_d = {
+            \ 'exe': 'eslint_d',
+            \ 'args': ['--fix', '--fix-to-stdout'],
+            \ 'stdin': 1,
+            \ }
 
 let g:neoformat_bash_shfmt = {
             \ 'exe': 'shfmt',
@@ -41,6 +48,5 @@ let g:neoformat_sh_shfmt = {
             \ 'stdin': 0,
             \ 'no_append': 0,
             \ }
-
 
 

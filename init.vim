@@ -62,7 +62,7 @@ Plug 'pangloss/vim-javascript',                {'for': ['javascript', 'typescrip
 " Plug 'othree/jsdoc-syntax.vim',          {'for': ['javascript', 'typescript', 'vue']}
 Plug 'jparise/vim-graphql',              {'for': ['graphql']}
 " Vue:
-Plug 'posva/vim-vue',                    {'for': 'vue'}
+Plug 'posva/vim-vue',                    {'for': ['vue', 'html'] }
 " JSX:
 " Plug 'mxw/vim-jsx',                      {'for': ['javascript', 'jsx', 'tsx']}
 Plug 'neoclide/vim-jsx-improve',         {'for': ['javascript', 'jsx', 'tsx']}
@@ -155,6 +155,7 @@ Plug 'chrisbra/csv.vim',        { 'for': ['csv', 'tsv' ] }
 Plug 'cespare/vim-toml',        { 'for': ['toml', 'tml'] }
 Plug 'chr4/nginx.vim',          { 'for': 'nginx'         }
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'dockerfile'   }
+Plug 'hashivim/vim-terraform'
 Plug 'pearofducks/ansible-vim'
 " }}}
 
@@ -191,9 +192,9 @@ Plug 'Raimondi/vim_search_objects'
 " }}}
 
 " === Editing === {{{
-" Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 Plug 'tomtom/tcomment_vim'
-Plug 'tyru/caw.vim'
+" Plug 'tyru/caw.vim'
 Plug 'kana/vim-niceblock'
 Plug 'joereynolds/place.vim'
 Plug 'junegunn/vim-easy-align'
@@ -279,6 +280,7 @@ Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
 Plug 'fcpg/vim-complimentary',        {'for': 'vim'}  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
 " Plug 'cyansprite/deoplete-omnisharp', {'for': 'cs'}
+Plug 'juliosueiras/vim-terraform-completion'
 " Plug '1995eaton/vim-better-javascript-completion'
 " }}}
 
@@ -340,6 +342,8 @@ call plug#end()
 filetype plugin indent on
 syntax on
 set nocompatible
+
+let g:python3_host_prog  = '/usr/local/bin/python3'
 
 " ==============================================================================
 " === Disable standard plugins === {{{

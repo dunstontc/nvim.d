@@ -33,7 +33,7 @@ syn match	confBang	"!"
 hi def link confComment		Comment
 hi def link confTodo		Todo
 hi def link confString		String
-hi def link confPunctuation	Constant
+hi def link confPunctuation	Boolean
 hi def link confAny		String
 hi def link confWildcard	Conditional
 hi def link confBang		Conditional

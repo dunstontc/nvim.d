@@ -4,11 +4,11 @@ scriptencoding utf-8
 " === Shougo/deoplete === {{{
 " ==============================================================================
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#max_list = 250
+let g:deoplete#max_list = 100
 let g:deoplete#max_abbr_width = 200
 let g:deoplete#max_menu_width = 200
-let g:deoplete#auto_complete_delay = 150
-let g:deoplete#auto_refresh_delay = 1000
+let g:deoplete#auto_complete_delay = 100
+let g:deoplete#auto_refresh_delay = 500
 let g:deoplete#disable_auto_complete = 0
 let g:deoplete#enable_refresh_always = 1
 let g:deoplete#auto_completion_start_length = 1
@@ -43,16 +43,17 @@ let g:deoplete#keyword_patterns.tex = '[^\w|\s][a-zA-Z_]\w*'
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
   let g:deoplete#omni#input_patterns.cs = ['\w*|\.']
-  let g:deoplete#omni#input_patterns.java = '[^. *\t]\.\w*'
   " let g:deoplete#omni#input_patterns.cs = '\w*'
+  let g:deoplete#omni#input_patterns.java = '[^. *\t]\.\w*'
+  let g:deoplete#omni#input_patterns.terraform = '[^ *\t"{=$]\w*'
   let g:deoplete#omni#input_patterns.lua = '\w+|[^. *\t][.:]\w*'
   let g:deoplete#omni#input_patterns.python = ''
 endif
 
 
 " let g:deoplete#skip_chars = ['(', ')', '<', '>']
-let g:deoplete#file#enable_buffer_path = 1
-let g:deoplete#sources#syntax#min_keyword_length = 1
+" let g:deoplete#file#enable_buffer_path = 1
+" let g:deoplete#sources#syntax#min_keyword_length = 1
 
 " let g:deoplete#ignore_sources =
 " let g:deoplete#file#enable_buffer_path = 1
@@ -62,10 +63,10 @@ let g:deoplete#sources#syntax#min_keyword_length = 1
 " let g:context_filetype#same_filetypes=0
 
 call deoplete#custom#source('_',      'matchers', ['matcher_fuzzy'])
-call deoplete#custom#source('_',      'min_pattern_length', 0)
+call deoplete#custom#source('_',      'min_pattern_length', 1)
 " call deoplete#custom#source('omni',   'min_pattern_length', 1)
 call deoplete#custom#source('go',     'min_pattern_length', 1)
-" call deoplete#custom#source('buffer', 'min_pattern_length', 1)
+call deoplete#custom#source('buffer', 'min_pattern_length', 3)
 call deoplete#custom#source('clang_complete', 'min_pattern_length', 1)
 " call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 " call deoplete#custom#source('_', 'sorters', ['sorter_rank'])
@@ -89,10 +90,10 @@ call deoplete#custom#source('look',           'mark', 'L ')
 call deoplete#custom#source('necovim',        'mark', ' ')
 call deoplete#custom#source('necosyntax',     'mark', '♯ ')
 call deoplete#custom#source('syntax',         'mark', '♯ ')
-call deoplete#custom#source('neosnippet',     'mark', ' ')
-call deoplete#custom#source('tern',           'mark', ' ')
+call deoplete#custom#source('neosnippet',     'mark', ' ')
+call deoplete#custom#source('tern',           'mark', ' ')
 call deoplete#custom#source('tmux-complete',  'mark', '⧉ ')
-call deoplete#custom#source('ultisnips',      'mark', ' ')
+call deoplete#custom#source('ultisnips',      'mark', ' ')
 call deoplete#custom#source('webcomplete',    'mark', ' ')
 call deoplete#custom#source('zsh',            'mark', 'z ')
 
@@ -109,18 +110,18 @@ call deoplete#custom#source('tern',           'rank', 700)
 call deoplete#custom#source('jedi',           'rank', 700)
 call deoplete#custom#source('padawan',        'rank', 700)
 " call deoplete#custom#source('omni',           'rank', 600)     " Default: 500
-call deoplete#custom#source('file',           'rank', 650)     " Default: 150
+call deoplete#custom#source('file',           'rank', 600)     " Default: 150
 call deoplete#custom#source('ultisnips',      'rank', 550)
-call deoplete#custom#source('neosnippet',     'rank', 550)
-call deoplete#custom#source('member',         'rank', 500)     " Default: 100
+" call deoplete#custom#source('neosnippet',     'rank', 550)
 call deoplete#custom#source('tmux-complete',  'rank', 500)
 call deoplete#custom#source('file_include',   'rank', 420)
 call deoplete#custom#source('tag',            'rank', 400)     " Default: 100
-call deoplete#custom#source('around',         'rank', 330)     " Default: 800
 call deoplete#custom#source('dictionary',     'rank', 310)     " Default: 100
-call deoplete#custom#source('buffer',         'rank', 300)     " Default: 100
-call deoplete#custom#source('vim',            'rank', 200)
-call deoplete#custom#source('syntax',         'rank', 200)
+call deoplete#custom#source('vim',            'rank', 250)
+call deoplete#custom#source('syntax',         'rank', 250)
+call deoplete#custom#source('around',         'rank', 230)     " Default: 800
+call deoplete#custom#source('member',         'rank', 200)     " Default: 100
+call deoplete#custom#source('buffer',         'rank', 100)     " Default: 100
 
 
 " function! Multiple_cursors_before()
@@ -299,7 +300,7 @@ let g:neosnippet#snippets_directory='~/.dotfiles/editors/nvim/nsnipz'
 
 " ==============================================================================
 " === Ultisnips === {{{
-let g:UltiSnipsUsePythonVersion    = 3
+" let g:UltiSnipsUsePythonVersion    = 3
 let g:UltiSnipsExpandTrigger       = '<tab>'
 let g:UltiSnipsJumpForwardTrigger  = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'

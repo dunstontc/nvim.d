@@ -1,8 +1,12 @@
 " ==============================================================================
-"  === Emmet === {{{
+"  === Emmet ===
 let g:user_emmet_install_global = 0
 
-let g:user_emmet_leader_key = '<C-y>'
+let g:user_emmet_leader_key = '<C-e>'
+
+let g:user_emmet_mode='a'
+let g:user_emmet_complete_tag = 1
+let g:user_emmet_install_global = 0
 
 let g:emmet_settings = {
   \  'indentation' : ' ',
@@ -50,11 +54,12 @@ let g:emmet_settings = {
 "   " let g:user_emmet_expandabbr_key='<Tab>'
 "   " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 "
-"   autocmd FileType html,css,scss imap <silent><buffer><expr><tab> <sid>expand_html_tab()
-"   let g:user_emmet_mode='a'
-"   let g:user_emmet_complete_tag = 0
-"   let g:user_emmet_install_global = 0
-"   autocmd FileType html,css,scss EmmetInstall
+
+augroup EmmetCmdz
+  autocmd!
+    " autocmd FileType html,css,scss imap <silent><buffer><expr><tab> <sid>expand_html_tab()
+    autocmd FileType html,css,scss EmmetInstall
+augroup END
 
 " }}}
 
