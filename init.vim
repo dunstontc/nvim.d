@@ -263,7 +263,7 @@ Plug 'Shougo/neoinclude.vim'
 " Plug 'ujihisa/neco-look'
 Plug 'SirVer/ultisnips'
 Plug 'wellle/tmux-complete.vim'
-Plug 'mattn/emmet-vim',               {'for': ['jsx', 'html', 'vue' ]}
+Plug 'mattn/emmet-vim',               {'for': ['jsx', 'html', 'vue', 'gohtml' ]}
 " Plug 'zchee/deoplete-clang',         {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " Plug 'tweekmonster/deoplete-clang2', {'for': ['c', 'cpp', 'objc', 'objcpp']}
 Plug 'Shougo/deoplete-clangx',        {'for': ['c', 'cpp', 'objc', 'objcpp']}

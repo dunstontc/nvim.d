@@ -3,6 +3,10 @@
 " ==============================================================================
 scriptencoding utf-8
 
+if !exists('g:loaded_denite')
+  finish
+endif
+
 call denite#custom#option('default', {
   \ 'prompt':                  '❯ ',
   \ 'auto_accel':              v:true,

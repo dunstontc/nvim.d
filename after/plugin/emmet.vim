@@ -5,8 +5,8 @@ let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key = '<C-e>'
 
 let g:user_emmet_mode='a'
-let g:user_emmet_complete_tag = 1
-let g:user_emmet_install_global = 0
+" let g:user_emmet_complete_tag = 1
+" let g:user_emmet_install_global = 0
 
 let g:emmet_settings = {
   \  'indentation' : ' ',
@@ -58,7 +58,7 @@ let g:emmet_settings = {
 augroup EmmetCmdz
   autocmd!
     " autocmd FileType html,css,scss imap <silent><buffer><expr><tab> <sid>expand_html_tab()
-    autocmd FileType html,css,scss EmmetInstall
+    autocmd FileType html,css,scss,gohtml EmmetInstall
 augroup END
 
 " }}}
