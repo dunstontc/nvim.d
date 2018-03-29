@@ -5,7 +5,7 @@ if !exists('g:neomake_place_signs')
 endif
 
 " When writing a buffer, and on normal mode changes (after X ms).
-call neomake#configure#automake('nw', 2000)
+call neomake#configure#automake('nw', 1500)
 
 " Signcolumn
 let g:neomake_place_signs = 1
@@ -39,6 +39,7 @@ let g:neomake_python_enabled_makers = ['flake8']
 let g:neomake_typescript_enabled_makers = ['tsc', 'tslint']
 let g:neomake_yaml_enabled_makers = ['yamllint']
 let g:neomake_vim_enabled_makers = ['vint']
+let g:neomake_zsh_enabled_makers = ['zsh']
 
 " let g:neomake_cs_mcs_maker = {
 "   \ 'args': ['@.mcs'],

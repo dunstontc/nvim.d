@@ -58,7 +58,7 @@ let g:emmet_settings = {
 augroup EmmetCmdz
   autocmd!
     " autocmd FileType html,css,scss imap <silent><buffer><expr><tab> <sid>expand_html_tab()
-    autocmd FileType html,css,scss,gohtml EmmetInstall
+    autocmd FileType html,scss,gohtml EmmetInstall
 augroup END
 
 " }}}

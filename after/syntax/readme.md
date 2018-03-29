@@ -11,6 +11,7 @@
 - [othree/csscomplete.vim 🔧](https://github.com/othree/csscomplete.vim)
   - Update the bult-in CSS complete function to latest CSS standard.
 - [hail2u/vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax)
+- [amadeus/vim-css](https://github.com/amadeus/vim-css)
 - [groenewege/vim-less](https://github.com/groenewege/vim-less)
 - [wavded/vim-stylus](https://github.com/wavded/vim-stylus)
 - [cakebaker/scss-syntax.vim](https://github.com/cakebaker/scss-syntax.vim)

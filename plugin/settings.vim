@@ -21,7 +21,7 @@ set splitbelow               " New split placed below
 set splitright               " New split placed right
 set winminheight=0           " Allow splits to be reduced to a single line
 set viewoptions=cursor,folds,slash,unix " What to save in sessions
-set cmdheight=2
+set cmdheight=1
 " set noshowcmd                  " Show (partial) command in the last line of the screen.
 set noshowmode                 " Don't show the current mode (airline takes care of this)
 set report=1                   " Report more than x lines changed at once

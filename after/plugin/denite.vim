@@ -3,6 +3,10 @@
 " ==============================================================================
 scriptencoding utf-8
 
+" if exists('g:gui_oni')
+"   finish
+" endif
+
 let s:menus = {}
 
 let s:menus.config = { 'description': ' Neovim Settings' }

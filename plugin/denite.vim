@@ -3,9 +3,9 @@
 " ==============================================================================
 scriptencoding utf-8
 
-if !exists('g:loaded_denite')
-  finish
-endif
+" if exists('g:gui_oni')
+"   finish
+" endif
 
 call denite#custom#option('default', {
   \ 'prompt':                  '❯ ',

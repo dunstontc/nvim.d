@@ -353,10 +353,10 @@ let g:multi_cursor_use_default_mapping=0
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
 let g:splitjoin_normalize_whitespace = 1
-let g:splitjoin_trailing_comma = 0
+let g:splitjoin_trailing_comma = 1
 let g:splitjoin_python_brackets_on_separate_lines = 1
-nmap gs :SplitjoinSplit<cr>
-nmap gj :SplitjoinJoin<cr>
+" nmap gs :SplitjoinSplit<cr>
+" nmap gj :SplitjoinJoin<cr>
 " }}}
 
 " === AndrewRadev/switch.vim === {{{
@@ -643,7 +643,11 @@ nnoremap <leader>hd<S-s> :Denite tcd_syntax<CR>
 " ==============================================================================
 
 " Update Plugins
-nnoremap <leader>pu :Denite menu:dein<CR>
+" nnoremap <leader>pu :Denite menu:dein<CR>
+nnoremap <leader>pc :PlugClean<CR>
+nnoremap <leader>pi :PlugInstall<CR>
+nnoremap <leader>pu :PlugUpdate<CR>
+
 " }}}
 
 " ==============================================================================

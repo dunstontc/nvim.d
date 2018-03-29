@@ -1,8 +1,8 @@
 scriptencoding utf-8
 
-if !exists('g:loaded_deoplete')
-  finish
-endif
+" if exists('g:gui_oni')
+"   finish
+" endif
 
 " ==============================================================================
 " === Shougo/deoplete === {{{
