@@ -81,7 +81,7 @@ Plug 'rhysd/vim-fixjson',                {'for': 'json' }
 Plug 'othree/html5.vim',                 {'for': ['html' ]}
 Plug 'azakus/vim-webcomponents',         {'for': ['html']}
 " CSS:
-" Plug 'amadeus/vim-css', {'for': ['css']}
+Plug 'amadeus/vim-css',                  {'for': ['css']}
 " Plug 'hail2u/vim-css3-syntax',           {'for': ['css'  ]}
 Plug 'groenewege/vim-less',              {'for': ['less' ]}
 Plug 'wavded/vim-stylus',                {'for': ['styl', 'stylus']}
@@ -90,7 +90,7 @@ Plug 'wavded/vim-stylus',                {'for': ['styl', 'stylus']}
 " Plug 'lepture/vim-jinja',                {'for': ['jinja' ]}
 " Plug 'digitaltoad/vim-pug',              {'for': ['jade', 'pug'], }
 " Plug 'slim-template/vim-slim',           {'for': ['slim']}
-Plug 'mustache/vim-mustache-handlebars', {'for': ['hbs', 'html']}
+" Plug 'mustache/vim-mustache-handlebars', {'for': ['hbs', 'html']}
 " }}}
 
 " Go: {{{
@@ -203,7 +203,7 @@ Plug 'haya14busa/vim-edgemotion'
 " Plug 'machakann/vim-swap'
 Plug 'valloric/matchtagalways',   {'for': ['html', 'xml']}
 " Plug 'AndrewRadev/splitjoin.vim', {'on': ['SplitjoinSplit', 'SplitjoinJoin']}
-Plug 'AndrewRadev/switch.vim',    {'on': 'Switch'}
+" Plug 'AndrewRadev/switch.vim',    {'on': 'Switch'}
 Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']}
 " }}}
 

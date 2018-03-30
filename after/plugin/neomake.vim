@@ -27,6 +27,7 @@ let g:neomake_message_sign = {'text': '➤', 'texthl': 'NeomakeMessageSign' }
 let g:neomake_info_sign =    {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'    }
 
 
+let g:neomake_css_enabled_makers = []
 let g:neomake_cs_enabled_makers = ['mcs']
 let g:neomake_go_enabled_makers = ['gometalinter']
 let g:neomake_help_enabled_makers = ['vimhelplint']
