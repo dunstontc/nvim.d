@@ -102,7 +102,7 @@ var (
 endsnippet
 
 snippet json "JSON field"
-\`json:"${1:displayName}"\`
+\`json:"${1:displayName}${2:,omitempty}"\`
 endsnippet
 
 # vim:ft=snippets:
@@ -112,6 +112,15 @@ snippet err "Basic error handling" b
 if err != nil {
 	log.${1:Fatal}(err)
 }
+endsnippet
+
+snippet println "fmt.Println()"
+fmt.Println(${1:""})
+endsnippet
+
+
+snippet printf "fmt.Printf()"
+fmt.Printf("${1:%s}", $2)
 endsnippet
 
 snippet doc "Multiline Comment"

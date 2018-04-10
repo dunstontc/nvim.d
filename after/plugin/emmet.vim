@@ -28,7 +28,9 @@ let g:emmet_settings = {
   " let g:user_emmet_settings = webapi#json#decode(
   " \  join( readfile( expand( '~/.snippets_custom.json' ) ), "\n" ) )
 
-" " let g:user_emmet_leader_key='<Plug>(emmet_expand)'
+let g:user_emmet_leader_key='<leader>y'
+'
+" let g:user_emmet_leader_key='<Plug>(emmet_expand)'
 " " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 "
 " "  https://github.com/mhartington/dotfiles/blob/master/config/nvim/init.vim

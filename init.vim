@@ -55,7 +55,8 @@ Plug 'dunstontc/kotlin-vim',    {'for': ['kotlin']}
 " }}}
 
 " JavaScript: {{{
-Plug 'pangloss/vim-javascript',                {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
+Plug 'pangloss/vim-javascript',          {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
+Plug 'jonsmithers/experimental-lit-html-vim'
 " Plug 'othree/yajs.vim',                        {'for': ['javascript', 'jsx']}
 " Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'jsx']}
 " Plug 'heavenshell/vim-jsdoc',            {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
@@ -94,7 +95,8 @@ Plug 'wavded/vim-stylus',                {'for': ['styl', 'stylus']}
 " }}}
 
 " Go: {{{
-Plug 'dunstontc/vim-go',  {'for': 'go' }
+" Plug 'dunstontc/vim-go',  {'for': 'go' }
+Plug '/users/clay/.ghq/github.com/dunstontc/vim-go',  {'for': 'go' }
 " Plug 'jodosha/vim-godebug'
 " Plug 'godoctor/godoctor.vim'
 " }}}
@@ -185,6 +187,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-fold'
 Plug 'kana/vim-textobj-entire'
+Plug 'beloglazov/vim-textobj-quotes'
 Plug 'glts/vim-textobj-comment'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'Julian/vim-textobj-variable-segment'

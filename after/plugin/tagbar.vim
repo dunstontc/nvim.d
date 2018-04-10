@@ -27,6 +27,35 @@ let g:tagbar_type_css = {
   \ ]
   \}
 
+let g:tagbar_type_go = {
+  \ 'ctagstype' : 'go',
+  \ 'kinds'     : [
+    \ 'p:package',
+    \ 'i:imports:1',
+    \ 'c:constants',
+    \ 'v:variables',
+    \ 't:types',
+    \ 'n:interfaces',
+    \ 'w:fields',
+    \ 'e:embedded',
+    \ 'm:methods',
+    \ 'r:constructor',
+    \ 'f:functions'
+  \ ],
+  \ 'sro' : '.',
+  \ 'kind2scope' : {
+    \ 't' : 'ctype',
+    \ 'n' : 'ntype'
+  \ },
+  \ 'scope2kind' : {
+    \ 'ctype' : 't',
+    \ 'ntype' : 'n'
+  \ },
+  \ 'ctagsbin'  : 'gotags',
+  \ 'ctagsargs' : '-sort -silent'
+  \}
+
+
 let g:tagbar_type_markdown = {
   \ 'ctagstype': 'markdown',
   \ 'ctagsbin' : '~/.ghq/github.com/jszakmeister/markdown2ctags/markdown2ctags.py',
@@ -80,19 +109,19 @@ let g:tagbar_type_snippets = {
   \}
 
 let g:tagbar_type_vim = {
-    \ 'ctagstype': 'Vim',
-    \ 'kinds' : [
-    \ 'n:vimball filenames',
-    \ 'v:variables',
-    \ 'f:functions',
-    \ 'a:autocommand groups',
-    \ 'c:commands',
-    \ 'm:maps',
-    \ 't:tags',
-    \ 'z:todos',
-    \ 'd:docs',
-    \ ],
-\     }
+  \ 'ctagstype': 'Vim',
+  \ 'kinds' : [
+  \ 'n:vimball filenames',
+  \ 'v:variables',
+  \ 'f:functions',
+  \ 'a:autocommand groups',
+  \ 'c:commands',
+  \ 'm:maps',
+  \ 't:tags',
+  \ 'z:todos',
+  \ 'd:docs',
+  \ ],
+  \}
 
 
 " TODO TODO

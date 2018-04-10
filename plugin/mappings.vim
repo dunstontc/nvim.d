@@ -28,10 +28,6 @@ let mapleader="\<Space>"
 let maplocalleader = ","
 
 " === Unsorted ==={{{
-" inoremap <S-Space> <esc>
-" F17 -- ^[[15;2~
-" inoremap <silent><F17> <esc>
-
 nnoremap ; :
 vnoremap ; :
 
@@ -87,6 +83,8 @@ inoremap <C-q> <C-c>
 nnoremap <C-q> <Nop>
 vnoremap <C-q> <C-c>
 " xnoremap <C-q> <C-c>
+
+" Use ctrl-s to save. (Can mess with flow control)
 nnoremap <silent><C-s> :w<CR>
 inoremap <silent><C-s> <C-o>:w<CR>
 
@@ -361,10 +359,10 @@ let g:splitjoin_python_brackets_on_separate_lines = 1
 
 " === AndrewRadev/switch.vim === {{{
 " let g:switch_mapping='\<CR>'
-let g:switch_mapping="-"
+" let g:switch_mapping="-"
 " nnoremap + :call switch#Switch({'definitions': g:variable_style_switch_definitions})<cr>
 " nnoremap - :Switch<cr>
-nnoremap - :Switch<CR>:echo<CR>
+" nnoremap - :Switch<CR>:echo<CR>
 " }}}
 
 " === sidemenu === {{{
@@ -452,7 +450,7 @@ nmap g<S-R> <Plug>(RegEditPostfix)
 " }}}
 
 " === joereynolds/place.vim === {{{
-nmap gp <Plug>(place-insert)
+" nmap gp <Plug>(place-insert)
 " <Plug>(place-insert-multiple)
 " }}}
 

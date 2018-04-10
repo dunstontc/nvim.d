@@ -16,7 +16,7 @@ augroup filetypes
 
   autocmd BufRead,BufNewFile {topydo,columns,column}.conf,column,columns,topydo,.taskrc set filetype=dosini
 
-  autocmd BufRead,BufNewFile *.gohtml set filetype=gohtml
+  autocmd BufRead,BufNewFile *.{gohtml,tpl,tmpl} set filetype=gohtml
 
   autocmd BufRead,BufNewFile .{babel,eslint,stylelint,jshint,prettier,cheat}rc,.tern-*,*.json set filetype=json
 
