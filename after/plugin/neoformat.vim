@@ -14,7 +14,9 @@ let g:neoformat_enabled_html       = ['tidy']
 let g:neoformat_enabled_xhtml      = ['tidy']
 let g:neoformat_enabled_xml        = ['tidy']
 let g:neoformat_enabled_javascript = ['es_dlint']
+let g:neoformat_enabled_typescript = ['tsfmt']
 let g:neoformat_enabled_json       = ['fixjson']
+let g:neoformat_enabled_json5      = ['fixjson']
 let g:neoformat_enabled_java       = ['uncrustify']
 let g:neoformat_enabled_markdown   = ['remark']
 let g:neoformat_enabled_sh         = ['shfmt']
@@ -30,6 +32,12 @@ let g:neoformat_enabled_bash       = ['shfmt']
 let g:neoformat_javascript_eslint_d = {
             \ 'exe': 'eslint_d',
             \ 'args': ['--fix', '--fix-to-stdout'],
+            \ 'stdin': 1,
+            \ }
+
+let g:neoformat_typescript_tsfmt = {
+            \ 'exe': 'tsfmt',
+            \ 'args': ['--useTsfmt ~/.dotfiles/config/linting/tsfmt.json', '--stdin', '%:p'],
             \ 'stdin': 1,
             \ }
 

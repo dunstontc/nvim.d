@@ -1,1 +1,1 @@
-autocmd FileType zsh setlocal commentstring=# %s
+autocmd FileType zsh setlocal commentstring=#\ %s

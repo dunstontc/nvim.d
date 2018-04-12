@@ -74,6 +74,7 @@ Plug 'HerringtonDarkholme/yats.vim',     {'for': ['tsx', 'typescript']}
 Plug 'kchmck/vim-coffee-script',         {'for': ['coff', 'coffee', 'cson']}
 " JSON:
 " Plug 'elzr/vim-json',                    {'for': ['json'                  ]}
+Plug 'gutenye/json5.vim',                {'for': 'json5'}
 Plug 'rhysd/vim-fixjson',                {'for': 'json' }
 " }}}
 

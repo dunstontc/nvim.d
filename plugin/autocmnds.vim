@@ -3,6 +3,8 @@ augroup MyAutoCmds
 
   autocmd VimResized * :wincmd =
 
+  autocmd VimLeave * if v:dying | echo "\nAAAAaaaarrrggghhhh!!!\n" | endif
+
   " autocmd InsertLeave * set nopaste
 
   " http://vim.wikia.com/wiki/Detect_window_creation_with_WinEnter
