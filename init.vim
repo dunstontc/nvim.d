@@ -46,8 +46,18 @@ Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
 Plug 'dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " }}}
 
-" C# {{{
+" C#: {{{
 Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
+" }}}
+
+" Dart: {{{
+Plug 'dart-lang/dart-vim-plugin', {'for': ['dart']}
+" }}}
+
+" Elixir: {{{
+Plug 'elixir-editors/vim-elixir', {'for': ['elixir']}
+Plug 'slashmili/alchemist.vim',   {'for': ['elixir']}
+Plug 'mhinz/vim-mix-format',      {'for': ['elixir']}
 " }}}
 
 " Java: {{{
@@ -63,7 +73,7 @@ Plug 'jonsmithers/experimental-lit-html-vim'
 " Plug 'othree/jsdoc-syntax.vim',          {'for': ['javascript', 'typescript', 'vue']}
 Plug 'jparise/vim-graphql',              {'for': ['graphql']}
 " Vue:
-Plug 'posva/vim-vue',                    {'for': ['vue', 'html'] }
+Plug 'posva/vim-vue',                    {'for': ['vue', 'html']}
 " JSX:
 " Plug 'mxw/vim-jsx',                      {'for': ['javascript', 'jsx', 'tsx']}
 Plug 'neoclide/vim-jsx-improve',         {'for': ['javascript', 'jsx', 'tsx']}
@@ -97,7 +107,7 @@ Plug 'wavded/vim-stylus',                {'for': ['styl', 'stylus']}
 
 " Go: {{{
 " Plug 'dunstontc/vim-go',  {'for': 'go' }
-Plug '/users/clay/.ghq/github.com/dunstontc/vim-go',  {'for': 'go' }
+Plug '/users/clay/.ghq/github.com/dunstontc/vim-go',  {'for': 'go'}
 " Plug 'jodosha/vim-godebug'
 " Plug 'godoctor/godoctor.vim'
 " }}}
@@ -113,7 +123,7 @@ Plug 'leafo/moonscript-vim',    {'for': ['moon']}
 
 " PHP: {{{
 Plug 'tobyS/pdv',   {'for': 'php'}
-Plug 'mxw/vim-xhp', { 'for': ['php', 'xhp']}
+Plug 'mxw/vim-xhp', {'for': ['php', 'xhp']}
 " }}}
 
 " Python: {{{
@@ -129,6 +139,33 @@ Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 " Plug 'tpope/vim-rails'
 " }}}
 
+" Rust: {{{
+Plug 'rust-lang/rust.vim',  {'for': 'rust'}
+" }}}
+
+" Shell: {{{
+Plug 'chrisbra/vim-zsh',  {'for': 'zsh'   }
+Plug 'vim-perl/vim-perl', {'for': 'perl'  }
+Plug 'dag/vim-fish',      {'for': 'fish'  }
+Plug 'dunstontc/vim-ps1', {'for': 'ps1'   }
+Plug 'dmix/elvish.vim',   {'for': 'elvish'}
+" }}}
+
+" Swift: {{{
+" Plug 'gfontenot/vim-xcode'
+Plug 'keith/swift.vim', {'for': 'swift'}
+" }}}
+
+" Config: {{{
+Plug 'tmux-plugins/vim-tmux',   {'for': 'tmux'         }
+Plug 'chrisbra/csv.vim',        {'for': ['csv', 'tsv' ]}
+Plug 'cespare/vim-toml',        {'for': ['toml', 'tml']}
+Plug 'chr4/nginx.vim',          {'for': 'nginx'        }
+Plug 'ekalinin/Dockerfile.vim', {'for': 'dockerfile'   }
+Plug 'hashivim/vim-terraform'
+Plug 'pearofducks/ansible-vim'
+" }}}
+
 " Writing: {{{
 Plug 'lervag/vimtex',                    {'for': ['tex'  ]}
 Plug 'jceb/vim-orgmode',                 {'for': ['org'  ]}
@@ -139,38 +176,13 @@ Plug 'tyru/markdown-codehl-onthefly.vim',{'for': 'markdown'}
 " Plug 'vim-pandoc/vim-pandoc-syntax',     {'for': ['md', 'md.pandoc', 'pandoc']}
 " }}}
 
-" Shell: {{{
-Plug 'chrisbra/vim-zsh',  { 'for': 'zsh'    }
-Plug 'vim-perl/vim-perl', { 'for': 'perl'   }
-Plug 'dag/vim-fish',      { 'for': 'fish'   }
-Plug 'dunstontc/vim-ps1', { 'for': 'ps1'    }
-Plug 'dmix/elvish.vim',   { 'for': 'elvish' }
-
-" }}}
-
-" Swift: {{{
-Plug 'gfontenot/vim-xcode'
-Plug 'keith/swift.vim',         { 'for': 'swift' }
-" }}}
-
-" Config: {{{
-Plug 'tmux-plugins/vim-tmux',   { 'for': 'tmux'          }
-Plug 'chrisbra/csv.vim',        { 'for': ['csv', 'tsv' ] }
-Plug 'cespare/vim-toml',        { 'for': ['toml', 'tml'] }
-Plug 'chr4/nginx.vim',          { 'for': 'nginx'         }
-Plug 'ekalinin/Dockerfile.vim', { 'for': 'dockerfile'   }
-Plug 'hashivim/vim-terraform'
-Plug 'pearofducks/ansible-vim'
-" }}}
-
 " Other: {{{
-" Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr' ]}
+" Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr']}
 " Plug 'uarun/vim-protobuf',  {'for': ['proto']}
-" Plug 'rust-lang/rust.vim',  {'for': ['rust', 'rs' ]}
-" Plug 'jpalardy/vim-slime',  {'for': ['lisp', 'el' ]}
-" Plug 'rhysd/vim-wasm',      {'for': ['wast'       ]}
+" Plug 'jpalardy/vim-slime',  {'for': ['lisp', 'el']}
 " Plug 'peterhoeg/vim-qml',   {'for': ['qml']}
 " Plug 'reasonml-editor/vim-reason-plus', {'for': ['reason']}
+" Plug 'rhysd/vim-wasm'
 " }}}
 
 " }}}
@@ -279,7 +291,8 @@ Plug 'zchee/deoplete-zsh',            {'for': 'zsh'}
 Plug 'ponko2/deoplete-fish',          {'for': 'fish'}
 Plug 'carlitux/deoplete-ternjs',      {'for': ['jsx', 'javascript' ]}
 Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
-Plug 'fishbullet/deoplete-ruby',      {'for': 'ruby'}
+" Plug 'fishbullet/deoplete-ruby',      {'for': 'ruby'}
+" Plug 'uplus/deoplete-solargraph',     {'for': 'ruby'}
 Plug 'padawan-php/deoplete-padawan',  {'for': 'php'}
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
