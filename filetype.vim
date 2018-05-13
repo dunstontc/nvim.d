@@ -8,6 +8,8 @@ augroup filetypes
 
   autocmd BufRead,BufNewFile *.csx set filetype=cs
 
+  autocmd BufRead,BufNewFile *.cr set filetype=crystal
+
   autocmd BufRead,BufNewFile *.ctags,*.cnf,.editorconfig set filetype=cfg
 
   autocmd BufRead,BufNewFile *.csv,*.dat,*.tsv set filetype=csv

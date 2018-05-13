@@ -36,10 +36,10 @@ Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
 " === Language Support === {{{
 
 " Language Server {{{2
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'rev': 'next',
-"     \ 'build': 'bash install.sh',
-"     \ }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 " }}}
 
 " C: {{{
@@ -135,12 +135,13 @@ Plug 'dunstontc/vim-pydocstring',    {'for': 'python'}
 " }}}
 
 " Ruby: {{{
-Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+" Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 " Plug 'tpope/vim-rails'
 " }}}
 
 " Rust: {{{
-Plug 'rust-lang/rust.vim',  {'for': 'rust'}
+Plug 'rust-lang/rust.vim',    {'for': 'rust'}
+Plug 'racer-rust/vim-racer',  {'for': 'rust'}
 " }}}
 
 " Shell: {{{
@@ -177,7 +178,7 @@ Plug 'tyru/markdown-codehl-onthefly.vim',{'for': 'markdown'}
 " }}}
 
 " Other: {{{
-" Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr']}
+Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr']}
 " Plug 'uarun/vim-protobuf',  {'for': ['proto']}
 " Plug 'jpalardy/vim-slime',  {'for': ['lisp', 'el']}
 " Plug 'peterhoeg/vim-qml',   {'for': ['qml']}
@@ -362,6 +363,7 @@ syntax on
 set nocompatible
 
 let g:python3_host_prog  = '/usr/local/bin/python3'
+
 
 " ==============================================================================
 " === Disable standard plugins === {{{

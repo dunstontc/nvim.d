@@ -1,7 +1,8 @@
 " TODO: Add load guard
 
 let g:LanguageClient_serverCommands = {
-    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ 'haskell': ['hie', '--lsp'],
+    \ 'ocaml':  ['ocaml-language-server', '--stdio'],
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ 'javascript': ['javascript-typescript-stdio'],
