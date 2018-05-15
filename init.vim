@@ -30,7 +30,7 @@ Plug 'xtal8/traces.vim'
 " Plug 'jszakmeister/vim-togglecursor'
 " Plug 'thaerkh/vim-indentguides'
 Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
-" Plug 'dunstontc/vim-vscode-theme'
+Plug 'dunstontc/vim-vscode-theme'
 " }}}
 
 " === Language Support === {{{
@@ -106,8 +106,7 @@ Plug 'wavded/vim-stylus',                {'for': ['styl', 'stylus']}
 " }}}
 
 " Go: {{{
-" Plug 'dunstontc/vim-go',  {'for': 'go' }
-Plug '/users/clay/.ghq/github.com/dunstontc/vim-go',  {'for': 'go'}
+Plug 'fatih/vim-go',  {'for': 'go' }
 " Plug 'jodosha/vim-godebug'
 " Plug 'godoctor/godoctor.vim'
 " }}}
@@ -347,13 +346,13 @@ Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'}
 " }}}
 
 " === Local === {{{
-Plug '/Users/clay/Projects/Vim/me/tcd'
-Plug '~/Projects/Vim/me/projectile.nvim'
+" Plug '/Users/clay/Projects/Vim/me/tcd'
+" Plug '~/Projects/Vim/me/projectile.nvim'
 " Plug '/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
-Plug '~/.ghq/github.com/dunstontc/vison',           {'for': ['json']}
-Plug '~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'for': 'vim'}
-Plug '~/.ghq/github.com/dunstontc/python-syntax',   {'for': ['py', 'python']}
-Plug '~/.ghq/github.com/dunstontc/vim-startify'
+" Plug '~/.ghq/github.com/dunstontc/vison',           {'for': ['json']}
+" Plug '~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'for': 'vim'}
+" Plug '~/.ghq/github.com/dunstontc/python-syntax',   {'for': ['py', 'python']}
+" Plug '~/.ghq/github.com/dunstontc/vim-startify'
 " }}}
 
 call plug#end()
