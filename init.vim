@@ -16,6 +16,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 
 " UI: {{{
+Plug 'mhinz/vim-startify'
 Plug 'junegunn/vim-peekaboo'
 Plug 'dunstontc/lightline.vim'
 Plug 'mgee/lightline-bufferline'
@@ -115,7 +116,7 @@ Plug 'fatih/vim-go',  {'for': 'go' }
 Plug 'tbastos/vim-lua',         {'for': ['lua']}
 Plug 'VaiN474/vim-etlua',       {'for': ['lua']}
 Plug 'VaiN474/vim-etlua-plain', {'for': ['ept']}
-Plug 'leafo/moonscript-vim',    {'for': ['moon']}
+" Plug 'leafo/moonscript-vim',    {'for': ['moon']}
 " Plug 'xolox/vim-misc',         {'for': ['lua'  ]}
 " Plug 'xolox/vim-lua-ftplugin', {'for': ['lua'  ]}
 " }}}
@@ -352,7 +353,6 @@ Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'}
 " Plug '~/.ghq/github.com/dunstontc/vison',           {'for': ['json']}
 " Plug '~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'for': 'vim'}
 " Plug '~/.ghq/github.com/dunstontc/python-syntax',   {'for': ['py', 'python']}
-" Plug '~/.ghq/github.com/dunstontc/vim-startify'
 " }}}
 
 call plug#end()
