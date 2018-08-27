@@ -8,7 +8,7 @@ command -nargs=0 GetFullPath :let @+ = expand("%:p")
 command -nargs=0 GetName :let @+ = expand("%:t")
 
 
-" Make these commonly mistyped commands still work
+" Make commonly mistyped commands still work
 command! WQ x
 command! Wq x
 " command! Wqa wqa

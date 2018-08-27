@@ -16,23 +16,22 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 
 " UI: {{{
-Plug 'mhinz/vim-startify'
-Plug 'junegunn/vim-peekaboo'
-Plug 'dunstontc/lightline.vim'
-" Plug 'itchyny/lightline.vim'
-Plug 'mgee/lightline-bufferline'
-Plug 'airblade/vim-gitgutter'
-Plug 'Shougo/vimfiler.vim'
+Plug 'mhinz/vim-startify'        " The fancy start screen for Vim.
+Plug 'junegunn/vim-peekaboo'     " Show the contents of registers on a sidebar.
+Plug 'dunstontc/lightline.vim'   " A light and configurable statusline/tabline
+" Plug 'itchyny/lightline.vim'   " A light and configurable statusline/tabline plugin for Vim.
+Plug 'mgee/lightline-bufferline' " Display the list of buffers in the lightline.vim plugin.
+Plug 'airblade/vim-gitgutter'    " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
+Plug 'Shougo/vimfiler.vim'       " File explorer implemented by Vim script
 Plug 'romgrk/vimfiler-prompt', { 'on': 'VimFilerPrompt'}
-Plug 'ryanoasis/vim-devicons'
-Plug 'itchyny/vim-cursorword'
-Plug 'blueyed/vim-diminactive'
-Plug 'xtal8/traces.vim'
-" Plug 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'jszakmeister/vim-togglecursor'
-" Plug 'thaerkh/vim-indentguides'
-Plug '/Users/clay/Projects/vim/vim-vscode-theme'
+Plug 'ryanoasis/vim-devicons'  " Adds file type glyphs/icons to popular Vim plugins.
+Plug 'itchyny/vim-cursorword'  " Underlines the word under the cursor.
+Plug 'blueyed/vim-diminactive' " Dim inactive windows.
+Plug 'xtal8/traces.vim'        " Range, pattern and substitute preview for Vim.
+" Plug 'jszakmeister/vim-togglecursor' " Toggle the cursor shape in the terminal for Vim.
+" Plug 'thaerkh/vim-indentguides'      " Simple indentation guides for your buffers
 " Plug 'dunstontc/vim-vscode-theme'
+Plug '/Users/clay/Projects/vim/vim-vscode-theme'
 " }}}
 
 " === Language Support === {{{
@@ -45,17 +44,17 @@ Plug 'autozimu/LanguageClient-neovim', {
 " }}}
 
 " C: {{{
-Plug 'dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
-Plug 'arakashic/chromatica.nvim', {'for': ['c', 'cpp', 'objc', 'objcpp']}
+" Plug 'dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
+" Plug 'arakashic/chromatica.nvim',            {'for': ['c', 'cpp', 'objc', 'objcpp']}
 
 " }}}
 
 " C#: {{{
-Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
+" Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
 " }}}
 
 " Dart: {{{
-Plug 'dart-lang/dart-vim-plugin', {'for': ['dart']}
+" Plug 'dart-lang/dart-vim-plugin', {'for': ['dart']}
 " }}}
 
 " Elixir: {{{
@@ -72,7 +71,6 @@ Plug 'jonsmithers/experimental-lit-html-vim'
 " Plug 'heavenshell/vim-jsdoc',            {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
 " Plug 'othree/jsdoc-syntax.vim',          {'for': ['javascript', 'typescript', 'vue']}
 Plug 'jparise/vim-graphql',              {'for': ['graphql']}
-" Vue:
 Plug 'posva/vim-vue',                    {'for': ['vue', 'html']}
 " JSX:
 " Plug 'mxw/vim-jsx',                      {'for': ['javascript', 'jsx', 'tsx']}
@@ -113,16 +111,16 @@ Plug 'fatih/vim-go',  {'for': 'go'}
 
 " Lua: {{{
 Plug 'tbastos/vim-lua',         {'for': ['lua']}
-Plug 'VaiN474/vim-etlua',       {'for': ['lua']}
-Plug 'VaiN474/vim-etlua-plain', {'for': ['ept']}
+" Plug 'VaiN474/vim-etlua',       {'for': ['lua']}
+" Plug 'VaiN474/vim-etlua-plain', {'for': ['ept']}
 " Plug 'leafo/moonscript-vim',    {'for': ['moon']}
 " Plug 'xolox/vim-misc',         {'for': ['lua'  ]}
 " Plug 'xolox/vim-lua-ftplugin', {'for': ['lua'  ]}
 " }}}
 
 " PHP: {{{
-Plug 'tobyS/pdv',   {'for': 'php'}
-Plug 'mxw/vim-xhp', {'for': ['php', 'xhp']}
+" Plug 'tobyS/pdv',   {'for': 'php'}
+" Plug 'mxw/vim-xhp', {'for': ['php', 'xhp']}
 " }}}
 
 " Python: {{{
@@ -148,8 +146,8 @@ Plug 'racer-rust/vim-racer',  {'for': 'rust'}
 Plug 'chrisbra/vim-zsh',  {'for': 'zsh'   }
 Plug 'vim-perl/vim-perl', {'for': 'perl'  }
 Plug 'dag/vim-fish',      {'for': 'fish'  }
-Plug 'dunstontc/vim-ps1', {'for': 'ps1'   }
-Plug 'dmix/elvish.vim',   {'for': 'elvish'}
+" Plug 'dunstontc/vim-ps1', {'for': 'ps1'   }
+" Plug 'dmix/elvish.vim',   {'for': 'elvish'}
 " }}}
 
 " Swift: {{{
@@ -163,8 +161,8 @@ Plug 'chrisbra/csv.vim',        {'for': ['csv', 'tsv' ]}
 Plug 'cespare/vim-toml',        {'for': ['toml', 'tml']}
 Plug 'chr4/nginx.vim',          {'for': 'nginx'        }
 Plug 'ekalinin/Dockerfile.vim', {'for': 'dockerfile'   }
-Plug 'hashivim/vim-terraform'
-Plug 'pearofducks/ansible-vim'
+" Plug 'hashivim/vim-terraform'
+" Plug 'pearofducks/ansible-vim'
 " }}}
 
 " Writing: {{{
@@ -179,7 +177,7 @@ Plug 'tyru/markdown-codehl-onthefly.vim',{'for': 'markdown'}
 
 " Other: {{{
 Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr']}
-Plug 'isaacsloan/vim-slang'
+" Plug 'isaacsloan/vim-slang'
 Plug 'neovimhaskell/haskell-vim', {'for': ['haskell', 'cabal']}
 " Plug 'uarun/vim-protobuf',  {'for': ['proto']}
 " Plug 'jpalardy/vim-slime',  {'for': ['lisp', 'el']}
@@ -191,76 +189,76 @@ Plug 'neovimhaskell/haskell-vim', {'for': ['haskell', 'cabal']}
 " }}}
 
 " === Linting === {{{
-Plug 'sbdchd/neoformat'
-Plug 'neomake/neomake',           {'do': 'make build/vimhelplint'}
-Plug 'ternjs/tern_for_vim',       {'for': ['javascript']}
+Plug 'sbdchd/neoformat'                                      " A (Neo)vim plugin for formatting code.
+Plug 'neomake/neomake',     {'do': 'make build/vimhelplint'} " Asynchronous linting and make framework for Neovim/Vim
+Plug 'ternjs/tern_for_vim', {'for': ['javascript']}
 " }}}
 
 " === Text Objects === {{{
 " Plug 'wellle/targets.vim'
 " Plug 'kana/vim-operator-user'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-fold'
-Plug 'kana/vim-textobj-entire'
-Plug 'beloglazov/vim-textobj-quotes'
-Plug 'glts/vim-textobj-comment'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'Julian/vim-textobj-variable-segment'
-Plug 'Julian/vim-textobj-brace'
-Plug 'Raimondi/vim_search_objects'
+Plug 'kana/vim-textobj-user'               " Create your own text objects.
+Plug 'kana/vim-textobj-line'               " Text objects for the current line.
+Plug 'kana/vim-textobj-fold'               " Text objects for foldings.
+Plug 'kana/vim-textobj-entire'             " Text objects for the entire content of a buffer.
+Plug 'beloglazov/vim-textobj-quotes'       " Text objects for the closest pairs of quotes of any type.
+Plug 'glts/vim-textobj-comment'            " Text objects for comments.
+Plug 'michaeljsmith/vim-indent-object'     " Text objects for levels of indentation.
+Plug 'Julian/vim-textobj-variable-segment' " Text objects for variable segments in PascalCase, camelCase, snake_case, or kebab-case.
+Plug 'Julian/vim-textobj-brace'            " A text object for the closest inner () {} *or* []
+Plug 'Raimondi/vim_search_objects'         " Vim text objects for search results.
 " }}}
 
 " === Editing === {{{
-Plug 'tpope/vim-commentary'
-Plug 'tomtom/tcomment_vim'
-" Plug 'tyru/caw.vim'
-Plug 'kana/vim-niceblock'
-Plug 'joereynolds/place.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'haya14busa/vim-edgemotion'
-" Plug 'machakann/vim-swap'
-Plug 'valloric/matchtagalways',   {'for': ['html', 'xml']}
-" Plug 'AndrewRadev/splitjoin.vim', {'on': ['SplitjoinSplit', 'SplitjoinJoin']}
-" Plug 'AndrewRadev/switch.vim',    {'on': 'Switch'}
-Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']}
+Plug 'tpope/vim-commentary'      " Comment stuff out.
+Plug 'tomtom/tcomment_vim'       " An extensible & universal comment vim-plugin that also handles embedded filetypes.
+" Plug 'tyru/caw.vim'            " Vim comment plugin: supported operator/non-operator mappings, repeatable by dot-command, 300+ filetypes.
+Plug 'kana/vim-niceblock'        " Make blockwise Visual mode more useful.
+Plug 'joereynolds/place.vim'     " Enter pieces of text without moving.
+Plug 'junegunn/vim-easy-align'   " A Vim alignment plugin
+Plug 'haya14busa/vim-edgemotion' " Move to the edge! (with J/K)
+" Plug 'machakann/vim-swap'      " Reorder delimited items.
+Plug 'valloric/matchtagalways',   {'for': ['html', 'xml', 'gohtml']}            " Always highlights the enclosing html/xml tags.
+" Plug 'AndrewRadev/splitjoin.vim', {'on': ['SplitjoinSplit', 'SplitjoinJoin']} " Simplifies the transition between multiline and single-line code.
+" Plug 'AndrewRadev/switch.vim',    {'on': 'Switch'}                            " Switch segments of text with predefined replacements.
+Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scratch', 'text', 'text', 'yaml']} " Automated bullet lists
 " }}}
 
 " === Utilities === {{{
 Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'djoshea/vim-autoread'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-dispatch'
-" Plug 'tpope/vim-endwise'
-" Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-speeddating'
-Plug 'airblade/vim-rooter'
-Plug 'pbrisbin/vim-mkdir'
-Plug 'kopischke/vim-stay'
-Plug 'duff/vim-bufonly', {'on': 'BufOnly'}
-Plug 'mhinz/vim-sayonara'
-Plug 'ervandew/supertab'
-Plug 'airblade/vim-matchquote'
-Plug 'justinmk/vim-sneak'
-" Plug 'rhysd/clever-f.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'sgur/vim-editorconfig'
-" Plug 'tommcdo/vim-kangaroo'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'nickeb96/vitality.vim'
+Plug 'junegunn/fzf.vim'                    " Wrapper for using FZF in Vim.
+Plug 'djoshea/vim-autoread'                " Have Vim automatically reload a file that has changed externally.
+Plug 'tpope/vim-rsi'                       " Readline style insertion.
+Plug 'tpope/vim-eunuch'                    " Vim sugar for the UNIX shell commands that need it the most.
+Plug 'tpope/vim-repeat'                    " Enable repeating supported plugin maps with "."
+Plug 'tpope/vim-fugitive'                  " A Git wrapper so awesome, it should be illegal.
+Plug 'tpope/vim-surround'                  " Provides mappings to easily delete, change, and add surroundings in pairs.
+Plug 'tpope/vim-dispatch'                  " Asynchronous build and test dispatcher.
+" Plug 'tpope/vim-endwise'                 " Helps to end certain structures automatically.
+" Plug 'tpope/vim-abolish'                 " Easily search for, substitute, and abbreviate multiple variants of a word.
+" Plug 'tpope/vim-projectionist'           " Granular project configuration.
+Plug 'tpope/vim-speeddating'               " Use CTRL-A/CTRL-X to increment dates, times, and more.
+Plug 'airblade/vim-rooter'                 " Changes Vim working directory to project root.
+Plug 'pbrisbin/vim-mkdir'                  " Automatically create any non-existent directories before writing the buffer.
+Plug 'kopischke/vim-stay'                  " Make Vim persist editing state without fuss.
+Plug 'duff/vim-bufonly', {'on': 'BufOnly'} " Unload all buffers but the current one.
+Plug 'mhinz/vim-sayonara'                  " Sane buffer/window deletion.
+Plug 'ervandew/supertab'                   " Perform all your vim insert mode completions with Tab.
+Plug 'airblade/vim-matchquote'             " %-style motion for single / double quotation marks, backticks and pipe.
+Plug 'justinmk/vim-sneak'                  " Jump to any location specified by two characters.
+" Plug 'rhysd/clever-f.vim'                " Extended f, F, t and T key mappings for Vim.
+Plug 'Raimondi/delimitMate'                " Provides insert mode auto-completion for quotes, parens, brackets, etc.
+Plug 'sgur/vim-editorconfig'               " Yet another EditorConfig plugin for vim written in vimscript only.
+" Plug 'tommcdo/vim-kangaroo'              " Maintain a manually-defined jump stack.
+Plug 'christoomey/vim-tmux-navigator'      " Seamless navigation between tmux panes and vim splits.
+Plug 'nickeb96/vitality.vim'               " Make Vim play nicely with iTerm 2 and tmux.
 " Plug 'embear/vim-localvimrc'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'lambdalisue/suda.vim'
-Plug 'Shougo/context_filetype.vim'
-" Plug 'Shougo/neossh.vim'
-Plug 'Shougo/echodoc.vim'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'ludovicchabant/vim-gutentags'        " A Vim plugin that manages your tag files.
+Plug 'lambdalisue/suda.vim'                " Read or write files with sudo command.
+Plug 'Shougo/context_filetype.vim'         " Context filetype library for Vim script?
+" Plug 'Shougo/neossh.vim'                 " SSH interface for Vim plugins.
+Plug 'Shougo/echodoc.vim'                  " Print documents in echo area.
+Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Interactive command execution in Vim.
 " }}}
 
 " === Denite === {{{
@@ -276,7 +274,7 @@ Plug 'blankname/denite_fzf_matcher'
 " }}}
 
 " === Completion === {{{
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'} " Asynchronous completion framework for neovim/Vim8
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neoinclude.vim'
@@ -298,16 +296,15 @@ Plug 'uplus/deoplete-solargraph',     {'for': 'ruby'}
 Plug 'padawan-php/deoplete-padawan',  {'for': 'php'}
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
-Plug 'fcpg/vim-complimentary',        {'for': 'vim'}  " Complimentary improves the completion of VimL builtin functions, commands, variables and options.
+Plug 'fcpg/vim-complimentary',        {'for': 'vim'}  " Improves the completion of VimL builtin functions, commands, variables and options.
 " Plug 'cyansprite/deoplete-omnisharp', {'for': 'cs'}
-Plug 'juliosueiras/vim-terraform-completion'
 " Plug '1995eaton/vim-better-javascript-completion'
 " }}}
 
 " === Misc === {{{
-Plug 'mattn/webapi-vim'
+Plug 'mattn/webapi-vim' " An Interface to WEB APIs.
 Plug 'wakatime/vim-wakatime'
-" Plug 'skywind3000/asyncrun.vim'
+" Plug 'skywind3000/asyncrun.vim' " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window.
 " }}}
 
 " === Version Control === {{{
@@ -323,28 +320,28 @@ Plug 'wakatime/vim-wakatime'
 
 " === Search And Replace === {{{
 " Plug 'mileszs/ack.vim'
-Plug 'osyo-manga/vim-anzu'
+Plug 'osyo-manga/vim-anzu' " Vim search status (current/found).
 " Plug 'haya14busa/is.vim'
 Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/vim-asterisk'
+Plug 'haya14busa/vim-asterisk' " Provides improved * motions.
 " Plug 'brooth/far.vim'
 " Plug 'dyng/ctrlsf.vim'
 " Plug 'pelodelfuego/vim-swoop'
 " }}}
 
 " === Lazy === {{{
-Plug 'ciaranm/securemodelines'
-Plug 'frioux/vim-regedit'
-Plug 'Shougo/junkfile.vim'
-Plug 'Shougo/vinarise.vim',           { 'on': 'Vinarise'}
-Plug 'Shougo/deol.nvim',              { 'on': 'Deol'}
-Plug 'tweekmonster/startuptime.vim'
-Plug 'tyru/capture.vim',              { 'on': 'Capture'}
-Plug 'chrisbra/Colorizer',            { 'on': 'ColorToggle'}
-Plug 'dhruvasagar/vim-table-mode',    { 'on': 'TableModeToggle'}
-Plug 'majutsushi/tagbar',             { 'on': 'TagbarToggle'}
-Plug 'mbbill/undotree'
-Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'}
+Plug 'ciaranm/securemodelines'                                   " A secure alternative to Vim modelines
+Plug 'frioux/vim-regedit'                                        " Allows very simple modification of registers
+Plug 'Shougo/junkfile.vim'                                       " Create temporary files
+Plug 'Shougo/vinarise.vim',           { 'on': 'Vinarise'}        " Hex editing
+Plug 'Shougo/deol.nvim',              { 'on': 'Deol'}            " Dark powered shell interface for NeoVim and Vim8.
+Plug 'tweekmonster/startuptime.vim',  { 'on': 'StartupTime'}     " Breakdown Vim's --startuptime output
+Plug 'tyru/capture.vim',              { 'on': 'Capture'}         " Show Ex command output in a buffer
+Plug 'chrisbra/Colorizer',            { 'on': 'ColorToggle'}     " Colors hex codes and color names
+Plug 'dhruvasagar/vim-table-mode',    { 'on': 'TableModeToggle'} " Automatic table creator & formatter
+Plug 'majutsushi/tagbar',             { 'on': 'TagbarToggle'}    " Provides an easy way to browse the tags of the current file and get an overview of its structure.
+Plug 'mbbill/undotree',               { 'on': 'UndotreeToggle'}  " Undo history visualizer
+Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'} " All 256 xterm colors with their RGB equivalents
 " }}}
 
 " === Local === {{{

@@ -220,9 +220,8 @@ endif
 " ==============================================================================
 set hlsearch                    " Highlight matches
 set incsearch                   " Search as characters are entered
-set inccommand=nosplit
-" set inccommand=split
-" set inccommand="nosplit"
+" set inccommand=nosplit          " Shows the effects of a command incrementally, as you type.
+" set inccommand=split            " Also shows partial off-screen results in a preview window.
 set magic                       " Enable extended regexes
 set wrapscan                    " Searches wrap around the end of the file
 " set gdefault                    " By default add g flag to search/replace. Add g to toggle
