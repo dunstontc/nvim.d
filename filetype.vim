@@ -22,6 +22,8 @@ augroup filetypes
 
   autocmd BufRead,BufNewFile .{babel,eslint,stylelint,jshint,prettier,cheat}rc,.tern-*,*.json set filetype=json
 
+  autocmd BufRead,BufNewFile *.hs set filetype=haskell
+
   autocmd BufRead,BufNewFile .spacemacs set filetype=lisp
 
   autocmd BufNewFile,BufRead *.{mustache,hogan,hulk,hjs} set filetype=html.mustache syntax=mustache

@@ -23,6 +23,7 @@ let g:neoformat_enabled_java       = ['uncrustify']
 let g:neoformat_enabled_markdown   = ['remark']
 let g:neoformat_enabled_sh         = ['shfmt']
 let g:neoformat_enabled_bash       = ['shfmt']
+let g:neoformat_enabled_rust       = ['rustfmt']
 
 " exe       the name the formatter executable in the path  n/a  required
 " args      list of arguments  []  optional

@@ -4,7 +4,7 @@
 " Maintainer:   Patrick Walton <pcwalton@mozilla.com>
 " Maintainer:   Ben Blum <bblum@cs.cmu.edu>
 " Maintainer:   Chris Morgan <me@chrismorgan.info>
-" Last Change:  May 04, 2018
+" Last Change:  May 16, 2018
 " For bugs, patches and license go to https://github.com/rust-lang/rust.vim
 
 if version < 600
@@ -56,7 +56,8 @@ syn keyword   rustExternCrate crate contained nextgroup=rustIdentifier,rustExter
 syn match   rustExternCrateString /".*"\_s*as/ contained nextgroup=rustIdentifier skipwhite transparent skipempty contains=rustString,rustOperator
 syn keyword rustObsoleteExternMod mod contained nextgroup=rustIdentifier skipwhite skipempty
 
-syn match     rustIdentifier  contains=rustIdentifierPrime "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
+" syn match     rustIdentifier  contains=rustIdentifierPrime "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
+syn match     rustIdentifier  "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
 syn match     rustFuncName    "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
 
 syn region    rustBoxPlacement matchgroup=rustBoxPlacementParens start="(" end=")" contains=TOP contained

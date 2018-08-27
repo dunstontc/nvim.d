@@ -19,6 +19,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/vim-peekaboo'
 Plug 'dunstontc/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'mgee/lightline-bufferline'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/vimfiler.vim'
@@ -30,8 +31,8 @@ Plug 'xtal8/traces.vim'
 " Plug 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'jszakmeister/vim-togglecursor'
 " Plug 'thaerkh/vim-indentguides'
-Plug '/Users/clay/Projects/GitHub/vim-vscode-theme'
-Plug 'dunstontc/vim-vscode-theme'
+Plug '/Users/clay/Projects/vim/vim-vscode-theme'
+" Plug 'dunstontc/vim-vscode-theme'
 " }}}
 
 " === Language Support === {{{
@@ -45,6 +46,8 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 " C: {{{
 Plug 'dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
+Plug 'arakashic/chromatica.nvim', {'for': ['c', 'cpp', 'objc', 'objcpp']}
+
 " }}}
 
 " C#: {{{
@@ -59,10 +62,6 @@ Plug 'dart-lang/dart-vim-plugin', {'for': ['dart']}
 Plug 'elixir-editors/vim-elixir', {'for': ['elixir']}
 Plug 'slashmili/alchemist.vim',   {'for': ['elixir']}
 Plug 'mhinz/vim-mix-format',      {'for': ['elixir']}
-" }}}
-
-" Java: {{{
-Plug 'dunstontc/kotlin-vim',    {'for': ['kotlin']}
 " }}}
 
 " JavaScript: {{{
@@ -91,7 +90,7 @@ Plug 'rhysd/vim-fixjson',                {'for': 'json' }
 
 " HTML CSS: {{{
 " HTML:
-Plug 'othree/html5.vim',                 {'for': ['html' ]}
+Plug 'othree/html5.vim',                 {'for': ['html']}
 Plug 'azakus/vim-webcomponents',         {'for': ['html']}
 " CSS:
 Plug 'amadeus/vim-css',                  {'for': ['css']}
@@ -107,7 +106,7 @@ Plug 'wavded/vim-stylus',                {'for': ['styl', 'stylus']}
 " }}}
 
 " Go: {{{
-Plug 'fatih/vim-go',  {'for': 'go' }
+Plug 'fatih/vim-go',  {'for': 'go'}
 " Plug 'jodosha/vim-godebug'
 " Plug 'godoctor/godoctor.vim'
 " }}}
@@ -127,15 +126,16 @@ Plug 'mxw/vim-xhp', {'for': ['php', 'xhp']}
 " }}}
 
 " Python: {{{
+Plug 'numirias/semshi',              {'for': 'python', 'do': ':UpdateRemotePlugins'}
 Plug 'tweekmonster/impsort.vim',     {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
-Plug 'dunstontc/vim-pydocstring',    {'for': 'python'}
+Plug 'heavenshell/vim-pydocstring',  {'for': 'python'}
 " Plug 'python-mode/python-mode',      {'for': 'python'}
 " Plug 'davidhalter/jedi-vim',         {'for': 'python'}
 " }}}
 
 " Ruby: {{{
-" Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 " Plug 'tpope/vim-rails'
 " }}}
 
@@ -168,8 +168,8 @@ Plug 'pearofducks/ansible-vim'
 " }}}
 
 " Writing: {{{
-Plug 'lervag/vimtex',                    {'for': ['tex'  ]}
-Plug 'jceb/vim-orgmode',                 {'for': ['org'  ]}
+Plug 'lervag/vimtex',                    {'for': ['tex'   ]}
+Plug 'jceb/vim-orgmode',                 {'for': ['org'   ]}
 Plug 'tpope/vim-markdown',               {'for': 'markdown'}
 " Plug 'nelstrom/vim-markdown-folding',    {'for': 'markdown'}
 Plug 'tyru/markdown-codehl-onthefly.vim',{'for': 'markdown'}
@@ -179,6 +179,8 @@ Plug 'tyru/markdown-codehl-onthefly.vim',{'for': 'markdown'}
 
 " Other: {{{
 Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr']}
+Plug 'isaacsloan/vim-slang'
+Plug 'neovimhaskell/haskell-vim', {'for': ['haskell', 'cabal']}
 " Plug 'uarun/vim-protobuf',  {'for': ['proto']}
 " Plug 'jpalardy/vim-slime',  {'for': ['lisp', 'el']}
 " Plug 'peterhoeg/vim-qml',   {'for': ['qml']}
@@ -226,7 +228,7 @@ Plug 'dkarter/bullets.vim',       {'for' : ['gitcommit', 'markdown', 'rst', 'scr
 
 " === Utilities === {{{
 Plug '/usr/local/opt/fzf'
-Plug 'dunstontc/fzf.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-eunuch'
@@ -263,7 +265,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 " === Denite === {{{
 Plug 'Shougo/unite.vim'
-Plug 'dunstontc/denite.nvim'
+Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'dunstontc/neomru.vim'
 Plug 'Shougo/neoyank.vim'
 Plug 'rafi/vim-denite-session'
@@ -274,7 +276,7 @@ Plug 'blankname/denite_fzf_matcher'
 " }}}
 
 " === Completion === {{{
-Plug 'dunstontc/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'Shougo/neco-vim'
 Plug 'Shougo/neco-syntax'
 Plug 'Shougo/neoinclude.vim'
@@ -288,12 +290,11 @@ Plug 'Shougo/deoplete-clangx',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " Plug 'Rip-Rip/clang_complete',        {'for': ['c', 'cpp', 'objc', 'objcpp']}
 Plug 'zchee/deoplete-jedi',           {'for': 'python'}
 Plug 'zchee/deoplete-zsh',            {'for': 'zsh'}
-" Plug 'zchee/deoplete-docker',         {'for': 'dockerfile'}
 Plug 'ponko2/deoplete-fish',          {'for': 'fish'}
 Plug 'carlitux/deoplete-ternjs',      {'for': ['jsx', 'javascript' ]}
 Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
 " Plug 'fishbullet/deoplete-ruby',      {'for': 'ruby'}
-" Plug 'uplus/deoplete-solargraph',     {'for': 'ruby'}
+Plug 'uplus/deoplete-solargraph',     {'for': 'ruby'}
 Plug 'padawan-php/deoplete-padawan',  {'for': 'php'}
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
@@ -347,8 +348,10 @@ Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'}
 " }}}
 
 " === Local === {{{
-" Plug '/Users/clay/Projects/Vim/me/tcd'
-" Plug '~/Projects/Vim/me/projectile.nvim'
+Plug '/Users/clay/Projects/Vim/tcd'
+" Plug 'dunstontc/tcd'
+Plug 'dunstontc/syntax-vim-ex'
+Plug 'dunstontc/projectile.nvim'
 " Plug '/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
 " Plug '~/.ghq/github.com/dunstontc/vison',           {'for': ['json']}
 " Plug '~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'for': 'vim'}
