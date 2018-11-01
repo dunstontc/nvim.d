@@ -66,6 +66,10 @@ vnoremap <S-L> g_
 noremap <S-E> ge
 noremap <S-B> w
 
+" Step through wrapped lines
+noremap j gj
+noremap k gk
+
 " Put newly available 'w' to good use
 noremap w @
 noremap <S-W> @@
