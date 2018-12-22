@@ -89,7 +89,7 @@ Plug 'rhysd/vim-fixjson',                {'for': 'json' }
 " HTML CSS: {{{
 " HTML:
 Plug 'othree/html5.vim',                 {'for': ['html']}
-Plug 'azakus/vim-webcomponents',         {'for': ['html']}
+" Plug 'azakus/vim-webcomponents',         {'for': ['html']}
 " CSS:
 Plug 'amadeus/vim-css',                  {'for': ['css']}
 " Plug 'hail2u/vim-css3-syntax',           {'for': ['css'  ]}
@@ -124,8 +124,8 @@ Plug 'tbastos/vim-lua',         {'for': ['lua']}
 " }}}
 
 " Python: {{{
-Plug 'numirias/semshi',              {'for': 'python', 'do': ':UpdateRemotePlugins'}
-Plug 'tweekmonster/impsort.vim',     {'for': 'python'}
+" Plug 'numirias/semshi',              {'for': 'python', 'do': ':UpdateRemotePlugins'}
+" Plug 'tweekmonster/impsort.vim',     {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
 Plug 'heavenshell/vim-pydocstring',  {'for': 'python'}
 " Plug 'python-mode/python-mode',      {'for': 'python'}
@@ -303,7 +303,6 @@ Plug 'fcpg/vim-complimentary',        {'for': 'vim'}  " Improves the completion 
 
 " === Misc === {{{
 Plug 'mattn/webapi-vim' " An Interface to WEB APIs.
-Plug 'wakatime/vim-wakatime'
 " Plug 'skywind3000/asyncrun.vim' " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window.
 " }}}
 
@@ -345,7 +344,7 @@ Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'} " All 256 xterm
 " }}}
 
 " === Local === {{{
-Plug '/Users/clay/Projects/Vim/tcd'
+" Plug '/Users/clay/Projects/Vim/tcd'
 " Plug 'dunstontc/tcd'
 Plug 'dunstontc/syntax-vim-ex'
 Plug 'dunstontc/projectile.nvim'

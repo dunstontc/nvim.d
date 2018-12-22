@@ -320,16 +320,16 @@ let g:incsearch#consistent_n_direction = 1            " When searching backward,
 let g:swoopUseDefaultKeyMap = 0
 " }}}
 
-" === slash === {{{
+" === slash === {{ {
 " noremap <plug>(slash-after) zz
 " }}}
 
 " === tomtom/tcomment === {{{
-let g:tcommentMaps=1
-let g:tcommentMapLeader1='<C-d>'
-let g:tcommentMapLeader2='<C-d>'
-let g:tcommentMapLeaderCommentAnyway=''
-let g:tcommentTextObjectInlineComment=''
+let g:tcomment_maps=1
+let g:tcomment_mapleader1='<C-d>'
+let g:tcomment_mapleader2='<C-d>'
+let g:tcomment_mapleader_comment_anyway=''
+let g:tcomment_textobject_inlinecomment=''
 " }}}
 
 " === w0rp/ale === {{{
