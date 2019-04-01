@@ -29,7 +29,6 @@ Plug 'itchyny/vim-cursorword'  " Underlines the word under the cursor.
 Plug 'blueyed/vim-diminactive' " Dim inactive windows.
 Plug 'xtal8/traces.vim'        " Range, pattern and substitute preview for Vim.
 " Plug 'jszakmeister/vim-togglecursor' " Toggle the cursor shape in the terminal for Vim.
-" Plug 'thaerkh/vim-indentguides'      " Simple indentation guides for your buffers
 " Plug 'dunstontc/vim-vscode-theme'
 Plug '/Users/clay/Projects/vim/vim-vscode-theme'
 " }}}
@@ -47,14 +46,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 " Plug 'dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " Plug 'arakashic/chromatica.nvim',            {'for': ['c', 'cpp', 'objc', 'objcpp']}
 
-" }}}
-
-" C#: {{{
-" Plug 'fsharp/vim-fsharp', {'for': ['fsharp']}
-" }}}
-
-" Dart: {{{
-" Plug 'dart-lang/dart-vim-plugin', {'for': ['dart']}
 " }}}
 
 " Elixir: {{{
@@ -111,20 +102,9 @@ Plug 'fatih/vim-go',  {'for': 'go'}
 
 " Lua: {{{
 Plug 'tbastos/vim-lua',         {'for': ['lua']}
-" Plug 'VaiN474/vim-etlua',       {'for': ['lua']}
-" Plug 'VaiN474/vim-etlua-plain', {'for': ['ept']}
-" Plug 'leafo/moonscript-vim',    {'for': ['moon']}
-" Plug 'xolox/vim-misc',         {'for': ['lua'  ]}
-" Plug 'xolox/vim-lua-ftplugin', {'for': ['lua'  ]}
-" }}}
-
-" PHP: {{{
-" Plug 'tobyS/pdv',   {'for': 'php'}
-" Plug 'mxw/vim-xhp', {'for': ['php', 'xhp']}
 " }}}
 
 " Python: {{{
-" Plug 'numirias/semshi',              {'for': 'python', 'do': ':UpdateRemotePlugins'}
 " Plug 'tweekmonster/impsort.vim',     {'for': 'python'}
 Plug 'hynek/vim-python-pep8-indent', {'for': 'python'}
 Plug 'heavenshell/vim-pydocstring',  {'for': 'python'}
@@ -146,13 +126,6 @@ Plug 'racer-rust/vim-racer',  {'for': 'rust'}
 Plug 'chrisbra/vim-zsh',  {'for': 'zsh'   }
 Plug 'vim-perl/vim-perl', {'for': 'perl'  }
 Plug 'dag/vim-fish',      {'for': 'fish'  }
-" Plug 'dunstontc/vim-ps1', {'for': 'ps1'   }
-" Plug 'dmix/elvish.vim',   {'for': 'elvish'}
-" }}}
-
-" Swift: {{{
-" Plug 'gfontenot/vim-xcode'
-Plug 'keith/swift.vim', {'for': 'swift'}
 " }}}
 
 " Config: {{{
@@ -196,7 +169,6 @@ Plug 'ternjs/tern_for_vim', {'for': ['javascript']}
 
 " === Text Objects === {{{
 " Plug 'wellle/targets.vim'
-" Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'               " Create your own text objects.
 Plug 'kana/vim-textobj-line'               " Text objects for the current line.
 Plug 'kana/vim-textobj-fold'               " Text objects for foldings.
@@ -249,7 +221,6 @@ Plug 'justinmk/vim-sneak'                  " Jump to any location specified by t
 " Plug 'rhysd/clever-f.vim'                " Extended f, F, t and T key mappings for Vim.
 Plug 'Raimondi/delimitMate'                " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'sgur/vim-editorconfig'               " Yet another EditorConfig plugin for vim written in vimscript only.
-" Plug 'tommcdo/vim-kangaroo'              " Maintain a manually-defined jump stack.
 Plug 'christoomey/vim-tmux-navigator'      " Seamless navigation between tmux panes and vim splits.
 Plug 'nickeb96/vitality.vim'               " Make Vim play nicely with iTerm 2 and tmux.
 " Plug 'embear/vim-localvimrc'
@@ -267,7 +238,6 @@ Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'dunstontc/neomru.vim'
 Plug 'Shougo/neoyank.vim'
 Plug 'rafi/vim-denite-session'
-" Plug 'lambdalisue/session.vim'
 Plug 'mhartington/denite-neomake'
 Plug 'yyotti/denite-marks'
 Plug 'blankname/denite_fzf_matcher'
@@ -306,17 +276,6 @@ Plug 'mattn/webapi-vim' " An Interface to WEB APIs.
 " Plug 'skywind3000/asyncrun.vim' " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window.
 " }}}
 
-" === Version Control === {{{
-" Plug 'lambdalisue/gina.vim'
-" Plug 'gregsexton/gitv'
-" Plug 'rhysd/committia.vim'
-" Plug 'idanarye/vim-merginal'
-" Plug 'elstgav/branch-manager'
-" Plug 'jreybert/vimagit', { 'on': 'Magit' }
-" Plug 'christoomey/vim-conflicted'
-" Plug 'chrisbra/vim-diff-enhanced'
-" }}}
-
 " === Search And Replace === {{{
 " Plug 'mileszs/ack.vim'
 Plug 'osyo-manga/vim-anzu' " Vim search status (current/found).
@@ -348,10 +307,6 @@ Plug 'guns/xterm-color-table.vim',    { 'on': 'XtermColorTable'} " All 256 xterm
 " Plug 'dunstontc/tcd'
 Plug 'dunstontc/syntax-vim-ex'
 Plug 'dunstontc/projectile.nvim'
-" Plug '/Users/clay/.ghq/github.com/dunstontc/YUNOcommit.vim')
-" Plug '~/.ghq/github.com/dunstontc/vison',           {'for': ['json']}
-" Plug '~/.ghq/github.com/dunstontc/syntax-vim-ex',   {'for': 'vim'}
-" Plug '~/.ghq/github.com/dunstontc/python-syntax',   {'for': ['py', 'python']}
 " }}}
 
 call plug#end()
