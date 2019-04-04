@@ -45,7 +45,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 " C: {{{
 " Plug 'dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " Plug 'arakashic/chromatica.nvim',            {'for': ['c', 'cpp', 'objc', 'objcpp']}
-
 " }}}
 
 " Elixir: {{{
@@ -115,6 +114,7 @@ Plug 'heavenshell/vim-pydocstring',  {'for': 'python'}
 " Ruby: {{{
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 " Plug 'tpope/vim-rails'
+Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr']}
 " }}}
 
 " Rust: {{{
@@ -134,7 +134,6 @@ Plug 'chrisbra/csv.vim',        {'for': ['csv', 'tsv' ]}
 Plug 'cespare/vim-toml',        {'for': ['toml', 'tml']}
 Plug 'chr4/nginx.vim',          {'for': 'nginx'        }
 Plug 'ekalinin/Dockerfile.vim', {'for': 'dockerfile'   }
-" Plug 'hashivim/vim-terraform'
 " Plug 'pearofducks/ansible-vim'
 " }}}
 
@@ -149,13 +148,9 @@ Plug 'tyru/markdown-codehl-onthefly.vim',{'for': 'markdown'}
 " }}}
 
 " Other: {{{
-Plug 'rhysd/vim-crystal',   {'for': ['crystal', 'cr']}
-" Plug 'isaacsloan/vim-slang'
 Plug 'neovimhaskell/haskell-vim', {'for': ['haskell', 'cabal']}
 " Plug 'uarun/vim-protobuf',  {'for': ['proto']}
 " Plug 'jpalardy/vim-slime',  {'for': ['lisp', 'el']}
-" Plug 'peterhoeg/vim-qml',   {'for': ['qml']}
-" Plug 'reasonml-editor/vim-reason-plus', {'for': ['reason']}
 " Plug 'rhysd/vim-wasm'
 " }}}
 
@@ -168,10 +163,9 @@ Plug 'ternjs/tern_for_vim', {'for': ['javascript']}
 " }}}
 
 " === Text Objects === {{{
-" Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'               " Create your own text objects.
 Plug 'kana/vim-textobj-line'               " Text objects for the current line.
-Plug 'kana/vim-textobj-fold'               " Text objects for foldings.
+" Plug 'kana/vim-textobj-fold'               " Text objects for foldings.
 Plug 'kana/vim-textobj-entire'             " Text objects for the entire content of a buffer.
 Plug 'beloglazov/vim-textobj-quotes'       " Text objects for the closest pairs of quotes of any type.
 Plug 'glts/vim-textobj-comment'            " Text objects for comments.
@@ -206,10 +200,10 @@ Plug 'tpope/vim-repeat'                    " Enable repeating supported plugin m
 Plug 'tpope/vim-fugitive'                  " A Git wrapper so awesome, it should be illegal.
 Plug 'tpope/vim-surround'                  " Provides mappings to easily delete, change, and add surroundings in pairs.
 Plug 'tpope/vim-dispatch'                  " Asynchronous build and test dispatcher.
+Plug 'tpope/vim-speeddating'               " Use CTRL-A/CTRL-X to increment dates, times, and more.
 " Plug 'tpope/vim-endwise'                 " Helps to end certain structures automatically.
 " Plug 'tpope/vim-abolish'                 " Easily search for, substitute, and abbreviate multiple variants of a word.
 " Plug 'tpope/vim-projectionist'           " Granular project configuration.
-Plug 'tpope/vim-speeddating'               " Use CTRL-A/CTRL-X to increment dates, times, and more.
 Plug 'airblade/vim-rooter'                 " Changes Vim working directory to project root.
 Plug 'pbrisbin/vim-mkdir'                  " Automatically create any non-existent directories before writing the buffer.
 Plug 'kopischke/vim-stay'                  " Make Vim persist editing state without fuss.
@@ -223,13 +217,12 @@ Plug 'Raimondi/delimitMate'                " Provides insert mode auto-completio
 Plug 'sgur/vim-editorconfig'               " Yet another EditorConfig plugin for vim written in vimscript only.
 Plug 'christoomey/vim-tmux-navigator'      " Seamless navigation between tmux panes and vim splits.
 Plug 'nickeb96/vitality.vim'               " Make Vim play nicely with iTerm 2 and tmux.
-" Plug 'embear/vim-localvimrc'
 Plug 'ludovicchabant/vim-gutentags'        " A Vim plugin that manages your tag files.
 Plug 'lambdalisue/suda.vim'                " Read or write files with sudo command.
 Plug 'Shougo/context_filetype.vim'         " Context filetype library for Vim script?
-" Plug 'Shougo/neossh.vim'                 " SSH interface for Vim plugins.
 Plug 'Shougo/echodoc.vim'                  " Print documents in echo area.
 Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Interactive command execution in Vim.
+Plug 'mattn/webapi-vim' " An Interface to WEB APIs.
 " }}}
 
 " === Denite === {{{
@@ -267,13 +260,7 @@ Plug 'padawan-php/deoplete-padawan',  {'for': 'php'}
 Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
 Plug 'fcpg/vim-complimentary',        {'for': 'vim'}  " Improves the completion of VimL builtin functions, commands, variables and options.
-" Plug 'cyansprite/deoplete-omnisharp', {'for': 'cs'}
 " Plug '1995eaton/vim-better-javascript-completion'
-" }}}
-
-" === Misc === {{{
-Plug 'mattn/webapi-vim' " An Interface to WEB APIs.
-" Plug 'skywind3000/asyncrun.vim' " Run Async Shell Commands in Vim 8.0 / NeoVim and Output to Quickfix Window.
 " }}}
 
 " === Search And Replace === {{{
