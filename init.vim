@@ -172,8 +172,8 @@ Plug 'Raimondi/vim_search_objects'         " Vim text objects for search results
 " }}}
 
 " === Editing === {{{
-Plug 'tpope/vim-commentary'      " Comment stuff out.
-" Plug 'tomtom/tcomment_vim'       " An extensible & universal comment vim-plugin that also handles embedded filetypes.
+" Plug 'tpope/vim-commentary'      " Comment stuff out.
+Plug 'tomtom/tcomment_vim'       " An extensible & universal comment vim-plugin that also handles embedded filetypes.
 " Plug 'tyru/caw.vim'            " Vim comment plugin: supported operator/non-operator mappings, repeatable by dot-command, 300+ filetypes.
 Plug 'kana/vim-niceblock'        " Make blockwise Visual mode more useful.
 Plug 'joereynolds/place.vim'     " Enter pieces of text without moving.
