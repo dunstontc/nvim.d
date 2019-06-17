@@ -177,9 +177,9 @@ set notitle                    " Don't Show the filename in the window titlebar
 
 " set textwidth=78
 " set synmaxcol=200             " Don't syntax highlight long lines
-if exists('+colorcolumn')
-  execute "set colorcolumn=" . join(range(81,335), ',')
-endif
+" if exists('+colorcolumn')
+"   execute "set colorcolumn=" . join(range(81,335), ',')
+" endif
 " }}}
 
 " ==============================================================================
@@ -195,7 +195,7 @@ set listchars+=trail:●
 " set listchars+=space:●   " Comment here to keep whitespace intact
 " set listchars+=extends:❯
 " set listchars+=precedes:❮
-set showbreak=↪
+" set showbreak=↪
 set list
 
 " === UI Characters ===

@@ -16,17 +16,14 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 
 " UI: {{{
-Plug 'mhinz/vim-startify'        " The fancy start screen for Vim.
 Plug 'junegunn/vim-peekaboo'     " Show the contents of registers on a sidebar.
 Plug 'dunstontc/lightline.vim'   " A light and configurable statusline/tabline
 " Plug 'itchyny/lightline.vim'   " A light and configurable statusline/tabline plugin for Vim.
 Plug 'mgee/lightline-bufferline' " Display the list of buffers in the lightline.vim plugin.
 Plug 'airblade/vim-gitgutter'    " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'Shougo/vimfiler.vim'       " File explorer implemented by Vim script
-Plug 'romgrk/vimfiler-prompt', { 'on': 'VimFilerPrompt'}
 Plug 'ryanoasis/vim-devicons'  " Adds file type glyphs/icons to popular Vim plugins.
 Plug 'itchyny/vim-cursorword'  " Underlines the word under the cursor.
-Plug 'blueyed/vim-diminactive' " Dim inactive windows.
 Plug 'xtal8/traces.vim'        " Range, pattern and substitute preview for Vim.
 " Plug 'jszakmeister/vim-togglecursor' " Toggle the cursor shape in the terminal for Vim.
 " Plug 'dunstontc/vim-vscode-theme'
@@ -55,7 +52,7 @@ Plug 'mhinz/vim-mix-format',      {'for': ['elixir']}
 
 " JavaScript: {{{
 Plug 'pangloss/vim-javascript',          {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
-Plug 'jonsmithers/experimental-lit-html-vim'
+" Plug 'jonsmithers/experimental-lit-html-vim'
 " Plug 'othree/yajs.vim',                        {'for': ['javascript', 'jsx']}
 " Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript', 'jsx']}
 " Plug 'heavenshell/vim-jsdoc',            {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
@@ -150,7 +147,6 @@ Plug 'tyru/markdown-codehl-onthefly.vim',{'for': 'markdown'}
 " Other: {{{
 Plug 'neovimhaskell/haskell-vim', {'for': ['haskell', 'cabal']}
 " Plug 'uarun/vim-protobuf',  {'for': ['proto']}
-" Plug 'jpalardy/vim-slime',  {'for': ['lisp', 'el']}
 " Plug 'rhysd/vim-wasm'
 " }}}
 
@@ -177,7 +173,7 @@ Plug 'Raimondi/vim_search_objects'         " Vim text objects for search results
 
 " === Editing === {{{
 Plug 'tpope/vim-commentary'      " Comment stuff out.
-Plug 'tomtom/tcomment_vim'       " An extensible & universal comment vim-plugin that also handles embedded filetypes.
+" Plug 'tomtom/tcomment_vim'       " An extensible & universal comment vim-plugin that also handles embedded filetypes.
 " Plug 'tyru/caw.vim'            " Vim comment plugin: supported operator/non-operator mappings, repeatable by dot-command, 300+ filetypes.
 Plug 'kana/vim-niceblock'        " Make blockwise Visual mode more useful.
 Plug 'joereynolds/place.vim'     " Enter pieces of text without moving.
@@ -211,17 +207,14 @@ Plug 'duff/vim-bufonly', {'on': 'BufOnly'} " Unload all buffers but the current 
 Plug 'mhinz/vim-sayonara'                  " Sane buffer/window deletion.
 Plug 'ervandew/supertab'                   " Perform all your vim insert mode completions with Tab.
 Plug 'airblade/vim-matchquote'             " %-style motion for single / double quotation marks, backticks and pipe.
-Plug 'justinmk/vim-sneak'                  " Jump to any location specified by two characters.
 " Plug 'rhysd/clever-f.vim'                " Extended f, F, t and T key mappings for Vim.
 Plug 'Raimondi/delimitMate'                " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'sgur/vim-editorconfig'               " Yet another EditorConfig plugin for vim written in vimscript only.
 Plug 'christoomey/vim-tmux-navigator'      " Seamless navigation between tmux panes and vim splits.
 Plug 'nickeb96/vitality.vim'               " Make Vim play nicely with iTerm 2 and tmux.
 Plug 'ludovicchabant/vim-gutentags'        " A Vim plugin that manages your tag files.
-Plug 'lambdalisue/suda.vim'                " Read or write files with sudo command.
 Plug 'Shougo/context_filetype.vim'         " Context filetype library for Vim script?
 Plug 'Shougo/echodoc.vim'                  " Print documents in echo area.
-Plug 'Shougo/vimproc.vim', {'do' : 'make'} " Interactive command execution in Vim.
 Plug 'mattn/webapi-vim' " An Interface to WEB APIs.
 " }}}
 
@@ -257,7 +250,7 @@ Plug 'sebastianmarkow/deoplete-rust', {'for': 'rust'}
 " Plug 'fishbullet/deoplete-ruby',      {'for': 'ruby'}
 Plug 'uplus/deoplete-solargraph',     {'for': 'ruby'}
 Plug 'padawan-php/deoplete-padawan',  {'for': 'php'}
-Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
+" Plug 'artur-shaik/vim-javacomplete2', {'for': 'java'}
 Plug 'zchee/deoplete-go',             {'for': 'go', 'do':  'make'}
 Plug 'fcpg/vim-complimentary',        {'for': 'vim'}  " Improves the completion of VimL builtin functions, commands, variables and options.
 " Plug '1995eaton/vim-better-javascript-completion'
@@ -341,8 +334,8 @@ let g:vim_jsx_pretty_colorful_config = 1
 
 " === tern-for-vim ===
 let g:tern_request_timeout = 1
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
 " let g:tern_show_signature_in_pum = '0'  " Disable full signature type on autocomplete
 let g:tern#filetypes = [
                 \ 'jsx',

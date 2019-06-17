@@ -53,8 +53,6 @@ let g:lightline = {
       \    'server_stat':     'LanguageClient_statusLine',
       \},
       \ 'component_expand': {
-      \   'linter_errors':    'lightline#AleWarnings',
-      \   'linter_warnings':  'lightline#AleErrs',
       \   'neomake_errors':   'lightline#NeomakeErrs',
       \   'neomake_warnings': 'lightline#NeomakeWarnings',
       \   'peest':            'lightline#Pest',
@@ -399,37 +397,6 @@ endfunction
 function! LangServStatus() abort " {{{
   let l:stat = LanguageClient_statusLine()
   return l:stat
-endfunction
-" }}}
-
-augroup lightline#ale
-  autocmd!
-  autocmd User ALELint call lightline#update()
-augroup END
-
-function! lightline#AleWarnings() abort " {{{
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  " return l:counts.total == 0 ? '' : printf('◊ %d ', all_non_errors)
-  return l:counts.total == 0 ? '' : printf('● %d ', all_non_errors)
-endfunction
-" }}}
-
-function! lightline#AleErrs() abort " {{{
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('✗ %d', all_errors)
-  " return l:counts.total == 0 ? '' : printf('● %d', all_errors)
-endfunction
-" }}}
-
-function! lightline#AleOkay() abort " {{{
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '✓' : ''
 endfunction
 " }}}
 

@@ -389,33 +389,6 @@ let g:bookmark_no_default_key_mappings = 0
 " nmap <Leader>g <Plug>BookmarkMoveToLine
 " }}}
 
-" === vim-sneak === {{{
-let g:sneak#prompt = '§ '
-
-let g:sneak#label = 1
-let g:sneak#label_esc = "\<Space>"
-let g:sneak#target_labels = "asldkfjghzxmcnvb"
-
-let g:sneak#s_next = 1
-let g:sneak#use_ic_scs = 1
-
-" noremap z <Plug>Sneak_s
-" noremap Z <Plug>Sneak_S
-
-map f <Plug>Sneak_f
-map F <Plug>Sneak_F
-map t <Plug>Sneak_t
-map T <Plug>Sneak_T
-" }}}
-
-" === Leader Guide === {{{
-" let g:leaderGuide_map = {}
-" call leaderGuide#register_prefix_descriptions('', 'g:leaderGuide_map')
-" call leaderGuide#register_prefix_descriptions("<Space>", "g:lmap")
-" nnoremap <silent> <leader> :<c-u>LeaderGuide '<Space>'<CR>
-" vnoremap <silent> <leader> :<c-u>LeaderGuideVisual '<Space>'<CR>
-" }}}
-
 " === christoomey/vim-tmux-navigator === {{{
 " let g:tmux_navigator_no_mappings = 1
 " nnoremap <silent> {Left-Mapping} :TmuxNavigateLeft<cr>
@@ -433,6 +406,7 @@ let g:gitgutter_map_keys = 0
 nmap gr <Plug>(RegEditPrefix)
 nmap g<S-R> <Plug>(RegEditPostfix)
 " }}}
+
 ""
 " @subsection Custom Motions & Objects
 
