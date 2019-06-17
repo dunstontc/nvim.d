@@ -17,8 +17,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " UI: {{{
 Plug 'junegunn/vim-peekaboo'     " Show the contents of registers on a sidebar.
-Plug 'dunstontc/lightline.vim'   " A light and configurable statusline/tabline
-" Plug 'itchyny/lightline.vim'   " A light and configurable statusline/tabline plugin for Vim.
+Plug 'itchyny/lightline.vim'   " A light and configurable statusline/tabline plugin for Vim.
 Plug 'mgee/lightline-bufferline' " Display the list of buffers in the lightline.vim plugin.
 Plug 'airblade/vim-gitgutter'    " Shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'Shougo/vimfiler.vim'       " File explorer implemented by Vim script
