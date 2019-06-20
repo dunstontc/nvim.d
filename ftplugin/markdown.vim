@@ -1,6 +1,4 @@
-" nmap <buffer> <CR> :vs<CR>gf
-" setlocal spell
-" setlocal wrap linebreak nolist textwidth=0 wrapmargin=0
+setlocal spell
 setlocal wrap
 setlocal linebreak
 setlocal nolist
