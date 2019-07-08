@@ -8,6 +8,7 @@
 
 scriptencoding utf-8
 
+let g:uname = substitute(system('uname'), '\n', '', '')
 " ==============================================================================
 "  Plugins
 " ==============================================================================
@@ -25,8 +26,11 @@ Plug 'ryanoasis/vim-devicons'  " Adds file type glyphs/icons to popular Vim plug
 Plug 'itchyny/vim-cursorword'  " Underlines the word under the cursor.
 Plug 'xtal8/traces.vim'        " Range, pattern and substitute preview for Vim.
 " Plug 'jszakmeister/vim-togglecursor' " Toggle the cursor shape in the terminal for Vim.
-" Plug 'dunstontc/vim-vscode-theme'
-Plug '/Users/clay/Projects/vim/vim-vscode-theme'
+if g:uname == 'Darwin'
+  Plug '/Users/clay/Projects/vim/vim-vscode-theme'
+else
+  Plug 'dunstontc/vim-vscode-theme'
+endif
 " }}}
 
 " === Language Support === {{{
