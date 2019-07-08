@@ -37,7 +37,6 @@ nnoremap ` '
 nnoremap v mvv
 
 nnoremap ,u :Unite<space><C-d>
-nnoremap ,/ :%s///g<left><left><left>
 
 nnoremap <S-m> :Denite messages<CR>
 
@@ -78,7 +77,6 @@ nnoremap g<S-i> gi<esc>
 
 " gtfo
 nnoremap fj :Sayonara<CR>
-inoremap fj <esc>:Sayonara<CR>
 " }}}
 
 " === Ctrl Mappings === {{{
@@ -444,6 +442,8 @@ nnoremap <leader><leader> <esc>
 nnoremap <leader><Tab> :bn<CR>
 nnoremap <leader><S-Tab> :bp<CR>
 " `   -- Same as VSCode term hotkey
+" /   -- Search & replace
+nnoremap <leader>/ :%s///g<left><left><left>
 " a   -- Add
 nnoremap <leader>a <Plug>(place-insert)
 nnoremap <leader>` :Deol -split -start-insert<CR>
@@ -462,7 +462,7 @@ nnoremap <leader>rr :source $MYVIMRC<CR>:call lightline#update_once()<CR>
 " f t -- FileTree
 nnoremap <leader>ft :VimFilerExplorer<CR>
 " v   -- Vertical Split
-nnoremap <leader>v :vsplit \| Startify<CR>:echo<CR>
+nnoremap <leader>v :vsplit \| :echo<CR>
 " x   -- ...Todo...
 nnoremap <leader>x :Denite todo<CR>
 nnoremap <leader><S-X> :Denite todotxt<CR>
