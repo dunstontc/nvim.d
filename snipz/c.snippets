@@ -4,6 +4,10 @@
 
 priority -50
 
+snippet incl "#include ..."
+#include <$1>$0
+endsnippet
+
 snippet def "#define ..."
 #define $1
 endsnippet
@@ -29,9 +33,8 @@ ${1:#pragma mark -
 $0
 endsnippet
 
-snippet main "main() (main)"
-int main(int argc, char *argv[])
-{
+snippet main "main()"
+int main(int argc, char *argv[]) {
 	${VISUAL}$0
 	return 0;
 }
