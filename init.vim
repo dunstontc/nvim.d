@@ -39,6 +39,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 " }}}
 
 " C: {{{
+Plug 'justinmk/vim-syntax-extra', {'for': ['c']}
 " Plug 'dunstontc/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " Plug 'arakashic/chromatica.nvim',            {'for': ['c', 'cpp', 'objc', 'objcpp']}
 " }}}
@@ -206,7 +207,6 @@ Plug 'duff/vim-bufonly', {'on': 'BufOnly'} " Unload all buffers but the current 
 Plug 'mhinz/vim-sayonara'                  " Sane buffer/window deletion.
 Plug 'ervandew/supertab'                   " Perform all your vim insert mode completions with Tab.
 Plug 'airblade/vim-matchquote'             " %-style motion for single / double quotation marks, backticks and pipe.
-" Plug 'rhysd/clever-f.vim'                " Extended f, F, t and T key mappings for Vim.
 Plug 'Raimondi/delimitMate'                " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'sgur/vim-editorconfig'               " Yet another EditorConfig plugin for vim written in vimscript only.
 Plug 'christoomey/vim-tmux-navigator'      " Seamless navigation between tmux panes and vim splits.
@@ -261,9 +261,6 @@ Plug 'osyo-manga/vim-anzu' " Vim search status (current/found).
 " Plug 'haya14busa/is.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk' " Provides improved * motions.
-" Plug 'brooth/far.vim'
-" Plug 'dyng/ctrlsf.vim'
-" Plug 'pelodelfuego/vim-swoop'
 " }}}
 
 " === Lazy === {{{
@@ -294,7 +291,12 @@ filetype plugin indent on
 syntax on
 set nocompatible
 
-let g:python3_host_prog  = '/usr/local/bin/python3'
+
+" Python Settings
+let g:uname = substitute(system('uname'), '\n', '', '')
+if g:uname == 'Darwin'
+  let g:python3_host_prog  = '/usr/local/bin/python3'
+endif
 
 
 " ==============================================================================
