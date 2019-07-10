@@ -95,7 +95,7 @@ Plug 'wavded/vim-stylus',                {'for': ['styl', 'stylus']}
 " }}}
 
 " Go: {{{
-Plug 'fatih/vim-go',  {'for': 'go'}
+Plug 'fatih/vim-go',  {'for': 'go', 'do': ':GoUpdateBinaries'}
 " Plug 'jodosha/vim-godebug'
 " Plug 'godoctor/godoctor.vim'
 " }}}
