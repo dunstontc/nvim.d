@@ -15,7 +15,7 @@ call denite#custom#option('default', {
   \ 'cursor_shape':            v:true,
   \ 'cursor_wrap':             v:true,
   \ 'reversed':                v:false,
-  \ 'statusline':              v:false,
+  \ 'statusline':              v:true,
   \ 'cursorline':              v:true,
   \ 'updatetime':              1,
   \ 'scroll':                  1,

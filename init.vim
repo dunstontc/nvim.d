@@ -224,7 +224,7 @@ Plug 'mattn/webapi-vim' " An Interface to WEB APIs.
 " === Denite === {{{
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/denite.nvim', {'do': ':UpdateRemotePlugins'}
-Plug 'dunstontc/neomru.vim'
+Plug 'Shougo/neomru.vim'
 Plug 'Shougo/neoyank.vim'
 Plug 'rafi/vim-denite-session'
 Plug 'mhartington/denite-neomake'
@@ -401,8 +401,8 @@ let g:go_textobj_include_variable = 1
 " Use this option to auto |:GoMetaLinter| on save.
 " Default: 0
 let g:go_metalinter_autosave = 0
-let g:go_metalinter_enabled = []
-let g:go_metalinter_autosave_enabled = []
+" let g:go_metalinter_enabled = []
+" let g:go_metalinter_autosave_enabled = []
 " Use this option to auto |:GoFmt| on save.
 " Default: 1
 let g:go_fmt_autosave = 1

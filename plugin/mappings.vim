@@ -90,7 +90,7 @@ vnoremap <C-q> <C-c>
 nnoremap <silent><C-s> :w<CR>
 inoremap <silent><C-s> <C-o>:w<CR>
 
-nnoremap <C-p> :Denite file_mru<CR>
+nnoremap <C-p> :Denite -start-filter file_mru<CR>
 
 " Move splits around, as we use ctrl-hjkl to navigate
 nnoremap <C-W><left> <C-W>H
@@ -99,7 +99,7 @@ nnoremap <C-W><down> <C-W>J
 nnoremap <C-W><up> <C-W>K
 
 " <C-m>
-nnoremap <F17> :Denite file_mru<CR>
+nnoremap <F17> :Denite -start-filter file_mru<CR>
 
 " <C-d>
 " Dupe lines
@@ -450,7 +450,7 @@ nnoremap <leader>` :Deol -split -start-insert<CR>
 " c   -- Comment
 noremap <silent> <leader>c :TComment<CR>
 " f   -- Find (grep)
-noremap <silent> <leader>f :Denite grep<CR>
+noremap <silent> <leader>f :Denite -start-filter grep<CR>
 " l   -- Neoformat
 noremap <leader>l :Neoformat<CR>
 " m   -- replay Macro
@@ -464,8 +464,8 @@ nnoremap <leader>ft :VimFilerExplorer<CR>
 " v   -- Vertical Split
 nnoremap <leader>v :vsplit \| :echo<CR>
 " x   -- ...Todo...
-nnoremap <leader>x :Denite todo<CR>
-nnoremap <leader><S-X> :Denite todotxt<CR>
+nnoremap <leader>x :Denite -start-filter todo<CR>
+nnoremap <leader><S-X> :Denite -start-filter todotxt<CR>
 
 " left  -- Close Folds
 nnoremap <leader><Left> zc
@@ -479,7 +479,7 @@ nnoremap <leader><Down> :bnext<CR>
 "  === b -- Buffers=== {{{
 " ==============================================================================
 " l -- List Buffers
-nnoremap <leader>b :Denite buffer -mode=normal<CR>
+nnoremap <leader>b :Denite -start-filter buffer<CR>
 " Next Buffer
 nnoremap <leader>bn :bn<CR>
 " Previous Buffer
@@ -499,30 +499,30 @@ nnoremap <leader>bq :q<CR>
 " ==============================================================================
 "  === d -- Denite === {{{
 " ==============================================================================
-nnoremap <leader>, :Denite menu:config<CR>
-nnoremap <leader>dc :Denite command<CR>
-nnoremap <leader>d<S-c> :Denite command_history<CR>
-nnoremap <leader>db :Denite bookmark<CR>
+nnoremap <leader>, :Denite -start-filter menu:config<CR>
+nnoremap <leader>dc :Denite -start-filter command<CR>
+nnoremap <leader>d<S-c> :Denite -start-filter command_history<CR>
+nnoremap <leader>db :Denite -start-filter bookmark<CR>
 nnoremap <leader>dd <NOP>
-nnoremap <leader>de :Denite tcd_env<CR>
-nnoremap <leader>df :Denite filetype<CR>
-nnoremap <leader>dg :Denite ghq<CR>
-nnoremap <leader>dh :Denite help<CR>
-nnoremap <leader>di :Denite menu:interfaces<CR>
-nnoremap <leader>dj :Denite jump<CR>
-nnoremap <leader>dk :Denite menu:map_list<CR>
+nnoremap <leader>de :Denite -start-filter tcd_env<CR>
+nnoremap <leader>df :Denite -start-filter filetype<CR>
+nnoremap <leader>dg :Denite -start-filter ghq<CR>
+nnoremap <leader>dh :Denite -start-filter help<CR>
+nnoremap <leader>di :Denite -start-filter menu:interfaces<CR>
+nnoremap <leader>dj :Denite -start-filter jump<CR>
+nnoremap <leader>dk :Denite -start-filter menu:map_list<CR>
 nnoremap <leader>d<S-k> :Maps<CR>
-nnoremap <leader>dl :Denite tcd_loclist<CR>
-nnoremap <leader>dm :Denite marks<CR>
-nnoremap <leader>do :Denite options<CR>
-nnoremap <leader>dp :Denite projectile -default-action=custom<CR>
-nnoremap <leader>dq :Denite tcd_quickfix<CR>
-nnoremap <leader>dt :Denite todotxt_local<CR>
-nnoremap <leader>d<S-T> :Denite todotxt<CR>
-nnoremap <leader>ds :Denite sauce<CR>
-nnoremap <leader>d<S-S> :Denite sauce_file<CR>
-nnoremap <leader>du :Denite ultisnips<CR>
-nnoremap <leader>d<S-U> :Denite ultisnips_file<CR>
+nnoremap <leader>dl :Denite -start-filter tcd_loclist<CR>
+nnoremap <leader>dm :Denite -start-filter marks<CR>
+nnoremap <leader>do :Denite -start-filter options<CR>
+nnoremap <leader>dp :Denite -start-filter projectile -default-action=custom<CR>
+nnoremap <leader>dq :Denite -start-filter tcd_quickfix<CR>
+nnoremap <leader>dt :Denite -start-filter todotxt_local<CR>
+nnoremap <leader>d<S-T> :Denite -start-filter todotxt<CR>
+nnoremap <leader>ds :Denite -start-filter sauce<CR>
+nnoremap <leader>d<S-S> :Denite -start-filter sauce_file<CR>
+nnoremap <leader>du :Denite -start-filter ultisnips<CR>
+nnoremap <leader>d<S-U> :Denite -start-filter ultisnips_file<CR>
 " }}}
 
 " ==============================================================================
@@ -584,9 +584,9 @@ nnoremap <leader>gs :Gstatus<CR>
 "  === h -- Help === {{{
 " ==============================================================================
 " Search the docs
-nnoremap <leader><S-H> :Denite help<CR>
+nnoremap <leader><S-H> :Denite -start-filter help<CR>
 " Denite Cheat Sheet
-nnoremap <leader>hc :Denite cheatsheet<CR>
+nnoremap <leader>hc :Denite -start-filter cheatsheet<CR>
 " Cheat Sheet
 nnoremap <leader>h<S-c> :Cheat40Open<CR>
 " Check Health
@@ -596,7 +596,7 @@ nnoremap <leader>hi :H index<CR>
 " Quickmenu
 " nnoremap <leader>, :call quickmenu#toggle(0)<CR>
 " Messages
-nnoremap <leader>hm :Denite messages<CR>
+nnoremap <leader>hm :Denite -start-filter messages<CR>
 
 " ==============================================================================
 " hd -- Help:Describe:
@@ -611,7 +611,7 @@ nnoremap <leader>hdp :GetFullPath<CR>
 " Describe Syntax at the cursosr
 nnoremap <leader>hds :SynDef<CR>
 " List Defined Syntax Groups
-nnoremap <leader>hd<S-s> :Denite tcd_syntax<CR>
+nnoremap <leader>hd<S-s> :Denite -start-filter tcd_syntax<CR>
 " }}}
 
 " ==============================================================================
@@ -634,9 +634,9 @@ nnoremap <leader>pu :PlugUpdate<CR>
 " Custom
 " noremap <silent> <leader>g. :Denite grep -path=
 " .dotfiles
-noremap <silent> <leader>g. :Denite grep -path=~/.dotfiles<CR>
+noremap <silent> <leader>g. :Denite grep -start-filter -path=~/.dotfiles<CR>
 " Dotfiles
-noremap <silent> <leader>gv :Denite grep -path=~/.config/nvim<CR>
+noremap <silent> <leader>gv :Denite grep -start-filter -path=~/.config/nvim<CR>
 " }}}
 
 " ==============================================================================

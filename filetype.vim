@@ -76,7 +76,7 @@ augroup filetypes
 
   autocmd BufRead,BufNewFile *.vstheme,*.vssettings set filetype=xml
 
-  " autocmd BufNewFile,BufReadPost *.wiki set filetype=wiki
+  autocmd BufNewFile,BufReadPost *.wiki set filetype=wiki
 
 augroup END
 

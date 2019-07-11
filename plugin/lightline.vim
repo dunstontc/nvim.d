@@ -133,13 +133,14 @@ let g:lightline#bufferline#number_map        = {
 
 " ==============================================================================
 
+      " \ &filetype ==#     'denite'     ? lightline#includeDenite() :
 function! Mode() abort " {{{
   return
         \ expand('%:t') ==# 'ControlP'   ? 'CtrlP'    :
         \ expand('%:t') ==# 'peekaboo'   ? 'Peekaboo' :
         \ &filetype ==#     'cheat40'    ? 'Cheat40'  :
         \ &filetype ==#     'deol'       ? 'Deol'     :
-        \ &filetype ==#     'denite'     ? lightline#includeDenite() :
+        \ &filetype ==#     'denite'     ? 'Denite'   :
         \ &filetype ==#     'fzf'        ? 'FZF'      :
         \ &filetype ==#     'gitcommit'  ? 'Fugitive' :
         \ &filetype ==#     'help'       ? 'Help'     :
@@ -161,11 +162,11 @@ endfunction
 " }}}
 
 
-function lightline#includeDenite() " {{{
-    let mode_str = substitute(denite#get_status_mode(), "-\\| ", "", "g")
-    call lightline#link(tolower(mode_str[0]))
-    return mode_str
-  endfunction
+" function lightline#includeDenite() " {{{
+"     let mode_str = substitute(denite#get_status_mode(), "-\\| ", "", "g")
+"     call lightline#link(tolower(mode_str[0]))
+"     return mode_str
+"   endfunction
 " }}}
 
 " function! s:fzf_statusline()
@@ -199,7 +200,7 @@ function! lightline#Filename() abort " {{{
   if &filetype ==# 'help'
     return ' ' . l:filename
   elseif &filetype ==# 'denite'
-    return ' ' . denite#get_status_sources()
+    return ' ' . denite#get_status("sources")
   elseif &filetype ==# 'tagbar'
     return ' '.g:lightline.fname
   else
@@ -213,7 +214,7 @@ endfunction
 " Returns the value of |denite#get_status_path()| with some added padding.
 function! DenitePath() abort " {{{
   if &filetype ==# 'denite'
-    let l:path = denite#get_status_path()
+    let l:path = denite#get_status("path")
     let l:clean_path = substitute(l:path, '\([\|\]\)', '', 'g')
     return '  '.l:clean_path.' '
     " return '  '.denite#get_status_path().' '
@@ -228,7 +229,7 @@ endfunction
 " Returns the value of |denite#get_status_sources()| with some added padding.
 function! DeniteLine() abort " {{{
   if &filetype ==# 'denite'
-    return denite#get_status_sources().'  '
+    return denite#get_status("sources").'  '
   else
     return ''
   endif
@@ -347,10 +348,9 @@ function! PaddedStats() abort " {{{
   elseif &filetype == 'denite'
     " return denite#get_status_path().' '
     " let l:path = denite#get_status_path()
-    let l:clean_path = substitute(denite#get_status_path(), '\([\|\]\)', '', 'g')
+    let l:clean_path = substitute(denite#get_status("path"), '\([\|\]\)', '', 'g')
     let l:cool_path = substitute(l:clean_path, expand($HOME), '~', 'g')
     return ''.l:cool_path.'   '
-    " return ' '.substitute(denite#get_status_path(), '\([\|\]\)', '', 'g').'  '
   else
     return &filetype !~# g:tcd_blacklist && winwidth(0) > 70 ?
                          \ (' '.l:padRow.':'.l:height.' /'.l:padCol .':'.l:padWidth) :

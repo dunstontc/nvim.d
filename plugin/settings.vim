@@ -176,9 +176,9 @@ set notitle                    " Don't Show the filename in the window titlebar
 " syntax sync maxlines=500
 
 " set textwidth=78
-" set synmaxcol=200             " Don't syntax highlight long lines
+set synmaxcol=255
 " if exists('+colorcolumn')
-"   execute "set colorcolumn=" . join(range(81,335), ',')
+"   execute "set colorcolumn=" . join(range(81,235), ',')
 " endif
 " }}}
 

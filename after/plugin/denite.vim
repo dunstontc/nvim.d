@@ -9,7 +9,7 @@ scriptencoding utf-8
 
 let s:menus = {}
 
-let s:menus.config = { 'description': ' Neovim Settings' }
+let s:menus.config = { 'description': 'Neovim Settings' }
 let s:menus.config.command_candidates = [
   \ ['Menu -- Denite',        'Denite menu:Denite'],
   \ ['Snippets/',             'VimFiler -explorer ~/nvim.d/snipz'],
